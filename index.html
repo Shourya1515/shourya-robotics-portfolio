@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shourya Vudemarri – Robotics Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-clean anim-medium">
+  <div class="ui-switcher">
+    <div class="switch-group">
+      <span class="switch-label">Theme:</span>
+      <button data-theme="theme-clean" class="switch-btn active">Clean</button>
+      <button data-theme="theme-neon" class="switch-btn">Neon</button>
+      <button data-theme="theme-ai" class="switch-btn">AI</button>
+    </div>
+    <div class="switch-group">
+      <span class="switch-label">Motion:</span>
+      <button data-motion="anim-soft" class="switch-btn">Soft</button>
+      <button data-motion="anim-medium" class="switch-btn active">Medium</button>
+      <button data-motion="anim-high" class="switch-btn">High</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero section reveal">
+    <div class="hero-photo">
+      <div class="photo-glow"></div>
+      <img src="images/profile.jpg" alt="Shourya Vudemarri portrait" />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Hi, I’m Shourya Vudemarri</h1>
+      <p class="hero-subtitle typewriter">
+        Robotics Engineer · ROS2 · SLAM · Autonomous Navigation
+      </p>
+      <p class="hero-text">
+        I design and build robots that can understand, map, and move through the world –
+        from autonomous mobile robots and omni-directional platforms to high-energy combat robots.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn ghost">Contact Me</a>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about reveal">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-layout">
+      <p>
+        I am a robotics engineer with a strong foundation in <b>ROS / ROS2, SLAM,
+        navigation, and real-time perception</b>. I enjoy taking ideas from CAD and
+        simulation all the way to physical systems — integrating LiDAR, IMU, cameras,
+        and control software into robust robots.
+      </p>
+      <p>
+        My experience spans <b>autonomous 4-wheel robots, omni-directional kinematics,
+        combat robotics, agricultural robots, and analytical reporting</b>. I like
+        combining hands-on building with clear documentation and data-driven insight.
+      </p>
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>What I Do</h3>
+          <p>Full robotics stack: CAD → simulation → ROS bring-up → SLAM & Nav2.</p>
+        </div>
+        <div class="about-card">
+          <h3>How I Work</h3>
+          <p>Iterative, experiment-driven, and obsessed with reliability.</p>
+        </div>
+        <div class="about-card">
+          <h3>What I’m Seeking</h3>
+          <p>Co-op / internships in robotics, autonomy, and intelligent systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects reveal">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <a href="project-4wheel-slam.html" class="project-card tilt">
+        <div class="project-tag">ROS2 · SLAM · Nav2</div>
+        <h3>4-Wheel Robot with SLAM & Navigation</h3>
+        <p>LiDAR + camera robot in Gazebo with SLAM Toolbox, AMCL, and Nav2 for multi-room autonomous navigation.</p>
+      </a>
+
+      <a href="project-omni.html" class="project-card tilt">
+        <div class="project-tag">Kinematics · Control</div>
+        <h3>Omni-Directional Robot</h3>
+        <p>Full kinematic model, Jacobian, and inverse kinematics for an omni robot with smooth 360° motion.</p>
+      </a>
+
+      <a href="project-combat.html" class="project-card tilt">
+        <div class="project-tag">Mechanical · Competition</div>
+        <h3>Combat Robotics Series (25 / 15 / 8 KG)</h3>
+        <p>Family of combat robots with CNC chassis and high-energy weapons, winning multiple national RoboWars podiums.</p>
+      </a>
+
+      <a href="project-pesticide.html" class="project-card tilt">
+        <div class="project-tag">Agri-Robotics</div>
+        <h3>Pesticide Spraying Robot</h3>
+        <p>Field robot concept for safer, more consistent pesticide application.</p>
+      </a>
+
+      <a href="project-nu-nance.html" class="project-card tilt">
+        <div class="project-tag">Analytics · Reporting</div>
+        <h3>NU Nance Report</h3>
+        <p>Structured analytical report pipeline with clear visuals and narrative for decision-making.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills reveal">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <span>ROS / ROS2</span>
+      <span>SLAM (SLAM Toolbox, RTAB-Map)</span>
+      <span>Nav2 Navigation</span>
+      <span>Gazebo / CoppeliaSim / Isaac Sim</span>
+      <span>LiDAR · IMU · Camera</span>
+      <span>robot_localization (EKF)</span>
+      <span>Python · C++</span>
+      <span>MATLAB · Control Systems</span>
+      <span>Fusion 360 · SolidWorks</span>
+      <span>Mechanical Design & Fabrication</span>
+      <span>Data Analysis & Reporting</span>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact reveal">
+    <h2 class="section-title">Contact</h2>
+    <p>
+      I’m open to co-op, internship, and collaborative project opportunities in
+      robotics, autonomy, and intelligent systems.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:vudemarri.s@northeastern.edu" class="btn primary">Email Me</a>
+      <a href="https://github.com/Harshavardhansurya" target="_blank" class="btn ghost">GitHub</a>
+      <a href="https://www.linkedin.com" target="_blank" class="btn ghost">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    © 2025 Shourya Vudemarri · Robotics Portfolio
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
