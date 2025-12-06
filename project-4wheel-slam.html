@@ -11,7 +11,10 @@
 
 <header class="site-header">
   <div class="logo">Shourya<span>Robotics</span></div>
-  <nav><a href="index.html">Home</a></nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#projects">Projects</a>
+  </nav>
 </header>
 
 <section class="project-details section reveal">
@@ -19,55 +22,57 @@
   <h2 class="section-title">4-Wheel Autonomous Robot with SLAM & Navigation</h2>
 
   <p>
-    This project focuses on building a complete autonomous navigation pipeline for a
-    differential-drive 4-wheel robot using <b>ROS2, SLAM Toolbox, Nav2, LiDAR mapping, TF frames,
-    and a URDF-based robot model</b>. The system was fully integrated in RViz and Gazebo,
-    demonstrating reliable mapping, localization, path planning, and autonomous navigation
-    through a multi-room indoor environment.
+    This project demonstrates a fully autonomous 4-wheel differential drive robot
+    built using <b>ROS2 Foxy</b>, <b>SLAM Toolbox</b>, <b>Nav2 Navigation Stack</b>, and a 
+    <b>URDF-based robot model</b>. The robot uses LiDAR for mapping, real-time localization, 
+    and path planning to autonomously navigate a multi-room indoor environment.
   </p>
 
   <h3>Gallery</h3>
 
   <div class="gallery-grid">
-    <img src="images/4wheel/nav1.jpg" alt="4 wheel robot rviz visualization">
-    <img src="images/4wheel/nav2.jpg" alt="4 wheel robot mapping">
-    <img src="images/4wheel/nav3.jpg" alt="4 wheel robot costmap and navigation">
+    <img src="images/4wheel/nav1.jpg" alt="RViz robot model">
+    <img src="images/4wheel/nav2.jpg" alt="SLAM mapping result">
+    <img src="images/4wheel/nav3.jpg" alt="Costmaps and navigation paths">
   </div>
 
-  <h3>Overview</h3>
+  <h3>Project Overview</h3>
   <p>
-    The robot was modeled in URDF with detailed wheel joints, sensor placements,
-    and TF frames. Using a simulated LiDAR scanner, the robot performed
-    <b>Simultaneous Localization and Mapping (SLAM)</b> to build a full indoor map.
-    Autonomous navigation was implemented using <b>Nav2</b>, enabling the robot to compute
-    collision-free global paths and perform local obstacle avoidance.
+    The robot was carefully modeled in URDF with correct physical dimensions, wheel joints,
+    and sensor placement. A simulated LiDAR scanner publishes scans used by 
+    <b>SLAM Toolbox</b> to generate a highly accurate multi-room 2D occupancy grid map.
+  </p>
+  <p>
+    Once the map is built, <b>Nav2</b> handles global planning (NavFn / Smac Hybrid Planner)
+    and local obstacle avoidance using costmaps, enabling the robot to reach any goal point
+    in the environment autonomously.
   </p>
 
   <h3>Technical Breakdown</h3>
   <ul>
-    <li><b>URDF + RViz visualization:</b> Complete robot model with correct TF tree.</li>
-    <li><b>SLAM Toolbox:</b> Real-time LiDAR-based mapping with loop closure.</li>
-    <li><b>Nav2 Navigation Stack:</b> Global planner, local planner, behavior tree executor.</li>
-    <li><b>Costmaps:</b> Generated obstacle inflation layers for safe navigation.</li>
-    <li><b>AMCL localization:</b> Adaptive Monte-Carlo particle filter for pose estimation.</li>
-    <li><b>Odometry:</b> Differential drive model using wheel encoder simulation.</li>
-    <li><b>TF Broadcasting:</b> base_link → laser → wheels, ensuring correct transforms.</li>
+    <li><b>URDF Robot Model:</b> Base link, wheel joints, LiDAR frame, collision + visual meshes.</li>
+    <li><b>SLAM Toolbox:</b> Real-time mapping with loop closure.</li>
+    <li><b>Nav2 Navigation:</b> Global + local planners, behavior tree executor.</li>
+    <li><b>Costmap Server:</b> Marking & clearing layers with obstacle inflation.</li>
+    <li><b>TF Transform Tree:</b> Proper linking of base_link → laser → odom → map frames.</li>
+    <li><b>Odometry:</b> Differential drive odom based on wheel velocities.</li>
+    <li><b>RViz Integration:</b> Display of SLAM map, robot pose, costmaps, and path planning.</li>
   </ul>
 
   <h3>Key Features</h3>
   <ul>
-    <li>Accurate multi-room map generation using LiDAR.</li>
-    <li>Autonomous goal-to-goal navigation with path smoothing.</li>
-    <li>Obstacle avoidance using layered costmaps.</li>
-    <li>Live real-time visualization of robot pose, laser scans, and trajectory in RViz.</li>
+    <li>Complete multi-room SLAM map generation using LiDAR.</li>
+    <li>Autonomous navigation with dynamic obstacle avoidance.</li>
+    <li>Accurate robot localization using AMCL or SLAM pose estimation.</li>
+    <li>Visualization of laser scans, paths, TF tree, and costmaps.</li>
+    <li>Modular system easily portable to physical hardware.</li>
   </ul>
 
   <h3>Outcome</h3>
   <p>
-    The robot successfully navigated complex indoor spaces, demonstrating a full robotics
-    autonomy pipeline from CAD modeling to perception, SLAM, planning, and navigation.
-    This project highlights my combined skills in <b>robot modeling, ROS2 navigation,
-    state estimation, and system integration</b>.
+    The robot successfully performed indoor exploration, mapping, and autonomous navigation,
+    demonstrating a full robotics pipeline from simulation to autonomy. This project highlights
+    expertise in <b>robot modeling, ROS2 navigation, SLAM algorithms, and system integration</b>.
   </p>
 
   <a href="index.html" class="btn ghost" style="margin-top:20px;">← Back to Projects</a>
