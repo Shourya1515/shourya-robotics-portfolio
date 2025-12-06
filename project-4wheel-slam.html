@@ -5,6 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4-Wheel Autonomous Robot – SLAM & Navigation</title>
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .project-wrapper {
+      max-width: 1050px;
+      margin: auto;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .section-title {
+      margin-bottom: 15px;
+    }
+
+    .gallery-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 950px;
+      margin-inline: auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .gallery-grid img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
+    }
+
+    .content-section {
+      margin-top: 40px;
+      line-height: 1.7;
+    }
+
+    .content-section h3 {
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    ul { margin-left: 20px; margin-top: 10px; }
+  </style>
 </head>
 
 <body class="theme-clean anim-medium">
@@ -16,55 +70,70 @@
   </nav>
 </header>
 
-<section class="project-details section reveal">
+<div class="project-wrapper reveal">
 
   <h2 class="section-title">4-Wheel Autonomous Robot with SLAM & Navigation</h2>
 
   <p>
-    This project demonstrates a fully autonomous 4-wheel differential drive robot
-    built using <b>ROS2 Foxy</b>, <b>SLAM Toolbox</b>, <b>Nav2 Navigation Stack</b>, and a 
-    <b>URDF-based robot model</b>. The robot uses LiDAR for mapping, real-time localization, 
-    and path planning to autonomously navigate a multi-room indoor environment.
+    A fully autonomous mobile robot built using <b>ROS2 Foxy</b>, <b>SLAM Toolbox</b>, 
+    <b>Nav2 Navigation Stack</b>, and a complete <b>URDF robot model</b>.
+    The robot performs LiDAR-based mapping, localization, and autonomous path planning
+    across a multi-room indoor environment.
   </p>
 
   <h3>Gallery</h3>
-
   <div class="gallery-grid">
-    <img src="images/4wheel/nav1.jpg">
-    <img src="images/4wheel/nav2.jpg">
-    <img src="images/4wheel/nav3.jpg">
+    <img src="images/4wheel/nav1.jpg" alt="RobotModel in RViz">
+    <img src="images/4wheel/nav2.jpg" alt="SLAM mapping">
+    <img src="images/4wheel/nav3.jpg" alt="Global and local costmaps for navigation">
   </div>
 
-  <h3>Project Overview</h3>
-  <p>
-    The robot was carefully modeled in URDF with correct physical dimensions, wheel joints,
-    and sensor placement. A simulated LiDAR scanner publishes scans used by 
-    <b>SLAM Toolbox</b> to generate a highly accurate indoor occupancy grid map.
-  </p>
-  <p>
-    Once the map is built, <b>Nav2</b> handles global planning and local obstacle avoidance,
-    allowing the robot to navigate autonomously through multiple rooms.
-  </p>
+  <div class="content-section">
+    <h3>Project Overview</h3>
+    <p>
+      The robot’s URDF model includes accurate joint frames, wheel kinematics, and LiDAR placement.
+      Using <b>SLAM Toolbox</b>, the robot builds a multi-room occupancy grid map with loop closure.  
+      The <b>Nav2 stack</b> then computes global paths and performs safe real-time obstacle avoidance 
+      using layered costmaps, allowing the robot to autonomously move between goal points.
+    </p>
+  </div>
 
-  <h3>Technical Breakdown</h3>
-  <ul>
-    <li>URDF model with accurate TF frames</li>
-    <li>SLAM Toolbox for mapping</li>
-    <li>Nav2 for global + local planning</li>
-    <li>Costmaps for safe obstacle avoidance</li>
-    <li>Differential-drive odometry</li>
-    <li>RViz visualization of map, laserscan, and path</li>
-  </ul>
+  <div class="content-section">
+    <h3>Technical Breakdown</h3>
+    <ul>
+      <li>URDF model with complete TF tree (base_link, wheels, LiDAR, odom, map).</li>
+      <li><b>SLAM Toolbox</b> for mapping and pose estimation with loop closure.</li>
+      <li><b>Nav2</b> global (NavFn/Smac) and local planners with behavior trees.</li>
+      <li>Inflation-based costmaps for obstacle avoidance and safe path generation.</li>
+      <li>Differential-drive odometry computed from wheel velocities.</li>
+      <li>Full RViz integration for map, laser scans, costmaps, and trajectories.</li>
+    </ul>
+  </div>
 
-  <h3>Outcome</h3>
-  <p>
-    This project demonstrates my ability to integrate ROS2 navigation, robot modeling,
-    SLAM algorithms, and real-time visualization for autonomous robotics applications.
-  </p>
+  <div class="content-section">
+    <h3>Outcome</h3>
+    <p>
+      The system demonstrates a complete robotics pipeline from modeling to autonomy, and
+      highlights my experience with <b>ROS2 navigation, SLAM, TF coordination, and system integration</b>.
+    </p>
+  </div>
 
-  <a href="index.html" class="btn ghost">← Back to Projects</a>
-</section>
+  <a href="index.html" class="btn ghost" style="margin-top:20px;">← Back to Projects</a>
+</div>
 
 <script src="main.js"></script>
+
+<script>
+  const imgs = document.querySelectorAll(".gallery-grid img");
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  },{threshold:0.25});
+  imgs.forEach(img => obs.observe(img));
+</script>
+
 </body>
 </html>
