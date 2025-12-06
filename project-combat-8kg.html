@@ -3,49 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8 KG Combat Robot – 2nd Place</title>
+  <title>8 KG Combat Robot – 2nd Place (Amrita Bengaluru)</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body class="theme-clean anim-medium">
 
+  <style>
+    .project-wrapper {
+      max-width: 1050px;
+      margin: auto;
+      padding: 40px 20px;
+      color: #fff;
+    }
+    .section-title { margin-bottom: 15px; }
+    .gallery-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 950px;
+      margin-inline: auto;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .gallery-grid img.visible { opacity:1; transform:translateY(0); }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+    .content-section { margin-top: 40px; line-height: 1.7; }
+    .content-section h3 { margin-bottom:10px; margin-top:20px; }
+    ul { margin-left:20px; margin-top:10px; }
+  </style>
+</head>
+
+<body class="theme-clean anim-medium">
 <header class="site-header">
   <div class="logo">Shourya<span>Robotics</span></div>
-  <nav><a href="index.html">Home</a> <a href="project-combat.html">Combat Series</a></nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="project-combat.html">Combat Series</a>
+  </nav>
 </header>
 
-<section class="project-details section">
+<div class="project-wrapper reveal">
 
-  <h2 class="section-title">8 KG Combat Robot – 2nd Place (Amrita University Bangalore)</h2>
+  <h2 class="section-title">8 KG Combat Robot – 2nd Place (Amrita University Bengaluru)</h2>
 
   <p>
-    This 8 KG combat robot achieved <b>2nd place</b> and earned a
-    <b>Twenty Five Thousand Rupees cash prize</b> at the National Tech Fest conducted by
-    <b>Amrita University Bengaluru</b>. The robot focused on lightweight durability, fast
-    maneuverability, and resilience under repeated impacts.
+    Lightweight, high-mobility combat robot designed for speed and evasive driving.
+    This robot earned <b>2nd place</b> and a <b>₹25,000 cash prize</b> at the
+    <b>National Tech Fest conducted by Amrita University Bengaluru</b>.
   </p>
 
+  <h3>Gallery</h3>
   <div class="gallery-grid">
-    <img src="images/combat/combat3.jpg">
+    <img src="images/combat/combat3.jpg" alt="8kg combat robot in the arena">
   </div>
 
-  <h3>Project Overview</h3>
-  <p>
-    Engineered with a lightweight frame and a speed-optimized drivetrain,
-    this robot excelled in mobility and controlled aggression.
-    Its compact geometry made it difficult for opponents to land damaging hits,
-    while its drivetrain allowed fast repositioning in the arena.
-  </p>
+  <div class="content-section">
+    <h3>Project Overview</h3>
+    <p>
+      In the 8&nbsp;KG category, every gram matters. The robot’s chassis and armor were optimized
+      for weight while still providing enough rigidity to survive repeated impacts.
+      The strategy focused on outmaneuvering heavier opponents, exploiting their spin-up time,
+      and attacking from safe angles.
+    </p>
+  </div>
 
-  <h3>Highlights</h3>
-  <ul>
-    <li>2nd Place – Amrita University National Tech Fest</li>
-    <li>Ultra-lightweight design with high maneuverability</li>
-    <li>Fast acceleration and quick directional control</li>
-    <li>Shock-resistant internal mounting system</li>
-  </ul>
+  <div class="content-section">
+    <h3>Technical Breakdown</h3>
+    <ul>
+      <li>Lightweight frame design prioritized power-to-weight ratio.</li>
+      <li>High-speed drive motors tuned for quick acceleration and directional changes.</li>
+      <li>Compact electronics packaging for minimized moment of inertia.</li>
+      <li>Traction-optimized wheels chosen for fast control on arena floor.</li>
+      <li>Electrical design with current protection and thermal awareness.</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h3>Outcome</h3>
+    <p>
+      Despite the constraints of the lighter weight class, the robot demonstrated excellent
+      driving dynamics and survivability, reinforcing my ability to <b>balance agility,
+      structural design, and electrical robustness</b> in constrained design spaces.
+    </p>
+  </div>
 
   <a href="project-combat.html" class="btn ghost" style="margin-top:20px;">← Back to Combat Series</a>
+</div>
 
-</section>
+<script src="main.js"></script>
+<script>
+  const imgs8 = document.querySelectorAll(".gallery-grid img");
+  const obs8 = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("visible"); });
+  },{threshold:0.25});
+  imgs8.forEach(img=>obs8.observe(img));
+</script>
+
 </body>
 </html>
