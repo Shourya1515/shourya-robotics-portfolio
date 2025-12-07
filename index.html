@@ -8,7 +8,7 @@
 </head>
 <body class="theme-clean anim-medium">
 
-  <!-- Theme / Motion Switcher -->
+  <!-- UI THEME / MOTION SWITCHER -->
   <div class="ui-switcher">
     <div class="switch-group">
       <span class="switch-label">Theme:</span>
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
@@ -36,7 +36,7 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section id="hero" class="hero section reveal">
     <div class="hero-photo">
       <div class="photo-glow"></div>
@@ -62,15 +62,15 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="section about reveal">
     <h2 class="section-title">About Me</h2>
     <div class="about-layout">
       <p>
-        I am a robotics engineer with a strong foundation in <b>ROS / ROS2, SLAM,
-        navigation, and real-time perception</b>. I enjoy taking ideas from CAD and
-        simulation all the way to physical systems — integrating LiDAR, IMU, cameras,
-        and control software into robust robots.
+        I am a robotics engineer with a strong foundation in
+        <b>ROS / ROS2, SLAM, navigation, and real-time perception</b>.
+        I enjoy taking ideas from CAD and simulation all the way to physical systems —
+        integrating LiDAR, IMU, cameras, and control software into robust robots.
       </p>
       <p>
         My experience spans <b>autonomous 4-wheel robots, omni-directional kinematics,
@@ -80,7 +80,7 @@
       <div class="about-cards">
         <div class="about-card">
           <h3>What I Do</h3>
-          <p>Full robotics stack: CAD → simulation → ROS bring-up → SLAM & Nav2.</p>
+          <p>Full robotics stack: CAD → simulation → ROS bring-up → SLAM &amp; Nav2.</p>
         </div>
         <div class="about-card">
           <h3>How I Work</h3>
@@ -94,182 +94,201 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- PROJECTS -->
   <section id="projects" class="section projects reveal">
     <h2 class="section-title">Projects</h2>
     <div class="project-grid">
       <a href="project-4wheel-slam.html" class="project-card tilt">
         <div class="project-tag">ROS2 · SLAM · Nav2</div>
-        <h3>4-Wheel Robot with SLAM & Navigation</h3>
-        <p>LiDAR + camera robot in Gazebo with SLAM Toolbox, AMCL, and Nav2 for multi-room autonomous navigation.</p>
+        <h3>4-Wheel Robot with SLAM &amp; Navigation</h3>
+        <p>
+          LiDAR-based 4-wheel robot in Gazebo with SLAM Toolbox, AMCL, and Nav2
+          for autonomous navigation across multi-room indoor maps.
+        </p>
       </a>
 
       <a href="project-omni.html" class="project-card tilt">
         <div class="project-tag">Kinematics · Control</div>
         <h3>Omni-Directional Robot</h3>
-        <p>Full kinematic model, Jacobian, and inverse kinematics for an omni robot with smooth 360° motion.</p>
+        <p>
+          Full kinematic model, Jacobian, and inverse kinematics for an omni-wheel robot
+          with smooth 360° motion and precise holonomic control.
+        </p>
       </a>
 
       <a href="project-combat.html" class="project-card tilt">
         <div class="project-tag">Mechanical · Competition</div>
         <h3>Combat Robotics Series (25 / 15 / 8 KG)</h3>
-        <p>Family of combat robots with CNC chassis and high-energy weapons, winning multiple national RoboWars podiums.</p>
+        <p>
+          Family of CNC-machined combat robots with high-energy weapons,
+          winning podium finishes at multiple national RoboWars events.
+        </p>
       </a>
 
       <a href="project-pesticide.html" class="project-card tilt">
         <div class="project-tag">Agri-Robotics</div>
         <h3>Pesticide Spraying Robot</h3>
-        <p>Field robot concept for safer, more consistent pesticide application.</p>
+        <p>
+          Field robot concept that reduces farmers’ direct exposure to chemicals
+          while providing consistent pesticide coverage.
+        </p>
       </a>
 
       <a href="project-nu-nance.html" class="project-card tilt">
         <div class="project-tag">Analytics · Reporting</div>
         <h3>NU Nance Report</h3>
-        <p>Structured analytical report pipeline with clear visuals and narrative for decision-making.</p>
+        <p>
+          Structured analytical reporting pipeline with clear data visuals and
+          narrative for financial decision-making.
+        </p>
       </a>
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- SKILLS -->
   <section id="skills" class="section skills reveal">
     <h2 class="section-title">Skills</h2>
+    <p class="skills-intro">
+      A blend of robotics software, simulation tools, perception, and mechanical design.
+    </p>
 
-    <div class="skills-marquee-wrapper">
-      <div class="skills-marquee">
-        <!-- one long row, duplicated once for seamless loop -->
+    <div class="skills-row">
+      <div class="skills-scroller">
+        <div class="skills-track">
+          <!-- one long row, duplicated for seamless scroll -->
+          <div class="skill-pill">
+            <img src="images/skills/ros-logo.jpg" alt="ROS" />
+            <span>ROS</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/ros2_jazzy.png" alt="ROS2 Jazzy" />
+            <span>ROS2 Jazzy</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/ros2_humble.jpeg" alt="ROS2 Humble" />
+            <span>ROS2 Humble</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/SLAM.jpeg" alt="SLAM" />
+            <span>SLAM Toolbox</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/sensor_fusion.png" alt="Sensor Fusion" />
+            <span>Sensor Fusion</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/autonomous_navigation.jpeg" alt="Nav2" />
+            <span>Nav2 Navigation</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/gazebo.png" alt="Gazebo" />
+            <span>Gazebo</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/coppeliasim.png" alt="CoppeliaSim" />
+            <span>CoppeliaSim</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/isaac.png" alt="Isaac Sim" />
+            <span>Isaac Sim</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/python.jpeg" alt="Python" />
+            <span>Python</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/c++.png" alt="C++" />
+            <span>C++</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/matlab.jpeg" alt="MATLAB" />
+            <span>MATLAB</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/open_cv.png" alt="OpenCV" />
+            <span>OpenCV</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/fusion360.png" alt="Fusion 360" />
+            <span>Fusion 360</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/ansys.jpeg" alt="Ansys" />
+            <span>Ansys</span>
+          </div>
 
-        <div class="skill-item">
-          <img src="images/skills/ros-logo.jpg" alt="ROS / ROS2">
-          <span>ROS / ROS2</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/ros2_humble.jpeg" alt="ROS2 Humble">
-          <span>ROS2 Humble</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/ros2_jazzy.png" alt="ROS2 Jazzy">
-          <span>ROS2 Jazzy</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/SLAM.jpeg" alt="SLAM">
-          <span>SLAM</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/autonomous_navigation.jpeg" alt="Autonomous Navigation">
-          <span>Autonomous Navigation</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/sensor_fusion.png" alt="Sensor Fusion">
-          <span>Sensor Fusion</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/gazebo.png" alt="Gazebo">
-          <span>Gazebo</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/coppeliasim.png" alt="CoppeliaSim">
-          <span>CoppeliaSim</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/isaac.png" alt="Isaac Sim">
-          <span>Isaac Sim</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/python.jpeg" alt="Python">
-          <span>Python</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/c++.png" alt="C++">
-          <span>C++</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/matlab.jpeg" alt="MATLAB">
-          <span>MATLAB</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/fusion360.png" alt="Fusion 360">
-          <span>Fusion 360</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/ansys.jpeg" alt="ANSYS">
-          <span>ANSYS</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/open_cv.png" alt="OpenCV">
-          <span>OpenCV</span>
-        </div>
-
-        <!-- duplicate list for infinite scroll -->
-        <div class="skill-item">
-          <img src="images/skills/ros-logo.jpg" alt="ROS / ROS2">
-          <span>ROS / ROS2</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/ros2_humble.jpeg" alt="ROS2 Humble">
-          <span>ROS2 Humble</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/ros2_jazzy.png" alt="ROS2 Jazzy">
-          <span>ROS2 Jazzy</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/SLAM.jpeg" alt="SLAM">
-          <span>SLAM</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/autonomous_navigation.jpeg" alt="Autonomous Navigation">
-          <span>Autonomous Navigation</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/sensor_fusion.png" alt="Sensor Fusion">
-          <span>Sensor Fusion</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/gazebo.png" alt="Gazebo">
-          <span>Gazebo</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/coppeliasim.png" alt="CoppeliaSim">
-          <span>CoppeliaSim</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/isaac.png" alt="Isaac Sim">
-          <span>Isaac Sim</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/python.jpeg" alt="Python">
-          <span>Python</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/c++.png" alt="C++">
-          <span>C++</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/matlab.jpeg" alt="MATLAB">
-          <span>MATLAB</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/fusion360.png" alt="Fusion 360">
-          <span>Fusion 360</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/ansys.jpeg" alt="ANSYS">
-          <span>ANSYS</span>
-        </div>
-        <div class="skill-item">
-          <img src="images/skills/open_cv.png" alt="OpenCV">
-          <span>OpenCV</span>
+          <!-- duplicate row for seamless infinite scroll -->
+          <div class="skill-pill">
+            <img src="images/skills/ros-logo.jpg" alt="ROS" />
+            <span>ROS</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/ros2_jazzy.png" alt="ROS2 Jazzy" />
+            <span>ROS2 Jazzy</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/ros2_humble.jpeg" alt="ROS2 Humble" />
+            <span>ROS2 Humble</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/SLAM.jpeg" alt="SLAM" />
+            <span>SLAM Toolbox</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/sensor_fusion.png" alt="Sensor Fusion" />
+            <span>Sensor Fusion</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/autonomous_navigation.jpeg" alt="Nav2" />
+            <span>Nav2 Navigation</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/gazebo.png" alt="Gazebo" />
+            <span>Gazebo</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/coppeliasim.png" alt="CoppeliaSim" />
+            <span>CoppeliaSim</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/isaac.png" alt="Isaac Sim" />
+            <span>Isaac Sim</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/python.jpeg" alt="Python" />
+            <span>Python</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/c++.png" alt="C++" />
+            <span>C++</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/matlab.jpeg" alt="MATLAB" />
+            <span>MATLAB</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/open_cv.png" alt="OpenCV" />
+            <span>OpenCV</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/fusion360.png" alt="Fusion 360" />
+            <span>Fusion 360</span>
+          </div>
+          <div class="skill-pill">
+            <img src="images/skills/ansys.jpeg" alt="Ansys" />
+            <span>Ansys</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section id="contact" class="section contact reveal">
     <h2 class="section-title">Contact</h2>
     <p>
-      I’m open to co-op, internship, and collaborative project opportunities in
-      robotics, autonomy, and intelligent systems.
+      I’m open to co-op, internship, and collaborative project opportunities
+      in robotics, autonomy, and intelligent systems.
     </p>
     <div class="contact-links">
       <a href="mailto:vudemarri.s@northeastern.edu" class="btn primary">Email Me</a>
@@ -281,6 +300,20 @@
   <footer class="site-footer">
     © 2025 Shourya Vudemarri · Robotics Portfolio
   </footer>
+
+  <!-- Shared lightbox markup (not used on home yet, but safe to keep) -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
