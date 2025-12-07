@@ -1,6 +1,6 @@
-/**********************************************
- *  SCROLL REVEAL ANIMATION
- **********************************************/
+// ---------------------
+// Scroll reveal
+// ---------------------
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
@@ -15,128 +15,168 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/**********************************************
- *  THEME + MOTION SWITCHING
- **********************************************/
+// ---------------------
+// Theme + motion switcher
+// ---------------------
 const body = document.body;
-
 document.querySelectorAll('.switch-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const theme = btn.dataset.theme;
     const motion = btn.dataset.motion;
 
     if (theme) {
-      body.classList.remove('theme-clean','theme-neon','theme-ai');
+      body.classList.remove('theme-clean', 'theme-neon', 'theme-ai');
       body.classList.add(theme);
-      document.querySelectorAll('[data-theme]').forEach(b=>b.classList.remove('active'));
+      document
+        .querySelectorAll('[data-theme]')
+        .forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
 
     if (motion) {
-      body.classList.remove('anim-soft','anim-medium','anim-high');
+      body.classList.remove('anim-soft', 'anim-medium', 'anim-high');
       body.classList.add(motion);
-      document.querySelectorAll('[data-motion]').forEach(b=>b.classList.remove('active'));
+      document
+        .querySelectorAll('[data-motion]')
+        .forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
   });
 });
 
+// ---------------------
+// Lightbox / gallery viewer
+// ---------------------
+(function () {
+  const modal = document.getElementById('lightbox-modal');
+  if (!modal) return; // if a page has no modal, skip
 
-/**********************************************
- *  GLOBAL LIGHTBOX (Images + Videos)
- *  - Fullscreen viewer
- *  - Close button
- *  - Left/Right arrows
- *  - Swipe support
- *  - Videos DO NOT autoplay
- **********************************************/
+  const backdrop = modal.querySelector('[data-lightbox-close]');
+  const closeBtn = modal.querySelector('.lightbox-close');
+  const prevBtn = modal.querySelector('[data-lightbox-prev]');
+  const nextBtn = modal.querySelector('[data-lightbox-next]');
+  const content = modal.querySelector('.lightbox-content');
+  const captionEl = modal.querySelector('.lightbox-caption');
 
-let lightboxItems = [];
-let lightboxIndex = 0;
+  let galleryItems = [];
+  let currentIndex = 0;
 
-function buildLightboxItems() {
-  lightboxItems = Array.from(document.querySelectorAll(".gallery-item"));
-  lightboxItems.forEach((el, idx) => {
-    el.dataset.lbIndex = idx;
-    el.addEventListener("click", () => openLightbox(idx));
-  });
-}
-
-function openLightbox(index) {
-  lightboxIndex = index;
-  const item = lightboxItems[index];
-  if (!item) return;
-
-  const src = item.getAttribute("data-src");
-  const type = item.getAttribute("data-type");
-
-  const modal = document.createElement("div");
-  modal.id = "lightbox-modal";
-  modal.classList.add("lightbox-modal");
-
-  let content = "";
-  if (type === "image") {
-    content = `<img src="${src}" class="lightbox-content" />`;
-  } else {
-    content = `
-      <video class="lightbox-content" controls>
-        <source src="${src}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>`;
+  function getVideoEl() {
+    return content.querySelector('video');
   }
 
-  modal.innerHTML = `
-    <div class="lightbox-backdrop"></div>
-    <button id="lightbox-close" class="lightbox-close">×</button>
-    <button id="lightbox-prev" class="lightbox-arrow left">‹</button>
-    <button id="lightbox-next" class="lightbox-arrow right">›</button>
-    <div class="lightbox-container">
-      ${content}
-    </div>
-  `;
+  function pauseVideo() {
+    const v = getVideoEl();
+    if (v && !v.paused) v.pause();
+  }
 
-  document.body.appendChild(modal);
+  function openModal(items, index) {
+    galleryItems = items;
+    currentIndex = index;
 
-  // Close
-  document.getElementById("lightbox-close").onclick = closeLightbox;
-  modal.querySelector(".lightbox-backdrop").onclick = closeLightbox;
+    renderCurrent();
+    modal.classList.add('open');
+    document.body.classList.add('no-scroll');
+  }
 
-  // Arrows
-  document.getElementById("lightbox-prev").onclick = () => navigateLightbox(-1);
-  document.getElementById("lightbox-next").onclick = () => navigateLightbox(1);
+  function closeModal() {
+    pauseVideo();
+    modal.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+    content.innerHTML = '';
+    captionEl.textContent = '';
+  }
 
-  // ESC key closes
-  document.addEventListener("keydown", escListener);
+  function renderCurrent() {
+    const item = galleryItems[currentIndex];
+    if (!item) return;
 
-  // Mobile swipe support
-  let startX = 0;
-  modal.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-  modal.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    if (endX - startX > 50) navigateLightbox(-1);
-    if (startX - endX > 50) navigateLightbox(1);
+    const type = item.dataset.type || 'image';
+    const src = item.dataset.src;
+    const caption = item.dataset.caption || '';
+
+    content.innerHTML = '';
+    captionEl.textContent = caption;
+
+    if (type === 'video') {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lightbox-video-wrapper';
+
+      const video = document.createElement('video');
+      video.src = src;
+      video.controls = true;
+      video.playsInline = true;
+
+      wrapper.appendChild(video);
+      content.appendChild(wrapper);
+    } else {
+      const img = new Image();
+      img.src = src;
+      img.alt = caption;
+      img.className = 'lightbox-image';
+      content.appendChild(img);
+    }
+  }
+
+  function gotoNext() {
+    if (!galleryItems.length) return;
+    pauseVideo();
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    renderCurrent();
+  }
+
+  function gotoPrev() {
+    if (!galleryItems.length) return;
+    pauseVideo();
+    currentIndex =
+      (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    renderCurrent();
+  }
+
+  // Attach events for all galleries on the page
+  document.querySelectorAll('.project-gallery').forEach(gallery => {
+    const items = Array.from(
+      gallery.querySelectorAll('[data-lightbox-item]')
+    );
+
+    items.forEach((el, idx) => {
+      el.addEventListener('click', () => openModal(items, idx));
+    });
   });
-}
 
-function escListener(e) {
-  if (e.key === "Escape") closeLightbox();
-}
+  // Modal controls
+  backdrop.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  nextBtn.addEventListener('click', gotoNext);
+  prevBtn.addEventListener('click', gotoPrev);
 
-function closeLightbox() {
-  const modal = document.getElementById("lightbox-modal");
-  if (modal) modal.remove();
-  document.removeEventListener("keydown", escListener);
-}
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('open')) return;
 
-function navigateLightbox(direction) {
-  if (!lightboxItems.length) return;
+    if (e.key === 'Escape') {
+      closeModal();
+    } else if (e.key === 'ArrowRight') {
+      gotoNext();
+    } else if (e.key === 'ArrowLeft') {
+      gotoPrev();
+    }
+  });
 
-  lightboxIndex += direction;
-  if (lightboxIndex < 0) lightboxIndex = lightboxItems.length - 1;
-  if (lightboxIndex >= lightboxItems.length) lightboxIndex = 0;
+  // Basic touch swipe (mobile)
+  let startX = null;
+  modal.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
 
-  closeLightbox();
-  openLightbox(lightboxIndex);
-}
-
-document.addEventListener("DOMContentLoaded", buildLightboxItems);
+  modal.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx > 50) {
+      gotoPrev();
+    } else if (dx < -50) {
+      gotoNext();
+    }
+    startX = null;
+  });
+})();
