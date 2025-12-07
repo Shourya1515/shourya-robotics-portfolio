@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>15 KG National Combat Robot – 1st Place (Anna University Chennai)</title>
+  <title>15 KG Combat Robot – Anna University Chennai</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="project-combat.html" class="back-link">← Back to Combat Series</a>
 
-    <h1 class="section-title reveal">15 KG Combat Robot – National Tech Fest Champion</h1>
+    <header class="project-heading">
+      <h1 class="section-title">15 KG Combat Robot – Championship Winner</h1>
+      <p class="project-meta">
+        1st Place · ₹40,000 Prize · National Tech Fest, Anna University Chennai
+      </p>
+      <p class="project-lede">
+        A fast, aggressive 15&nbsp;kg combat robot designed around a
+        drum/bar-style weapon and highly responsive drivetrain, tuned for
+        controlled rushes and precision driving in tight arenas.
+      </p>
+    </header>
 
-    <p class="reveal">
-      This 15 KG combat robot secured a <b>1<sup>st</sup> Place victory</b> at the  
-      <b>National Level Tech Fest conducted by Anna University, Chennai</b>, earning a cash prize of  
-      <b>₹40,000</b>.
-    </p>
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-strip">
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat1.jpg"
+          data-caption="15 KG robot taking hits in the arena."
+        >
+          <img src="images/combat/combat1.jpg" alt="15kg combat robot in fight" class="gallery-thumb" />
+        </button>
 
-    <p class="reveal">
-      Designed for high maneuverability and impact resistance, this robot features a reinforced metal chassis,
-      precision weapon mount, and powerful drive motors optimized for fast directional control and aggressive combat.
-    </p>
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat2.jpg"
+          data-caption="Sparks and weapon engagement against the opponent."
+        >
+          <img src="images/combat/combat2.jpg" alt="15kg robot sparks" class="gallery-thumb" />
+        </button>
 
-    <!-- GALLERY -->
-    <h3 class="reveal">Gallery</h3>
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat5.jpg"
+          data-caption="Robot ready on the floor with full weapon setup."
+        >
+          <img src="images/combat/combat5.jpg" alt="15kg robot ready" class="gallery-thumb" />
+        </button>
+      </div>
+    </section>
 
-    <div class="gallery-grid reveal">
+    <section class="project-body">
+      <div>
+        <h3>Design Focus</h3>
+        <ul>
+          <li>Balanced weapon to minimize self-damage and maintain driveability.</li>
+          <li>Robust wheel guards and armour to handle repeated side impacts.</li>
+          <li>Compact electronics layout for faster repairs between matches.</li>
+        </ul>
+      </div>
 
-      <img
-        src="images/combat/combat1.jpg"
-        alt="15kg combat robot battle photo 1"
-        class="gallery-item"
-        data-src="images/combat/combat1.jpg"
-        data-type="image">
+      <div>
+        <h3>Competition Outcome</h3>
+        <p>
+          At the national tech fest conducted by <b>Anna University, Chennai</b>,
+          this robot secured <b>1st place</b> and won <b>₹40,000</b>. Consistent
+          control and reliability allowed the team to capitalise on opponent
+          mistakes and finish fights either by knockout or judges' decision.
+        </p>
+        <p>
+          The success of this bot validated the drivetrain and weapon architecture
+          and heavily influenced the design decisions for the other weight classes
+          in the combat series.
+        </p>
+      </div>
+    </section>
+  </main>
 
-      <img
-        src="images/combat/combat2.jpg"
-        alt="15kg combat robot battle photo 2"
-        class="gallery-item"
-        data-src="images/combat/combat2.jpg"
-        data-type="image">
-
-      <img
-        src="images/combat/combat5.jpg"
-        alt="15kg combat robot cad or arena photo"
-        class="gallery-item"
-        data-src="images/combat/combat5.jpg"
-        data-type="image">
-
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OVERVIEW -->
-    <h3 class="section-title reveal">Project Overview</h3>
-
-    <p class="reveal">
-      Built using a mix of <b>aircraft-grade aluminum</b> and <b>steel reinforcements</b>, this robot was engineered
-      to withstand continuous high-energy hits. Its compact geometry enabled rapid turning and evasive maneuvers,
-      allowing strategic control in the arena.
-    </p>
-
-    <p class="reveal">
-      The design focused on achieving a balance between <b>speed, armor, and weapon stability</b>, resulting in a
-      highly competitive configuration for the 15 KG category.
-    </p>
-
-    <!-- TECHNICAL DETAILS -->
-    <h3 class="section-title reveal">Technical Breakdown</h3>
-
-    <ul class="reveal">
-      <li>High-mobility 4-wheel or 2-wheel drive configuration</li>
-      <li>Reinforced chassis for impact absorption</li>
-      <li>Brushless drive motors for quick acceleration</li>
-      <li>Polycarbonate armor shielding vulnerable components</li>
-      <li>Modular weapon mount suitable for wedge or drum systems</li>
-      <li>Internal compartment layout optimized for cooling and wiring safety</li>
-    </ul>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Outcome</h3>
-
-    <p class="reveal">
-      The robot demonstrated exceptional combat performance — fast, stable, and durable throughout the competition.
-      Its decisive victories led to securing the <b>1st Place Title</b> at Anna University’s national event.
-    </p>
-
-    <a href="project-combat.html" class="btn ghost reveal">← Back to Combat Robots</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
