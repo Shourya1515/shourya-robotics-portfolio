@@ -1,108 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pesticide Spraying Robot – Agricultural Automation</title>
+  <title>Pesticide Spraying Robot</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- CONTENT WRAPPER -->
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
-    <h1 class="section-title reveal">Pesticide Spraying Robot – Agricultural Field Robot</h1>
+    <header class="project-heading">
+      <h1 class="section-title">Pesticide Spraying Robot</h1>
+      <p class="project-meta">Agri-Robotics · Remote Operation · Safety</p>
+      <p class="project-lede">
+        A remote-controlled field robot designed to spray pesticides while
+        reducing direct exposure for farmers. The platform uses a four-wheel
+        drive chassis with an onboard pump and adjustable spray boom for both
+        horizontal and vertical coverage.
+      </p>
+    </header>
 
-    <p class="reveal">
-      This robot was developed to help farmers <b>reduce direct contact with harmful pesticides</b>
-      during field spraying operations.  
-      It is a manually controlled 4-wheel mobile robot equipped with a pumping system and an adjustable
-      horizontal & vertical spraying mechanism.
-    </p>
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-strip">
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/pesticide/agri1.jpg"
+          data-caption="Pesticide spraying robot with extended boom for coverage."
+        >
+          <img src="images/pesticide/agri1.jpg" alt="Pesticide spraying robot" class="gallery-thumb" />
+        </button>
+      </div>
+    </section>
 
-    <p class="reveal">
-      By allowing farmers to operate the robot remotely, this system increases safety, improves spray
-      consistency, and enables more efficient pesticide application in agricultural settings.
-    </p>
+    <section class="project-body">
+      <div>
+        <h3>Motivation</h3>
+        <p>
+          Spraying pesticides manually exposes farmers to chemicals and results
+          in inconsistent coverage. This project explores a low-cost robot that
+          can be operated from a safe distance while delivering more uniform
+          application.
+        </p>
 
-    <!-- GALLERY -->
-    <h3 class="reveal">Gallery</h3>
+        <h3>Mechanical Design</h3>
+        <ul>
+          <li>Four-wheel chassis driven by four independent DC motors.</li>
+          <li>Onboard pesticide tank and pump for pressurized spraying.</li>
+          <li>Pipe-based boom that supports both horizontal and vertical spray patterns.</li>
+        </ul>
+      </div>
 
-    <div class="gallery-grid reveal">
+      <div>
+        <h3>Operation</h3>
+        <p>
+          The robot is manually controlled via a remote controller, allowing the
+          operator to stay away from the sprayed area. The boom height and
+          orientation can be adjusted to target crops at different stages.
+        </p>
 
-      <img
-        src="images/pesticide/agri1.jpg"
-        alt="Pesticide Spraying Robot Front"
-        class="gallery-item"
-        data-src="images/pesticide/agri1.jpg"
-        data-type="image">
+        <h3>Impact</h3>
+        <p>
+          While this is an early prototype, it demonstrates a practical path
+          toward more accessible agricultural robots that focus on operator
+          safety and consistent pesticide application.
+        </p>
+      </div>
+    </section>
+  </main>
 
-      <img
-        src="images/pesticide/agri1.jpg"
-        alt="Pesticide Robot Pipe System"
-        class="gallery-item"
-        data-src="images/pesticide/agri1.jpg"
-        data-type="image">
-
-      <img
-        src="images/pesticide/agri1.jpg"
-        alt="Agricultural robot"
-        class="gallery-item"
-        data-src="images/pesticide/agri1.jpg"
-        data-type="image">
-
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OVERVIEW -->
-    <h3 class="section-title reveal">Project Overview</h3>
-
-    <p class="reveal">
-      The robot uses <b>four independently powered wheels</b> to move across uneven farm terrain.
-      A mounted <b>electric pump system</b> supplies pesticides to the sprayer assembly, which consists of
-      PVC pipe branches that allow for both <b>horizontal</b> and <b>vertical</b> spray coverage.
-    </p>
-
-    <p class="reveal">
-      The spraying mechanism was engineered to provide a wide and uniform spray pattern while keeping the design lightweight and easy to maintain.  
-      The entire system is manually controlled using a handheld RC transmitter, giving the farmer precise directional and spray control.
-    </p>
-
-    <!-- TECHNICAL DETAILS -->
-    <h3 class="section-title reveal">Technical Breakdown</h3>
-
-    <ul class="reveal">
-      <li>4-wheel drive mobile platform with individual motors</li>
-      <li>High-pressure electric pump for pesticide delivery</li>
-      <li>Adjustable PVC boom for horizontal & vertical spraying</li>
-      <li>Remote RC controller for safe long-distance operation</li>
-      <li>Lightweight chassis designed for uneven agricultural fields</li>
-      <li>Reduces human exposure to toxic chemicals</li>
-    </ul>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Outcome</h3>
-
-    <p class="reveal">
-      The robot successfully enabled pesticide spraying without exposing farmers to chemicals.
-      The platform demonstrated reliability, stability, and ease of control, showcasing how robotics
-      can directly improve agricultural safety and productivity.
-    </p>
-
-    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
