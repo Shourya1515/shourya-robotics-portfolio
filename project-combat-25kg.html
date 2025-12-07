@@ -1,116 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>25 KG Combat Robot – 2nd Place (NIT Trichy)</title>
+  <title>25 KG National Combat Robot – 2nd Place Winner (NIT Trichy)</title>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .project-wrapper {
-      max-width: 1050px;
-      margin: auto;
-      padding: 40px 20px;
-      color: #fff;
-    }
-    .section-title { margin-bottom: 15px; }
-    .gallery-grid {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 950px;
-      margin-inline: auto;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .gallery-grid img.visible { opacity:1; transform:translateY(0); }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    }
-    .content-section { margin-top: 40px; line-height: 1.7; }
-    .content-section h3 { margin-bottom:10px; margin-top:20px; }
-    ul { margin-left:20px; margin-top:10px; }
-  </style>
+  <script defer src="main.js"></script>
 </head>
 
 <body class="theme-clean anim-medium">
 
-<header class="site-header">
-  <div class="logo">Shourya<span>Robotics</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="project-combat.html">Combat Series</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-<div class="project-wrapper reveal">
+  <div class="project-wrapper">
 
-  <h2 class="section-title">25 KG Combat Robot – 2nd Place (NIT Trichy)</h2>
+    <h1 class="section-title reveal">25 KG Combat Robot – National Tech Fest (NIT Trichy)</h1>
 
-  <p>
-    Heavyweight combat robot engineered for high-energy impacts and durability.
-    This robot secured <b>2nd place</b> and a <b>₹50,000 cash prize</b> at the
-    <b>National Tech Fest conducted by NIT Trichy</b>.
-  </p>
-
-  <h3>Gallery</h3>
-  <div class="gallery-grid">
-    <img src="images/combat/combat4.jpg" alt="25kg combat robot in arena">
-    <img src="images/combat/combat6.jpg" alt="25kg robot manufacturing / assembly">
-    <img src="images/combat/combat7.jpg" alt="25kg robot CAD / design">
-  </div>
-
-  <div class="content-section">
-    <h3>Project Overview</h3>
-    <p>
-      The 25&nbsp;KG robot was built around a CNC-machined 6061-T6 aluminum chassis designed to
-      absorb and redirect impact forces from high-RPM spinning weapons.
-      Its architecture focused on structural rigidity, protected powertrain layout,
-      and fast serviceability between matches.
+    <p class="reveal">
+      This 25 KG combat robot was engineered for high-intensity arena battles and competed in the
+      <b>National Level Tech Fest at NIT Trichy</b>, securing an outstanding  
+      <b>2<sup>nd</sup> Place</b> finish along with a cash prize of  
+      <b>₹50,000</b>.
     </p>
-  </div>
 
-  <div class="content-section">
-    <h3>Technical Breakdown</h3>
-    <ul>
-      <li>Heavy-duty 6061-T6 aluminum chassis with stiffening ribs and pocketing.</li>
-      <li>High-inertia spinning weapon designed for energy transfer and bite.</li>
-      <li>Brushless drive system dimensioned for torque and acceleration under load.</li>
-      <li>High-discharge LiPo battery pack with fuse and isolation for safety.</li>
-      <li>Armored side walls and top plate to protect electronics and batteries.</li>
-      <li>Modular assembly for rapid motor, wheel, and weapon maintenance.</li>
+    <p class="reveal">
+      The robot featured a precision-machined aluminum chassis, a powerful vertical spinning drum weapon,
+      and highly optimized armor designed for impact resistance, stability, and durability in full-contact competitions.
+    </p>
+
+    <!-- GALLERY -->
+    <h3 class="reveal">Gallery</h3>
+    <div class="gallery-grid reveal">
+
+      <img 
+        src="images/combat/combat4.jpg"
+        alt="25kg combat robot photo 1"
+        class="gallery-item"
+        data-src="images/combat/combat4.jpg"
+        data-type="image">
+
+      <img 
+        src="images/combat/combat6.jpg"
+        alt="25kg combat robot photo 2"
+        class="gallery-item"
+        data-src="images/combat/combat6.jpg"
+        data-type="image">
+
+      <img 
+        src="images/combat/combat7.jpg"
+        alt="25kg combat robot photo 3"
+        class="gallery-item"
+        data-src="images/combat/combat7.jpg"
+        data-type="image">
+
+    </div>
+
+    <!-- OVERVIEW -->
+    <h3 class="section-title reveal">Project Overview</h3>
+
+    <p class="reveal">
+      The 25 KG robot was built from a combination of <b>CNC-machined 6061 aluminum</b>,  
+      <b>custom weapon mounts</b>, <b>high-torque BLDC drive motors</b>, and precision bearings.
+      The weapon system delivered devastating impacts while maintaining rotational balance and efficiency.
+    </p>
+
+    <p class="reveal">
+      The design also focused on ease of maintenance, quick part replacement, and effective defensive geometry,
+      making it well-suited for the demanding nature of national competition battles.
+    </p>
+
+    <!-- TECHNICAL DETAILS -->
+    <h3 class="section-title reveal">Technical Breakdown</h3>
+
+    <ul class="reveal">
+      <li>6061-T6 Aluminum CNC-machined chassis and removable armor plates</li>
+      <li>High-speed vertical spinning drum weapon</li>
+      <li>Independent dual drive motors for maneuverability</li>
+      <li>Polycarbonate top shield and reinforced wheel guards</li>
+      <li>LiPo battery system with ESC thermal protection</li>
+      <li>Optimized for durability, reliability, and high-energy impacts</li>
     </ul>
-  </div>
 
-  <div class="content-section">
-    <h3>Outcome</h3>
-    <p>
-      The robot consistently survived full-contact fights against other heavy spinners
-      while maintaining drivability and weapon reliability, demonstrating my experience in
-      <b>high-load mechanical design, power electronics, and competition strategy</b>.
+    <!-- OUTCOME -->
+    <h3 class="section-title reveal">Outcome</h3>
+
+    <p class="reveal">
+      The robot excelled in multiple rounds of the national competition, demonstrating exceptional
+      durability, weapon performance, and driving control.  
+      Its 2nd place victory at NIT Trichy stands as a major highlight in my combat robotics experience.
     </p>
+
+    <a href="project-combat.html" class="btn ghost reveal">← Back to Combat Robots</a>
+
   </div>
-
-  <a href="project-combat.html" class="btn ghost" style="margin-top:20px;">← Back to Combat Series</a>
-</div>
-
-<script src="main.js"></script>
-<script>
-  const imgs25 = document.querySelectorAll(".gallery-grid img");
-  const obs25 = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("visible"); });
-  },{threshold:0.25});
-  imgs25.forEach(img=>obs25.observe(img));
-</script>
 
 </body>
 </html>
