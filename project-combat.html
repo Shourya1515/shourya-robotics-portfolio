@@ -1,93 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Combat Robotics – National Level Competitions</title>
+  <title>Combat Robotics Series – 25 / 15 / 8 KG</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- PROJECT WRAPPER -->
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
-    <h1 class="section-title reveal">Combat Robotics – National Achievements</h1>
+    <header class="project-heading">
+      <h1 class="section-title">Combat Robotics Series – 25 / 15 / 8 KG</h1>
+      <p class="project-meta">CNC Machining · Weapon Design · High-Energy Impacts</p>
+      <p class="project-lede">
+        A family of combat robots across 25&nbsp;kg, 15&nbsp;kg, and 8&nbsp;kg weight
+        classes, each optimized for robustness, energy transfer, and serviceability.
+        These robots have collectively earned multiple national podium finishes and
+        significant prize money.
+      </p>
+    </header>
 
-    <p class="reveal">
-      Over the years, I have designed, manufactured, and competed with multiple combat robots
-      across various <b>National Tech Fests</b> in India.  
-      These robots were engineered from scratch using high-strength materials, precision-machined components,
-      and robust weapon systems.  
-      Each robot competed at the highest level, winning multiple national awards and cash prizes.
-    </p>
+    <section class="project-body">
+      <div>
+        <h3>Robots in the Series</h3>
+        <ul>
+          <li>
+            <a href="project-combat-25kg.html">25 KG Vertical Spinner</a> –
+            CNC billet chassis, high-moment vertical weapon.
+          </li>
+          <li>
+            <a href="project-combat-15kg.html">15 KG Drum / Bar Hybrid</a> –
+            agile drivetrain tuned for aggressive driving.
+          </li>
+          <li>
+            <a href="project-combat-8kg.html">8 KG Compact Weapon Bot</a> –
+            optimized for low-inertia, fast spin-up.
+          </li>
+        </ul>
+        <p>
+          Across all designs, the focus is on repeatable hard hits, modular repair,
+          and keeping the robot driveable even after sustaining damage.
+        </p>
+      </div>
 
-    <p class="reveal">
-      Explore each category below to see the robots, competition performances, and engineering details:
-    </p>
+      <div>
+        <h3>Highlights</h3>
+        <ul>
+          <li>Multiple national tech fest podiums across India.</li>
+          <li>Extensive use of CNC machining, hardox/EN materials, and TIG welding.</li>
+          <li>Iterative upgrades after every competition based on damage analysis.</li>
+          <li>Experience coordinating fabrication, electronics, and pit operations.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-    <!-- CATEGORY CARDS -->
-    <div class="gallery-grid reveal">
-
-      <!-- 25 KG -->
-      <a href="project-combat-25kg.html" class="gallery-item"
-         style="text-decoration:none;"
-         data-src="images/combat/combat4.jpg" data-type="image">
-        <img src="images/combat/combat4.jpg" 
-             alt="25kg Combat Robot"
-             class="gallery-item"
-             data-src="images/combat/combat4.jpg"
-             data-type="image">
-      </a>
-
-      <!-- 15 KG -->
-      <a href="project-combat-15kg.html" class="gallery-item"
-         style="text-decoration:none;"
-         data-src="images/combat/combat1.jpg" data-type="image">
-        <img src="images/combat/combat1.jpg" 
-             alt="15kg Combat Robot"
-             class="gallery-item"
-             data-src="images/combat/combat1.jpg"
-             data-type="image">
-      </a>
-
-      <!-- 8 KG -->
-      <a href="project-combat-8kg.html" class="gallery-item"
-         style="text-decoration:none;"
-         data-src="images/combat/combat3.jpg" data-type="image">
-        <img src="images/combat/combat3.jpg" 
-             alt="8kg Combat Robot"
-             class="gallery-item"
-             data-src="images/combat/combat3.jpg"
-             data-type="image">
-      </a>
-
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Summary</h3>
-
-    <p class="reveal">
-      Across all three competition categories, the robots demonstrated exceptional durability,
-      powerful weapon systems, and precise control.  
-      These achievements highlight strong capability in <b>mechanical design</b>,  
-      <b>manufacturing</b>, <b>electronics integration</b>, and <bcompetitive strategy</b>.
-    </p>
-
-    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
