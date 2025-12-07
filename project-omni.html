@@ -1,1 +1,100 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Omni Robot</title><link rel='stylesheet' href='style.css'></head><body class='theme-clean anim-medium'><header class='site-header'><div class='logo'>Shourya<span>Robotics</span></div><nav><a href='index.html'>Home</a></nav></header><section class='project-details section'><h2 class='section-title'>Omni-Directional Robot</h2><p>Detailed description placeholder.</p><a href='index.html' class='btn ghost' style='margin-top:20px;'>← Back</a></section></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omni Directional Mobile Robot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+
+<body class="theme-clean anim-medium">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <!-- PROJECT WRAPPER -->
+  <div class="project-wrapper">
+
+    <h1 class="section-title reveal">Omni Directional Mobile Robot</h1>
+
+    <p class="reveal">
+      This project explores <b>holonomic motion</b> using an omni-directional drive base.
+      The robot can translate in any direction and rotate independently, making it ideal for
+      tight indoor spaces, warehouse logistics, and research in advanced motion planning.
+    </p>
+
+    <!-- GALLERY -->
+    <h3 class="reveal">Gallery</h3>
+    <div class="gallery-grid reveal">
+      <!-- NOTE: update these image paths when you upload omni robot photos -->
+      <img
+        src="images/omni/omni1.jpg"
+        alt="Omni robot top view"
+        class="gallery-item"
+        data-src="images/omni/omni1.jpg"
+        data-type="image">
+
+      <img
+        src="images/omni/omni2.jpg"
+        alt="Omni robot chassis and wheels"
+        class="gallery-item"
+        data-src="images/omni/omni2.jpg"
+        data-type="image">
+
+      <img
+        src="images/omni/omni3.jpg"
+        alt="Omni robot in motion"
+        class="gallery-item"
+        data-src="images/omni/omni3.jpg"
+        data-type="image">
+    </div>
+
+    <!-- OVERVIEW -->
+    <h3 class="section-title reveal">Project Overview</h3>
+
+    <p class="reveal">
+      The robot uses <b>omni wheels</b> (or mecanum wheels) positioned at 90° increments to achieve
+      full 2D mobility. By controlling the wheel velocities in a coordinated way, the platform can
+      move laterally, diagonally, or rotate in place without needing to reorient the chassis.
+    </p>
+
+    <p class="reveal">
+      The control architecture is built around a kinematic model that maps desired platform
+      velocities to individual wheel speeds. This allows smooth transitions between different
+      motion commands while maintaining stability and responsiveness.
+    </p>
+
+    <!-- TECHNICAL DETAILS -->
+    <h3 class="section-title reveal">Technical Breakdown</h3>
+
+    <ul class="reveal">
+      <li>Omni- or mecanum-wheel drive configuration for holonomic motion</li>
+      <li>Kinematic model to convert platform velocity into wheel RPMs</li>
+      <li>Independent motor control for each wheel</li>
+      <li>Modular chassis design for mounting sensors and controllers</li>
+      <li>Designed as a testbed for advanced motion planning and control algorithms</li>
+    </ul>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title reveal">Outcome</h3>
+
+    <p class="reveal">
+      The omni-directional robot proved effective as a research and experimentation platform.
+      It demonstrates strong understanding of <b>mobile robot kinematics</b>, <b>drive-system design</b>,
+      and precise motion control for holonomic robots.
+    </p>
+
+    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
+
+  </div>
+
+</body>
+</html>
