@@ -1,115 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>15 KG Combat Robot – 1st Place (Anna University)</title>
+  <title>15 KG National Combat Robot – 1st Place (Anna University Chennai)</title>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .project-wrapper {
-      max-width: 1050px;
-      margin: auto;
-      padding: 40px 20px;
-      color: #fff;
-    }
-    .section-title { margin-bottom: 15px; }
-    .gallery-grid {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 950px;
-      margin-inline: auto;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .gallery-grid img.visible { opacity:1; transform:translateY(0); }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    }
-    .content-section { margin-top: 40px; line-height: 1.7; }
-    .content-section h3 { margin-bottom:10px; margin-top:20px; }
-    ul { margin-left:20px; margin-top:10px; }
-  </style>
+  <script defer src="main.js"></script>
 </head>
 
 <body class="theme-clean anim-medium">
-<header class="site-header">
-  <div class="logo">Shourya<span>Robotics</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="project-combat.html">Combat Series</a>
-  </nav>
-</header>
 
-<div class="project-wrapper reveal">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-  <h2 class="section-title">15 KG Combat Robot – 1st Place (Anna University Chennai)</h2>
+  <div class="project-wrapper">
 
-  <p>
-    Mid-weight combat robot optimized for pushing power, low profile, and reliability.
-    This robot won <b>1st place</b> and a <b>₹40,000 cash prize</b> at the
-    <b>National Tech Fest conducted by Anna University Chennai</b>.
-  </p>
+    <h1 class="section-title reveal">15 KG Combat Robot – National Tech Fest Champion</h1>
 
-  <h3>Gallery</h3>
-  <div class="gallery-grid">
-    <img src="images/combat/combat1.jpg" alt="15kg combat robot action shot">
-    <img src="images/combat/combat2.jpg" alt="15kg combat robot arena fight">
-    <img src="images/combat/combat5.jpg" alt="15kg combat robot static view">
-  </div>
-
-  <div class="content-section">
-    <h3>Project Overview</h3>
-    <p>
-      The 15&nbsp;KG robot focuses on controlled aggression rather than pure destructive power.
-      A rigid, low-center-of-gravity chassis and front wedge geometry allow the robot to get
-      under opponents, disrupt their stability, and control the fight.
-      High-torque brushless motors provide strong pushing force and acceleration.
+    <p class="reveal">
+      This 15 KG combat robot secured a <b>1<sup>st</sup> Place victory</b> at the  
+      <b>National Level Tech Fest conducted by Anna University, Chennai</b>, earning a cash prize of  
+      <b>₹40,000</b>.
     </p>
-  </div>
 
-  <div class="content-section">
-    <h3>Technical Breakdown</h3>
-    <ul>
-      <li>CNC-machined aluminum frame with reinforced corner blocks.</li>
-      <li>Four-wheel drive using high-torque BLDC motors and gearboxes.</li>
-      <li>Low ground-clearance front wedge for lifting and destabilizing other bots.</li>
-      <li>LiPo power system with high current ESCs and safety isolation.</li>
-      <li>Modular electronics bay for fast swapping of ESCs / receivers.</li>
-      <li>Designed around weight balancing for responsive driving and traction.</li>
+    <p class="reveal">
+      Designed for high maneuverability and impact resistance, this robot features a reinforced metal chassis,
+      precision weapon mount, and powerful drive motors optimized for fast directional control and aggressive combat.
+    </p>
+
+    <!-- GALLERY -->
+    <h3 class="reveal">Gallery</h3>
+
+    <div class="gallery-grid reveal">
+
+      <img
+        src="images/combat/combat1.jpg"
+        alt="15kg combat robot battle photo 1"
+        class="gallery-item"
+        data-src="images/combat/combat1.jpg"
+        data-type="image">
+
+      <img
+        src="images/combat/combat2.jpg"
+        alt="15kg combat robot battle photo 2"
+        class="gallery-item"
+        data-src="images/combat/combat2.jpg"
+        data-type="image">
+
+      <img
+        src="images/combat/combat5.jpg"
+        alt="15kg combat robot cad or arena photo"
+        class="gallery-item"
+        data-src="images/combat/combat5.jpg"
+        data-type="image">
+
+    </div>
+
+    <!-- OVERVIEW -->
+    <h3 class="section-title reveal">Project Overview</h3>
+
+    <p class="reveal">
+      Built using a mix of <b>aircraft-grade aluminum</b> and <b>steel reinforcements</b>, this robot was engineered
+      to withstand continuous high-energy hits. Its compact geometry enabled rapid turning and evasive maneuvers,
+      allowing strategic control in the arena.
+    </p>
+
+    <p class="reveal">
+      The design focused on achieving a balance between <b>speed, armor, and weapon stability</b>, resulting in a
+      highly competitive configuration for the 15 KG category.
+    </p>
+
+    <!-- TECHNICAL DETAILS -->
+    <h3 class="section-title reveal">Technical Breakdown</h3>
+
+    <ul class="reveal">
+      <li>High-mobility 4-wheel or 2-wheel drive configuration</li>
+      <li>Reinforced chassis for impact absorption</li>
+      <li>Brushless drive motors for quick acceleration</li>
+      <li>Polycarbonate armor shielding vulnerable components</li>
+      <li>Modular weapon mount suitable for wedge or drum systems</li>
+      <li>Internal compartment layout optimized for cooling and wiring safety</li>
     </ul>
-  </div>
 
-  <div class="content-section">
-    <h3>Outcome</h3>
-    <p>
-      Across multiple matches, the robot showed outstanding durability and control, dominating
-      pushing battles and winning on aggression and ring control. This project sharpened my
-      skills in <b>combat-oriented mechanical design, drivetrain tuning, and competition strategy</b>.
+    <!-- OUTCOME -->
+    <h3 class="section-title reveal">Outcome</h3>
+
+    <p class="reveal">
+      The robot demonstrated exceptional combat performance — fast, stable, and durable throughout the competition.
+      Its decisive victories led to securing the <b>1st Place Title</b> at Anna University’s national event.
     </p>
+
+    <a href="project-combat.html" class="btn ghost reveal">← Back to Combat Robots</a>
+
   </div>
-
-  <a href="project-combat.html" class="btn ghost" style="margin-top:20px;">← Back to Combat Series</a>
-</div>
-
-<script src="main.js"></script>
-<script>
-  const imgs15 = document.querySelectorAll(".gallery-grid img");
-  const obs15 = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("visible"); });
-  },{threshold:0.25});
-  imgs15.forEach(img=>obs15.observe(img));
-</script>
 
 </body>
 </html>
