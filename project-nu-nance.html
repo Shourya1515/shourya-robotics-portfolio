@@ -1,93 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NU Nance – Analytical Report & Insights</title>
+  <title>NU Nance Report – Analytics & Reporting</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- CONTENT WRAPPER -->
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
-    <h1 class="section-title reveal">NU Nance – Structured Analytical Report</h1>
+    <header class="project-heading">
+      <h1 class="section-title">NU Nance Report</h1>
+      <p class="project-meta">Data Analysis · Visualization · Narrative Reporting</p>
+      <p class="project-lede">
+        A structured analytical report that combines quantitative analysis with
+        clear visuals and written narrative to support data-driven decisions.
+      </p>
+    </header>
 
-    <p class="reveal">
-      This project focuses on preparing a structured and data-driven report for the
-      <b>NU Nance system</b>, highlighting financial, operational, and statistical insights.
-      The objective was to transform raw institutional data into meaningful visualizations and
-      actionable recommendations for decision-making.
-    </p>
+    <section class="project-body">
+      <div>
+        <h3>Report Pipeline</h3>
+        <ul>
+          <li>Data cleaning and preprocessing.</li>
+          <li>Exploratory analysis to identify trends and outliers.</li>
+          <li>Visualization of key metrics using charts and tables.</li>
+          <li>Written commentary tying the data back to real decisions.</li>
+        </ul>
+      </div>
 
-    <p class="reveal">
-      The report includes data cleaning, descriptive analysis, trend identification, and clear
-      visual storytelling aimed at communicating findings to administrative stakeholders.
-    </p>
+      <div>
+        <h3>Outcome</h3>
+        <p>
+          The NU Nance report demonstrates the ability to move from raw data to
+          a polished, stakeholder-facing document that can be used for both
+          communication and decision support.
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <!-- GALLERY (EMPTY PLACEHOLDERS FOR FUTURE IMAGES) -->
-    <h3 class="reveal">Gallery</h3>
-
-    <div class="gallery-grid reveal">
-
-      <div></div>
-      <div></div>
-      <div></div>
-
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OVERVIEW -->
-    <h3 class="section-title reveal">Project Overview</h3>
-
-    <p class="reveal">
-      The NU Nance report was constructed by collecting multiple datasets, merging them into a
-      consistent structure, and applying analytical techniques to extract insights.
-      Emphasis was placed on ensuring data accuracy, identifying outliers, and presenting results
-      using intuitive visual formats.
-    </p>
-
-    <p class="reveal">
-      The final report delivers a cohesive narrative describing trends in spending, resource allocation,
-      performance metrics, and opportunities for optimization.
-    </p>
-
-    <!-- TECHNICAL DETAILS -->
-    <h3 class="section-title reveal">Technical Breakdown</h3>
-
-    <ul class="reveal">
-      <li>Data ingestion and preprocessing in Python (pandas & numpy)</li>
-      <li>Descriptive statistics and exploratory analysis</li>
-      <li>Visualization using matplotlib, seaborn, and spreadsheets</li>
-      <li>Identification of financial trends, anomalies, and key performance indicators</li>
-      <li>Clear and concise findings structured for executive-level reporting</li>
-      <li>Final recommendations supported by quantitative insights</li>
-    </ul>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Outcome</h3>
-
-    <p class="reveal">
-      The report successfully communicated important insights derived from institutional data,
-      helping support informed strategic decisions.  
-      This project demonstrates strong capabilities in <b>data analysis</b>,
-      <b>report structuring</b>, and <b>visual communication</b>.
-    </p>
-
-    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
