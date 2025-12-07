@@ -1,64 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Combat Robotics Series</title>
+  <title>Combat Robotics – National Level Competitions</title>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .project-wrapper {
-      max-width: 1050px;
-      margin: auto;
-      padding: 40px 20px;
-      color: #fff;
-    }
-    .section-title { margin-bottom: 15px; }
-    .content-section { margin-top: 30px; line-height: 1.7; }
-    ul { margin-left: 20px; margin-top: 10px; }
-    .combat-links a { display:block; margin:8px 0; }
-  </style>
+  <script defer src="main.js"></script>
 </head>
 
 <body class="theme-clean anim-medium">
-<header class="site-header">
-  <div class="logo">Shourya<span>Robotics</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
-</header>
 
-<div class="project-wrapper reveal">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-  <h2 class="section-title">Combat Robotics Series</h2>
+  <!-- PROJECT WRAPPER -->
+  <div class="project-wrapper">
 
-  <p>
-    Over multiple national competitions, I designed and built three combat robots across
-    the <b>25&nbsp;KG</b>, <b>15&nbsp;KG</b>, and <b>8&nbsp;KG</b> categories. These robots competed at major
-    National Tech Fests in India and secured podium finishes and prize money at NIT Trichy,
-    Anna University Chennai, and Amrita University Bengaluru.
-  </p>
+    <h1 class="section-title reveal">Combat Robotics – National Achievements</h1>
 
-  <div class="content-section combat-links">
-    <h3>Robots</h3>
-    <a href="project-combat-25kg.html">25 KG Combat Robot – 2nd Place, NIT Trichy (₹50,000)</a>
-    <a href="project-combat-15kg.html">15 KG Combat Robot – 1st Place, Anna University (₹40,000)</a>
-    <a href="project-combat-8kg.html">8 KG Combat Robot – 2nd Place, Amrita Bengaluru (₹25,000)</a>
+    <p class="reveal">
+      Over the years, I have designed, manufactured, and competed with multiple combat robots
+      across various <b>National Tech Fests</b> in India.  
+      These robots were engineered from scratch using high-strength materials, precision-machined components,
+      and robust weapon systems.  
+      Each robot competed at the highest level, winning multiple national awards and cash prizes.
+    </p>
+
+    <p class="reveal">
+      Explore each category below to see the robots, competition performances, and engineering details:
+    </p>
+
+    <!-- CATEGORY CARDS -->
+    <div class="gallery-grid reveal">
+
+      <!-- 25 KG -->
+      <a href="project-combat-25kg.html" class="gallery-item"
+         style="text-decoration:none;"
+         data-src="images/combat/combat4.jpg" data-type="image">
+        <img src="images/combat/combat4.jpg" 
+             alt="25kg Combat Robot"
+             class="gallery-item"
+             data-src="images/combat/combat4.jpg"
+             data-type="image">
+      </a>
+
+      <!-- 15 KG -->
+      <a href="project-combat-15kg.html" class="gallery-item"
+         style="text-decoration:none;"
+         data-src="images/combat/combat1.jpg" data-type="image">
+        <img src="images/combat/combat1.jpg" 
+             alt="15kg Combat Robot"
+             class="gallery-item"
+             data-src="images/combat/combat1.jpg"
+             data-type="image">
+      </a>
+
+      <!-- 8 KG -->
+      <a href="project-combat-8kg.html" class="gallery-item"
+         style="text-decoration:none;"
+         data-src="images/combat/combat3.jpg" data-type="image">
+        <img src="images/combat/combat3.jpg" 
+             alt="8kg Combat Robot"
+             class="gallery-item"
+             data-src="images/combat/combat3.jpg"
+             data-type="image">
+      </a>
+
+    </div>
+
+    <!-- OUTCOME -->
+    <h3 class="section-title reveal">Summary</h3>
+
+    <p class="reveal">
+      Across all three competition categories, the robots demonstrated exceptional durability,
+      powerful weapon systems, and precise control.  
+      These achievements highlight strong capability in <b>mechanical design</b>,  
+      <b>manufacturing</b>, <b>electronics integration</b>, and <bcompetitive strategy</b>.
+    </p>
+
+    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
+
   </div>
 
-  <div class="content-section">
-    <h3>Skills Demonstrated</h3>
-    <ul>
-      <li>Mechanical design for impact resistance and energy transfer.</li>
-      <li>Power electronics, motor selection, and battery safety at high currents.</li>
-      <li>Rapid prototyping, machining, and assembly under competition deadlines.</li>
-      <li>Match strategy, driving skills, and between-match repair workflows.</li>
-    </ul>
-  </div>
-
-  <a href="index.html" class="btn ghost" style="margin-top:20px;">← Back to Projects</a>
-</div>
-
-<script src="main.js"></script>
 </body>
 </html>
