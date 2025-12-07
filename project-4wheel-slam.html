@@ -25,11 +25,14 @@
       <h1 class="section-title">
         4-Wheel Autonomous Robot with SLAM &amp; Navigation
       </h1>
-      <p class="project-meta">ROS2 Foxy · SLAM Toolbox · Nav2 Navigation Stack · Gazebo</p>
+      <p class="project-meta">
+        ROS2 Foxy · SLAM Toolbox · Nav2 Navigation Stack · Gazebo
+      </p>
       <p class="project-lede">
-        A fully autonomous mobile robot that performs LiDAR-based mapping, localization,
-        and path planning across a multi-room indoor environment using a URDF robot model,
-        SLAM Toolbox, and the Nav2 navigation stack.
+        A fully autonomous 4-wheel differential drive robot that performs
+        LiDAR-based mapping, localization, and path planning across a multi-room
+        indoor environment using a URDF robot model, SLAM Toolbox, and the Nav2
+        navigation stack.
       </p>
     </header>
 
@@ -57,7 +60,7 @@
           data-lightbox-item
           data-type="video"
           data-src="images/4wheel/mapping_updated.mp4"
-          data-caption="Real-time SLAM mapping run with LiDAR scan and pose graph."
+          data-caption="Real-time SLAM mapping run with LiDAR scans and pose graph."
         >
           <div>
             <div class="play-icon">▶</div>
@@ -85,24 +88,32 @@
       <div>
         <h3>Project Overview</h3>
         <p>
-          The 4-wheel robot is modeled in URDF with accurate wheelbase, wheel radius,
-          and LiDAR placement. Using Gazebo for simulation and RViz for visualization,
-          the robot publishes odometry from a differential-drive model and laser scans
-          from a simulated 2D LiDAR.
+          The 4-wheel robot is modeled in URDF with accurate wheelbase, wheel
+          radius, and LiDAR placement. Using Gazebo for simulation and RViz for
+          visualization, the robot publishes odometry from a differential-drive
+          model and laser scans from a simulated 2D LiDAR.
         </p>
         <p>
-          SLAM Toolbox consumes the laser scans and odometry to build a high-resolution
-          2D occupancy grid map spanning multiple rooms. Once mapping is complete, the
-          Nav2 stack takes over for autonomous navigation to user-defined goal points.
+          SLAM Toolbox consumes the laser scans and odometry to build a
+          high-resolution 2D occupancy grid map spanning multiple rooms. Once
+          mapping is complete, the Nav2 stack takes over for autonomous
+          navigation to user-defined goal points.
         </p>
 
         <h3>Key Features</h3>
         <ul>
-          <li>URDF model with base_link, wheel joints, LiDAR frame, and collision meshes.</li>
+          <li>
+            URDF model with <code>base_link</code>, wheel joints, LiDAR frame,
+            and collision meshes.
+          </li>
           <li>SLAM Toolbox with loop-closure enabled for drift correction.</li>
-          <li>Nav2 global and local planners for path generation and obstacle avoidance.</li>
-          <li>Global and local costmaps with inflation layers around obstacles.</li>
-          <li>TF tree linking <code>map → odom → base_link → laser</code> frames.</li>
+          <li>Nav2 global and local planners for path generation.</li>
+          <li>
+            Global and local costmaps with inflation layers around obstacles.
+          </li>
+          <li>
+            TF tree linking <code>map → odom → base_link → laser</code> frames.
+          </li>
         </ul>
       </div>
 
@@ -111,23 +122,24 @@
         <ul>
           <li>ROS2 Jazzy / Nav2 / SLAM Toolbox</li>
           <li>Gazebo simulation + RViz visualization</li>
-          <li>Differential drive kinematics for odometry</li>
+          <li>Differential-drive kinematics for odometry</li>
           <li>AMCL / SLAM pose estimation for localization</li>
-          <li>Behavior-tree based navigation (bt_navigator)</li>
+          <li>Behavior-tree based navigation (<code>bt_navigator</code>)</li>
         </ul>
 
         <h3>Outcome</h3>
         <p>
-          The robot successfully explores and maps a complex indoor layout, then uses the
-          saved map to repeatedly navigate to 2D Nav Goals with stable localization and
-          smooth collision-free motion. This project showcases end-to-end capability in
-          robot modeling, SLAM, and autonomous navigation.
+          The robot successfully explores and maps a complex indoor layout, then
+          uses the saved map to repeatedly navigate to 2D Nav Goals with stable
+          localization and smooth collision-free motion. This project showcases
+          end-to-end capability in robot modeling, SLAM, and autonomous
+          navigation.
         </p>
       </div>
     </section>
   </main>
 
-  <!-- Shared lightbox modal -->
+  <!-- Lightbox -->
   <div id="lightbox-modal" class="lightbox-modal">
     <div class="lightbox-backdrop" data-lightbox-close></div>
     <div class="lightbox-inner">
