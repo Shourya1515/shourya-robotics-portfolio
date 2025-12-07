@@ -1,145 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pesticide Spraying Robot</title>
+  <title>Pesticide Spraying Robot – Agricultural Automation</title>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .project-wrapper {
-      max-width: 1050px;
-      margin: auto;
-      padding: 40px 20px;
-      color: #fff;
-    }
-    .section-title { margin-bottom: 15px; }
-
-    /* --- HORIZONTAL GALLERY --- */
-    .gallery-grid {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      max-width: 950px;
-      margin-inline: auto;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform .35s ease, box-shadow .35s ease, opacity .35s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .gallery-grid img.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
-    }
-
-    /* TEXT SECTIONS */
-    .content-section {
-      margin-top: 40px;
-      line-height: 1.7;
-    }
-
-    .content-section h3 {
-      margin-bottom: 10px;
-      margin-top: 20px;
-    }
-
-    ul { margin-left: 20px; margin-top: 10px; }
-  </style>
+  <script defer src="main.js"></script>
 </head>
 
 <body class="theme-clean anim-medium">
 
-<header class="site-header">
-  <div class="logo">Shourya<span>Robotics</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-<div class="project-wrapper reveal">
+  <!-- CONTENT WRAPPER -->
+  <div class="project-wrapper">
 
-  <h2 class="section-title">Pesticide Spraying Robot</h2>
+    <h1 class="section-title reveal">Pesticide Spraying Robot – Agricultural Field Robot</h1>
 
-  <p>
-    A low-cost mobile robot designed to help farmers reduce direct exposure to harmful pesticides
-    during field spraying operations. The robot is manually controlled using a remote controller
-    and incorporates a pumping mechanism with a horizontal and vertical spray pipe system.
-  </p>
-
-  <!-- ====================== GALLERY ======================= -->
-  <h3>Gallery</h3>
-  <div class="gallery-grid">
-    <img src="images/pesticide/agri1.jpg" alt="Pesticide Robot Front View">
-    <img src="images/pesticide/agri1.jpg" alt="Spray Mechanism">
-    <img src="images/pesticide/agri1.jpg" alt="Agricultural Robot Platform">
-  </div>
-
-  <!-- ====================== OVERVIEW ======================= -->
-  <div class="content-section">
-    <h3>Project Overview</h3>
-    <p>
-      The robot is built on a sturdy 4-wheel platform powered by four independent motors,
-      allowing it to travel across typical farm surfaces. A pesticide pump is mounted on the chassis
-      and connected to a custom-designed spraying mechanism made from lightweight PVC pipes.
-      The mechanism supports both horizontal and vertical spraying to cover a wide crop area.
+    <p class="reveal">
+      This robot was developed to help farmers <b>reduce direct contact with harmful pesticides</b>
+      during field spraying operations.  
+      It is a manually controlled 4-wheel mobile robot equipped with a pumping system and an adjustable
+      horizontal & vertical spraying mechanism.
     </p>
-    <p>
-      The system is controlled remotely, enabling farmers to operate the sprayer from a safe distance,
-      significantly reducing their direct contact with chemicals.
-    </p>
-  </div>
 
-  <!-- ====================== TECH BREAKDOWN ======================= -->
-  <div class="content-section">
-    <h3>Technical Breakdown</h3>
-    <ul>
-      <li><b>Drive System:</b> 4-wheel, 4-motor platform for stable movement on uneven fields.</li>
-      <li><b>Spray Mechanism:</b> Adjustable PVC pipe system for horizontal and vertical spraying.</li>
-      <li><b>Pumping Unit:</b> Electric pesticide pump mounted on the body.</li>
-      <li><b>Control:</b> Manual operation via remote controller for safe distancing.</li>
-      <li><b>Purpose:</b> Reduce human exposure to chemicals while improving spray consistency.</li>
+    <p class="reveal">
+      By allowing farmers to operate the robot remotely, this system increases safety, improves spray
+      consistency, and enables more efficient pesticide application in agricultural settings.
+    </p>
+
+    <!-- GALLERY -->
+    <h3 class="reveal">Gallery</h3>
+
+    <div class="gallery-grid reveal">
+
+      <img
+        src="images/pesticide/agri1.jpg"
+        alt="Pesticide Spraying Robot Front"
+        class="gallery-item"
+        data-src="images/pesticide/agri1.jpg"
+        data-type="image">
+
+      <img
+        src="images/pesticide/agri1.jpg"
+        alt="Pesticide Robot Pipe System"
+        class="gallery-item"
+        data-src="images/pesticide/agri1.jpg"
+        data-type="image">
+
+      <img
+        src="images/pesticide/agri1.jpg"
+        alt="Agricultural robot"
+        class="gallery-item"
+        data-src="images/pesticide/agri1.jpg"
+        data-type="image">
+
+    </div>
+
+    <!-- OVERVIEW -->
+    <h3 class="section-title reveal">Project Overview</h3>
+
+    <p class="reveal">
+      The robot uses <b>four independently powered wheels</b> to move across uneven farm terrain.
+      A mounted <b>electric pump system</b> supplies pesticides to the sprayer assembly, which consists of
+      PVC pipe branches that allow for both <b>horizontal</b> and <b>vertical</b> spray coverage.
+    </p>
+
+    <p class="reveal">
+      The spraying mechanism was engineered to provide a wide and uniform spray pattern while keeping the design lightweight and easy to maintain.  
+      The entire system is manually controlled using a handheld RC transmitter, giving the farmer precise directional and spray control.
+    </p>
+
+    <!-- TECHNICAL DETAILS -->
+    <h3 class="section-title reveal">Technical Breakdown</h3>
+
+    <ul class="reveal">
+      <li>4-wheel drive mobile platform with individual motors</li>
+      <li>High-pressure electric pump for pesticide delivery</li>
+      <li>Adjustable PVC boom for horizontal & vertical spraying</li>
+      <li>Remote RC controller for safe long-distance operation</li>
+      <li>Lightweight chassis designed for uneven agricultural fields</li>
+      <li>Reduces human exposure to toxic chemicals</li>
     </ul>
-  </div>
 
-  <!-- ====================== OUTCOME ======================= -->
-  <div class="content-section">
-    <h3>Outcome</h3>
-    <p>
-      This project demonstrates how robotics can directly assist agriculture by improving worker
-      safety and efficiency. The robot successfully delivered uniform spray coverage while removing
-      farmers from hazardous chemicals, showcasing a practical application of field robotics.
+    <!-- OUTCOME -->
+    <h3 class="section-title reveal">Outcome</h3>
+
+    <p class="reveal">
+      The robot successfully enabled pesticide spraying without exposing farmers to chemicals.
+      The platform demonstrated reliability, stability, and ease of control, showcasing how robotics
+      can directly improve agricultural safety and productivity.
     </p>
+
+    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
+
   </div>
-
-  <a href="index.html" class="btn ghost" style="margin-top:20px;">← Back to Projects</a>
-</div>
-
-<script src="main.js"></script>
-
-<script>
-  const imgs = document.querySelectorAll(".gallery-grid img");
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-      }
-    });
-  },{threshold:0.25});
-  imgs.forEach(img => obs.observe(img));
-</script>
 
 </body>
 </html>
