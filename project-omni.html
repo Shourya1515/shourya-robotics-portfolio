@@ -23,46 +23,53 @@
 
     <header class="project-heading">
       <h1 class="section-title">Omni-Directional Robot</h1>
-      <p class="project-meta">Kinematics · Holonomic Drive · Motion Control</p>
+      <p class="project-meta">Kinematics · Holonomic Control · Motion Planning</p>
       <p class="project-lede">
-        A holonomic mobile platform capable of smooth 360° motion, built around
-        a full kinematic model and Jacobian-based inverse kinematics for
-        independent control of translational and rotational velocities.
+        An omni-wheel mobile base designed for smooth 360° motion, built around
+        a complete kinematic model, Jacobian derivation, and inverse kinematics
+        controller for precise holonomic motion.
       </p>
     </header>
 
     <section class="project-body">
       <div>
-        <h3>Concept</h3>
+        <h3>Project Overview</h3>
         <p>
-          The omni-directional robot is designed to move freely in any planar
-          direction without reorienting its chassis. By using omni wheels and a
-          carefully derived kinematic model, the platform can track desired
-          linear and angular velocity commands simultaneously.
+          This project focuses on the modeling and control of an omni-directional
+          mobile robot. The base uses three or four omni wheels arranged so that
+          the robot can translate and rotate independently, enabling extremely
+          agile motion in tight spaces.
+        </p>
+        <p>
+          A full kinematic model was derived from first principles, including
+          wheel velocity mapping, Jacobian matrices, and inverse kinematics.
+          These equations were implemented in code to command wheel RPMs from
+          desired body-frame velocities.
         </p>
 
-        <h3>Kinematics</h3>
+        <h3>Key Features</h3>
         <ul>
-          <li>Derived forward and inverse kinematics for a 3/4-wheel omni base.</li>
-          <li>Jacobian formulation mapping wheel speeds to chassis twist.</li>
-          <li>Decoupled control of <code>v<sub>x</sub>, v<sub>y</sub>, ω</code>.</li>
+          <li>Holonomic base capable of independent x, y, and yaw motion.</li>
+          <li>Closed-form inverse kinematics from body twist to wheel speeds.</li>
+          <li>Simulation tests with trajectory tracking and velocity limits.</li>
+          <li>Feedforward + feedback control to reduce tracking error.</li>
         </ul>
       </div>
 
       <div>
-        <h3>Control & Simulation</h3>
+        <h3>Technical Stack</h3>
         <ul>
-          <li>Implemented velocity controllers for individual wheel motors.</li>
-          <li>Tested path-following behavior for circular and L-shaped paths.</li>
-          <li>Validated kinematics through simulation before physical build.</li>
+          <li>MATLAB / Python for kinematics and plotting.</li>
+          <li>ROS2 node for velocity commands and wheel control.</li>
+          <li>Rviz / simple Gazebo models for visualization.</li>
         </ul>
 
         <h3>Outcome</h3>
         <p>
-          This project builds the mathematical and control foundation for
-          future omni-drive robots, where precise lateral motion and
-          reorientation are critical—such as warehouse logistics or inspection
-          platforms.
+          The omni base demonstrates smooth, intuitive motion — sliding
+          sideways into tight gaps and rotating in place without losing
+          position. The project serves as a foundation for future work in
+          omni-drive platforms and indoor service robots.
         </p>
       </div>
     </section>
