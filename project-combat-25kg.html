@@ -1,106 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>25 KG National Combat Robot – 2nd Place Winner (NIT Trichy)</title>
+  <title>25 KG Combat Robot – NIT Trichy</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="project-combat.html" class="back-link">← Back to Combat Series</a>
 
-    <h1 class="section-title reveal">25 KG Combat Robot – National Tech Fest (NIT Trichy)</h1>
+    <header class="project-heading">
+      <h1 class="section-title">25 KG Combat Robot – Vertical Spinner</h1>
+      <p class="project-meta">
+        2nd Place · ₹50,000 Prize · National Tech Fest, NIT Trichy
+      </p>
+      <p class="project-lede">
+        A 25&nbsp;kg vertical-spinner combat robot with a CNC-machined billet chassis,
+        large-diameter weapon, and robust two-wheel drive. Designed to deliver high
+        energy impacts while surviving full-contact fights in national-level arenas.
+      </p>
+    </header>
 
-    <p class="reveal">
-      This 25 KG combat robot was engineered for high-intensity arena battles and competed in the
-      <b>National Level Tech Fest at NIT Trichy</b>, securing an outstanding  
-      <b>2<sup>nd</sup> Place</b> finish along with a cash prize of  
-      <b>₹50,000</b>.
-    </p>
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-strip">
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat4.jpg"
+          data-caption="25 KG combat robot ready in the arena."
+        >
+          <img src="images/combat/combat4.jpg" alt="25kg combat robot" class="gallery-thumb" />
+        </button>
 
-    <p class="reveal">
-      The robot featured a precision-machined aluminum chassis, a powerful vertical spinning drum weapon,
-      and highly optimized armor designed for impact resistance, stability, and durability in full-contact competitions.
-    </p>
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat6.jpg"
+          data-caption="Internal billet chassis and drivetrain during assembly."
+        >
+          <img src="images/combat/combat6.jpg" alt="25kg chassis assembly" class="gallery-thumb" />
+        </button>
 
-    <!-- GALLERY -->
-    <h3 class="reveal">Gallery</h3>
-    <div class="gallery-grid reveal">
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat7.jpg"
+          data-caption="Weapon and wheel layout for controlled aggression."
+        >
+          <img src="images/combat/combat7.jpg" alt="25kg weapon layout" class="gallery-thumb" />
+        </button>
+      </div>
+    </section>
 
-      <img 
-        src="images/combat/combat4.jpg"
-        alt="25kg combat robot photo 1"
-        class="gallery-item"
-        data-src="images/combat/combat4.jpg"
-        data-type="image">
+    <section class="project-body">
+      <div>
+        <h3>Design & Construction</h3>
+        <ul>
+          <li>CNC-machined billet aluminium chassis for stiffness and serviceability.</li>
+          <li>High-moment vertical spinner weapon driven by a powerful motor.</li>
+          <li>Two-wheel drive with grippy tyres for reliable pushing and control.</li>
+          <li>Layered armor strategy around key electronics and battery pack.</li>
+        </ul>
+      </div>
 
-      <img 
-        src="images/combat/combat6.jpg"
-        alt="25kg combat robot photo 2"
-        class="gallery-item"
-        data-src="images/combat/combat6.jpg"
-        data-type="image">
+      <div>
+        <h3>Competition Performance</h3>
+        <p>
+          At the national tech fest hosted by NIT Trichy, the robot secured
+          <b>2nd place</b> and won <b>₹50,000</b> in prize money. The design delivered
+          heavy hits while staying driveable even after taking damage, which was
+          critical in back-to-back fights.
+        </p>
+        <p>
+          Post-event teardown informed improvements to weapon balancing, wheel hub
+          design, and shock isolation for electronics, all of which fed into later
+          iterations of the combat series.
+        </p>
+      </div>
+    </section>
+  </main>
 
-      <img 
-        src="images/combat/combat7.jpg"
-        alt="25kg combat robot photo 3"
-        class="gallery-item"
-        data-src="images/combat/combat7.jpg"
-        data-type="image">
-
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OVERVIEW -->
-    <h3 class="section-title reveal">Project Overview</h3>
-
-    <p class="reveal">
-      The 25 KG robot was built from a combination of <b>CNC-machined 6061 aluminum</b>,  
-      <b>custom weapon mounts</b>, <b>high-torque BLDC drive motors</b>, and precision bearings.
-      The weapon system delivered devastating impacts while maintaining rotational balance and efficiency.
-    </p>
-
-    <p class="reveal">
-      The design also focused on ease of maintenance, quick part replacement, and effective defensive geometry,
-      making it well-suited for the demanding nature of national competition battles.
-    </p>
-
-    <!-- TECHNICAL DETAILS -->
-    <h3 class="section-title reveal">Technical Breakdown</h3>
-
-    <ul class="reveal">
-      <li>6061-T6 Aluminum CNC-machined chassis and removable armor plates</li>
-      <li>High-speed vertical spinning drum weapon</li>
-      <li>Independent dual drive motors for maneuverability</li>
-      <li>Polycarbonate top shield and reinforced wheel guards</li>
-      <li>LiPo battery system with ESC thermal protection</li>
-      <li>Optimized for durability, reliability, and high-energy impacts</li>
-    </ul>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Outcome</h3>
-
-    <p class="reveal">
-      The robot excelled in multiple rounds of the national competition, demonstrating exceptional
-      durability, weapon performance, and driving control.  
-      Its 2nd place victory at NIT Trichy stands as a major highlight in my combat robotics experience.
-    </p>
-
-    <a href="project-combat.html" class="btn ghost reveal">← Back to Combat Robots</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
