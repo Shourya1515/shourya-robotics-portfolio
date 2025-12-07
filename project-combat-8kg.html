@@ -1,98 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8 KG Combat Robot – 2nd Place (Amrita University Bangalore)</title>
+  <title>8 KG Combat Robot – Amrita University Bangalore</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- CONTENT WRAPPER -->
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="project-combat.html" class="back-link">← Back to Combat Series</a>
 
-    <h1 class="section-title reveal">8 KG Combat Robot – National Runner-Up</h1>
+    <header class="project-heading">
+      <h1 class="section-title">8 KG Combat Robot – Compact Weapon Bot</h1>
+      <p class="project-meta">
+        2nd Place · ₹25,000 Prize · National Tech Fest, Amrita University Bangalore
+      </p>
+      <p class="project-lede">
+        A compact 8&nbsp;kg combat robot focused on fast spin-up, low inertia, and
+        efficient energy transfer—ideal for smaller arenas and dense fight schedules.
+      </p>
+    </header>
 
-    <p class="reveal">
-      This agile 8 KG combat robot won <b>2<sup>nd</sup> place</b> at the  
-      <b>National Tech Fest conducted by Amrita University Bengaluru</b>,
-      earning a cash prize of <b>₹25,000</b>.
-    </p>
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-strip">
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/combat/combat3.jpg"
+          data-caption="8 KG bot delivering hits in the arena."
+        >
+          <img src="images/combat/combat3.jpg" alt="8kg combat robot" class="gallery-thumb" />
+        </button>
+      </div>
+    </section>
 
-    <p class="reveal">
-      Designed for speed, maneuverability, and rapid attack cycles, the robot excelled in a lightweight category
-      where precision driving and quick directional changes are critical to victory.
-    </p>
+    <section class="project-body">
+      <div>
+        <h3>Design Highlights</h3>
+        <ul>
+          <li>Compact footprint for high agility and quick directional changes.</li>
+          <li>Efficient weapon system designed for rapid spin-up.</li>
+          <li>Optimized weight distribution to stay planted during hits.</li>
+        </ul>
+      </div>
 
-    <!-- GALLERY -->
-    <h3 class="reveal">Gallery</h3>
+      <div>
+        <h3>Competition Outcome</h3>
+        <p>
+          At the national tech fest hosted by <b>Amrita University, Bangalore</b>,
+          the 8&nbsp;kg robot earned <b>2nd place</b> and a prize of <b>₹25,000</b>.
+          The robot consistently delivered clean impacts and remained functional
+          across multiple intense matches.
+        </p>
+        <p>
+          Lessons from this lighter-weight platform informed the control tuning
+          and weapon behaviour of the larger 15&nbsp;kg and 25&nbsp;kg robots.
+        </p>
+      </div>
+    </section>
+  </main>
 
-    <div class="gallery-grid reveal">
-
-      <img
-        src="images/combat/combat3.jpg"
-        alt="8kg combat robot arena photo"
-        class="gallery-item"
-        data-src="images/combat/combat3.jpg"
-        data-type="image">
-
-      <!-- Two empty placeholders for 3-column consistency -->
-      <div></div>
-      <div></div>
-
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OVERVIEW -->
-    <h3 class="section-title reveal">Project Overview</h3>
-
-    <p class="reveal">
-      This robot was optimized for the lightweight category, focusing heavily on <b>speed-to-weight ratio</b>
-      and <b>structural resilience</b>. Its compact frame and centered mass distribution enabled sharp turns,
-      evasive maneuvers, and stable weapon engagement.
-    </p>
-
-    <p class="reveal">
-      Reinforced wheel guards and precise electronic packaging ensured uninterrupted performance during the
-      fast-paced battles typical of the 8 KG class.
-    </p>
-
-    <!-- TECH DETAILS -->
-    <h3 class="section-title reveal">Technical Breakdown</h3>
-
-    <ul class="reveal">
-      <li>Lightweight aluminum chassis optimized for maneuverability</li>
-      <li>High-speed brushless drive motors</li>
-      <li>Low-profile design for strategic pushing and control</li>
-      <li>Electronics protected within shock-dampened mounts</li>
-      <li>High-traction wheels for tight turning radius</li>
-      <li>Optimized for endurance during sustained combat rounds</li>
-    </ul>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Outcome</h3>
-
-    <p class="reveal">
-      The robot’s agility and precision were key to its success, outperforming multiple teams to secure the
-      <b>Runner-Up position</b>.  
-      This project showcases strong skills in <b>lightweight chassis design</b>, <b>rapid control response</b>,
-      and <b>combat strategy</b>.
-    </p>
-
-    <a href="project-combat.html" class="btn ghost reveal">← Back to Combat Robots</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
