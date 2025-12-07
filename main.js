@@ -1,11 +1,11 @@
-// ---------------------
+// --------------------------------------------------
 // Scroll reveal
-// ---------------------
+// --------------------------------------------------
 const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
         observer.unobserve(entry.target);
       }
     });
@@ -13,170 +13,127 @@ const observer = new IntersectionObserver(
   { threshold: 0.18 }
 );
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// ---------------------
-// Theme + motion switcher
-// ---------------------
+// --------------------------------------------------
+// Theme / motion switcher
+// --------------------------------------------------
 const body = document.body;
-document.querySelectorAll('.switch-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+
+document.querySelectorAll(".switch-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
     const theme = btn.dataset.theme;
     const motion = btn.dataset.motion;
 
     if (theme) {
-      body.classList.remove('theme-clean', 'theme-neon', 'theme-ai');
+      body.classList.remove("theme-clean", "theme-neon", "theme-ai");
       body.classList.add(theme);
       document
-        .querySelectorAll('[data-theme]')
-        .forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+        .querySelectorAll("[data-theme]")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
     }
 
     if (motion) {
-      body.classList.remove('anim-soft', 'anim-medium', 'anim-high');
+      body.classList.remove("anim-soft", "anim-medium", "anim-high");
       body.classList.add(motion);
       document
-        .querySelectorAll('[data-motion]')
-        .forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+        .querySelectorAll("[data-motion]")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
     }
   });
 });
 
-// ---------------------
-// Lightbox / gallery viewer
-// ---------------------
-(function () {
-  const modal = document.getElementById('lightbox-modal');
-  if (!modal) return; // if a page has no modal, skip
+// --------------------------------------------------
+// Lightbox (images + videos, shared on all pages)
+// --------------------------------------------------
+(function initLightbox() {
+  const items = Array.from(document.querySelectorAll("[data-lightbox-item]"));
+  const modal = document.getElementById("lightbox-modal");
+  if (!modal || items.length === 0) return;
 
-  const backdrop = modal.querySelector('[data-lightbox-close]');
-  const closeBtn = modal.querySelector('.lightbox-close');
-  const prevBtn = modal.querySelector('[data-lightbox-prev]');
-  const nextBtn = modal.querySelector('[data-lightbox-next]');
-  const content = modal.querySelector('.lightbox-content');
-  const captionEl = modal.querySelector('.lightbox-caption');
+  const contentEl = modal.querySelector(".lightbox-content");
+  const captionEl = modal.querySelector(".lightbox-caption");
+  const closeEls = modal.querySelectorAll("[data-lightbox-close]");
+  const prevBtn = modal.querySelector("[data-lightbox-prev]");
+  const nextBtn = modal.querySelector("[data-lightbox-next]");
 
-  let galleryItems = [];
+  const gallery = items.map((el) => ({
+    type: el.dataset.type,
+    src: el.dataset.src,
+    caption: el.dataset.caption || "",
+  }));
+
   let currentIndex = 0;
 
-  function getVideoEl() {
-    return content.querySelector('video');
-  }
+  function openAt(index) {
+    currentIndex = ((index % gallery.length) + gallery.length) % gallery.length;
+    const item = gallery[currentIndex];
 
-  function pauseVideo() {
-    const v = getVideoEl();
-    if (v && !v.paused) v.pause();
-  }
+    // Clear previous
+    contentEl.innerHTML = "";
 
-  function openModal(items, index) {
-    galleryItems = items;
-    currentIndex = index;
-
-    renderCurrent();
-    modal.classList.add('open');
-    document.body.classList.add('no-scroll');
-  }
-
-  function closeModal() {
-    pauseVideo();
-    modal.classList.remove('open');
-    document.body.classList.remove('no-scroll');
-    content.innerHTML = '';
-    captionEl.textContent = '';
-  }
-
-  function renderCurrent() {
-    const item = galleryItems[currentIndex];
-    if (!item) return;
-
-    const type = item.dataset.type || 'image';
-    const src = item.dataset.src;
-    const caption = item.dataset.caption || '';
-
-    content.innerHTML = '';
-    captionEl.textContent = caption;
-
-    if (type === 'video') {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'lightbox-video-wrapper';
-
-      const video = document.createElement('video');
-      video.src = src;
-      video.controls = true;
-      video.playsInline = true;
-
-      wrapper.appendChild(video);
-      content.appendChild(wrapper);
+    if (item.type === "video") {
+      const vid = document.createElement("video");
+      vid.src = item.src;
+      vid.controls = true;
+      vid.autoplay = false; // user starts playback
+      contentEl.appendChild(vid);
     } else {
-      const img = new Image();
-      img.src = src;
-      img.alt = caption;
-      img.className = 'lightbox-image';
-      content.appendChild(img);
+      const img = document.createElement("img");
+      img.src = item.src;
+      img.alt = item.caption || "Gallery image";
+      contentEl.appendChild(img);
     }
+
+    captionEl.textContent = item.caption || "";
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
   }
 
-  function gotoNext() {
-    if (!galleryItems.length) return;
-    pauseVideo();
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-    renderCurrent();
+  function close() {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+    const vid = contentEl.querySelector("video");
+    if (vid) vid.pause();
   }
 
-  function gotoPrev() {
-    if (!galleryItems.length) return;
-    pauseVideo();
-    currentIndex =
-      (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    renderCurrent();
+  function next() {
+    openAt(currentIndex + 1);
+  }
+  function prev() {
+    openAt(currentIndex - 1);
   }
 
-  // Attach events for all galleries on the page
-  document.querySelectorAll('.project-gallery').forEach(gallery => {
-    const items = Array.from(
-      gallery.querySelectorAll('[data-lightbox-item]')
-    );
-
-    items.forEach((el, idx) => {
-      el.addEventListener('click', () => openModal(items, idx));
-    });
+  items.forEach((el, index) => {
+    el.addEventListener("click", () => openAt(index));
   });
 
-  // Modal controls
-  backdrop.addEventListener('click', closeModal);
-  closeBtn.addEventListener('click', closeModal);
-  nextBtn.addEventListener('click', gotoNext);
-  prevBtn.addEventListener('click', gotoPrev);
+  closeEls.forEach((el) =>
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      close();
+    })
+  );
 
-  // Keyboard navigation
-  document.addEventListener('keydown', e => {
-    if (!modal.classList.contains('open')) return;
-
-    if (e.key === 'Escape') {
-      closeModal();
-    } else if (e.key === 'ArrowRight') {
-      gotoNext();
-    } else if (e.key === 'ArrowLeft') {
-      gotoPrev();
-    }
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    prev();
+  });
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    next();
   });
 
-  // Basic touch swipe (mobile)
-  let startX = null;
-  modal.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
+  modal
+    .querySelector(".lightbox-backdrop")
+    .addEventListener("click", () => close());
 
-  modal.addEventListener('touchend', e => {
-    if (startX === null) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    if (dx > 50) {
-      gotoPrev();
-    } else if (dx < -50) {
-      gotoNext();
-    }
-    startX = null;
+  window.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
   });
 })();
