@@ -1,100 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omni Directional Mobile Robot</title>
+  <title>Omni-Directional Robot – Kinematics & Control</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
 </head>
-
 <body class="theme-clean anim-medium">
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">Shourya<span>Robotics</span></div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- PROJECT WRAPPER -->
-  <div class="project-wrapper">
+  <main class="section project-details reveal">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
-    <h1 class="section-title reveal">Omni Directional Mobile Robot</h1>
+    <header class="project-heading">
+      <h1 class="section-title">Omni-Directional Robot</h1>
+      <p class="project-meta">Kinematics · Holonomic Drive · Motion Control</p>
+      <p class="project-lede">
+        A holonomic mobile platform capable of smooth 360° motion, built around
+        a full kinematic model and Jacobian-based inverse kinematics for
+        independent control of translational and rotational velocities.
+      </p>
+    </header>
 
-    <p class="reveal">
-      This project explores <b>holonomic motion</b> using an omni-directional drive base.
-      The robot can translate in any direction and rotate independently, making it ideal for
-      tight indoor spaces, warehouse logistics, and research in advanced motion planning.
-    </p>
+    <section class="project-body">
+      <div>
+        <h3>Concept</h3>
+        <p>
+          The omni-directional robot is designed to move freely in any planar
+          direction without reorienting its chassis. By using omni wheels and a
+          carefully derived kinematic model, the platform can track desired
+          linear and angular velocity commands simultaneously.
+        </p>
 
-    <!-- GALLERY -->
-    <h3 class="reveal">Gallery</h3>
-    <div class="gallery-grid reveal">
-      <!-- NOTE: update these image paths when you upload omni robot photos -->
-      <img
-        src="images/omni/omni1.jpg"
-        alt="Omni robot top view"
-        class="gallery-item"
-        data-src="images/omni/omni1.jpg"
-        data-type="image">
+        <h3>Kinematics</h3>
+        <ul>
+          <li>Derived forward and inverse kinematics for a 3/4-wheel omni base.</li>
+          <li>Jacobian formulation mapping wheel speeds to chassis twist.</li>
+          <li>Decoupled control of <code>v<sub>x</sub>, v<sub>y</sub>, ω</code>.</li>
+        </ul>
+      </div>
 
-      <img
-        src="images/omni/omni2.jpg"
-        alt="Omni robot chassis and wheels"
-        class="gallery-item"
-        data-src="images/omni/omni2.jpg"
-        data-type="image">
+      <div>
+        <h3>Control & Simulation</h3>
+        <ul>
+          <li>Implemented velocity controllers for individual wheel motors.</li>
+          <li>Tested path-following behavior for circular and L-shaped paths.</li>
+          <li>Validated kinematics through simulation before physical build.</li>
+        </ul>
 
-      <img
-        src="images/omni/omni3.jpg"
-        alt="Omni robot in motion"
-        class="gallery-item"
-        data-src="images/omni/omni3.jpg"
-        data-type="image">
+        <h3>Outcome</h3>
+        <p>
+          This project builds the mathematical and control foundation for
+          future omni-drive robots, where precise lateral motion and
+          reorientation are critical—such as warehouse logistics or inspection
+          platforms.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-
-    <!-- OVERVIEW -->
-    <h3 class="section-title reveal">Project Overview</h3>
-
-    <p class="reveal">
-      The robot uses <b>omni wheels</b> (or mecanum wheels) positioned at 90° increments to achieve
-      full 2D mobility. By controlling the wheel velocities in a coordinated way, the platform can
-      move laterally, diagonally, or rotate in place without needing to reorient the chassis.
-    </p>
-
-    <p class="reveal">
-      The control architecture is built around a kinematic model that maps desired platform
-      velocities to individual wheel speeds. This allows smooth transitions between different
-      motion commands while maintaining stability and responsiveness.
-    </p>
-
-    <!-- TECHNICAL DETAILS -->
-    <h3 class="section-title reveal">Technical Breakdown</h3>
-
-    <ul class="reveal">
-      <li>Omni- or mecanum-wheel drive configuration for holonomic motion</li>
-      <li>Kinematic model to convert platform velocity into wheel RPMs</li>
-      <li>Independent motor control for each wheel</li>
-      <li>Modular chassis design for mounting sensors and controllers</li>
-      <li>Designed as a testbed for advanced motion planning and control algorithms</li>
-    </ul>
-
-    <!-- OUTCOME -->
-    <h3 class="section-title reveal">Outcome</h3>
-
-    <p class="reveal">
-      The omni-directional robot proved effective as a research and experimentation platform.
-      It demonstrates strong understanding of <b>mobile robot kinematics</b>, <b>drive-system design</b>,
-      and precise motion control for holonomic robots.
-    </p>
-
-    <a href="index.html" class="btn ghost reveal">← Back to Projects</a>
-
   </div>
 
+  <script src="main.js"></script>
 </body>
 </html>
