@@ -3,78 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NU Nance Report – Analytics & Reporting</title>
+  <title>NU Nance Report – Sensor Fusion & Localization</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="theme-clean anim-medium">
-  <header class="site-header">
-    <div class="logo">Shourya<span>Robotics</span></div>
-    <nav>
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+<header class="site-header">
+  <div class="logo">Shourya<span>Robotics</span></div>
+  <nav>
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="section project-details reveal">
+  <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+  <header class="project-heading">
+    <h1 class="section-title">NU Nance Report – Sensor Fusion & Localization</h1>
+    <p class="project-meta">IMU · GPS · Complementary Filtering · Heading Estimation · Sensor Fusion</p>
+
+    <p class="project-lede">
+      This project implements a complete localization pipeline using IMU and GPS data to
+      estimate heading, forward velocity, and vehicle trajectory. The work focuses heavily
+      on sensor fusion, calibration, and filtering techniques used in robotics and mobile
+      navigation systems.
+    </p>
   </header>
 
-  <main class="section project-details reveal">
-    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+  <!-- GALLERY -->
+  <section class="project-gallery">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-strip">
 
-    <header class="project-heading">
-      <h1 class="section-title">NU Nance Report</h1>
-      <p class="project-meta">Data Analysis · Visualization · Storytelling</p>
-      <p class="project-lede">
-        A structured reporting pipeline that combines cleaned financial data,
-        visual dashboards, and narrative summaries into a single, easy-to-read
-        report.
-      </p>
-    </header>
+      <!-- Image 1 -->
+      <button class="gallery-item" data-lightbox-item data-type="image"
+              data-src="images/NU Nance/circle_mag_calibration1.png"
+              data-caption="Magnetometer calibration using least-squares circle fitting.">
+        <img src="images/NU Nance/circle_mag_calibration1.png" class="gallery-thumb" />
+      </button>
 
-    <section class="project-body">
-      <div>
-        <h3>Project Overview</h3>
-        <p>
-          The NU Nance report consolidates data from multiple sources into a
-          consistent format, then uses charts and commentary to explain trends,
-          risks, and recommendations. The focus is on clarity: each visual is
-          paired with a brief interpretation, so the reader doesn’t have to
-          guess what the chart means.
-        </p>
+      <!-- Image 2 -->
+      <button class="gallery-item" data-lightbox-item data-type="image"
+              data-src="images/NU Nance/fig3_complementary_filter1.png"
+              data-caption="Complementary filter fusing magnetometer and gyroscope heading.">
+        <img src="images/NU Nance/fig3_complementary_filter1.png" class="gallery-thumb" />
+      </button>
 
-        <h3>Key Components</h3>
-        <ul>
-          <li>Data cleaning and transformation using Python / Pandas.</li>
-          <li>Visualizations produced in tools such as Matplotlib or Tableau.</li>
-          <li>Written narrative that highlights key takeaways for decision-makers.</li>
-        </ul>
-      </div>
+      <!-- Image 3 -->
+      <button class="gallery-item" data-lightbox-item data-type="image"
+              data-src="images/NU Nance/fig6_trajectories1.png"
+              data-caption="Trajectory comparison using IMU dead-reckoning vs GPS path.">
+        <img src="images/NU Nance/fig6_trajectories1.png" class="gallery-thumb" />
+      </button>
 
-      <div>
-        <h3>Outcome</h3>
-        <p>
-          The report demonstrates an end-to-end analytical workflow: starting
-          from raw data, moving through validation and visualization, and ending
-          with an actionable story that can be consumed by non-technical
-          stakeholders.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <div id="lightbox-modal" class="lightbox-modal">
-    <div class="lightbox-backdrop" data-lightbox-close></div>
-    <div class="lightbox-inner">
-      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
-      <div class="lightbox-media">
-        <button class="lightbox-close" data-lightbox-close>&times;</button>
-        <div class="lightbox-content"></div>
-        <div class="lightbox-caption"></div>
-      </div>
-      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
     </div>
-  </div>
+  </section>
 
-  <script src="main.js"></script>
+  <!-- BODY -->
+  <section class="project-body">
+    <div>
+      <h3>Methodology</h3>
+
+      <p>
+        The localization pipeline was developed using IMU (accelerometer, gyroscope,
+        magnetometer) and GPS data collected during structured driving sessions. All
+        processing—including calibration, filtering, heading estimation, and trajectory
+        reconstruction—was performed using robotics-inspired signal processing workflows.
+      </p>
+
+      <ul>
+        <li><b>Magnetometer Calibration:</b> Hard-iron and soft-iron distortions were corrected by applying least-squares circle fitting to X–Y magnetometer data collected during circular driving. The calibration output was then applied to all future datasets.</li>
+
+        <li><b>Heading Estimation:</b> Three parallel estimates were generated—magnetometer yaw, gyroscope-integrated yaw, and fused yaw—to evaluate sensor behavior and drift characteristics.</li>
+
+        <li><b>Complementary Filter:</b> A Butterworth low-pass/high-pass split was used to fuse magnetometer stability with gyroscope responsiveness. The fused heading closely matched the ground-truth reference.</li>
+
+        <li><b>Velocity Estimation:</b> Forward velocity was derived from integrated accelerometer data (after bias removal & low-pass filtering) and compared with GPS-differentiated velocity.</li>
+
+        <li><b>Trajectory Reconstruction:</b> The fused heading and corrected forward velocity were used to generate a 2D dead-reckoning trajectory, highlighting challenges of pure IMU-based navigation.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Relevance to Robotics & ROS</h3>
+
+      <p>
+        The techniques used mirror common robotics localization workflows including IMU
+        preprocessing, calibration pipelines, sensor fusion, heading estimation, and
+        trajectory reconstruction. These methods extend directly to ROS environments using
+        packages such as <code>robot_localization</code>, <code>EKF/UKF</code> filters, and
+        SLAM tools that fuse IMU, wheel odometry, and GPS.
+      </p>
+
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Calibration is essential for using low-cost IMUs in mobile robots.</li>
+        <li>Gyroscope drift makes long-term inertial navigation unreliable without fusion.</li>
+        <li>Complementary filtering provides a practical balance between noise rejection and responsiveness.</li>
+        <li>GPS is necessary for long-duration global track estimation.</li>
+        <li>IMU-only dead reckoning diverges rapidly without absolute corrections.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox-modal" class="lightbox-modal">
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <div class="lightbox-inner">
+    <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+    <div class="lightbox-media">
+      <button class="lightbox-close" data-lightbox-close>&times;</button>
+      <div class="lightbox-content"></div>
+      <div class="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+  </div>
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
