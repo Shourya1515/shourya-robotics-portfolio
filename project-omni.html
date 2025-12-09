@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omni-Directional Robot – Kinematics & Control</title>
+  <title>Omni-Directional Robot – Kinematics & Obstacle Avoidance</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-clean anim-medium">
@@ -21,60 +21,156 @@
   <main class="section project-details reveal">
     <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
+    <!-- Heading -->
     <header class="project-heading">
-      <h1 class="section-title">Omni-Directional Robot</h1>
-      <p class="project-meta">Kinematics · Holonomic Control · Motion Planning</p>
+      <h1 class="section-title">
+        Omni-Directional Robot with Kinematics & Obstacle Avoidance
+      </h1>
+      <p class="project-meta">
+        ROS / ROS2 · Gazebo · Omni-Directional Kinematics · LiDAR-Based Obstacle Avoidance
+      </p>
       <p class="project-lede">
-        An omni-wheel mobile base designed for smooth 360° motion, built around
-        a complete kinematic model, Jacobian derivation, and inverse kinematics
-        controller for precise holonomic motion.
+        A bio-inspired omni-directional robot designed to move smoothly in any direction,
+        combining full kinematic modeling with a ROS-based control stack and
+        LiDAR-driven obstacle avoidance in simulation.
       </p>
     </header>
 
+    <!-- Gallery -->
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-strip">
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/omni/omni1.png"
+          data-caption="CAD and layout of the omni-directional robot platform."
+        >
+          <img src="images/omni/omni1.png" alt="Omni robot CAD and layout" class="gallery-thumb" />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/omni/omni2.png"
+          data-caption="Wheel arrangement and omni-directional drive configuration."
+        >
+          <img src="images/omni/omni2.png" alt="Wheel arrangement" class="gallery-thumb" />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/omni/omni3.png"
+          data-caption="Kinematic model and Jacobian mapping for body velocities to wheel speeds."
+        >
+          <img src="images/omni/omni3.png" alt="Kinematic model" class="gallery-thumb" />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/omni/omni4.png"
+          data-caption="RViz visualization of the robot, LiDAR, and TF frames in ROS."
+        >
+          <img src="images/omni/omni4.png" alt="RViz view" class="gallery-thumb" />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/omni/omni5.png"
+          data-caption="Obstacle avoidance behavior in a cluttered simulated environment."
+        >
+          <img src="images/omni/omni5.png" alt="Obstacle avoidance simulation" class="gallery-thumb" />
+        </button>
+      </div>
+    </section>
+
+    <!-- Text content -->
     <section class="project-body">
       <div>
         <h3>Project Overview</h3>
         <p>
-          This project focuses on the modeling and control of an omni-directional
-          mobile robot. The base uses three or four omni wheels arranged so that
-          the robot can translate and rotate independently, enabling extremely
-          agile motion in tight spaces.
+          This project explores the design of a bio-inspired, omni-directional mobile robot.
+          The platform is capable of translating and rotating in any direction, making it well
+          suited for tight indoor environments where conventional differential-drive robots
+          struggle to maneuver.
         </p>
         <p>
-          A full kinematic model was derived from first principles, including
-          wheel velocity mapping, Jacobian matrices, and inverse kinematics.
-          These equations were implemented in code to command wheel RPMs from
-          desired body-frame velocities.
+          The robot’s mechanical concept is modeled in CAD and then represented in URDF for
+          use with ROS and Gazebo. The focus of the project is on understanding omni-directional
+          kinematics, mapping body-frame velocities to individual wheel speeds, and validating
+          those relationships through simulation.
         </p>
 
-        <h3>Key Features</h3>
+        <h3>Kinematics & Control</h3>
         <ul>
-          <li>Holonomic base capable of independent x, y, and yaw motion.</li>
-          <li>Closed-form inverse kinematics from body twist to wheel speeds.</li>
-          <li>Simulation tests with trajectory tracking and velocity limits.</li>
-          <li>Feedforward + feedback control to reduce tracking error.</li>
+          <li>
+            Developed the full kinematic model and Jacobian for an omni-directional base,
+            relating desired linear and angular body velocities to individual wheel angular speeds.
+          </li>
+          <li>
+            Implemented inverse kinematics to convert high-level motion commands
+            (<code>v<sub>x</sub>, v<sub>y</sub>, ω</code>) into wheel-level control inputs.
+          </li>
+          <li>
+            Verified motion primitives (pure translation, pure rotation, diagonal motion)
+            inside simulation to confirm the correctness of the kinematic mapping.
+          </li>
         </ul>
       </div>
 
       <div>
-        <h3>Technical Stack</h3>
+        <h3>ROS & Simulation Stack</h3>
         <ul>
-          <li>MATLAB / Python for kinematics and plotting.</li>
-          <li>ROS2 node for velocity commands and wheel control.</li>
-          <li>Rviz / simple Gazebo models for visualization.</li>
+          <li>
+            Modeled the robot in URDF with links, joints, and collision geometry, and brought it
+            into Gazebo for physics-based simulation.
+          </li>
+          <li>
+            Used ROS to integrate wheel controllers, TF frames, LiDAR, and RViz visualization,
+            enabling introspection of robot pose, odometry, and sensor data in real time.
+          </li>
+          <li>
+            Implemented a ROS node that subscribes to <code>/cmd_vel</code> and applies the
+            omni-directional kinematic equations to generate per-wheel velocity commands.
+          </li>
         </ul>
+
+        <h3>Obstacle Avoidance</h3>
+        <p>
+          Instead of following objects, the robot performs <b>reactive obstacle avoidance</b>
+          using LiDAR data. A dedicated ROS node subscribes to the <code>/scan</code> topic,
+          partitions the environment into angular sectors, and monitors the minimum distance
+          to obstacles in front, left, and right of the robot.
+        </p>
+        <p>
+          When an obstacle is detected within a safety threshold, the node reduces forward
+          velocity and commands a lateral or rotational motion using the omni-directional
+          kinematics. This allows the robot to sidestep or rotate away from obstacles while
+          preserving overall goal-directed movement, resulting in smooth, collision-free
+          navigation in cluttered scenes.
+        </p>
 
         <h3>Outcome</h3>
         <p>
-          The omni base demonstrates smooth, intuitive motion — sliding
-          sideways into tight gaps and rotating in place without losing
-          position. The project serves as a foundation for future work in
-          omni-drive platforms and indoor service robots.
+          The omni-directional robot successfully demonstrates holonomic motion and
+          LiDAR-based obstacle avoidance in ROS and Gazebo. The project highlights
+          end-to-end skills in kinematic modeling, simulation, and ROS-based perception
+          and control, and serves as a foundation for future work on higher-level planning
+          and multi-robot coordination.
         </p>
       </div>
     </section>
   </main>
 
+  <!-- Shared lightbox modal (used across all project pages) -->
   <div id="lightbox-modal" class="lightbox-modal">
     <div class="lightbox-backdrop" data-lightbox-close></div>
     <div class="lightbox-inner">
