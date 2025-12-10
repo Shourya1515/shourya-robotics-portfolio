@@ -1,11 +1,11 @@
-// --------------------------------------------------
+// =========================
 // Scroll reveal
-// --------------------------------------------------
+// =========================
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
+  entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+        entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
@@ -13,127 +13,114 @@ const observer = new IntersectionObserver(
   { threshold: 0.18 }
 );
 
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// --------------------------------------------------
-// Theme / motion switcher
-// --------------------------------------------------
+// =========================
+// Theme + motion switcher
+// =========================
 const body = document.body;
-
-document.querySelectorAll(".switch-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
+document.querySelectorAll('.switch-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
     const theme = btn.dataset.theme;
     const motion = btn.dataset.motion;
 
     if (theme) {
-      body.classList.remove("theme-clean", "theme-neon", "theme-ai");
+      body.classList.remove('theme-clean', 'theme-neon', 'theme-ai');
       body.classList.add(theme);
-      document
-        .querySelectorAll("[data-theme]")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+      document.querySelectorAll('[data-theme]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
-
     if (motion) {
-      body.classList.remove("anim-soft", "anim-medium", "anim-high");
+      body.classList.remove('anim-soft', 'anim-medium', 'anim-high');
       body.classList.add(motion);
-      document
-        .querySelectorAll("[data-motion]")
-        .forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+      document.querySelectorAll('[data-motion]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
   });
 });
 
-// --------------------------------------------------
-// Lightbox (images + videos, shared on all pages)
-// --------------------------------------------------
+// =========================
+// Lightbox for galleries
+// =========================
 (function initLightbox() {
-  const items = Array.from(document.querySelectorAll("[data-lightbox-item]"));
-  const modal = document.getElementById("lightbox-modal");
-  if (!modal || items.length === 0) return;
+  const modal = document.getElementById('lightbox-modal');
+  if (!modal) return;
 
-  const contentEl = modal.querySelector(".lightbox-content");
-  const captionEl = modal.querySelector(".lightbox-caption");
-  const closeEls = modal.querySelectorAll("[data-lightbox-close]");
-  const prevBtn = modal.querySelector("[data-lightbox-prev]");
-  const nextBtn = modal.querySelector("[data-lightbox-next]");
+  const items = Array.from(document.querySelectorAll('[data-lightbox-item]'));
+  if (!items.length) return;
 
-  const gallery = items.map((el) => ({
-    type: el.dataset.type,
-    src: el.dataset.src,
-    caption: el.dataset.caption || "",
-  }));
+  const contentEl  = modal.querySelector('.lightbox-content');
+  const captionEl  = modal.querySelector('.lightbox-caption');
+  const prevBtn    = modal.querySelector('[data-lightbox-prev]');
+  const nextBtn    = modal.querySelector('[data-lightbox-next]');
+  const closeEls   = modal.querySelectorAll('[data-lightbox-close]');
 
   let currentIndex = 0;
 
   function openAt(index) {
-    currentIndex = ((index % gallery.length) + gallery.length) % gallery.length;
-    const item = gallery[currentIndex];
+    if (!items.length) return;
+    currentIndex = (index + items.length) % items.length;
 
-    // Clear previous
-    contentEl.innerHTML = "";
+    const item    = items[currentIndex];
+    const type    = item.dataset.type || 'image';
+    const src     = item.dataset.src;
+    const caption = item.dataset.caption || '';
 
-    if (item.type === "video") {
-      const vid = document.createElement("video");
-      vid.src = item.src;
-      vid.controls = true;
-      vid.autoplay = false; // user starts playback
-      contentEl.appendChild(vid);
+    // Clear old media
+    contentEl.innerHTML = '';
+
+    if (type === 'video') {
+      const video = document.createElement('video');
+      video.src = src;
+      video.controls = true;
+      video.playsInline = true;
+      // Do NOT autoplay – user controls play/pause
+      contentEl.appendChild(video);
     } else {
-      const img = document.createElement("img");
-      img.src = item.src;
-      img.alt = item.caption || "Gallery image";
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = caption || '';
       contentEl.appendChild(img);
     }
 
-    captionEl.textContent = item.caption || "";
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
+    captionEl.textContent = caption;
+    modal.classList.add('is-open');
   }
 
-  function close() {
-    modal.classList.remove("open");
-    document.body.style.overflow = "";
-    const vid = contentEl.querySelector("video");
-    if (vid) vid.pause();
+  function closeLightbox() {
+    modal.classList.remove('is-open');
+    contentEl.innerHTML = '';
   }
 
-  function next() {
-    openAt(currentIndex + 1);
-  }
-  function prev() {
-    openAt(currentIndex - 1);
-  }
-
-  items.forEach((el, index) => {
-    el.addEventListener("click", () => openAt(index));
+  items.forEach((btn, index) => {
+    btn.addEventListener('click', () => openAt(index));
   });
 
-  closeEls.forEach((el) =>
-    el.addEventListener("click", (e) => {
-      e.stopPropagation();
-      close();
-    })
-  );
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => openAt(currentIndex - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => openAt(currentIndex + 1));
+  }
 
-  prevBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    prev();
-  });
-  nextBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    next();
+  closeEls.forEach(el => {
+    el.addEventListener('click', closeLightbox);
   });
 
-  modal
-    .querySelector(".lightbox-backdrop")
-    .addEventListener("click", () => close());
+  modal.addEventListener('click', e => {
+    if (e.target.classList.contains('lightbox-backdrop')) {
+      closeLightbox();
+    }
+  });
 
-  window.addEventListener("keydown", (e) => {
-    if (!modal.classList.contains("open")) return;
-    if (e.key === "Escape") close();
-    if (e.key === "ArrowRight") next();
-    if (e.key === "ArrowLeft") prev();
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('is-open')) return;
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      openAt(currentIndex + 1);
+    } else if (e.key === 'ArrowLeft') {
+      openAt(currentIndex - 1);
+    }
   });
 })();
