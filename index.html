@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-clean anim-medium">
-
-  <!-- THEME + MOTION SWITCHER -->
+  <!-- THEME / MOTION SWITCHER -->
   <div class="ui-switcher">
     <div class="switch-group">
       <span class="switch-label">Theme:</span>
@@ -36,7 +35,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section id="hero" class="hero section reveal">
     <div class="hero-photo">
       <div class="photo-glow"></div>
@@ -44,21 +43,17 @@
     </div>
     <div class="hero-content">
       <h1 class="hero-title">Hi, I’m Shourya Vudemarri</h1>
-
       <p class="hero-subtitle typewriter">
         Robotics Engineer · ROS2 · SLAM · Autonomous Navigation
       </p>
-
       <p class="hero-text">
         I design and build robots that can understand, map, and move through the world –
-        from autonomous mobile robots and omni-directional systems to high-energy combat robots.
+        from autonomous mobile robots and omni-directional platforms to high-energy combat robots.
       </p>
-
       <div class="hero-actions">
         <a href="#projects" class="btn primary">View Projects</a>
         <a href="#contact" class="btn ghost">Contact Me</a>
       </div>
-
       <div class="hero-scroll-hint">
         <span>Scroll</span>
         <div class="scroll-dot"></div>
@@ -69,35 +64,45 @@
   <!-- ABOUT -->
   <section id="about" class="section about reveal">
     <h2 class="section-title">About Me</h2>
-
     <div class="about-layout">
       <p>
-        I am a robotics engineer with strong experience in <b>ROS2, SLAM, autonomous navigation,
-        kinematics, and real-time perception</b>. I specialize in bringing up robots from scratch—
-        modeling them in simulation, integrating LiDAR/IMU/cameras, and deploying intelligent
-        navigation pipelines.
+        I’m a robotics engineer who loves taking robots from <b>CAD to code</b>. I work
+        across the full stack – modelling in Fusion&nbsp;360, bringing up robots in
+        <b>ROS2</b>, and tuning <b>SLAM &amp; Nav2</b> so they can reliably move through
+        the world. Most of my projects combine LiDAR, IMU, cameras, and custom controllers
+        with clean software structure and documentation.
       </p>
-
       <p>
-        My projects span <b>autonomous 4-wheel robots, omni-directional platforms, combat robots,
-        agricultural systems, and sensor-fusion pipelines</b>. I enjoy solving challenging robotics
-        problems by combining engineering intuition with clean system design.
+        I’ve built <b>autonomous 4-wheel robots, omni-directional platforms, combat robots,
+        agricultural robots, and sensor-fusion pipelines</b>. I enjoy debugging at the terminal
+        as much as I enjoy tightening the last bolt on a chassis, and I care a lot about
+        repeatable experiments, good plots, and readable code.
       </p>
 
       <div class="about-cards">
         <div class="about-card">
           <h3>What I Do</h3>
-          <p>End-to-end robot development — CAD → simulation → ROS2 bring-up → SLAM & Nav2 pipelines.</p>
+          <p>
+            Design, simulate, and deploy robots end-to-end: CAD → Gazebo / RViz →
+            ROS2 bring-up → SLAM, localization, and autonomous navigation with real-time
+            visualization and logging.
+          </p>
         </div>
-
         <div class="about-card">
           <h3>How I Work</h3>
-          <p>Iterative, detail-oriented, experiment-driven, and focused on reliability in real systems.</p>
+          <p>
+            Start simple, iterate fast, and validate with experiments. I like
+            version-controlled configs, structured launch files, and clear plots that show
+            whether a change actually helped.
+          </p>
         </div>
-
         <div class="about-card">
           <h3>What I’m Seeking</h3>
-          <p>Co-op / internships in robotics, autonomy, perception, and intelligent systems.</p>
+          <p>
+            Co-op / internship roles where I can work on <b>autonomy, perception,
+            and robot platforms</b> – especially teams using ROS2, SLAM, Nav2, or
+            hardware-in-the-loop testing.
+          </p>
         </div>
       </div>
     </div>
@@ -106,45 +111,60 @@
   <!-- PROJECTS -->
   <section id="projects" class="section projects reveal">
     <h2 class="section-title">Projects</h2>
-
     <div class="project-grid">
-
       <a href="project-4wheel-slam.html" class="project-card tilt">
         <div class="project-tag">ROS2 · SLAM · Nav2</div>
-        <h3>4-Wheel Robot with SLAM & Navigation</h3>
-        <p>LiDAR + camera robot with SLAM Toolbox, AMCL, and Nav2 autonomous navigation.</p>
+        <h3>4-Wheel Robot with SLAM &amp; Navigation</h3>
+        <p>
+          LiDAR-equipped 4-wheel robot in Gazebo using SLAM Toolbox, AMCL, and Nav2
+          for multi-room autonomous navigation.
+        </p>
       </a>
 
       <a href="project-omni.html" class="project-card tilt">
         <div class="project-tag">Kinematics · Control</div>
         <h3>Omni-Directional Robot</h3>
-        <p>360° holonomic motion robot with inverse kinematics & obstacle avoidance.</p>
+        <p>
+          Full kinematic model and Jacobian-based control for an omni platform with
+          obstacle-aware motion and smooth 360° manoeuvres.
+        </p>
       </a>
 
       <a href="project-combat.html" class="project-card tilt">
         <div class="project-tag">Mechanical · Competition</div>
-        <h3>Combat Robotics Series</h3>
-        <p>25kg / 15kg / 8kg robots with CNC chassis and high-energy weapon systems.</p>
+        <h3>Combat Robotics Series (25 / 15 / 8&nbsp;KG)</h3>
+        <p>
+          Family of combat robots with CNC chassis and high-energy weapons, earning
+          multiple national RoboWars podiums.
+        </p>
       </a>
 
       <a href="project-pesticide.html" class="project-card tilt">
         <div class="project-tag">Agri-Robotics</div>
         <h3>Pesticide Spraying Robot</h3>
-        <p>Field robot for safer pesticide spraying using controlled mechanisms.</p>
+        <p>
+          Manually controlled 4-wheel sprayer robot that reduces farmer exposure to
+          chemicals with adjustable horizontal and vertical nozzles.
+        </p>
       </a>
 
       <a href="project-blockmap.html" class="project-card tilt">
-        <div class="project-tag">SLAM · Localization</div>
-        <h3>Block-Map Localization</h3>
-        <p>ROS2 localization pipeline with LiDAR feature matching & motion updates.</p>
+        <div class="project-tag">Localization · Mapping</div>
+        <h3>Block-Map-Based Localization</h3>
+        <p>
+          Custom block-map localization pipeline with LiDAR-based occupancy grids, scan
+          matching, and comparative evaluation across trajectories.
+        </p>
       </a>
 
       <a href="project-nu-nance.html" class="project-card tilt">
         <div class="project-tag">Sensor Fusion · ROS</div>
-        <h3>NU Nance Report</h3>
-        <p>Magnetometer + IMU fusion pipeline with calibration & ROS tools.</p>
+        <h3>NU Nance – Sensor Fusion Report</h3>
+        <p>
+          ROS-based data collection, calibration, and IMU–magnetometer fusion to estimate
+          heading using complementary filters and EKF.
+        </p>
       </a>
-
     </div>
   </section>
 
@@ -152,41 +172,85 @@
   <section id="skills" class="section skills reveal">
     <h2 class="section-title">Skills</h2>
 
-    <div class="skills-grid-fixed">
-
-      <div class="skill-item"><img src="images/skills/ros-logo.jpg"><p>ROS / ROS2</p></div>
-      <div class="skill-item"><img src="images/skills/SLAM.jpeg"><p>SLAM (RTAB-Map, SLAM Toolbox)</p></div>
-      <div class="skill-item"><img src="images/skills/autonomous_navigation.jpeg"><p>Autonomous Navigation</p></div>
-      <div class="skill-item"><img src="images/skills/sensor_fusion.png"><p>Sensor Fusion</p></div>
-
-      <div class="skill-item"><img src="images/skills/python.jpeg"><p>Python</p></div>
-      <div class="skill-item"><img src="images/skills/c++.png"><p>C++</p></div>
-      <div class="skill-item"><img src="images/skills/matlab.jpeg"><p>MATLAB</p></div>
-
-      <div class="skill-item"><img src="images/skills/fusion360.png"><p>Fusion 360</p></div>
-      <div class="skill-item"><img src="images/skills/coppeliasim.png"><p>CoppeliaSim</p></div>
-      <div class="skill-item"><img src="images/skills/gazebo.png"><p>Gazebo</p></div>
-
-      <div class="skill-item"><img src="images/skills/ros2_jazzy.png"><p>ROS2 Jazzy</p></div>
-      <div class="skill-item"><img src="images/skills/ros2_humble.jpeg"><p>ROS2 Humble</p></div>
-      <div class="skill-item"><img src="images/skills/open_cv.png"><p>OpenCV</p></div>
-
+    <div class="skills-strip">
+      <div class="skill-item">
+        <img src="images/skills/ros-logo.jpg" alt="ROS / ROS2" />
+        <span>ROS / ROS2</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/SLAM.jpeg" alt="SLAM" />
+        <span>SLAM (SLAM Toolbox, RTAB-Map)</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/autonomous_navigation.jpeg" alt="Autonomous Navigation" />
+        <span>Autonomous Navigation</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/sensor_fusion.png" alt="Sensor Fusion" />
+        <span>Sensor Fusion</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/python.jpeg" alt="Python" />
+        <span>Python</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/c++.png" alt="C++" />
+        <span>C++</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/matlab.jpeg" alt="MATLAB" />
+        <span>MATLAB</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/open_cv.png" alt="OpenCV" />
+        <span>OpenCV</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/fusion360.png" alt="Fusion 360" />
+        <span>Fusion 360</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/coppeliasim.png" alt="CoppeliaSim" />
+        <span>CoppeliaSim</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/gazebo.png" alt="Gazebo" />
+        <span>Gazebo</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/isaac.png" alt="Isaac Sim" />
+        <span>Isaac Sim</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/ros2_jazzy.png" alt="ROS2 Jazzy" />
+        <span>ROS2 Jazzy</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/ros2_humble.jpeg" alt="ROS2 Humble" />
+        <span>ROS2 Humble</span>
+      </div>
+      <div class="skill-item">
+        <img src="images/skills/ansys.jpeg" alt="Ansys" />
+        <span>Ansys</span>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section contact reveal">
     <h2 class="section-title">Contact</h2>
-
-    <p>I’m open to co-op, internship, and collaborative robotics opportunities.</p>
-
+    <p>
+      I’m open to co-op, internship, and collaborative project opportunities in
+      robotics, autonomy, and intelligent systems.
+    </p>
     <div class="contact-links">
       <a href="mailto:vudemarri.s@northeastern.edu" class="btn primary">Email Me</a>
-      <a href="https://github.com/Harshavardhansurya" class="btn ghost" target="_blank">GitHub</a>
-      <a href="https://linkedin.com" class="btn ghost" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Harshavardhansurya" target="_blank" class="btn ghost">GitHub</a>
+      <a href="https://www.linkedin.com" target="_blank" class="btn ghost">LinkedIn</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     © 2025 Shourya Vudemarri · Robotics Portfolio
   </footer>
