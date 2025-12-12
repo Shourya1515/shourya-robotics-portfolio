@@ -75,7 +75,12 @@ img {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(14px);
-  background: linear-gradient(to bottom, rgba(5, 5, 12, 0.9), rgba(5, 5, 12, 0.5), transparent);
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 12, 0.9),
+    rgba(5, 5, 12, 0.5),
+    transparent
+  );
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -292,7 +297,7 @@ img {
 }
 
 /* =========================
-   Skills (Option A)
+   Skills
    ========================= */
 .skills-grid {
   display: flex;
@@ -407,15 +412,20 @@ img {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
 }
 
-/* Video tiles */
+/* Video tiles – brighter & clearly visible */
 .gallery-item.video {
-  background: rgba(12, 12, 22, 0.98);
-  border-radius: 0.9rem;
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 340px;
   height: 200px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+  border-radius: 0.9rem;
+  background: radial-gradient(circle at top, #262944 0, #111324 55%, #090913 100%);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .gallery-item.video > div {
@@ -424,13 +434,22 @@ img {
 }
 
 .play-icon {
-  font-size: 2.1rem;
-  margin-bottom: 0.4rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #00c8ff;           /* bright cyan play icon */
 }
 
 .video-label {
-  font-size: 0.85rem;
-  opacity: 0.9;
+  font-size: 0.9rem;
+  opacity: 0.96;
+  color: #fdfdfd;
+}
+
+/* subtle hover pop so they look clickable */
+.gallery-item.video:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+  border-color: rgba(0, 200, 255, 0.65);
 }
 
 /* ----- Project body text layout ----- */
