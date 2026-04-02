@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual-Inertial SLAM – ORB-SLAM3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-clean anim-medium">
+
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section project-details reveal">
+
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+    <header class="project-heading">
+      <h1 class="section-title">Visual-Inertial SLAM for Real-Time Robot Localization</h1>
+
+      <p class="project-meta">
+        ROS 2 · C++ · ORB-SLAM3 · OpenCV · Eigen · EuRoC MAV
+      </p>
+
+      <p class="project-lede">
+        Developed a real-time localization pipeline using ORB-SLAM3’s mono-inertial SLAM to
+        fuse monocular vision and IMU data for accurate robot pose estimation in GPS-denied
+        environments. The system delivers stable 30 Hz pose output with robust initialization
+        for scale, gravity, and sensor bias estimation.
+      </p>
+    </header>
+
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="gallery-strip">
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/orbslam3/eval_v1_01_realtime.png"
+          data-caption="Trajectory comparison on EuRoC V1_01_easy sequence."
+        >
+          <img
+            src="images/orbslam3/eval_v1_01_realtime.png"
+            alt="EuRoC V1_01 trajectory comparison"
+            class="gallery-thumb"
+          />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/orbslam3/eval_mh_03_realtime.png"
+          data-caption="Trajectory comparison on EuRoC MH_03_medium sequence."
+        >
+          <img
+            src="images/orbslam3/eval_mh_03_realtime.png"
+            alt="EuRoC MH_03 trajectory comparison"
+            class="gallery-thumb"
+          />
+        </button>
+
+      </div>
+    </section>
+
+    <section class="project-body">
+
+      <div>
+        <h3>Overview</h3>
+        <p>
+          This project implements a real-time visual-inertial SLAM system that estimates a robot’s
+          position and orientation using only a monocular camera and an IMU. It is designed for
+          autonomous robots operating in environments where GPS is unavailable or unreliable.
+        </p>
+
+        <h3>Problem</h3>
+        <p>
+          GPS performs poorly indoors and in visually challenging environments. Camera-only methods
+          struggle with fast motion and metric scale, while IMU-only solutions drift over time.
+          This project solves that by tightly fusing both sensing modalities.
+        </p>
+
+        <h3>Approach</h3>
+        <ul>
+          <li>Built a ROS 2 C++ node around ORB-SLAM3’s mono-inertial pipeline.</li>
+          <li>Used ORB feature extraction and tracking from camera images at 30 Hz.</li>
+          <li>Pre-integrated IMU measurements at 200 Hz for motion prediction and scale recovery.</li>
+          <li>Applied tightly-coupled optimization to jointly refine visual and inertial pose constraints.</li>
+          <li>Implemented a custom 2.5-second IMU pre-warming buffer for stable initialization of gravity, scale, and sensor biases.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Evaluation</h3>
+        <p>
+          The system was evaluated on the EuRoC MAV benchmark, a standard dataset for visual-inertial
+          odometry research. It maintained real-time 30 Hz pose output and demonstrated robust tracking
+          across both easy and difficult motion sequences.
+        </p>
+
+        <h3>Key Highlights</h3>
+        <ul>
+          <li>Centimeter-level position accuracy on benchmark sequences.</li>
+          <li>Near-perfect scale recovery, indicating successful visual-inertial initialization.</li>
+          <li>Stable tracking on aggressive-motion sequences where pure visual pipelines are less reliable.</li>
+          <li>Real-time localization suitable for downstream autonomy and navigation pipelines.</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>C++ · ROS 2 · ORB-SLAM3</li>
+          <li>OpenCV · Eigen · Python</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
