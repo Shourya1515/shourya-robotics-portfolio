@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Object Tracking with Appearance-Based Re-Identification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-clean anim-medium">
+
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section project-details reveal">
+
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+    <header class="project-heading">
+      <h1 class="section-title">Multi-Object Tracking with Appearance-Based Re-Identification</h1>
+
+      <p class="project-meta">
+        Northeastern University · Jan 2026 – Apr 2026 · Python · PyTorch · OpenCV · YOLOv8
+      </p>
+
+      <p class="project-lede">
+        Final project for EECE 5639: Computer Vision, built collaboratively with Meet Brahmbhatt.
+        Designed and implemented a complete multi-object tracking pipeline that combines YOLOv8 detection,
+        Kalman prediction, Hungarian assignment, and ResNet18 appearance embeddings for re-identification
+        through occlusions, re-entry, and cross-camera viewpoint changes.
+      </p>
+    </header>
+
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="gallery-strip">
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/mot/ss 1.png"
+          data-caption="Multi-object tracking output showing detections and assigned identities."
+        >
+          <img
+            src="images/mot/ss 1.png"
+            alt="Multi-object tracking result 1"
+            class="gallery-thumb"
+          />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/mot/ss2.png"
+          data-caption="Tracking visualization with maintained identities across frames."
+        >
+          <img
+            src="images/mot/ss2.png"
+            alt="Multi-object tracking result 2"
+            class="gallery-thumb"
+          />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/mot/cross_camera_distances.png"
+          data-caption="Cross-camera Re-ID cosine distance matrix used for identity matching across views."
+        >
+          <img
+            src="images/mot/cross_camera_distances.png"
+            alt="Cross-camera Re-ID distance matrix"
+            class="gallery-thumb"
+          />
+        </button>
+
+      </div>
+    </section>
+
+    <section class="project-body">
+
+      <div>
+        <h3>Overview</h3>
+        <p>
+          This project implements a multi-stage perception pipeline for pedestrian tracking and
+          appearance-based re-identification. The system combines classical tracking methods with
+          deep learning-based appearance embeddings, similar to the hybrid perception pipelines used
+          in modern robotics and autonomous systems.
+        </p>
+
+        <h3>Level 1 — Single-Object Tracking</h3>
+        <ul>
+          <li>Used YOLOv8 for pedestrian detection from video frames.</li>
+          <li>Implemented constant-velocity Kalman filtering for motion prediction.</li>
+          <li>Performed IoU-based data association between predicted boxes and detections.</li>
+          <li>Achieved 95–97% mean IoU across custom indoor clips with under 0.3% frame loss.</li>
+        </ul>
+
+        <h3>Level 2 — Multi-Object Tracking with Re-ID</h3>
+        <ul>
+          <li>Extended tracking to multiple pedestrians using Hungarian algorithm assignment.</li>
+          <li>Built a combined IoU + cosine-distance cost matrix for matching detections to active tracks.</li>
+          <li>Used ResNet18 to generate 512-dimensional L2-normalized appearance embeddings.</li>
+          <li>Maintained a per-track appearance gallery to recover identities through occlusions and re-entry.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Level 3 — Cross-Camera Re-Identification</h3>
+        <ul>
+          <li>Extended the system to two synchronized cameras placed at a 90-degree offset.</li>
+          <li>Matched per-track gallery means between views using Hungarian assignment over cosine distance.</li>
+          <li>Achieved 100% identity match across two clip pairs, with 3/3 tracks matched per pair.</li>
+          <li>Maintained average cosine distance below 0.10 across correctly matched identities.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <ul>
+          <li>95–97% mean IoU on single-target tracking.</li>
+          <li>MOTA 0.50 and IDF1 0.71 on the MOT17-09-DPM benchmark.</li>
+          <li>Exceeded the SORT baseline by 16 MOTA points.</li>
+          <li>Achieved 100% cross-camera identity matching on a custom two-camera dataset.</li>
+        </ul>
+
+        <h3>Technical Implementation</h3>
+        <ul>
+          <li>Ported C++ embedding extraction utilities to Python / PyTorch.</li>
+          <li>Built modular detector, tracker, Re-ID, and evaluator components.</li>
+          <li>Tuned association weight, cosine-distance thresholds, and max-lost track lifetime.</li>
+          <li>Structured the system for repeatable evaluation and benchmark comparison.</li>
+        </ul>
+
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>Python · PyTorch · OpenCV · YOLOv8 · ResNet18</li>
+          <li>SciPy · NumPy · Kalman Filter · Hungarian Algorithm</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
