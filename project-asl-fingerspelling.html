@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time ASL Fingerspelling Recognition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-clean anim-medium">
+
+  <header class="site-header">
+    <div class="logo">Shourya<span>Robotics</span></div>
+    <nav>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section project-details reveal">
+
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+    <header class="project-heading">
+      <h1 class="section-title">Real-Time ASL Fingerspelling Recognition</h1>
+
+      <p class="project-meta">
+        Python · PyTorch · OpenCV · MediaPipe · ResNet18 · MobileNetV2
+      </p>
+
+      <p class="project-lede">
+        Built a real-time computer vision system that recognizes 24 American Sign Language letters
+        from webcam input at 27–30 FPS using MediaPipe hand detection and CNN-based classification.
+        The project also investigated the domain gap between benchmark datasets and real-world webcam input.
+      </p>
+    </header>
+
+    <section class="project-gallery">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="gallery-strip">
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/asl/Q.png"
+          data-caption="Real-time ASL fingerspelling recognition example for the letter Q."
+        >
+          <img
+            src="images/asl/Q.png"
+            alt="ASL recognition output for letter Q"
+            class="gallery-thumb"
+          />
+        </button>
+
+        <button
+          class="gallery-item"
+          data-lightbox-item
+          data-type="image"
+          data-src="images/asl/W.png"
+          data-caption="Real-time ASL fingerspelling recognition example for the letter W."
+        >
+          <img
+            src="images/asl/W.png"
+            alt="ASL recognition output for letter W"
+            class="gallery-thumb"
+          />
+        </button>
+
+      </div>
+    </section>
+
+    <section class="project-body">
+
+      <div>
+        <h3>Overview</h3>
+        <p>
+          This project focuses on real-time sign-language perception using webcam input. The system
+          detects a hand region using MediaPipe, preprocesses the cropped hand image, and classifies
+          ASL fingerspelling letters using trained deep learning models.
+        </p>
+
+        <h3>Approach</h3>
+        <ul>
+          <li>Built an end-to-end webcam pipeline using OpenCV and MediaPipe hand detection.</li>
+          <li>Classified 24 ASL letters using CNN-based image classification.</li>
+          <li>Compared three architectures: custom CNN, ResNet18, and MobileNetV2.</li>
+          <li>Trained and evaluated models using 72,000+ benchmark training images.</li>
+        </ul>
+
+        <h3>Real-Time System</h3>
+        <ul>
+          <li>Processed live webcam frames at 27–30 FPS.</li>
+          <li>Used MediaPipe to localize hand landmarks and isolate the hand region.</li>
+          <li>Applied preprocessing to support stable classification under live camera conditions.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Results</h3>
+        <ul>
+          <li>Achieved 100% benchmark accuracy using ResNet18 transfer learning.</li>
+          <li>Compared real-time behavior across custom CNN, ResNet18, and MobileNetV2.</li>
+          <li>Identified a major domain shift between benchmark images and real-world webcam captures.</li>
+          <li>Observed a 67% accuracy drop when moving from benchmark data to real-world webcam input.</li>
+        </ul>
+
+        <h3>Key Learning</h3>
+        <p>
+          The most important insight from this project was that high benchmark accuracy does not
+          automatically translate to robust real-world deployment. Lighting, camera quality, hand pose,
+          background clutter, and user variation created a significant domain gap, reinforcing the
+          importance of real deployment testing for perception systems.
+        </p>
+
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>Python · PyTorch · OpenCV · MediaPipe</li>
+          <li>ResNet18 · MobileNetV2 · Custom CNN</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox-media">
+        <button class="lightbox-close" data-lightbox-close>&times;</button>
+        <div class="lightbox-content"></div>
+        <div class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
