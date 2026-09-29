@@ -3,79 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Combat Robotics Series – 25 / 15 / 8 KG</title>
+  <title>Combat Robotics Series – 25 / 15 / 8 KG | Shourya Vuddemarri</title>
+  <meta name="description" content="Three combat robots (25 kg, 15 kg, 8 kg) built end-to-end for national RoboWars competitions — 1st place at Anna University Chennai and 2nd place at NIT Trichy and Amrita University Bangalore." />
+  <meta name="theme-color" content="#06080d" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Combat Robotics Series (25 / 15 / 8 KG)" />
+  <meta property="og:description" content="CNC-machined chassis, high-energy weapons, and three national RoboWars podiums." />
+  <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-combat.html" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/combat/combat1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="theme-clean anim-medium">
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="logo">Shourya<span>Robotics</span></div>
-    <nav>
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Shourya Vuddemarri – home">
+        <span class="logo-mark" aria-hidden="true">SV</span>
+        <span class="logo-text">Shourya<span>Robotics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects" class="is-active">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="section project-details reveal">
-    <a href="index.html#projects" class="back-link">← Back to Projects</a>
-
-    <header class="project-heading">
-      <h1 class="section-title">Combat Robotics Series (25 / 15 / 8 KG)</h1>
-      <p class="project-meta">CNC Chassis · High-Energy Weapons · National RoboWars Podiums</p>
-      <p class="project-lede">
-        A family of three combat robots built for national RoboWars competitions:
-        25&nbsp;kg, 15&nbsp;kg, and 8&nbsp;kg weight classes. Each robot features a CNC-machined
-        chassis, tuned drivetrain, and carefully balanced weapon system, optimized for
-        reliability under extreme impacts.
-      </p>
-    </header>
-
-    <section class="project-body">
-      <div>
-        <h3>Series Overview</h3>
-        <p>
-          The robots were iteratively designed across multiple seasons, with each class
-          taking lessons from the previous builds in terms of weapon integration, armor
-          layout, and serviceability. The result is a consistent design language: compact
-          frames, modular armor plates, and fast access to electronics.
-        </p>
-        <p>
-          All three robots were built end-to-end: CAD, manufacturing, assembly, wiring,
-          and competition-day repair. The projects provided hands-on experience with
-          impact-resistant design, rapid fault isolation, and tuning ESCs, motors, and
-          batteries for short, high-power matches.
-        </p>
-      </div>
-
-      <div>
-        <h3>Individual Robots</h3>
-        <ul>
-          <li><a href="project-combat-25kg.html">25&nbsp;KG Vertical Spinner</a> – 2nd place at NIT Trichy.</li>
-          <li><a href="project-combat-15kg.html">15&nbsp;KG Drum Spinner</a> – 1st place at Anna University Chennai.</li>
-          <li><a href="project-combat-8kg.html">8&nbsp;KG Front-hinged Wedge</a> – 2nd place at Amrita University Bangalore.</li>
+  <main id="main">
+    <section class="project-hero">
+      <div class="container reveal">
+        <a href="index.html#projects" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          Back to Projects
+        </a>
+        <p class="eyebrow">Project · Robot Design &amp; Hardware</p>
+        <h1 class="project-title">Combat Robotics Series (25 / 15 / 8 KG)</h1>
+        <ul class="meta-chips">
+          <li>CNC Chassis</li>
+          <li>High-Energy Weapons</li>
+          <li class="gold">National RoboWars Podiums</li>
         </ul>
-        <p>
-          Each robot’s page includes its own gallery, technical stack, and competition
-          results.
+        <p class="project-lede">
+          A family of three combat robots built for national RoboWars competitions:
+          25&nbsp;kg, 15&nbsp;kg, and 8&nbsp;kg weight classes. Each robot features a CNC-machined
+          chassis, tuned drivetrain, and carefully balanced weapon system, optimized for
+          reliability under extreme impacts.
         </p>
       </div>
     </section>
+
+    <section class="project-section">
+      <div class="container reveal">
+        <ul class="stats compact" aria-label="Results">
+          <li class="stat"><div class="stat-value">3</div><div class="stat-label">robots built end-to-end, from CAD to competition-day repair</div></li>
+          <li class="stat"><div class="stat-value">1st</div><div class="stat-label">place with the 15&nbsp;KG drum spinner at Anna University Chennai</div></li>
+          <li class="stat"><div class="stat-value">2 × 2nd</div><div class="stat-label">place finishes at NIT Trichy and Amrita University Bangalore</div></li>
+          <li class="stat"><div class="stat-value">₹115,000</div><div class="stat-label">in total prize money across the three events</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container">
+        <h2 class="block-title reveal">The Robots</h2>
+        <div class="robot-grid" data-stagger>
+          <a href="project-combat-25kg.html" class="project-card reveal">
+            <div class="project-media is-figure">
+              <img src="images/thumbs/combat/combat4.jpg" alt="CAD model of the 25 KG vertical spinner" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="place silver">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+                2nd Place
+              </span>
+              <h3>25&nbsp;KG Vertical Spinner</h3>
+              <p class="card-meta">NIT Trichy · ₹50,000 prize</p>
+              <span class="card-cta">View robot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-combat-15kg.html" class="project-card reveal">
+            <div class="project-media">
+              <img src="images/thumbs/combat/combat1.jpg" alt="15 KG drum spinner in the arena with sparks" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="place gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+                1st Place
+              </span>
+              <h3>15&nbsp;KG Drum Spinner</h3>
+              <p class="card-meta">Anna University Chennai · ₹40,000 prize</p>
+              <span class="card-cta">View robot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-combat-8kg.html" class="project-card reveal">
+            <div class="project-media is-figure">
+              <img src="images/thumbs/combat/combat9.jpg" alt="CAD model of the 8 KG front-hinged wedge robot" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <span class="place silver">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+                2nd Place
+              </span>
+              <h3>8&nbsp;KG Front-hinged Wedge</h3>
+              <p class="card-meta">Amrita University Bangalore · ₹25,000 prize</p>
+              <span class="card-cta">View robot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container content-grid">
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Series Overview</h3>
+            <p>
+              The robots were iteratively designed across multiple seasons, with each class
+              taking lessons from the previous builds in terms of weapon integration, armor
+              layout, and serviceability. The result is a consistent design language: compact
+              frames, modular armor plates, and fast access to electronics.
+            </p>
+            <p>
+              All three robots were built end-to-end: CAD, manufacturing, assembly, wiring,
+              and competition-day repair. The projects provided hands-on experience with
+              impact-resistant design, rapid fault isolation, and tuning ESCs, motors, and
+              batteries for short, high-power matches.
+            </p>
+          </article>
+        </div>
+
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Individual Robots</h3>
+            <ul>
+              <li><a href="project-combat-25kg.html">25&nbsp;KG Vertical Spinner</a> – 2nd place at NIT Trichy.</li>
+              <li><a href="project-combat-15kg.html">15&nbsp;KG Drum Spinner</a> – 1st place at Anna University Chennai.</li>
+              <li><a href="project-combat-8kg.html">8&nbsp;KG Front-hinged Wedge</a> – 2nd place at Amrita University Bangalore.</li>
+            </ul>
+            <p>
+              Each robot’s page includes its own gallery, technical stack, and competition
+              results.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="container project-pager" aria-label="More projects">
+      <a class="pager-link prev" href="project-omni.html">
+        <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
+        <span class="pager-title">Omni-Directional Robot</span>
+      </a>
+      <a class="pager-link next" href="project-pesticide.html">
+        <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="pager-title">Pesticide Spraying Robot</span>
+      </a>
+    </nav>
   </main>
 
-  <div id="lightbox-modal" class="lightbox-modal">
-    <div class="lightbox-backdrop" data-lightbox-close></div>
-    <div class="lightbox-inner">
-      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
-      <div class="lightbox-media">
-        <button class="lightbox-close" data-lightbox-close>&times;</button>
-        <div class="lightbox-content"></div>
-        <div class="lightbox-caption"></div>
-      </div>
-      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#projects">All projects</a>
+        <a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
     </div>
-  </div>
+  </footer>
 
   <script src="main.js"></script>
 </body>

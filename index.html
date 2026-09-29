@@ -4,280 +4,443 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shourya Vuddemarri – Robotics Portfolio</title>
+  <meta name="description" content="Robotics engineer working on ROS 2, SLAM, computer vision, sensor fusion, and autonomous navigation — from autonomous mobile robots and visual-inertial SLAM to multi-object tracking and combat robotics." />
+  <meta name="theme-color" content="#06080d" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shourya Vuddemarri – Robotics Portfolio" />
+  <meta property="og:description" content="ROS 2 · SLAM · Computer Vision · Autonomous Navigation — robotics and perception projects with demos, results, and write-ups." />
+  <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body class="theme-clean anim-medium">
-
-  <div class="ui-switcher">
-    <div class="switch-group">
-      <span class="switch-label">Theme:</span>
-      <button data-theme="theme-clean" class="switch-btn active">Clean</button>
-      <button data-theme="theme-neon" class="switch-btn">Neon</button>
-      <button data-theme="theme-ai" class="switch-btn">AI</button>
-    </div>
-    <div class="switch-group">
-      <span class="switch-label">Motion:</span>
-      <button data-motion="anim-soft" class="switch-btn">Soft</button>
-      <button data-motion="anim-medium" class="switch-btn active">Medium</button>
-      <button data-motion="anim-high" class="switch-btn">High</button>
-    </div>
-  </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="logo">Shourya<span>Robotics</span></div>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="logo" href="#hero" aria-label="Shourya Vuddemarri – home">
+        <span class="logo-mark" aria-hidden="true">SV</span>
+        <span class="logo-text">Shourya<span>Robotics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="hero" class="hero section reveal">
-    <div class="hero-photo">
-      <img src="images/profile.jpg" alt="Shourya Vuddemarri portrait" />
-    </div>
+  <main id="main">
 
-    <div class="hero-content">
-      <h1 class="hero-title">Hi, I’m Shourya Vuddemarri</h1>
-      <p class="hero-subtitle">Robotics Engineer · ROS2 · SLAM · Computer Vision · Autonomous Navigation</p>
-      <p class="hero-text">
-        I build robotics and perception systems that combine sensing, localization, control,
-        and real-world validation — from autonomous mobile robots and visual-inertial SLAM
-        pipelines to multi-object tracking, sign-language recognition, and field robotics.
-      </p>
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Open to co-op &amp; internship roles</p>
 
-      <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn ghost">Contact Me</a>
-      </div>
+            <h1 class="hero-title">
+              <span class="hero-hi">Hi, I’m</span>
+              <span class="grad">Shourya Vuddemarri</span>
+            </h1>
 
-      <div class="hero-scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-dot"></div>
-      </div>
-    </div>
-  </section>
+            <p class="hero-subtitle"><strong>Robotics Engineer</strong> · ROS2 · SLAM · Computer Vision · Autonomous Navigation</p>
 
-  <section id="about" class="section about reveal">
-    <h2 class="section-title">About Me</h2>
+            <p class="hero-text">
+              I build robotics and perception systems that combine sensing, localization, control,
+              and real-world validation — from autonomous mobile robots and visual-inertial SLAM
+              pipelines to multi-object tracking, sign-language recognition, and field robotics.
+            </p>
 
-    <div class="about-layout">
-      <p>
-        I’m a robotics engineer who enjoys taking robots and perception systems from concept
-        to working implementation. My work focuses on ROS / ROS2, SLAM, autonomous navigation,
-        computer vision, sensor fusion, and real-time perception pipelines.
-      </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn primary">
+                View Projects
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="#contact" class="btn ghost">Contact Me</a>
+            </div>
 
-      <p>
-        My experience spans autonomous mobile robots, visual-inertial localization, multi-object
-        tracking, sign-language recognition, omni-directional kinematics, agricultural robotics,
-        combat robotics, and experimental robotics workflows involving sensing, data logging,
-        and repeatable validation.
-      </p>
+            <div class="hero-social">
+              <a class="icon-link" href="https://github.com/Shourya1515" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </a>
+              <a class="icon-link" href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              </a>
+              <a class="icon-link" href="mailto:vuddemarri.s@northeastern.edu" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </a>
+            </div>
+          </div>
 
-      <div class="about-cards">
-        <div class="about-card">
-          <h3>What I Do</h3>
-          <p>
-            Design, simulate, and deploy robotics systems end-to-end: CAD → Gazebo / RViz →
-            ROS2 bring-up → SLAM, localization, perception, and autonomous navigation.
-          </p>
+          <div class="hero-visual reveal">
+            <div class="photo-frame">
+              <img src="images/profile.jpg" alt="Shourya Vuddemarri portrait" width="1200" height="1600" fetchpriority="high" />
+            </div>
+            <div class="bbox" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="bbox-label">ID 1</span></div>
+          </div>
         </div>
 
-        <div class="about-card">
-          <h3>How I Work</h3>
-          <p>
-            Start simple, iterate fast, and validate with experiments. I like clean launch files,
-            repeatable logs, clear plots, modular code, and results that show what actually improved.
-          </p>
+        <ul class="stats reveal" aria-label="Highlights">
+          <li class="stat">
+            <div class="stat-value">3×</div>
+            <div class="stat-label">National RoboWars podiums, including a 1st place</div>
+          </li>
+          <li class="stat">
+            <div class="stat-value">+16 MOTA</div>
+            <div class="stat-label">over the SORT baseline on MOT17 (multi-object tracking)</div>
+          </li>
+          <li class="stat">
+            <div class="stat-value">30 Hz</div>
+            <div class="stat-label">real-time visual-inertial pose output (ORB-SLAM3)</div>
+          </li>
+          <li class="stat">
+            <div class="stat-value">27–30 FPS</div>
+            <div class="stat-label">live ASL fingerspelling recognition from webcam</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">01 · About</p>
+          <h2 class="section-title">About Me</h2>
         </div>
 
-        <div class="about-card">
-          <h3>What I’m Seeking</h3>
-          <p>
-            Co-op / internship roles where I can work on robotics, autonomy, perception,
-            SLAM, robot learning data pipelines, or real-time sensing systems.
-          </p>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I’m a robotics engineer who enjoys taking robots and perception systems from concept
+              to working implementation. My work focuses on ROS / ROS2, SLAM, autonomous navigation,
+              computer vision, sensor fusion, and real-time perception pipelines.
+            </p>
+            <p>
+              My experience spans autonomous mobile robots, visual-inertial localization, multi-object
+              tracking, sign-language recognition, omni-directional kinematics, agricultural robotics,
+              combat robotics, and experimental robotics workflows involving sensing, data logging,
+              and repeatable validation.
+            </p>
+            <ul class="tag-list" aria-label="Focus areas">
+              <li class="tag">ROS / ROS2</li>
+              <li class="tag">SLAM</li>
+              <li class="tag">Autonomous Navigation</li>
+              <li class="tag">Computer Vision</li>
+              <li class="tag">Sensor Fusion</li>
+              <li class="tag">Real-Time Perception</li>
+            </ul>
+          </div>
+
+          <div class="about-cards" data-stagger>
+            <div class="info-card reveal">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4M9 3h6"/><circle cx="9.5" cy="12.5" r="1.2"/><circle cx="14.5" cy="12.5" r="1.2"/><path d="M2 11v4M22 11v4"/></svg>
+              </div>
+              <div>
+                <h3>What I Do</h3>
+                <p>
+                  Design, simulate, and deploy robotics systems end-to-end: CAD → Gazebo / RViz →
+                  ROS2 bring-up → SLAM, localization, perception, and autonomous navigation.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card reveal">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg>
+              </div>
+              <div>
+                <h3>How I Work</h3>
+                <p>
+                  Start simple, iterate fast, and validate with experiments. I like clean launch files,
+                  repeatable logs, clear plots, modular code, and results that show what actually improved.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card reveal">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
+              </div>
+              <div>
+                <h3>What I’m Seeking</h3>
+                <p>
+                  Co-op / internship roles where I can work on robotics, autonomy, perception,
+                  SLAM, robot learning data pipelines, or real-time sensing systems.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects" class="section projects reveal">
-    <h2 class="section-title">Projects</h2>
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="projects-head">
+          <div class="section-head reveal">
+            <p class="eyebrow">02 · Projects</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-sub">Selected work across localization, perception, and robot hardware — each with its own write-up, results, and media.</p>
+          </div>
+          <div class="filters reveal" role="group" aria-label="Filter projects">
+            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All <span class="filter-count"></span></button>
+            <button type="button" class="filter-btn" data-filter="nav" aria-pressed="false">Localization &amp; Navigation <span class="filter-count"></span></button>
+            <button type="button" class="filter-btn" data-filter="cv" aria-pressed="false">Computer Vision <span class="filter-count"></span></button>
+            <button type="button" class="filter-btn" data-filter="hw" aria-pressed="false">Robot Design &amp; Hardware <span class="filter-count"></span></button>
+          </div>
+        </div>
 
-    <div class="project-grid">
+        <div class="project-grid" data-stagger>
 
-      <a href="project-4wheel-slam.html" class="project-card">
-        <div class="project-tag">ROS2 · SLAM · Nav2</div>
-        <h3>4-Wheel Robot with SLAM & Navigation</h3>
-        <p>
-          LiDAR + camera robot in Gazebo with SLAM Toolbox, AMCL, and Nav2 for
-          multi-room autonomous navigation.
-        </p>
-      </a>
+          <a href="project-4wheel-slam.html" class="project-card reveal" data-category="nav">
+            <div class="project-media">
+              <img src="images/thumbs/4wheel/nav2.jpg" alt="RViz view of the SLAM map with a Nav2 planned path" loading="lazy" />
+              <span class="media-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
+                2 demo videos
+              </span>
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">ROS2</li><li class="tag">SLAM</li><li class="tag">Nav2</li></ul>
+              <h3>4-Wheel Robot with SLAM &amp; Navigation</h3>
+              <p>
+                LiDAR + camera robot in Gazebo with SLAM Toolbox, AMCL, and Nav2 for
+                multi-room autonomous navigation.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-orb-slam3.html" class="project-card">
-        <div class="project-tag">SLAM · Sensor Fusion</div>
-        <h3>Visual-Inertial SLAM (ORB-SLAM3)</h3>
-        <p>
-          Real-time robot localization using camera + IMU fusion with ROS2 and ORB-SLAM3,
-          evaluated on EuRoC benchmark sequences.
-        </p>
-      </a>
+          <a href="project-orb-slam3.html" class="project-card reveal" data-category="nav">
+            <div class="project-media is-figure">
+              <img src="images/thumbs/orbslam3/eval_v1_01_realtime.jpg" alt="EuRoC V1_01 trajectory evaluation: VIO estimate vs. ground truth" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">SLAM</li><li class="tag">Sensor Fusion</li></ul>
+              <h3>Visual-Inertial SLAM (ORB-SLAM3)</h3>
+              <p>
+                Real-time robot localization using camera + IMU fusion with ROS2 and ORB-SLAM3,
+                evaluated on EuRoC benchmark sequences.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-multi-object-tracking.html" class="project-card">
-        <div class="project-tag">Computer Vision · Tracking</div>
-        <h3>Multi-Object Tracking with Re-ID</h3>
-        <p>
-          Pedestrian tracking pipeline using YOLOv8, Kalman filtering, Hungarian assignment,
-          and ResNet18 appearance embeddings for re-identification.
-        </p>
-      </a>
+          <a href="project-multi-object-tracking.html" class="project-card reveal" data-category="cv">
+            <div class="project-media">
+              <img src="images/thumbs/mot/ss-1.jpg" alt="Tracking output with two pedestrians labelled ID 1 and ID 2" loading="lazy" style="object-position: 50% 66%" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Computer Vision</li><li class="tag">Tracking</li></ul>
+              <h3>Multi-Object Tracking with Re-ID</h3>
+              <p>
+                Pedestrian tracking pipeline using YOLOv8, Kalman filtering, Hungarian assignment,
+                and ResNet18 appearance embeddings for re-identification.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-asl-fingerspelling.html" class="project-card">
-        <div class="project-tag">Computer Vision · Deep Learning</div>
-        <h3>Real-Time ASL Fingerspelling Recognition</h3>
-        <p>
-          Webcam-based ASL letter recognition system using MediaPipe hand detection and
-          CNN-based classifiers running at real-time frame rates.
-        </p>
-      </a>
+          <a href="project-asl-fingerspelling.html" class="project-card reveal" data-category="cv">
+            <div class="project-media">
+              <img src="images/thumbs/asl/w.jpg" alt="Live ASL recognition of the letter W with hand landmarks" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Computer Vision</li><li class="tag">Deep Learning</li></ul>
+              <h3>Real-Time ASL Fingerspelling Recognition</h3>
+              <p>
+                Webcam-based ASL letter recognition system using MediaPipe hand detection and
+                CNN-based classifiers running at real-time frame rates.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-omni.html" class="project-card">
-        <div class="project-tag">Kinematics · Control</div>
-        <h3>Omni-Directional Robot</h3>
-        <p>
-          Omni-drive platform with full kinematics, ROS control, obstacle avoidance,
-          and simulation-based validation.
-        </p>
-      </a>
+          <a href="project-omni.html" class="project-card reveal" data-category="hw">
+            <div class="project-media">
+              <img src="images/thumbs/omni/omni1.jpg" alt="Omni-directional robot with wheeled legs in Gazebo" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Kinematics</li><li class="tag">Control</li></ul>
+              <h3>Omni-Directional Robot</h3>
+              <p>
+                Omni-drive platform with full kinematics, ROS control, obstacle avoidance,
+                and simulation-based validation.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-combat.html" class="project-card">
-        <div class="project-tag">Mechanical · Competition</div>
-        <h3>Combat Robotics Series</h3>
-        <p>
-          25 / 15 / 8 kg combat robots with CNC chassis, drivetrain design, electronics
-          integration, and national competition results.
-        </p>
-      </a>
+          <a href="project-combat.html" class="project-card reveal" data-category="hw">
+            <div class="project-media">
+              <img src="images/thumbs/combat/combat1.jpg" alt="Combat robot in the arena with sparks on impact" loading="lazy" />
+              <span class="media-badge gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+                3 national podiums
+              </span>
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Mechanical</li><li class="tag">Competition</li></ul>
+              <h3>Combat Robotics Series</h3>
+              <p>
+                25 / 15 / 8 kg combat robots with CNC chassis, drivetrain design, electronics
+                integration, and national competition results.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-pesticide.html" class="project-card">
-        <div class="project-tag">Agri-Robotics</div>
-        <h3>Pesticide Spraying Robot</h3>
-        <p>
-          Four-wheel manually controlled agricultural robot with pesticide pump and
-          horizontal / vertical spraying mechanism.
-        </p>
-      </a>
+          <a href="project-pesticide.html" class="project-card reveal" data-category="hw">
+            <div class="project-media">
+              <img src="images/thumbs/pesticide/agri1.jpg" alt="Pesticide spraying robot with four-wheel chassis and spray boom" loading="lazy" style="object-position: 50% 42%" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Agri-Robotics</li></ul>
+              <h3>Pesticide Spraying Robot</h3>
+              <p>
+                Four-wheel manually controlled agricultural robot with pesticide pump and
+                horizontal / vertical spraying mechanism.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-block-map-localization.html" class="project-card">
-        <div class="project-tag">Localization · Mapping</div>
-        <h3>Block-Map Based Localization</h3>
-        <p>
-          Hierarchical localization using block-based search and ICP refinement for
-          efficient scan-to-map matching.
-        </p>
-      </a>
+          <a href="project-block-map-localization.html" class="project-card reveal" data-category="nav">
+            <div class="project-media is-figure">
+              <img src="images/thumbs/blockmap/blockmap3.jpg" alt="Top view of the generated block maps" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Localization</li><li class="tag">Mapping</li></ul>
+              <h3>Block-Map Based Localization</h3>
+              <p>
+                Hierarchical localization using branch-and-bound search and ICP refinement for
+                efficient scan-to-map matching.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-      <a href="project-nu-nance.html" class="project-card">
-        <div class="project-tag">Sensor Fusion · ROS</div>
-        <h3>NU Nance Report</h3>
-        <p>
-          Sensor fusion, calibration, and localization analysis using ROS-based workflows
-          and trajectory visualization.
-        </p>
-      </a>
+          <a href="project-nu-nance.html" class="project-card reveal" data-category="nav">
+            <div class="project-media is-figure">
+              <img src="images/thumbs/nu-nance/circle_mag_calibration1.jpg" alt="Magnetometer calibration before and after correction" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <ul class="tag-list"><li class="tag">Sensor Fusion</li><li class="tag">ROS</li></ul>
+              <h3>NU Nance Report</h3>
+              <p>
+                Sensor fusion, calibration, and localization analysis using ROS-based workflows
+                and trajectory visualization.
+              </p>
+              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
 
-    </div>
-  </section>
-
-  <section id="skills" class="section skills reveal">
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills-grid">
-      <div class="skill-pill">
-        <img src="images/skills/ros-logo.jpg" alt="ROS / ROS2" />
-        <span>ROS / ROS2</span>
+        </div>
       </div>
+    </section>
 
-      <div class="skill-pill">
-        <img src="images/skills/SLAM.jpeg" alt="SLAM" />
-        <span>SLAM</span>
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">03 · Skills</p>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-sub">The frameworks, languages, and tools behind these projects.</p>
+        </div>
+
+        <div class="skills-grid" data-stagger>
+          <div class="skill-group reveal">
+            <h3>Robotics &amp; Autonomy</h3>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill-logo"><img src="images/skills/ros-logo.jpg" alt="" loading="lazy" /></span><span>ROS / ROS2</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/ros2_jazzy.png" alt="" loading="lazy" /></span><span>ROS 2 Jazzy</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/ros2_humble.jpeg" alt="" loading="lazy" /></span><span>ROS 2 Humble</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/SLAM.jpeg" alt="" loading="lazy" /></span><span>SLAM</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/autonomous_navigation.jpeg" alt="" loading="lazy" /></span><span>Navigation</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/sensor_fusion.png" alt="" loading="lazy" /></span><span>Sensor Fusion</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Programming &amp; Perception</h3>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill-logo"><img src="images/skills/python.jpeg" alt="" loading="lazy" /></span><span>Python</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/c++.png" alt="" loading="lazy" /></span><span>C++</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/open_cv.png" alt="" loading="lazy" /></span><span>OpenCV</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/matlab.jpeg" alt="" loading="lazy" /></span><span>MATLAB</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Simulation &amp; CAD</h3>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill-logo"><img src="images/skills/gazebo.png" alt="" loading="lazy" /></span><span>Gazebo</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/coppeliasim.png" alt="" loading="lazy" /></span><span>CoppeliaSim</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/isaac.png" alt="" loading="lazy" /></span><span>Isaac Sim</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/fusion360.png" alt="" loading="lazy" /></span><span>Fusion 360</span></li>
+              <li class="skill"><span class="skill-logo"><img src="images/skills/ansys.jpeg" alt="" loading="lazy" /></span><span>Ansys</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="skill-pill">
-        <img src="images/skills/autonomous_navigation.jpeg" alt="Autonomous Navigation" />
-        <span>Navigation</span>
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <p class="eyebrow">04 · Contact</p>
+          <h2 class="section-title">Let’s connect</h2>
+          <p class="contact-text">
+            I’m open to co-op, internship, and collaborative project opportunities in robotics,
+            autonomy, perception, and intelligent systems.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:vuddemarri.s@northeastern.edu" class="btn primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Email Me
+            </a>
+            <a href="https://github.com/Shourya1515" target="_blank" rel="noopener" class="btn ghost">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener" class="btn ghost">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+          <a class="contact-email" href="mailto:vuddemarri.s@northeastern.edu">vuddemarri.s@northeastern.edu</a>
+        </div>
       </div>
+    </section>
 
-      <div class="skill-pill">
-        <img src="images/skills/sensor_fusion.png" alt="Sensor Fusion" />
-        <span>Sensor Fusion</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/python.jpeg" alt="Python" />
-        <span>Python</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/c++.png" alt="C++" />
-        <span>C++</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/open_cv.png" alt="OpenCV" />
-        <span>OpenCV</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/matlab.jpeg" alt="MATLAB" />
-        <span>MATLAB</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/gazebo.png" alt="Gazebo" />
-        <span>Gazebo</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/coppeliasim.png" alt="CoppeliaSim" />
-        <span>CoppeliaSim</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/fusion360.png" alt="Fusion 360" />
-        <span>Fusion 360</span>
-      </div>
-
-      <div class="skill-pill">
-        <img src="images/skills/isaac.png" alt="Isaac Sim" />
-        <span>Isaac Sim</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section contact reveal">
-    <h2 class="section-title">Contact</h2>
-
-    <p>
-      I’m open to co-op, internship, and collaborative project opportunities in robotics,
-      autonomy, perception, and intelligent systems.
-    </p>
-
-    <div class="contact-links">
-      <a href="mailto:vuddemarri.s@northeastern.edu" class="btn primary">Email Me</a>
-      <a href="https://github.com/Harshavardhansurya" target="_blank" class="btn ghost">GitHub</a>
-      <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" class="btn ghost">LinkedIn</a>
-    </div>
-  </section>
+  </main>
 
   <footer class="site-footer">
-    © 2025 Shourya Vuddemarri · Robotics Portfolio
+    <div class="container footer-inner">
+      <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#hero">Back to top ↑</a>
+      </nav>
+    </div>
   </footer>
 
   <script src="main.js"></script>

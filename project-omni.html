@@ -3,184 +3,253 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omni-Directional Robot – Kinematics & Obstacle Avoidance</title>
+  <title>Omni-Directional Robot – Kinematics &amp; Obstacle Avoidance | Shourya Vuddemarri</title>
+  <meta name="description" content="A bio-inspired omni-directional robot with full kinematic modeling, a ROS-based control stack, and LiDAR-driven obstacle avoidance in Gazebo." />
+  <meta name="theme-color" content="#06080d" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Omni-Directional Robot with Kinematics &amp; Obstacle Avoidance" />
+  <meta property="og:description" content="Kinematic modeling, Jacobian analysis, ROS control, and LiDAR-based obstacle avoidance for a bio-inspired omni-directional robot." />
+  <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-omni.html" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/omni/omni1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="theme-clean anim-medium">
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="logo">Shourya<span>Robotics</span></div>
-    <nav>
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Shourya Vuddemarri – home">
+        <span class="logo-mark" aria-hidden="true">SV</span>
+        <span class="logo-text">Shourya<span>Robotics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects" class="is-active">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="section project-details reveal">
-    <a href="index.html#projects" class="back-link">← Back to Projects</a>
-
-    <!-- Heading -->
-    <header class="project-heading">
-      <h1 class="section-title">
-        Omni-Directional Robot with Kinematics & Obstacle Avoidance
-      </h1>
-      <p class="project-meta">
-        ROS / ROS2 · Gazebo · Omni-Directional Kinematics · LiDAR-Based Obstacle Avoidance
-      </p>
-      <p class="project-lede">
-        A bio-inspired omni-directional robot designed to move smoothly in any direction,
-        combining full kinematic modeling with a ROS-based control stack and
-        LiDAR-driven obstacle avoidance in simulation.
-      </p>
-    </header>
-
-    <!-- Gallery -->
-    <section class="project-gallery">
-      <h2 class="section-title">Gallery</h2>
-      <div class="gallery-strip">
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/omni/omni1.png"
-          data-caption="CAD and layout of the omni-directional robot platform."
-        >
-          <img src="images/omni/omni1.png" alt="Omni robot CAD and layout" class="gallery-thumb" />
-        </button>
-
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/omni/omni2.png"
-          data-caption="Wheel arrangement and omni-directional drive configuration."
-        >
-          <img src="images/omni/omni2.png" alt="Wheel arrangement" class="gallery-thumb" />
-        </button>
-
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/omni/omni3.png"
-          data-caption="Kinematic model and Jacobian mapping for body velocities to wheel speeds."
-        >
-          <img src="images/omni/omni3.png" alt="Kinematic model" class="gallery-thumb" />
-        </button>
-
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/omni/omni4.png"
-          data-caption="RViz visualization of the robot, LiDAR, and TF frames in ROS."
-        >
-          <img src="images/omni/omni4.png" alt="RViz view" class="gallery-thumb" />
-        </button>
-
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/omni/omni5.png"
-          data-caption="Obstacle avoidance behavior in a cluttered simulated environment."
-        >
-          <img src="images/omni/omni5.png" alt="Obstacle avoidance simulation" class="gallery-thumb" />
-        </button>
+  <main id="main">
+    <section class="project-hero">
+      <div class="container reveal">
+        <a href="index.html#projects" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          Back to Projects
+        </a>
+        <p class="eyebrow">Project · Robot Design &amp; Control</p>
+        <h1 class="project-title">Omni-Directional Robot with Kinematics &amp; Obstacle Avoidance</h1>
+        <ul class="meta-chips">
+          <li>ROS / ROS2</li>
+          <li>Gazebo</li>
+          <li>Omni-Directional Kinematics</li>
+          <li>LiDAR-Based Obstacle Avoidance</li>
+        </ul>
+        <p class="project-lede">
+          A bio-inspired omni-directional robot designed to move smoothly in any direction,
+          combining full kinematic modeling with a ROS-based control stack and
+          LiDAR-driven obstacle avoidance in simulation.
+        </p>
       </div>
     </section>
 
-    <!-- Text content -->
-    <section class="project-body">
-      <div>
-        <h3>Project Overview</h3>
-        <p>
-          This project explores the design of a bio-inspired, omni-directional mobile robot.
-          The platform is capable of translating and rotating in any direction, making it well
-          suited for tight indoor environments where conventional differential-drive robots
-          struggle to maneuver.
-        </p>
-        <p>
-          The robot’s mechanical concept is modeled in CAD and then represented in URDF for
-          use with ROS and Gazebo. The focus of the project is on understanding omni-directional
-          kinematics, mapping body-frame velocities to individual wheel speeds, and validating
-          those relationships through simulation.
-        </p>
+    <section class="project-section">
+      <div class="container reveal">
+        <h2 class="block-title">Gallery</h2>
+        <div class="gallery-grid wide">
+          <button type="button" class="gallery-item" data-lightbox-item data-type="image"
+                  data-src="images/omni/omni1.png"
+                  data-caption="Bio-inspired omni-directional robot with wheeled legs, modeled for Gazebo simulation.">
+            <span class="gallery-media">
+              <img src="images/thumbs/omni/omni1.jpg" alt="Omni-directional robot model with wheeled legs in Gazebo" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">Bio-inspired omni-directional robot with wheeled legs, modeled for Gazebo simulation.</span>
+          </button>
 
-        <h3>Kinematics & Control</h3>
-        <ul>
-          <li>
-            Developed the full kinematic model and Jacobian for an omni-directional base,
-            relating desired linear and angular body velocities to individual wheel angular speeds.
-          </li>
-          <li>
-            Implemented inverse kinematics to convert high-level motion commands
-            (<code>v<sub>x</sub>, v<sub>y</sub>, ω</code>) into wheel-level control inputs.
-          </li>
-          <li>
-            Verified motion primitives (pure translation, pure rotation, diagonal motion)
-            inside simulation to confirm the correctness of the kinematic mapping.
-          </li>
-        </ul>
-      </div>
+          <button type="button" class="gallery-item" data-lightbox-item data-type="image"
+                  data-src="images/omni/omni2.png"
+                  data-caption="The robot in a simulated Gazebo indoor environment, with its LiDAR scan rays visualized.">
+            <span class="gallery-media">
+              <img src="images/thumbs/omni/omni2.jpg" alt="Robot in a Gazebo indoor world with LiDAR rays" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">The robot in a simulated Gazebo indoor environment, with LiDAR scan rays visualized.</span>
+          </button>
 
-      <div>
-        <h3>ROS & Simulation Stack</h3>
-        <ul>
-          <li>
-            Modeled the robot in URDF with links, joints, and collision geometry, and brought it
-            into Gazebo for physics-based simulation.
-          </li>
-          <li>
-            Used ROS to integrate wheel controllers, TF frames, LiDAR, and RViz visualization,
-            enabling introspection of robot pose, odometry, and sensor data in real time.
-          </li>
-          <li>
-            Implemented a ROS node that subscribes to <code>/cmd_vel</code> and applies the
-            omni-directional kinematic equations to generate per-wheel velocity commands.
-          </li>
-        </ul>
+          <button type="button" class="gallery-item" data-lightbox-item data-type="image"
+                  data-src="images/omni/omni3.png"
+                  data-caption="RViz view with the map, global and local costmaps, and a planned path toward a goal.">
+            <span class="gallery-media">
+              <img src="images/thumbs/omni/omni3.jpg" alt="RViz view with costmaps and a planned path" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">RViz view with the map, global and local costmaps, and a planned path toward a goal.</span>
+          </button>
 
-        <h3>Obstacle Avoidance</h3>
-        <p>
-          The robot performs <b>reactive obstacle avoidance</b>
-          using LiDAR data. A dedicated ROS node subscribes to the <code>/scan</code> topic,
-          partitions the environment into angular sectors, and monitors the minimum distance
-          to obstacles in front, left, and right of the robot.
-        </p>
-        <p>
-          When an obstacle is detected within a safety threshold, the node reduces forward
-          velocity and commands a lateral or rotational motion using the omni-directional
-          kinematics. This allows the robot to sidestep or rotate away from obstacles while
-          preserving overall goal-directed movement, resulting in smooth, collision-free
-          navigation in cluttered scenes.
-        </p>
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/omni/omni4.png"
+                  data-caption="Jacobian condition number κ(J_B) versus wheel radius, wheel offset, and steering angle.">
+            <span class="gallery-media">
+              <img src="images/thumbs/omni/omni4.jpg" alt="Surface plots of the Jacobian condition number" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">Jacobian condition number κ(J<sub>B</sub>) versus wheel radius, wheel offset, and steering angle.</span>
+          </button>
 
-        <h3>Outcome</h3>
-        <p>
-          The omni-directional robot successfully demonstrates holonomic motion and
-          LiDAR-based obstacle avoidance in ROS and Gazebo. The project highlights
-          end-to-end skills in kinematic modeling, simulation, and ROS-based perception
-          and control, and serves as a foundation for future work on higher-level planning
-          and multi-robot coordination.
-        </p>
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/omni/omni5.png"
+                  data-caption="Kinematic model of a leg with its Denavit–Hartenberg (DH) parameters.">
+            <span class="gallery-media">
+              <img src="images/thumbs/omni/omni5.jpg" alt="Leg kinematic model with DH parameter table" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">Kinematic model of a leg with its Denavit–Hartenberg (DH) parameters.</span>
+          </button>
+        </div>
       </div>
     </section>
+
+    <section class="project-section">
+      <div class="container content-grid">
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Project Overview</h3>
+            <p>
+              This project explores the design of a bio-inspired, omni-directional mobile robot.
+              The platform is capable of translating and rotating in any direction, making it well
+              suited for tight indoor environments where conventional differential-drive robots
+              struggle to maneuver.
+            </p>
+            <p>
+              The robot’s mechanical concept is modeled in CAD and then represented in URDF for
+              use with ROS and Gazebo. The focus of the project is on understanding omni-directional
+              kinematics, mapping body-frame velocities to individual wheel speeds, and validating
+              those relationships through simulation.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Kinematics &amp; Control</h3>
+            <ul>
+              <li>
+                Developed the full kinematic model and Jacobian for an omni-directional base,
+                relating desired linear and angular body velocities to individual wheel angular speeds.
+              </li>
+              <li>
+                Implemented inverse kinematics to convert high-level motion commands
+                (<code>v<sub>x</sub>, v<sub>y</sub>, ω</code>) into wheel-level control inputs.
+              </li>
+              <li>
+                Verified motion primitives (pure translation, pure rotation, diagonal motion)
+                inside simulation to confirm the correctness of the kinematic mapping.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>ROS &amp; Simulation Stack</h3>
+            <ul>
+              <li>
+                Modeled the robot in URDF with links, joints, and collision geometry, and brought it
+                into Gazebo for physics-based simulation.
+              </li>
+              <li>
+                Used ROS to integrate wheel controllers, TF frames, LiDAR, and RViz visualization,
+                enabling introspection of robot pose, odometry, and sensor data in real time.
+              </li>
+              <li>
+                Implemented a ROS node that subscribes to <code>/cmd_vel</code> and applies the
+                omni-directional kinematic equations to generate per-wheel velocity commands.
+              </li>
+            </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Obstacle Avoidance</h3>
+            <p>
+              The robot performs <b>reactive obstacle avoidance</b>
+              using LiDAR data. A dedicated ROS node subscribes to the <code>/scan</code> topic,
+              partitions the environment into angular sectors, and monitors the minimum distance
+              to obstacles in front, left, and right of the robot.
+            </p>
+            <p>
+              When an obstacle is detected within a safety threshold, the node reduces forward
+              velocity and commands a lateral or rotational motion using the omni-directional
+              kinematics. This allows the robot to sidestep or rotate away from obstacles while
+              preserving overall goal-directed movement, resulting in smooth, collision-free
+              navigation in cluttered scenes.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Outcome</h3>
+            <p>
+              The omni-directional robot successfully demonstrates holonomic motion and
+              LiDAR-based obstacle avoidance in ROS and Gazebo. The project highlights
+              end-to-end skills in kinematic modeling, simulation, and ROS-based perception
+              and control, and serves as a foundation for future work on higher-level planning
+              and multi-robot coordination.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="container project-pager" aria-label="More projects">
+      <a class="pager-link prev" href="project-asl-fingerspelling.html">
+        <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
+        <span class="pager-title">Real-Time ASL Fingerspelling Recognition</span>
+      </a>
+      <a class="pager-link next" href="project-combat.html">
+        <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="pager-title">Combat Robotics Series</span>
+      </a>
+    </nav>
   </main>
 
-  <!-- Shared lightbox modal (used across all project pages) -->
-  <div id="lightbox-modal" class="lightbox-modal">
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#projects">All projects</a>
+        <a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image viewer">
     <div class="lightbox-backdrop" data-lightbox-close></div>
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
     <div class="lightbox-inner">
-      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
-      <div class="lightbox-media">
-        <button class="lightbox-close" data-lightbox-close>&times;</button>
+      <button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <figure class="lightbox-media">
         <div class="lightbox-content"></div>
-        <div class="lightbox-caption"></div>
-      </div>
-      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+        <figcaption class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-counter"></span></figcaption>
+      </figure>
+      <button class="lightbox-nav" type="button" data-lightbox-next aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
 

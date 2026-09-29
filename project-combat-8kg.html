@@ -3,124 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>8 KG Combat Robot – Amrita University Bangalore</title>
+  <title>8 KG Combat Robot – Amrita University Bangalore | Shourya Vuddemarri</title>
+  <meta name="description" content="A compact 8 kg wedge combat robot focused on control and reliability — 2nd place and a ₹25,000 prize at the Amrita University Bangalore national tech fest." />
+  <meta name="theme-color" content="#06080d" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="8 KG Combat Robot – Wedge Bot" />
+  <meta property="og:description" content="2nd place · ₹25,000 prize · Amrita University Bangalore National Tech Fest." />
+  <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-combat-8kg.html" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/combat/combat9.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="theme-clean anim-medium">
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="logo">Shourya<span>Robotics</span></div>
-    <nav>
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Shourya Vuddemarri – home">
+        <span class="logo-mark" aria-hidden="true">SV</span>
+        <span class="logo-text">Shourya<span>Robotics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects" class="is-active">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="section project-details reveal">
-    <a href="project-combat.html" class="back-link">← Back to Combat Series</a>
-
-    <header class="project-heading">
-      <h1 class="section-title">8&nbsp;KG Combat Robot – Wedge Bot</h1>
-      <p class="project-meta">2nd Place · ₹25,000 Prize · Amrita University Bangalore National Tech Fest</p>
-      <p class="project-lede">
-        A compact 8&nbsp;kg robot focused on control, low profile, and reliability,
-        acting as a testbed for new drivetrain and armor ideas.
-      </p>
-    </header>
-
-    <section class="project-gallery">
-      <h2 class="section-title">Gallery</h2>
-      <div class="gallery-strip">
-
-        <!-- combat3.jpg (original) -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/combat/combat3.jpg"
-          data-caption="8 KG wedge bot during a match, grinding against the opponent's armor."
-        >
-          <img src="images/combat/combat3.jpg" alt="8 KG bot in match" class="gallery-thumb" />
-        </button>
-
-        <!-- NEW: combat8.jpg -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/combat/combat8.jpg"
-          data-caption="Updated 8 KG wedge bot with improved chassis and reinforced armor."
-        >
-          <img src="images/combat/combat8.jpg" alt="8 KG combat bot" class="gallery-thumb" />
-        </button>
-
-        <!-- NEW: combat9.jpg -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/combat/combat9.jpg"
-          data-caption="Final assembly of the 8 KG wedge bot before the national competition."
-        >
-          <img src="images/combat/combat9.jpg" alt="8 KG bot assembly" class="gallery-thumb" />
-        </button>
-
-      </div>
-    </section>
-
-    <section class="project-body">
-      <div>
-        <h3>Project Overview</h3>
-        <p>
-          The 8&nbsp;kg bot trades raw weapon power for aggressive driving and
-          survivability. It is built around a low wedge that can get underneath
-          opponents and push them into arena hazards or out of the engagement zone.
-        </p>
-        <p>
-          The small size made it an ideal platform to quickly iterate on armor
-          layouts, wheel protection, and internal packaging before scaling the
-          ideas to heavier classes.
-        </p>
-
-        <h3>Competition Result</h3>
-        <p>
-          The robot earned <b>2nd place</b> and a prize of <b>₹25,000</b> at the
-          national-level tech fest hosted by <b>Amrita University Bangalore</b>.
-        </p>
-      </div>
-
-      <div>
-        <h3>Technical Details</h3>
-        <ul>
-          <li>Lightweight wedge chassis with reinforced front lip.</li>
-          <li>High-torque drive for shoving heavier opponents.</li>
-          <li>Electronics packaged for quick access and replacement.</li>
-          <li>Designed to be easy to transport and field.</li>
+  <main id="main">
+    <section class="project-hero">
+      <div class="container reveal">
+        <a href="project-combat.html" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          Back to Combat Series
+        </a>
+        <p class="eyebrow">Combat Robotics · 8 KG Class</p>
+        <h1 class="project-title">8&nbsp;KG Combat Robot – Wedge Bot</h1>
+        <ul class="meta-chips">
+          <li class="silver">2nd Place</li>
+          <li class="gold">₹25,000 Prize</li>
+          <li>Amrita University Bangalore National Tech Fest</li>
         </ul>
-
-        <h3>Learnings</h3>
-        <p>
-          This robot reinforced the importance of driver skill, weight
-          distribution, and ground clearance management, especially in lighter
-          classes where every gram matters.
+        <p class="project-lede">
+          A compact 8&nbsp;kg robot focused on control, low profile, and reliability,
+          acting as a testbed for new drivetrain and armor ideas.
         </p>
       </div>
     </section>
+
+    <section class="project-section">
+      <div class="container reveal">
+        <h2 class="block-title">Gallery</h2>
+        <div class="gallery-grid">
+          <button type="button" class="gallery-item" data-lightbox-item data-type="image"
+                  data-src="images/combat/combat3.jpg"
+                  data-caption="The robot on the shop floor, showing its front weapon and forks.">
+            <span class="gallery-media">
+              <img src="images/thumbs/combat/combat3.jpg" alt="Combat robot on the shop floor" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">The robot on the shop floor, showing its front weapon and forks.</span>
+          </button>
+
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/combat/combat8.jpg"
+                  data-caption="CAD top view of the 8 KG design, showing the front wedge plates and weapon housing.">
+            <span class="gallery-media">
+              <img src="images/thumbs/combat/combat8.jpg" alt="CAD top view of the 8 KG robot" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">CAD top view of the 8 KG design, showing the front wedge plates and weapon housing.</span>
+          </button>
+
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/combat/combat9.jpg"
+                  data-caption="CAD isometric view of the 8 KG design with its front wedges and weapon.">
+            <span class="gallery-media">
+              <img src="images/thumbs/combat/combat9.jpg" alt="CAD isometric view of the 8 KG robot" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">CAD isometric view of the 8 KG design with its front wedges and weapon.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container content-grid">
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Project Overview</h3>
+            <p>
+              The 8&nbsp;kg bot trades raw weapon power for aggressive driving and
+              survivability. It is built around a low wedge that can get underneath
+              opponents and push them into arena hazards or out of the engagement zone.
+            </p>
+            <p>
+              The small size made it an ideal platform to quickly iterate on armor
+              layouts, wheel protection, and internal packaging before scaling the
+              ideas to heavier classes.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Competition Result</h3>
+            <p>
+              The robot earned <b>2nd place</b> and a prize of <b>₹25,000</b> at the
+              national-level tech fest hosted by <b>Amrita University Bangalore</b>.
+            </p>
+          </article>
+        </div>
+
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Technical Details</h3>
+            <ul>
+              <li>Lightweight wedge chassis with reinforced front lip.</li>
+              <li>High-torque drive for shoving heavier opponents.</li>
+              <li>Electronics packaged for quick access and replacement.</li>
+              <li>Designed to be easy to transport and field.</li>
+            </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Learnings</h3>
+            <p>
+              This robot reinforced the importance of driver skill, weight
+              distribution, and ground clearance management, especially in lighter
+              classes where every gram matters.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <nav class="container project-pager" aria-label="More combat robots">
+      <a class="pager-link prev" href="project-combat-15kg.html">
+        <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous robot</span>
+        <span class="pager-title">15&nbsp;KG Drum Spinner</span>
+      </a>
+      <a class="pager-link next" href="project-combat.html">
+        <span class="pager-label">Series<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="pager-title">Combat Robotics Series overview</span>
+      </a>
+    </nav>
   </main>
 
-  <!-- Lightbox (global) -->
-  <div id="lightbox-modal" class="lightbox-modal">
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#projects">All projects</a>
+        <a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image viewer">
     <div class="lightbox-backdrop" data-lightbox-close></div>
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
     <div class="lightbox-inner">
-      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
-      <div class="lightbox-media">
-        <button class="lightbox-close" data-lightbox-close>&times;</button>
+      <button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <figure class="lightbox-media">
         <div class="lightbox-content"></div>
-        <div class="lightbox-caption"></div>
-      </div>
-      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+        <figcaption class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-counter"></span></figcaption>
+      </figure>
+      <button class="lightbox-nav" type="button" data-lightbox-next aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
 

@@ -3,179 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Block-Map Based Localization – ROS2 / ICP / BBS</title>
+  <title>Block-Map Based Localization – ROS2 / ICP / BBS | Shourya Vuddemarri</title>
+  <meta name="description" content="Hierarchical robot localization that splits a global point-cloud map into overlapping block maps, with branch-and-bound search (BBS) for coarse pose initialization and ICP for fine alignment." />
+  <meta name="theme-color" content="#06080d" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Block-Map Based Localization" />
+  <meta property="og:description" content="Coarse-to-fine localization over overlapping block maps: branch-and-bound search + ICP refinement." />
+  <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-block-map-localization.html" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/blockmap/blockmap3.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body class="theme-clean anim-medium">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
   <header class="site-header">
-    <div class="logo">Shourya<span>Robotics</span></div>
-    <nav>
-      <a href="index.html#hero">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Shourya Vuddemarri – home">
+        <span class="logo-mark" aria-hidden="true">SV</span>
+        <span class="logo-text">Shourya<span>Robotics</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects" class="is-active">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="section project-details reveal">
-
-    <a href="index.html#projects" class="back-link">← Back to Projects</a>
-
-    <header class="project-heading">
-      <h1 class="section-title">Block-Map Based Localization</h1>
-      <p class="project-meta">
-        ROS2 · ICP · Coarse-to-Fine Pose Estimation · Global Map Partitioning
-      </p>
-
-      <p class="project-lede">
-        A hierarchical robot localization system that improves scan-to-map matching
-        efficiency by dividing a global map into overlapping block maps. The method
-        combines coarse pose initialization using Block-Based Search (BBS) and
-        fine alignment with Iterative Closest Point (ICP).
-      </p>
-    </header>
-
-    <!-- GALLERY SECTION -->
-    <section class="project-gallery">
-      <h2 class="section-title">Gallery</h2>
-
-      <div class="gallery-strip">
-
-        <!-- Image 1 -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/blockmap/blockmap1.png"
-          data-caption="Global map partitioned into overlapping block maps for fast lookup."
-        >
-          <img src="images/blockmap/blockmap1.png" alt="Block Map 1" class="gallery-thumb" />
-        </button>
-
-        <!-- Image 2 -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/blockmap/blockmap2.png"
-          data-caption="Block segmentation showing spatial decomposition for coarse-level matching."
-        >
-          <img src="images/blockmap/blockmap2.png" alt="Block Map 2" class="gallery-thumb" />
-        </button>
-
-        <!-- Image 3 -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/blockmap/blockmap3.png"
-          data-caption="Estimated pose progression using coarse-to-fine BBS + ICP refinement."
-        >
-          <img src="images/blockmap/blockmap3.png" alt="Block Map 3" class="gallery-thumb" />
-        </button>
-
-        <!-- Image 4 -->
-        <button
-          class="gallery-item"
-          data-lightbox-item
-          data-type="image"
-          data-src="images/blockmap/blockmap4.png"
-          data-caption="Localized trajectory plotted over block map grid regions."
-        >
-          <img src="images/blockmap/blockmap4.png" alt="Block Map 4" class="gallery-thumb" />
-        </button>
-
+  <main id="main">
+    <section class="project-hero">
+      <div class="container reveal">
+        <a href="index.html#projects" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          Back to Projects
+        </a>
+        <p class="eyebrow">Project · Localization &amp; Navigation</p>
+        <h1 class="project-title">Block-Map Based Localization</h1>
+        <ul class="meta-chips">
+          <li>ROS2</li>
+          <li>ICP</li>
+          <li>Coarse-to-Fine Pose Estimation</li>
+          <li>Global Map Partitioning</li>
+        </ul>
+        <p class="project-lede">
+          A hierarchical robot localization system that improves scan-to-map matching
+          efficiency by dividing a global map into overlapping block maps. The method
+          combines coarse pose initialization using Branch-and-Bound Search (BBS) and
+          fine alignment with Iterative Closest Point (ICP).
+        </p>
+        <div class="project-actions">
+          <a href="https://github.com/Shourya1515/Block-Map-Localization" target="_blank" rel="noopener" class="btn ghost">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            View code on GitHub
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- PROJECT BODY -->
-    <section class="project-body">
+    <section class="project-section">
+      <div class="container reveal">
+        <h2 class="block-title">Gallery</h2>
+        <div class="gallery-grid cols-2">
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/blockmap/blockmap1.png"
+                  data-caption="3D visualization of LiDAR point cloud 001.pcd.">
+            <span class="gallery-media">
+              <img src="images/thumbs/blockmap/blockmap1.jpg" alt="3D point cloud 001.pcd" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">3D visualization of LiDAR point cloud <code>001.pcd</code>.</span>
+          </button>
 
-      <!-- Overview -->
-      <div>
-        <h3>Project Overview</h3>
-        <p>
-          This project implements a <b>Block-Map Localization System</b> to address the high
-          computational cost of performing global scan-to-map matching in large environments.
-          Instead of matching LiDAR scans against the full map, the environment is divided
-          into <b>overlapping block maps</b>. This reduces search space, improves accuracy,
-          and accelerates localization.
-        </p>
-        <p>
-          The method integrates <b>BBS for coarse pose estimation</b> followed by
-          <b>ICP for fine alignment</b>, achieving reliable localization even with partial
-          or noisy scan data.
-        </p>
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/blockmap/blockmap2.png"
+                  data-caption="3D visualization of LiDAR point cloud 003.pcd.">
+            <span class="gallery-media">
+              <img src="images/thumbs/blockmap/blockmap2.jpg" alt="3D point cloud 003.pcd" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">3D visualization of LiDAR point cloud <code>003.pcd</code>.</span>
+          </button>
+
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/blockmap/blockmap3.png"
+                  data-caption="Top view of all generated block maps (BM 0 and BM 1) and how they overlap.">
+            <span class="gallery-media">
+              <img src="images/thumbs/blockmap/blockmap3.jpg" alt="Top view of all block maps" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">Top view of all generated block maps (BM 0 and BM 1) and how they overlap.</span>
+          </button>
+
+          <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
+                  data-src="images/blockmap/blockmap4.png"
+                  data-caption="Localization result: estimated trajectory from the start to the current pose over Block Map 0.">
+            <span class="gallery-media">
+              <img src="images/thumbs/blockmap/blockmap4.jpg" alt="Localization result trajectory over Block Map 0" loading="lazy" />
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </span>
+            <span class="gallery-caption">Localization result: estimated trajectory from the start to the current pose over Block Map 0.</span>
+          </button>
+        </div>
       </div>
-
-      <!-- Methodology -->
-      <div>
-        <h3>Methodology</h3>
-        <ul>
-          <li>Partition the global occupancy grid into overlapping block maps.</li>
-          <li>Perform <b>Block-Based Search (BBS)</b> to find the most likely candidate region.</li>
-          <li>Extract the relevant local block map around the estimated region.</li>
-          <li>Run <b>ICP alignment</b> between the scan and block map for refined pose.</li>
-          <li>Evaluate results using <b>RMSE</b> of estimated vs ground-truth trajectory.</li>
-        </ul>
-      </div>
-
-      <!-- Algorithm -->
-      <div>
-        <h3>Algorithm Pipeline</h3>
-        <ul>
-          <li><b>Input:</b> LiDAR scan, global occupancy map.</li>
-          <li><b>Stage 1 – Block Map Partitioning:</b> Create block maps with overlaps of 20–40%.</li>
-          <li><b>Stage 2 – BBS:</b> Compare scan footprint with each block using feature similarity.</li>
-          <li><b>Stage 3 – ICP:</b> Perform fine-grained transformation refinement.</li>
-          <li><b>Stage 4 – Pose Fusion:</b> Output final pose estimate.</li>
-        </ul>
-      </div>
-
-      <!-- Results -->
-      <div>
-        <h3>Results & Observations</h3>
-        <ul>
-          <li>Localization accuracy improved significantly vs full-map ICP.</li>
-          <li>Block maps reduced search area, lowering computation time by up to 40%.</li>
-          <li>Overlapping blocks ensured robustness in ambiguous environments.</li>
-          <li>BBS provided reliable coarse initialization, reducing ICP failure cases.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Conclusion</h3>
-        <p>
-          The block-map approach demonstrates strong potential for <b>scalable localization</b>
-          in large indoor environments. By combining spatial partitioning with hierarchical
-          scan matching, the system balances efficiency and accuracy—making it suitable for
-          SLAM backends, autonomous mobile robots, and real-time navigation frameworks.
-        </p>
-      </div>
-
     </section>
+
+    <section class="project-section">
+      <div class="container content-grid">
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Project Overview</h3>
+            <p>
+              This project implements a <b>Block-Map Localization System</b> to address the high
+              computational cost of performing global scan-to-map matching in large environments.
+              Instead of matching LiDAR scans against the full map, the environment is divided
+              into <b>overlapping block maps</b>. This reduces search space, improves accuracy,
+              and accelerates localization.
+            </p>
+            <p>
+              The method integrates <b>BBS for coarse pose estimation</b> followed by
+              <b>ICP for fine alignment</b>, achieving reliable localization even with partial
+              or noisy scan data.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Methodology</h3>
+            <ul>
+              <li>Partition the global point-cloud map into overlapping block maps.</li>
+              <li>Perform <b>Branch-and-Bound Search (BBS)</b> for coarse pose initialization within the most likely block map.</li>
+              <li>Extract the relevant local block map around the estimated region.</li>
+              <li>Run <b>ICP alignment</b> between the scan and block map for refined pose.</li>
+              <li>Evaluate results using <b>RMSE</b> of estimated vs ground-truth trajectory.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="content-col">
+          <article class="content-card reveal">
+            <h3>Algorithm Pipeline</h3>
+            <ul>
+              <li><b>Input:</b> LiDAR scan, global point-cloud map.</li>
+              <li><b>Stage 1 – Block Map Partitioning:</b> Create block maps with overlaps of 20–40%.</li>
+              <li><b>Stage 2 – BBS:</b> Branch-and-bound search over a multi-resolution map pyramid for coarse pose initialization.</li>
+              <li><b>Stage 3 – ICP:</b> Perform fine-grained transformation refinement.</li>
+              <li><b>Stage 4 – Pose Fusion:</b> Output final pose estimate.</li>
+            </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Results &amp; Observations</h3>
+            <ul>
+              <li>Localization accuracy improved significantly vs full-map ICP.</li>
+              <li>Block maps reduced search area, lowering computation time by up to 40%.</li>
+              <li>Overlapping blocks ensured robustness in ambiguous environments.</li>
+              <li>BBS provided reliable coarse initialization, reducing ICP failure cases.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="content-card full reveal">
+          <h3>Conclusion</h3>
+          <p>
+            The block-map approach demonstrates strong potential for <b>scalable localization</b>
+            in large indoor environments. By combining spatial partitioning with hierarchical
+            scan matching, the system balances efficiency and accuracy—making it suitable for
+            SLAM backends, autonomous mobile robots, and real-time navigation frameworks.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <nav class="container project-pager" aria-label="More projects">
+      <a class="pager-link prev" href="project-pesticide.html">
+        <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
+        <span class="pager-title">Pesticide Spraying Robot</span>
+      </a>
+      <a class="pager-link next" href="project-nu-nance.html">
+        <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="pager-title">NU Nance Report – Sensor Fusion &amp; Localization</span>
+      </a>
+    </nav>
   </main>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="lightbox-modal">
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#projects">All projects</a>
+        <a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image viewer">
     <div class="lightbox-backdrop" data-lightbox-close></div>
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
     <div class="lightbox-inner">
-      <button class="lightbox-nav" data-lightbox-prev>&#10094;</button>
-      <div class="lightbox-media">
-        <button class="lightbox-close" data-lightbox-close>&times;</button>
+      <button class="lightbox-nav" type="button" data-lightbox-prev aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <figure class="lightbox-media">
         <div class="lightbox-content"></div>
-        <div class="lightbox-caption"></div>
-      </div>
-      <button class="lightbox-nav" data-lightbox-next>&#10095;</button>
+        <figcaption class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-counter"></span></figcaption>
+      </figure>
+      <button class="lightbox-nav" type="button" data-lightbox-next aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
 
   <script src="main.js"></script>
-
 </body>
 </html>
