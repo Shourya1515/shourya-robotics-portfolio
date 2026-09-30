@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4-Wheel Autonomous Robot – SLAM &amp; Navigation | Shourya Vuddemarri</title>
-  <meta name="description" content="A 4-wheel differential drive robot performing LiDAR-based mapping, localization, and path planning in Gazebo with SLAM Toolbox and Nav2 (ROS 2 Jazzy)." />
+  <title>C.A.N.D.I. Delivery Robot – SLAM &amp; Nav2 | Shourya Vuddemarri</title>
+  <meta name="description" content="C.A.N.D.I., a simulated four-wheel delivery robot: SLAM Toolbox mapping and Nav2 autonomous navigation in Gazebo Harmonic with ROS 2 Jazzy. 95% goal success over 40 trials and 40% faster goals after tuning." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="4-Wheel Autonomous Robot with SLAM &amp; Navigation" />
-  <meta property="og:description" content="LiDAR-based mapping, localization, and autonomous navigation with SLAM Toolbox and Nav2 in Gazebo." />
+  <meta property="og:title" content="C.A.N.D.I. — Autonomous Delivery Robot with SLAM &amp; Nav2" />
+  <meta property="og:description" content="Led SLAM and navigation for a four-person team: 95% goal success over 40 simulated trials and 40% faster goals after tuning." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-4wheel-slam.html" />
   <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/4wheel/nav2.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -50,18 +51,20 @@
           Back to Projects
         </a>
         <p class="eyebrow">Project · Localization &amp; Navigation</p>
-        <h1 class="project-title">4-Wheel Autonomous Robot with SLAM &amp; Navigation</h1>
+        <h1 class="project-title">C.A.N.D.I. — Autonomous Delivery Robot with SLAM &amp; Nav2</h1>
         <ul class="meta-chips">
+          <li>Northeastern · Jan – Apr 2025</li>
+          <li>Team of 4 · led SLAM &amp; navigation</li>
           <li>ROS 2 Jazzy</li>
-          <li>SLAM Toolbox</li>
-          <li>Nav2 Navigation Stack</li>
           <li>Gazebo Harmonic</li>
+          <li>SLAM Toolbox</li>
+          <li>Nav2</li>
         </ul>
         <p class="project-lede">
-          A fully autonomous 4-wheel differential drive robot that performs
-          LiDAR-based mapping, localization, and path planning across a multi-room
-          indoor environment using a URDF robot model, SLAM Toolbox, and the Nav2
-          navigation stack.
+          C.A.N.D.I. (Compact Autonomous Navigating Delivery Intelligence) is a simulated four-wheel
+          delivery robot that maps a two-room indoor world and then navigates it on its own. On a
+          four-person team I led the SLAM and navigation stack — SLAM Toolbox configuration, map
+          generation, Nav2 integration and tuning — and ran the evaluation.
         </p>
         <div class="project-actions">
           <a href="#demos" class="btn primary">
@@ -73,6 +76,17 @@
             View code on GitHub
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container reveal">
+        <ul class="stats compact" aria-label="Key results">
+          <li class="stat"><div class="stat-value">95%</div><div class="stat-label">goal success over 40 simulated trials (38/40), up from 85%</div></li>
+          <li class="stat"><div class="stat-value">−40%</div><div class="stat-label">time to a 10 m goal after tuning: 45 s → 27 s</div></li>
+          <li class="stat"><div class="stat-value">4 cm</div><div class="stat-label">final goal error, down from 8 cm</div></li>
+          <li class="stat"><div class="stat-value">85 m²</div><div class="stat-label">mapped in 2.5 min of teleoperation, 92% loop-closure success</div></li>
+        </ul>
       </div>
     </section>
 
@@ -88,9 +102,9 @@
             <figcaption>
               <p class="video-title">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
-                Mapping Run – SLAM Toolbox
+                Mapping with SLAM Toolbox
               </p>
-              <p class="video-desc">Real-time SLAM mapping run with LiDAR scans and pose graph, while the robot is teleoperated through the environment.</p>
+              <p class="video-desc">The map is built in real time from LiDAR scans while the robot is teleoperated through the house world.</p>
             </figcaption>
           </figure>
 
@@ -102,9 +116,9 @@
             <figcaption>
               <p class="video-title">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
-                Navigation – Goal Reached
+                Autonomous navigation with Nav2
               </p>
-              <p class="video-desc">Autonomous navigation trajectory with global and local costmaps.</p>
+              <p class="video-desc">Nav2 plans and follows a path to a goal on the saved map, with global and local costmaps.</p>
             </figcaption>
           </figure>
         </div>
@@ -117,12 +131,12 @@
         <div class="gallery-grid wide">
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/4wheel/nav1.jpg"
-                  data-caption="URDF-based 4-wheel robot model in RViz with TF tree and sensors.">
+                  data-caption="URDF model of the robot in RViz with its TF frames.">
             <span class="gallery-media">
-              <img src="images/thumbs/4wheel/nav1.jpg" alt="4-wheel robot RViz model with TF frames" loading="lazy" />
+              <img src="images/thumbs/4wheel/nav1.jpg" alt="Robot URDF model in RViz with TF frames" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">URDF-based 4-wheel robot model in RViz with TF tree and sensors.</span>
+            <span class="gallery-caption">URDF model of the robot in RViz with its TF frames.</span>
           </button>
 
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
@@ -137,12 +151,12 @@
 
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/4wheel/nav3.jpg"
-                  data-caption="Global and local costmaps with inflation layers around obstacles across the multi-room map.">
+                  data-caption="Global and local costmaps. The inflation radius was tuned so the robot fits through the 0.6–1.2 m corridors.">
             <span class="gallery-media">
               <img src="images/thumbs/4wheel/nav3.jpg" alt="Global and local costmaps for navigation" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Global and local costmaps with inflation layers across the multi-room map.</span>
+            <span class="gallery-caption">Global and local costmaps, tuned so the robot fits through 0.6–1.2 m corridors.</span>
           </button>
         </div>
       </div>
@@ -152,67 +166,95 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Project Overview</h3>
+            <h3>Robot &amp; World</h3>
             <p>
-              The 4-wheel robot is modeled in URDF with accurate wheelbase, wheel
-              radius, and LiDAR placement. Using Gazebo for simulation and RViz for
-              visualization, the robot publishes odometry from a differential-drive
-              model and laser scans from a simulated 2D LiDAR.
-            </p>
-            <p>
-              SLAM Toolbox consumes the laser scans and odometry to build a
-              high-resolution 2D occupancy grid map spanning multiple rooms. Once
-              mapping is complete, the Nav2 stack takes over for autonomous
-              navigation to user-defined goal points.
+              A four-wheel differential-drive base (front wheels driven, rear wheels as passive casters)
+              with a 2D LiDAR at 10&nbsp;Hz and a 640×480 camera at 30&nbsp;Hz, simulated in Gazebo Harmonic
+              and bridged to ROS&nbsp;2 Jazzy with <code>ros_gz</code>. The test world is two rooms connected
+              by corridors 0.6–1.2&nbsp;m wide.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Key Features</h3>
+            <h3>My Role</h3>
             <ul>
-              <li>URDF model with <code>base_link</code>, wheel joints, LiDAR frame, and collision meshes.</li>
-              <li>SLAM Toolbox with loop-closure enabled for drift correction.</li>
-              <li>Nav2 global and local planners for path generation.</li>
-              <li>Global and local costmaps with inflation layers around obstacles.</li>
-              <li>TF tree linking <code>map → odom → base_link → laser</code> frames.</li>
+              <li><b>SLAM:</b> configured SLAM Toolbox (online asynchronous mapping, 5&nbsp;cm resolution, loop closure) and generated the navigation map.</li>
+              <li><b>Navigation:</b> integrated Nav2 — AMCL localization on the saved map, NavFn global planner, DWB local controller and the behavior-tree navigator.</li>
+              <li><b>Tuning &amp; testing:</b> tuned costmaps and the controller for narrow corridors, then ran the 40-trial evaluation.</li>
             </ul>
+            <p class="fine">
+              Team: Meet Brahmbhatt (Gazebo world), Dawei Wang (sensors and ROS&nbsp;2–Gazebo bridge),
+              Michael Nunes (CAD, URDF and inertial model), Shourya Vuddemarri (SLAM and navigation).
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Mapping</h3>
+            <p>
+              Two and a half minutes of teleoperation produced an 85&nbsp;m² occupancy map. 92% of loop
+              closures succeeded, with about 3&nbsp;cm of pose correction after closure.
+            </p>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Technical Stack</h3>
-            <ul>
-              <li>ROS2 Jazzy / Nav2 / SLAM Toolbox</li>
-              <li>Gazebo simulation + RViz visualization</li>
-              <li>Differential-drive kinematics for odometry</li>
-              <li>AMCL / SLAM pose estimation for localization</li>
-              <li>Behavior-tree based navigation (<code>bt_navigator</code>)</li>
-            </ul>
+            <h3>Tuning &amp; Results</h3>
+            <p>Baseline vs. tuned configuration over 40 trials (4 scenarios × 10 runs):</p>
+            <div class="table-scroll">
+              <table class="result-table">
+                <thead>
+                  <tr><th>Metric</th><th>Baseline</th><th>Tuned</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Goal success</td><td class="num">85%</td><td class="num">95%</td></tr>
+                  <tr><td>Time to a 10 m goal</td><td class="num">45 ± 8 s</td><td class="num">27 ± 5 s</td></tr>
+                  <tr><td>Final goal error</td><td class="num">0.08 m</td><td class="num">0.04 m</td></tr>
+                  <tr><td>Recovery behaviors per run</td><td class="num">2.4</td><td class="num">0.6</td></tr>
+                  <tr><td>CPU load</td><td class="num">55%</td><td class="num">48%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              The biggest gain came from shrinking the costmap inflation radius from 0.70 to 0.55&nbsp;m
+              (robot radius 0.12&nbsp;m) so plans fit the narrow corridors, together with local-controller
+              tuning.
+            </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Outcome</h3>
+            <h3>Scope</h3>
             <p>
-              The robot successfully explores and maps a complex indoor layout, then
-              uses the saved map to repeatedly navigate to 2D Nav Goals with stable
-              localization and smooth collision-free motion. This project showcases
-              end-to-end capability in robot modeling, SLAM, and autonomous
-              navigation.
+              Simulation only. SLAM Toolbox and Nav2 were integrated, configured and tuned rather than
+              re-implemented.
             </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Tech Stack</h3>
+            <ul class="chips">
+              <li>ROS 2 Jazzy</li>
+              <li>Gazebo Harmonic</li>
+              <li>ros_gz</li>
+              <li>SLAM Toolbox</li>
+              <li>Nav2</li>
+              <li>AMCL</li>
+              <li>RViz 2</li>
+              <li>Python launch</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-nu-nance.html">
+      <a class="pager-link prev" href="project-orb-slam3.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">NU Nance Report – Sensor Fusion &amp; Localization</span>
+        <span class="pager-title">Visual-Inertial SLAM with ORB-SLAM3</span>
       </a>
-      <a class="pager-link next" href="project-orb-slam3.html">
+      <a class="pager-link next" href="project-multi-object-tracking.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">Visual-Inertial SLAM (ORB-SLAM3)</span>
+        <span class="pager-title">Multi-Object Tracking with Cross-Camera Re-ID</span>
       </a>
     </nav>
   </main>

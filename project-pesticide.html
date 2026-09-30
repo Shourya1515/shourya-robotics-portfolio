@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pesticide Spraying Robot – Agricultural Support | Shourya Vuddemarri</title>
-  <meta name="description" content="A manually controlled 4-wheel robot with an on-board pesticide tank, pump, and spray boom that helps farmers spray crops while minimizing direct exposure to chemicals." />
+  <title>Pesticide Spraying Robot | Shourya Vuddemarri</title>
+  <meta name="description" content="A teleoperated four-wheel robot with an onboard pesticide tank, pump and dual-axis spray boom, built to reduce farmers’ direct exposure to chemicals. Course project, Amrita Vishwa Vidyapeetham (2023)." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Pesticide Spraying Robot" />
-  <meta property="og:description" content="Remote-controlled agricultural robot with horizontal and vertical spraying to reduce farmers’ pesticide exposure." />
+  <meta property="og:description" content="Teleoperated four-wheel sprayer with a dual-axis spray boom to reduce farmers’ pesticide exposure." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-pesticide.html" />
   <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/pesticide/agri1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -52,13 +53,14 @@
         <p class="eyebrow">Project · Robot Design &amp; Hardware</p>
         <h1 class="project-title">Pesticide Spraying Robot</h1>
         <ul class="meta-chips">
+          <li>Amrita Vishwa Vidyapeetham</li>
+          <li>Course project · Mar – Jun 2023</li>
+          <li>Teleoperated</li>
           <li>Agri-Robotics</li>
-          <li>Remote Operation</li>
-          <li>Safety</li>
         </ul>
         <p class="project-lede">
-          A manually controlled 4-wheel robot designed to help farmers spray
-          pesticides while minimizing direct human exposure to chemicals.
+          A remote-controlled four-wheel robot that carries a pesticide tank, pump and adjustable spray
+          boom, so farmers can spray crops while minimizing their direct exposure to chemicals.
         </p>
       </div>
     </section>
@@ -67,47 +69,38 @@
       <div class="container project-split">
         <button type="button" class="gallery-item reveal" data-lightbox-item data-type="image"
                 data-src="images/pesticide/agri1.jpg"
-                data-caption="Pesticide spraying robot with four-wheel chassis and adjustable spray boom.">
+                data-caption="The pesticide spraying robot: four-wheel chassis, onboard tank and pump, and the long spray boom.">
           <span class="gallery-media">
             <img src="images/thumbs/pesticide/agri1.jpg" alt="Pesticide spraying robot" loading="lazy" width="533" height="905" />
             <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
           </span>
-          <span class="gallery-caption">Pesticide spraying robot with four-wheel chassis and adjustable spray boom.</span>
+          <span class="gallery-caption">Four-wheel chassis with an onboard tank and pump, and the long spray boom.</span>
         </button>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Project Overview</h3>
-            <p>
-              The robot is built on a 4-wheel platform with independent DC motors
-              and is controlled via a remote controller. A pesticide tank and pump
-              are mounted on the chassis, supplying fluid to the long spray pipe
-              that extends in front of the robot.
-            </p>
-            <p>
-              The spraying mechanism supports both horizontal and vertical coverage
-              using adjustable pipes and nozzles. This allows the robot to cover
-              crop rows while the operator remains at a safer distance.
-            </p>
-          </article>
-
-          <article class="content-card reveal">
-            <h3>Technical Details</h3>
+            <h3>Build</h3>
             <ul>
-              <li>4-wheel chassis with four motors and off-road tires.</li>
-              <li>On-board pesticide tank and electric pump.</li>
-              <li>Spray boom with multiple nozzles and adjustable height.</li>
-              <li>Remote-controlled motion for manual navigation in fields.</li>
+              <li>Four-wheel off-road chassis driven by four DC motors through H-bridge drivers, operated by a remote controller.</li>
+              <li>Onboard pesticide tank and electric pump feeding PVC plumbing to a spray boom with multiple nozzles.</li>
+              <li>Dual-axis spray mechanism for horizontal and vertical coverage, with adjustable boom height.</li>
             </ul>
           </article>
 
           <article class="content-card reveal">
-            <h3>Impact</h3>
+            <h3>Testing</h3>
             <p>
-              This project is an early prototype for agricultural robots that can
-              reduce farmers’ exposure to pesticides while still using familiar,
-              easy-to-operate controls. It also opens the door for future autonomy
-              such as waypoint following and coverage path planning.
+              Field-tested for drive stability on uneven ground, spray actuation and overall
+              reliability.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Scope &amp; Next Steps</h3>
+            <p>
+              The robot is teleoperated only — the operator drives it while staying a safer distance
+              from the spray. Natural next steps are waypoint following and coverage path planning for
+              autonomous spraying.
             </p>
           </article>
         </div>
@@ -115,13 +108,13 @@
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-combat.html">
+      <a class="pager-link prev" href="project-block-map-localization.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">Combat Robotics Series</span>
+        <span class="pager-title">Block-Map LiDAR Localization</span>
       </a>
-      <a class="pager-link next" href="project-block-map-localization.html">
+      <a class="pager-link next" href="project-orb-slam3.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">Block-Map Based Localization</span>
+        <span class="pager-title">Visual-Inertial SLAM with ORB-SLAM3</span>
       </a>
     </nav>
   </main>

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multi-Object Tracking with Appearance-Based Re-Identification | Shourya Vuddemarri</title>
-  <meta name="description" content="Multi-object pedestrian tracking with YOLOv8, Kalman filtering, Hungarian assignment, and ResNet18 Re-ID embeddings — MOTA 0.50 / IDF1 0.71 on MOT17-09-DPM and 100% cross-camera identity matching." />
+  <title>Multi-Object Tracking with Cross-Camera Re-ID | Shourya Vuddemarri</title>
+  <meta name="description" content="Tracking-by-detection with YOLOv8, a Kalman filter, Hungarian assignment and ResNet18 appearance Re-ID: MOTA 0.50 / IDF1 0.71 on MOT17-09-DPM and 3/3 identities matched across two cameras. EECE 5639, Northeastern." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Multi-Object Tracking with Appearance-Based Re-Identification" />
-  <meta property="og:description" content="YOLOv8 + Kalman + Hungarian + ResNet18 Re-ID. Exceeded the SORT baseline by 16 MOTA points on MOT17-09-DPM." />
+  <meta property="og:title" content="Multi-Object Tracking with Cross-Camera Re-Identification" />
+  <meta property="og:description" content="YOLOv8 + Kalman + Hungarian + ResNet18 Re-ID — MOTA 0.50 / IDF1 0.71 on MOT17-09-DPM." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-multi-object-tracking.html" />
-  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/mot/ss-1.jpg" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/mot/ss1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -50,21 +51,26 @@
           Back to Projects
         </a>
         <p class="eyebrow">Project · Computer Vision</p>
-        <h1 class="project-title">Multi-Object Tracking with Appearance-Based Re-Identification</h1>
+        <h1 class="project-title">Multi-Object Tracking with Cross-Camera Re-Identification</h1>
         <ul class="meta-chips">
-          <li>Northeastern University</li>
-          <li>Jan 2026 – Apr 2026</li>
-          <li>Python</li>
-          <li>PyTorch</li>
-          <li>OpenCV</li>
+          <li>EECE 5639 Computer Vision</li>
+          <li>Northeastern · Spring 2026</li>
+          <li>with Meet Brahmbhatt</li>
+          <li>Python · PyTorch</li>
           <li>YOLOv8</li>
+          <li>OpenCV</li>
         </ul>
         <p class="project-lede">
-          Final project for EECE 5639: Computer Vision, built collaboratively with Meet Brahmbhatt.
-          Designed and implemented a complete multi-object tracking pipeline that combines YOLOv8 detection,
-          Kalman prediction, Hungarian assignment, and ResNet18 appearance embeddings for re-identification
-          through occlusions, re-entry, and cross-camera viewpoint changes.
+          A tracking-by-detection pipeline built up in three levels — single-object tracking,
+          multi-object tracking with appearance re-identification, and identity matching across two
+          cameras — co-developed with Meet Brahmbhatt and evaluated on MOT17 and on our own recordings.
         </p>
+        <div class="project-actions">
+          <a href="https://github.com/brahmbhatt-me/multi-object-tracking-reid" target="_blank" rel="noopener" class="btn ghost">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            View code on GitHub (team repo)
+          </a>
+        </div>
       </div>
     </section>
 
@@ -72,9 +78,9 @@
       <div class="container reveal">
         <ul class="stats compact" aria-label="Key results">
           <li class="stat"><div class="stat-value">0.50 / 0.71</div><div class="stat-label">MOTA / IDF1 on the MOT17-09-DPM benchmark</div></li>
-          <li class="stat"><div class="stat-value">+16 MOTA</div><div class="stat-label">points over the SORT baseline</div></li>
-          <li class="stat"><div class="stat-value">95–97%</div><div class="stat-label">mean IoU on single-target tracking</div></li>
-          <li class="stat"><div class="stat-value">100%</div><div class="stat-label">cross-camera identity matching on a custom two-camera dataset</div></li>
+          <li class="stat"><div class="stat-value">+0.16</div><div class="stat-label">MOTA above SORT’s published MOT17 score (≈0.34)</div></li>
+          <li class="stat"><div class="stat-value">3 / 3</div><div class="stat-label">identities matched across two cameras, in both clip pairs</div></li>
+          <li class="stat"><div class="stat-value">0.94–0.97</div><div class="stat-label">mean IoU on single-object clips, one lost frame per clip</div></li>
         </ul>
       </div>
     </section>
@@ -84,33 +90,33 @@
         <h2 class="block-title">Gallery</h2>
         <div class="gallery-grid">
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
-                  data-src="images/mot/ss%201.png"
-                  data-caption="Multi-object tracking output showing detections and assigned identities.">
+                  data-src="images/mot/ss1.png"
+                  data-caption="Multi-object tracking output showing detections and their assigned identities.">
             <span class="gallery-media">
-              <img src="images/thumbs/mot/ss-1.jpg" alt="Multi-object tracking result with ID 1 and ID 2" loading="lazy" style="object-position: 50% 68%" />
+              <img src="images/thumbs/mot/ss1.jpg" alt="Tracking result with ID 1 and ID 2" loading="lazy" style="object-position: 50% 68%" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Multi-object tracking output showing detections and assigned identities.</span>
+            <span class="gallery-caption">Tracking output showing detections and their assigned identities.</span>
           </button>
 
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/mot/ss2.png"
-                  data-caption="Tracking visualization with maintained identities across frames.">
+                  data-caption="Tracking output from another recording, with identities maintained across frames.">
             <span class="gallery-media">
               <img src="images/thumbs/mot/ss2.jpg" alt="Tracking result with identities maintained across frames" loading="lazy" style="object-position: 50% 68%" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Tracking visualization with maintained identities across frames.</span>
+            <span class="gallery-caption">Tracking output with identities maintained across frames.</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
                   data-src="images/mot/cross_camera_distances.png"
-                  data-caption="Cross-camera Re-ID cosine distance matrix used for identity matching across views.">
+                  data-caption="Cross-camera Re-ID cosine-distance matrix; highlighted cells are the Hungarian assignments used to match identities between views.">
             <span class="gallery-media">
               <img src="images/thumbs/mot/cross_camera_distances.jpg" alt="Cross-camera Re-ID cosine distance matrix" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Cross-camera Re-ID cosine distance matrix used for identity matching across views.</span>
+            <span class="gallery-caption">Cross-camera cosine-distance matrix used to match identities between views.</span>
           </button>
         </div>
       </div>
@@ -120,64 +126,52 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Overview</h3>
+            <h3>Pipeline</h3>
+            <ol class="steps">
+              <li><b>Detect:</b> YOLOv8n, person class only, confidence ≥ 0.5.</li>
+              <li><b>Predict:</b> an 8-state constant-velocity Kalman filter per track.</li>
+              <li><b>Associate:</b> cost = λ·(1 − IoU) + (1 − λ)·cosine distance, with λ = 0.7 and a 0.7 gate, solved with the Hungarian algorithm (SciPy).</li>
+              <li><b>Manage tracks:</b> confirm after 3 hits, delete after 50 missed frames.</li>
+            </ol>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Appearance Re-ID</h3>
             <p>
-              This project implements a multi-stage perception pipeline for pedestrian tracking and
-              appearance-based re-identification. The system combines classical tracking methods with
-              deep learning-based appearance embeddings, similar to the hybrid perception pipelines used
-              in modern robotics and autonomous systems.
+              An ImageNet-pretrained ResNet18 turns each 128×64 crop into a 512-D, L2-normalized
+              embedding. Every track keeps its 10 most recent embeddings plus an exponential moving
+              average, so a person who is occluded or leaves and re-enters the frame gets their
+              original ID back.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Level 1 — Single-Object Tracking</h3>
-            <ul>
-              <li>Used YOLOv8 for pedestrian detection from video frames.</li>
-              <li>Implemented constant-velocity Kalman filtering for motion prediction.</li>
-              <li>Performed IoU-based data association between predicted boxes and detections.</li>
-              <li>Achieved 95–97% mean IoU across custom indoor clips with under 0.3% frame loss.</li>
-            </ul>
-          </article>
-
-          <article class="content-card reveal">
-            <h3>Level 2 — Multi-Object Tracking with Re-ID</h3>
-            <ul>
-              <li>Extended tracking to multiple pedestrians using Hungarian algorithm assignment.</li>
-              <li>Built a combined IoU + cosine-distance cost matrix for matching detections to active tracks.</li>
-              <li>Used ResNet18 to generate 512-dimensional L2-normalized appearance embeddings.</li>
-              <li>Maintained a per-track appearance gallery to recover identities through occlusions and re-entry.</li>
-            </ul>
+            <h3>Cross-Camera Matching</h3>
+            <p>
+              Two phones recorded the same three people from viewpoints 90° apart. Each track’s gallery
+              mean serves as its signature, and identities are matched across views with the Hungarian
+              algorithm over cosine distance, accepting matches below 0.5.
+            </p>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Level 3 — Cross-Camera Re-Identification</h3>
-            <ul>
-              <li>Extended the system to two synchronized cameras placed at a 90-degree offset.</li>
-              <li>Matched per-track gallery means between views using Hungarian assignment over cosine distance.</li>
-              <li>Achieved 100% identity match across two clip pairs, with 3/3 tracks matched per pair.</li>
-              <li>Maintained average cosine distance below 0.10 across correctly matched identities.</li>
-            </ul>
-          </article>
-
-          <article class="content-card reveal">
             <h3>Results</h3>
             <ul>
-              <li>95–97% mean IoU on single-target tracking.</li>
-              <li>MOTA 0.50 and IDF1 0.71 on the MOT17-09-DPM benchmark.</li>
-              <li>Exceeded the SORT baseline by 16 MOTA points.</li>
-              <li>Achieved 100% cross-camera identity matching on a custom two-camera dataset.</li>
+              <li><b>MOT17-09-DPM</b> (525 frames): MOTA 0.50, IDF1 0.71, precision 0.88, recall 0.59, 56 ID switches.</li>
+              <li><b>Tuning:</b> raising the IoU weight λ from 0.5 to 0.7 and track lifetime from 30 to 50 frames lifted MOTA from 0.476 to 0.500.</li>
+              <li><b>Single-object tracking:</b> mean IoU of 0.94–0.97 between the Kalman prediction and the matched detection, with one lost frame per clip (&gt;99.7% track rate).</li>
+              <li><b>Cross-camera:</b> 3/3 identities matched in both clip pairs, with mean cosine distances of 0.085 and 0.095, verified by inspecting the output videos.</li>
             </ul>
           </article>
 
           <article class="content-card reveal">
-            <h3>Technical Implementation</h3>
+            <h3>Limitations</h3>
             <ul>
-              <li>Ported C++ embedding extraction utilities to Python / PyTorch.</li>
-              <li>Built modular detector, tracker, Re-ID, and evaluator components.</li>
-              <li>Tuned association weight, cosine-distance thresholds, and max-lost track lifetime.</li>
-              <li>Structured the system for repeatable evaluation and benchmark comparison.</li>
+              <li>Evaluated on one MOT17 sequence; the SORT comparison uses its published MOT17 score.</li>
+              <li>Re-ID uses generic ImageNet features with no Re-ID-specific training.</li>
+              <li>Inference ran on CPU at 0.5–1 s per frame, so the pipeline runs offline rather than in real time.</li>
             </ul>
           </article>
 
@@ -186,13 +180,13 @@
             <ul class="chips">
               <li>Python</li>
               <li>PyTorch</li>
-              <li>OpenCV</li>
               <li>YOLOv8</li>
               <li>ResNet18</li>
+              <li>OpenCV</li>
               <li>SciPy</li>
               <li>NumPy</li>
-              <li>Kalman Filter</li>
-              <li>Hungarian Algorithm</li>
+              <li>Kalman filter</li>
+              <li>Hungarian algorithm</li>
             </ul>
           </article>
         </div>
@@ -200,13 +194,13 @@
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-orb-slam3.html">
+      <a class="pager-link prev" href="project-4wheel-slam.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">Visual-Inertial SLAM (ORB-SLAM3)</span>
+        <span class="pager-title">C.A.N.D.I. Delivery Robot — SLAM &amp; Nav2</span>
       </a>
-      <a class="pager-link next" href="project-asl-fingerspelling.html">
+      <a class="pager-link next" href="project-omni.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">Real-Time ASL Fingerspelling Recognition</span>
+        <span class="pager-title">Bio-Inspired Omnidirectional Robot</span>
       </a>
     </nav>
   </main>

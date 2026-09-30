@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visual-Inertial SLAM – ORB-SLAM3 | Shourya Vuddemarri</title>
-  <meta name="description" content="Real-time mono-inertial localization with ORB-SLAM3 and ROS 2 (C++), fusing a monocular camera and IMU, evaluated on the EuRoC MAV benchmark." />
+  <title>Visual-Inertial SLAM with ORB-SLAM3 | Shourya Vuddemarri</title>
+  <meta name="description" content="ROS 2 C++ integration of ORB-SLAM3 monocular-inertial SLAM with an IMU pre-warming fix for cold-start initialization and a Python evaluation pipeline: 0.13 m ATE RMSE on EuRoC V1_01_easy at 30 Hz." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Visual-Inertial SLAM for Real-Time Robot Localization" />
-  <meta property="og:description" content="ORB-SLAM3 mono-inertial pipeline in ROS 2 with 30 Hz pose output, evaluated on EuRoC MAV sequences." />
+  <meta property="og:title" content="Visual-Inertial SLAM with ORB-SLAM3" />
+  <meta property="og:description" content="ROS 2 integration, initialization fix and trajectory evaluation for ORB-SLAM3 monocular-inertial SLAM on EuRoC MAV." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-orb-slam3.html" />
   <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/orbslam3/eval_v1_01_realtime.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -49,32 +50,30 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
           Back to Projects
         </a>
-        <p class="eyebrow">Project · Localization &amp; Navigation</p>
-        <h1 class="project-title">Visual-Inertial SLAM for Real-Time Robot Localization</h1>
+        <p class="eyebrow">Project · SLAM &amp; State Estimation</p>
+        <h1 class="project-title">Visual-Inertial SLAM with ORB-SLAM3</h1>
         <ul class="meta-chips">
-          <li>ROS 2</li>
-          <li>C++</li>
+          <li>Mobile Robotics · Northeastern</li>
+          <li>Nov – Dec 2025</li>
+          <li>ROS 2 · C++</li>
           <li>ORB-SLAM3</li>
-          <li>OpenCV</li>
-          <li>Eigen</li>
           <li>EuRoC MAV</li>
         </ul>
         <p class="project-lede">
-          Developed a real-time localization pipeline using ORB-SLAM3’s mono-inertial SLAM to
-          fuse monocular vision and IMU data for accurate robot pose estimation in GPS-denied
-          environments. The system delivers stable 30 Hz pose output with robust initialization
-          for scale, gravity, and sensor bias estimation.
+          I integrated ORB-SLAM3’s monocular-inertial mode into ROS&nbsp;2 as a real-time C++ node,
+          fixed a cold-start initialization failure with an IMU pre-warming buffer, and built a Python
+          pipeline that scores the estimated trajectory against EuRoC ground truth.
         </p>
       </div>
     </section>
 
     <section class="project-section">
       <div class="container reveal">
-        <ul class="stats compact" aria-label="Key numbers">
-          <li class="stat"><div class="stat-value">30 Hz</div><div class="stat-label">real-time pose output from camera images</div></li>
-          <li class="stat"><div class="stat-value">200 Hz</div><div class="stat-label">IMU measurements pre-integrated for prediction and scale</div></li>
-          <li class="stat"><div class="stat-value">2.5 s</div><div class="stat-label">custom IMU pre-warming buffer for stable initialization</div></li>
-          <li class="stat"><div class="stat-value">EuRoC</div><div class="stat-label">MAV benchmark sequences used for evaluation</div></li>
+        <ul class="stats compact" aria-label="Key results">
+          <li class="stat"><div class="stat-value">0.13 m</div><div class="stat-label">ATE RMSE on EuRoC V1_01_easy (RPE RMSE 1.8 cm)</div></li>
+          <li class="stat"><div class="stat-value">0.48 m</div><div class="stat-label">ATE RMSE on the harder MH_03_medium (RPE RMSE 4.3 cm)</div></li>
+          <li class="stat"><div class="stat-value">30 / 200 Hz</div><div class="stat-label">camera and IMU streams processed in real time</div></li>
+          <li class="stat"><div class="stat-value">2.5 s</div><div class="stat-label">IMU pre-warm window, chosen from a 1.0–4.0 s sweep</div></li>
         </ul>
       </div>
     </section>
@@ -85,22 +84,22 @@
         <div class="gallery-grid">
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
                   data-src="images/orbslam3/eval_v1_01_realtime.png"
-                  data-caption="Trajectory comparison on EuRoC V1_01_easy sequence — VIO estimate vs. ground truth, with absolute trajectory error.">
+                  data-caption="EuRoC V1_01_easy: VIO estimate vs. ground truth (3D, top and side views), position over time, and absolute trajectory error — ATE RMSE 0.13 m.">
             <span class="gallery-media">
-              <img src="images/thumbs/orbslam3/eval_v1_01_realtime.jpg" alt="EuRoC V1_01 trajectory comparison" loading="lazy" />
+              <img src="images/thumbs/orbslam3/eval_v1_01_realtime.jpg" alt="EuRoC V1_01 trajectory evaluation" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Trajectory comparison on EuRoC V1_01_easy sequence.</span>
+            <span class="gallery-caption">EuRoC V1_01_easy: estimate vs. ground truth and absolute trajectory error (ATE RMSE 0.13 m).</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
                   data-src="images/orbslam3/eval_mh_03_realtime.png"
-                  data-caption="Trajectory comparison on EuRoC MH_03_medium sequence — VIO estimate vs. ground truth, with absolute trajectory error.">
+                  data-caption="EuRoC MH_03_medium: VIO estimate vs. ground truth — ATE RMSE 0.48 m, with most of the error in the first ~20 s before the estimate converges.">
             <span class="gallery-media">
-              <img src="images/thumbs/orbslam3/eval_mh_03_realtime.jpg" alt="EuRoC MH_03 trajectory comparison" loading="lazy" />
+              <img src="images/thumbs/orbslam3/eval_mh_03_realtime.jpg" alt="EuRoC MH_03 trajectory evaluation" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Trajectory comparison on EuRoC MH_03_medium sequence.</span>
+            <span class="gallery-caption">EuRoC MH_03_medium: ATE RMSE 0.48 m, mostly from the first ~20 s before convergence.</span>
           </button>
         </div>
       </div>
@@ -110,53 +109,62 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Overview</h3>
-            <p>
-              This project implements a real-time visual-inertial SLAM system that estimates a robot’s
-              position and orientation using only a monocular camera and an IMU. It is designed for
-              autonomous robots operating in environments where GPS is unavailable or unreliable.
-            </p>
-          </article>
-
-          <article class="content-card reveal">
             <h3>Problem</h3>
             <p>
-              GPS performs poorly indoors and in visually challenging environments. Camera-only methods
-              struggle with fast motion and metric scale, while IMU-only solutions drift over time.
-              This project solves that by tightly fusing both sensing modalities.
+              GPS is unavailable indoors and unreliable in cluttered spaces. Camera-only SLAM struggles
+              with fast motion and cannot observe metric scale, while an IMU alone drifts within
+              seconds. Fusing a monocular camera with an IMU gives a robot metric, drift-resistant
+              pose estimates from two cheap sensors.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Approach</h3>
+            <h3>What I Built</h3>
             <ul>
-              <li>Built a ROS 2 C++ node around ORB-SLAM3’s mono-inertial pipeline.</li>
-              <li>Used ORB feature extraction and tracking from camera images at 30 Hz.</li>
-              <li>Pre-integrated IMU measurements at 200 Hz for motion prediction and scale recovery.</li>
-              <li>Applied tightly-coupled optimization to jointly refine visual and inertial pose constraints.</li>
-              <li>Implemented a custom 2.5-second IMU pre-warming buffer for stable initialization of gravity, scale, and sensor biases.</li>
+              <li><b>ROS&nbsp;2 integration:</b> a C++ node around ORB-SLAM3’s monocular-inertial mode that pairs 30&nbsp;Hz camera frames with a thread-safe buffer of 200&nbsp;Hz IMU samples (≈1,000 ORB features per frame) and publishes the pose and TF.</li>
+              <li><b>Initialization fix:</b> the system failed to initialize on the harder EuRoC sequences (V2_03, MH_05). A sweep from 1.0 to 4.0&nbsp;s showed that windows under 2.0&nbsp;s failed, so the node pre-warms the IMU for 2.5&nbsp;s — enough excitation to estimate gravity, scale and sensor biases before tracking starts.</li>
+              <li><b>Evaluation pipeline:</b> a Python logger writes poses to CSV, aligns them to ground truth with Umeyama alignment (with scale), and reports ATE / RPE with trajectory plots.</li>
             </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Scope</h3>
+            <p>
+              ORB feature tracking, IMU pre-integration, the tightly coupled visual-inertial optimization
+              and loop closing come from ORB-SLAM3 itself. My work was everything around it: the ROS&nbsp;2
+              integration and sensor synchronization, the initialization fix, and the evaluation.
+            </p>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Evaluation</h3>
-            <p>
-              The system was evaluated on the EuRoC MAV benchmark, a standard dataset for visual-inertial
-              odometry research. It maintained real-time 30 Hz pose output and demonstrated robust tracking
-              across both easy and difficult motion sequences.
-            </p>
+            <h3>Results</h3>
+            <div class="table-scroll">
+              <table class="result-table">
+                <thead>
+                  <tr><th>EuRoC sequence</th><th>ATE RMSE</th><th>RPE RMSE</th><th>Scale</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>V1_01_easy</td><td class="num">0.13 m</td><td class="num">1.8 cm</td><td class="num">1.017</td></tr>
+                  <tr><td>MH_03_medium</td><td class="num">0.48 m</td><td class="num">4.3 cm</td><td class="num">0.959</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <ul>
+              <li>Real-time operation at the 30&nbsp;Hz camera rate.</li>
+              <li>Scale recovered within about 2% on V1_01_easy and 4% on MH_03_medium.</li>
+              <li>On MH_03_medium, most of the error occurs in the first ~20&nbsp;s, before the visual-inertial estimate converges.</li>
+            </ul>
           </article>
 
           <article class="content-card reveal">
-            <h3>Key Highlights</h3>
-            <ul>
-              <li>Centimeter-level position accuracy on benchmark sequences.</li>
-              <li>Near-perfect scale recovery, indicating successful visual-inertial initialization.</li>
-              <li>Stable tracking on aggressive-motion sequences where pure visual pipelines are less reliable.</li>
-              <li>Real-time localization suitable for downstream autonomy and navigation pipelines.</li>
-            </ul>
+            <h3>What I Learned</h3>
+            <p>
+              In monocular-inertial SLAM, the fragile part is initialization, not tracking. Giving the
+              IMU time to observe gravity and biases, and keeping camera and IMU timestamps consistent,
+              mattered more than tuning tracking parameters.
+            </p>
           </article>
 
           <article class="content-card reveal">
@@ -168,6 +176,7 @@
               <li>OpenCV</li>
               <li>Eigen</li>
               <li>Python</li>
+              <li>EuRoC MAV</li>
             </ul>
           </article>
         </div>
@@ -175,13 +184,13 @@
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-4wheel-slam.html">
+      <a class="pager-link prev" href="project-pesticide.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">4-Wheel Robot with SLAM &amp; Navigation</span>
+        <span class="pager-title">Pesticide Spraying Robot</span>
       </a>
-      <a class="pager-link next" href="project-multi-object-tracking.html">
+      <a class="pager-link next" href="project-4wheel-slam.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">Multi-Object Tracking with Re-ID</span>
+        <span class="pager-title">C.A.N.D.I. Delivery Robot — SLAM &amp; Nav2</span>
       </a>
     </nav>
   </main>

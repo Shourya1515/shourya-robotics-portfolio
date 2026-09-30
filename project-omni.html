@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Omni-Directional Robot – Kinematics &amp; Obstacle Avoidance | Shourya Vuddemarri</title>
-  <meta name="description" content="A bio-inspired omni-directional robot with full kinematic modeling, a ROS-based control stack, and LiDAR-driven obstacle avoidance in Gazebo." />
+  <title>Bio-Inspired Omnidirectional Robot – ICRA 2024 | Shourya Vuddemarri</title>
+  <meta name="description" content="Design Considerations for Bioinspired Multi-morphing Omnidirectional Robot — IEEE ICRA 2024 Late-Breaking Results poster (Amrita Vishwa Vidyapeetham with Sony India Software Centre). Leg kinematics, Jacobian conditioning and a Spresense-based control architecture." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Omni-Directional Robot with Kinematics &amp; Obstacle Avoidance" />
-  <meta property="og:description" content="Kinematic modeling, Jacobian analysis, ROS control, and LiDAR-based obstacle avoidance for a bio-inspired omni-directional robot." />
+  <meta property="og:title" content="Bio-Inspired Multi-Morphing Omnidirectional Robot — ICRA 2024 poster" />
+  <meta property="og:description" content="Leg kinematics and Jacobian-conditioning analysis for a multi-morphing wheeled quadruped, presented at IEEE ICRA 2024." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-omni.html" />
   <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/omni/omni1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -49,19 +50,33 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
           Back to Projects
         </a>
-        <p class="eyebrow">Project · Robot Design &amp; Control</p>
-        <h1 class="project-title">Omni-Directional Robot with Kinematics &amp; Obstacle Avoidance</h1>
+        <p class="eyebrow">Project · Robot Design · IEEE ICRA 2024</p>
+        <h1 class="project-title">Bio-Inspired Multi-Morphing Omnidirectional Robot</h1>
         <ul class="meta-chips">
-          <li>ROS / ROS2</li>
-          <li>Gazebo</li>
-          <li>Omni-Directional Kinematics</li>
-          <li>LiDAR-Based Obstacle Avoidance</li>
+          <li class="gold">IEEE ICRA 2024 · Late-Breaking Results poster</li>
+          <li>Amrita Vishwa Vidyapeetham × Sony India</li>
+          <li>Undergraduate capstone · Jan – Apr 2024</li>
+          <li>Kinematics</li>
+          <li>CoppeliaSim</li>
         </ul>
         <p class="project-lede">
-          A bio-inspired omni-directional robot designed to move smoothly in any direction,
-          combining full kinematic modeling with a ROS-based control stack and
-          LiDAR-driven obstacle avoidance in simulation.
+          A spider- and crab-inspired wheeled quadruped that changes its footprint to squeeze through
+          tight spaces and drives in any direction. The design was presented as a late-breaking results
+          poster at IEEE ICRA 2024 in Yokohama by an eight-author team from Amrita Vishwa Vidyapeetham
+          and Sony India Software Centre. My part was the leg kinematics: forward and inverse kinematics
+          and the Jacobian.
         </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container reveal">
+        <ul class="stats compact" aria-label="Key facts">
+          <li class="stat"><div class="stat-value">ICRA 2024</div><div class="stat-label">Late-Breaking Results poster, Yokohama</div></li>
+          <li class="stat"><div class="stat-value">4 × 3-DOF</div><div class="stat-label">legs, each ending in a steerable wheel</div></li>
+          <li class="stat"><div class="stat-value">κ ≈ 1</div><div class="stat-label">Jacobian condition number targeted when sizing the wheels</div></li>
+          <li class="stat"><div class="stat-value">Sony SSUP</div><div class="stat-label">university-program funding and Spresense boards</div></li>
+        </ul>
       </div>
     </section>
 
@@ -71,52 +86,52 @@
         <div class="gallery-grid wide">
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/omni/omni1.png"
-                  data-caption="Bio-inspired omni-directional robot with wheeled legs, modeled for Gazebo simulation.">
+                  data-caption="The multi-morphing robot design: a body carried on four wheeled legs.">
             <span class="gallery-media">
-              <img src="images/thumbs/omni/omni1.jpg" alt="Omni-directional robot model with wheeled legs in Gazebo" loading="lazy" />
+              <img src="images/thumbs/omni/omni1.jpg" alt="Wheeled-leg robot model" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Bio-inspired omni-directional robot with wheeled legs, modeled for Gazebo simulation.</span>
+            <span class="gallery-caption">The multi-morphing robot design: a body carried on four wheeled legs.</span>
           </button>
 
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/omni/omni2.png"
-                  data-caption="The robot in a simulated Gazebo indoor environment, with its LiDAR scan rays visualized.">
+                  data-caption="The robot model in a Gazebo world, with its LiDAR scan rays visualized.">
             <span class="gallery-media">
-              <img src="images/thumbs/omni/omni2.jpg" alt="Robot in a Gazebo indoor world with LiDAR rays" loading="lazy" />
+              <img src="images/thumbs/omni/omni2.jpg" alt="Robot model in a Gazebo world with LiDAR rays" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">The robot in a simulated Gazebo indoor environment, with LiDAR scan rays visualized.</span>
+            <span class="gallery-caption">The robot model in a Gazebo world, with LiDAR scan rays visualized.</span>
           </button>
 
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/omni/omni3.png"
-                  data-caption="RViz view with the map, global and local costmaps, and a planned path toward a goal.">
+                  data-caption="RViz view with a map, global and local costmaps, and a planned path toward a goal.">
             <span class="gallery-media">
               <img src="images/thumbs/omni/omni3.jpg" alt="RViz view with costmaps and a planned path" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">RViz view with the map, global and local costmaps, and a planned path toward a goal.</span>
+            <span class="gallery-caption">RViz view with a map, global and local costmaps, and a planned path.</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
                   data-src="images/omni/omni4.png"
-                  data-caption="Jacobian condition number κ(J_B) versus wheel radius, wheel offset, and steering angle.">
+                  data-caption="Jacobian condition number κ(J_B) versus wheel radius, wheel offset and steering angle, used to size the wheels and choose steering ranges.">
             <span class="gallery-media">
               <img src="images/thumbs/omni/omni4.jpg" alt="Surface plots of the Jacobian condition number" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Jacobian condition number κ(J<sub>B</sub>) versus wheel radius, wheel offset, and steering angle.</span>
+            <span class="gallery-caption">Jacobian condition number κ(J<sub>B</sub>) vs. wheel radius, wheel offset and steering angle.</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
                   data-src="images/omni/omni5.png"
-                  data-caption="Kinematic model of a leg with its Denavit–Hartenberg (DH) parameters.">
+                  data-caption="Kinematic model of one leg with its Denavit–Hartenberg (DH) parameters.">
             <span class="gallery-media">
               <img src="images/thumbs/omni/omni5.jpg" alt="Leg kinematic model with DH parameter table" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Kinematic model of a leg with its Denavit–Hartenberg (DH) parameters.</span>
+            <span class="gallery-caption">Kinematic model of one leg with its Denavit–Hartenberg (DH) parameters.</span>
           </button>
         </div>
       </div>
@@ -126,94 +141,86 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Project Overview</h3>
+            <h3>Design</h3>
             <p>
-              This project explores the design of a bio-inspired, omni-directional mobile robot.
-              The platform is capable of translating and rotating in any direction, making it well
-              suited for tight indoor environments where conventional differential-drive robots
-              struggle to maneuver.
-            </p>
-            <p>
-              The robot’s mechanical concept is modeled in CAD and then represented in URDF for
-              use with ROS and Gazebo. The focus of the project is on understanding omni-directional
-              kinematics, mapping body-frame velocities to individual wheel speeds, and validating
-              those relationships through simulation.
+              Inspired by spiders and crabs, the robot stands on four 3-DOF legs that end in wheels.
+              Folding and extending the legs changes its footprint (“multi-morphing”), so it can shrink
+              or expand to fit through confined spaces, while the wheels let it move omnidirectionally.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Kinematics &amp; Control</h3>
+            <h3>Kinematics — My Contribution</h3>
             <ul>
-              <li>
-                Developed the full kinematic model and Jacobian for an omni-directional base,
-                relating desired linear and angular body velocities to individual wheel angular speeds.
-              </li>
-              <li>
-                Implemented inverse kinematics to convert high-level motion commands
-                (<code>v<sub>x</sub>, v<sub>y</sub>, ω</code>) into wheel-level control inputs.
-              </li>
-              <li>
-                Verified motion primitives (pure translation, pure rotation, diagonal motion)
-                inside simulation to confirm the correctness of the kinematic mapping.
-              </li>
+              <li>Modeled each leg with Denavit–Hartenberg parameters (base, wheel, ankle, knee, hip and twist frames).</li>
+              <li>Derived forward kinematics and the body Jacobian <code>J<sub>B</sub></code> that maps joint rates to body velocity (<code>ẋ, ẏ, ω</code>).</li>
+              <li>Inverse kinematics for the legs, with body-velocity commands mapped to joint rates through the Jacobian pseudo-inverse <code>J<sub>B</sub><sup>+</sup> = J<sub>B</sub><sup>T</sup>(J<sub>B</sub>J<sub>B</sub><sup>T</sup>)<sup>−1</sup></code>.</li>
             </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Design Analysis</h3>
+            <p>
+              The condition number κ(J<sub>B</sub>) = λ<sub>max</sub>/λ<sub>min</sub> measures how evenly the robot can move
+              in every direction. Sweeping it over wheel radius, wheel offset (0.03&nbsp;m) and steering angle
+              identified geometries with κ close to 1 — well-conditioned, near-isotropic motion — and
+              the feasible steering ranges.
+            </p>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>ROS &amp; Simulation Stack</h3>
-            <ul>
-              <li>
-                Modeled the robot in URDF with links, joints, and collision geometry, and brought it
-                into Gazebo for physics-based simulation.
-              </li>
-              <li>
-                Used ROS to integrate wheel controllers, TF frames, LiDAR, and RViz visualization,
-                enabling introspection of robot pose, odometry, and sensor data in real time.
-              </li>
-              <li>
-                Implemented a ROS node that subscribes to <code>/cmd_vel</code> and applies the
-                omni-directional kinematic equations to generate per-wheel velocity commands.
-              </li>
+            <h3>Control Architecture</h3>
+            <p>
+              A desired body velocity goes to a Sony Spresense main controller, which applies the
+              Jacobian with encoder feedback and drives a secondary controller for the wheel and
+              steering motors. Commands arrive over a Wi-Fi API in an <code>axis.direction.RPM</code>
+              format (for example <code>X.FORWARD.11</code>). The planned sensor suite included LiDAR,
+              an IMU, a camera and ultrasonic sensors.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Validation &amp; Status</h3>
+            <p>
+              The kinematics were verified in simulation (CoppeliaSim). Building a full hardware
+              prototype was left as future work.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Publication</h3>
+            <p>
+              “Design Considerations for Bioinspired Multi-morphing Omnidirectional Robot,” Late-Breaking
+              Results poster, IEEE ICRA 2024, Yokohama, Japan.
+            </p>
+            <p class="fine">
+              Paramesh S.P.S., Ruvanthika T., Sanjeev S., Barathwaj A., Shourya V., Sharan R., Anil S.,
+              Rammohan S. — Department of Mechanical Engineering, Amrita Vishwa Vidyapeetham, Coimbatore,
+              with Sony India Software Centre, Bengaluru. Supported by Sony’s Sensing Solutions University
+              Program.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Tech Stack</h3>
+            <ul class="chips">
+              <li>DH kinematics</li>
+              <li>Jacobian analysis</li>
+              <li>CoppeliaSim</li>
+              <li>ADAMS</li>
+              <li>Sony Spresense</li>
             </ul>
-          </article>
-
-          <article class="content-card reveal">
-            <h3>Obstacle Avoidance</h3>
-            <p>
-              The robot performs <b>reactive obstacle avoidance</b>
-              using LiDAR data. A dedicated ROS node subscribes to the <code>/scan</code> topic,
-              partitions the environment into angular sectors, and monitors the minimum distance
-              to obstacles in front, left, and right of the robot.
-            </p>
-            <p>
-              When an obstacle is detected within a safety threshold, the node reduces forward
-              velocity and commands a lateral or rotational motion using the omni-directional
-              kinematics. This allows the robot to sidestep or rotate away from obstacles while
-              preserving overall goal-directed movement, resulting in smooth, collision-free
-              navigation in cluttered scenes.
-            </p>
-          </article>
-
-          <article class="content-card reveal">
-            <h3>Outcome</h3>
-            <p>
-              The omni-directional robot successfully demonstrates holonomic motion and
-              LiDAR-based obstacle avoidance in ROS and Gazebo. The project highlights
-              end-to-end skills in kinematic modeling, simulation, and ROS-based perception
-              and control, and serves as a foundation for future work on higher-level planning
-              and multi-robot coordination.
-            </p>
           </article>
         </div>
       </div>
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-asl-fingerspelling.html">
+      <a class="pager-link prev" href="project-multi-object-tracking.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">Real-Time ASL Fingerspelling Recognition</span>
+        <span class="pager-title">Multi-Object Tracking with Cross-Camera Re-ID</span>
       </a>
       <a class="pager-link next" href="project-combat.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NU Nance Report – Sensor Fusion &amp; Localization | Shourya Vuddemarri</title>
-  <meta name="description" content="IMU + GPS localization pipeline: magnetometer calibration, complementary-filter heading estimation, forward-velocity estimation, and dead-reckoning trajectory reconstruction." />
+  <title>NUance IMU + GPS Navigation Study | Shourya Vuddemarri</title>
+  <meta name="description" content="IMU and GPS navigation study on the NUance car: magnetometer hard/soft-iron calibration, complementary-filter heading, and IMU dead reckoning compared against GPS over a 5.7 km drive through Boston. EECE 5554, Northeastern." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="NU Nance Report – Sensor Fusion &amp; Localization" />
-  <meta property="og:description" content="Magnetometer calibration, complementary filtering, and IMU vs. GPS trajectory reconstruction." />
+  <meta property="og:title" content="NUance IMU + GPS Navigation Study" />
+  <meta property="og:description" content="Magnetometer calibration, complementary-filter heading, and why IMU-only dead reckoning needs absolute corrections." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-nu-nance.html" />
-  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/nu-nance/circle_mag_calibration1.jpg" />
+  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/nuance/circle_mag_calibration1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -49,21 +50,32 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
           Back to Projects
         </a>
-        <p class="eyebrow">Project · Localization &amp; Sensor Fusion</p>
-        <h1 class="project-title">NU Nance Report – Sensor Fusion &amp; Localization</h1>
+        <p class="eyebrow">Project · Sensor Fusion</p>
+        <h1 class="project-title">NUance IMU + GPS Navigation Study</h1>
         <ul class="meta-chips">
-          <li>IMU</li>
+          <li>EECE 5554 Robot Sensing &amp; Navigation</li>
+          <li>Northeastern</li>
+          <li>VectorNav VN-100 IMU</li>
           <li>GPS</li>
-          <li>Complementary Filtering</li>
-          <li>Heading Estimation</li>
-          <li>Sensor Fusion</li>
+          <li>ROS 2 bags</li>
+          <li>Python</li>
         </ul>
         <p class="project-lede">
-          This project implements a complete localization pipeline using IMU and GPS data to
-          estimate heading, forward velocity, and vehicle trajectory. The work focuses heavily
-          on sensor fusion, calibration, and filtering techniques used in robotics and mobile
-          navigation systems.
+          A navigation study with data from Northeastern’s NUance car: calibrate a MEMS magnetometer,
+          fuse magnetometer and gyro heading with a complementary filter, and measure how far pure IMU
+          dead reckoning drifts from GPS over a 5.7&nbsp;km drive through Boston.
         </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container reveal">
+        <ul class="stats compact" aria-label="Key results">
+          <li class="stat"><div class="stat-value">90.5%</div><div class="stat-label">magnetometer circularity after hard- and soft-iron calibration</div></li>
+          <li class="stat"><div class="stat-value">α = 0.98</div><div class="stat-label">complementary-filter heading with a 0.1 Hz filter split</div></li>
+          <li class="stat"><div class="stat-value">12.7×</div><div class="stat-label">IMU dead-reckoning path overestimate: 72.69 km vs. 5.73 km</div></li>
+          <li class="stat"><div class="stat-value">3–5 s</div><div class="stat-label">before IMU-only position left a 2 m band around GPS</div></li>
+        </ul>
       </div>
     </section>
 
@@ -72,33 +84,33 @@
         <h2 class="block-title">Gallery</h2>
         <div class="gallery-grid wide">
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
-                  data-src="images/NU%20Nance/circle_mag_calibration1.png"
-                  data-caption="Magnetometer calibration using least-squares circle fitting — raw vs. calibrated data from circle driving.">
+                  data-src="images/nuance/circle_mag_calibration1.png"
+                  data-caption="Magnetometer calibration from the circle drive: raw data vs. calibrated data after least-squares circle fitting (90.5% circularity).">
             <span class="gallery-media">
-              <img src="images/thumbs/nu-nance/circle_mag_calibration1.jpg" alt="Magnetometer calibration before and after" loading="lazy" />
+              <img src="images/thumbs/nuance/circle_mag_calibration1.jpg" alt="Magnetometer calibration before and after" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Magnetometer calibration using least-squares circle fitting.</span>
+            <span class="gallery-caption">Magnetometer calibration by least-squares circle fitting.</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
-                  data-src="images/NU%20Nance/fig3_complementary_filter1.png"
-                  data-caption="Complementary filter fusing magnetometer and gyroscope heading — low-pass magnetometer, high-pass gyro, fused (α = 0.98), and IMU estimate.">
+                  data-src="images/nuance/fig3_complementary_filter1.png"
+                  data-caption="Heading estimates: low-pass magnetometer, high-pass gyro, the complementary filter (α = 0.98), and the IMU’s onboard estimate.">
             <span class="gallery-media">
-              <img src="images/thumbs/nu-nance/fig3_complementary_filter1.jpg" alt="Heading estimates from magnetometer, gyroscope, and complementary filter" loading="lazy" />
+              <img src="images/thumbs/nuance/fig3_complementary_filter1.jpg" alt="Heading estimates from magnetometer, gyroscope and complementary filter" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Complementary filter fusing magnetometer and gyroscope heading.</span>
+            <span class="gallery-caption">Complementary filter fusing magnetometer and gyro heading.</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
-                  data-src="images/NU%20Nance/fig6_trajectories1.png"
-                  data-caption="Trajectory comparison using IMU dead-reckoning vs GPS path.">
+                  data-src="images/nuance/fig6_trajectories1.png"
+                  data-caption="GPS track (5.73 km) vs. IMU dead reckoning (72.69 km path, 27.4 km final error).">
             <span class="gallery-media">
-              <img src="images/thumbs/nu-nance/fig6_trajectories1.jpg" alt="GPS trajectory vs IMU dead-reckoning trajectory" loading="lazy" />
+              <img src="images/thumbs/nuance/fig6_trajectories1.jpg" alt="GPS trajectory vs IMU dead-reckoning trajectory" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Trajectory comparison using IMU dead-reckoning vs GPS path.</span>
+            <span class="gallery-caption">GPS track vs. IMU dead reckoning over the same drive.</span>
           </button>
         </div>
       </div>
@@ -108,57 +120,64 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Methodology</h3>
+            <h3>Data</h3>
             <p>
-              The localization pipeline was developed using IMU (accelerometer, gyroscope,
-              magnetometer) and GPS data collected during structured driving sessions. All
-              processing—including calibration, filtering, heading estimation, and trajectory
-              reconstruction—was performed using robotics-inspired signal processing workflows.
+              A VectorNav VN-100 IMU (40&nbsp;Hz) and a GPS receiver (1&nbsp;Hz), recorded as ROS&nbsp;2 bags:
+              first a circle drive for calibration, then a roughly 25-minute, 5.73&nbsp;km drive through
+              Boston.
             </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Method</h3>
             <ul>
-              <li><b>Magnetometer Calibration:</b> Hard-iron and soft-iron distortions were corrected by applying least-squares circle fitting to X–Y magnetometer data collected during circular driving. The calibration output was then applied to all future datasets.</li>
-              <li><b>Heading Estimation:</b> Three parallel estimates were generated—magnetometer yaw, gyroscope-integrated yaw, and fused yaw—to evaluate sensor behavior and drift characteristics.</li>
-              <li><b>Complementary Filter:</b> A Butterworth low-pass/high-pass split was used to fuse magnetometer stability with gyroscope responsiveness. The fused heading closely matched the ground-truth reference.</li>
-              <li><b>Velocity Estimation:</b> Forward velocity was derived from integrated accelerometer data (after bias removal &amp; low-pass filtering) and compared with GPS-differentiated velocity.</li>
-              <li><b>Trajectory Reconstruction:</b> The fused heading and corrected forward velocity were used to generate a 2D dead-reckoning trajectory, highlighting challenges of pure IMU-based navigation.</li>
+              <li><b>Magnetometer calibration:</b> corrected hard- and soft-iron distortion with a least-squares circle fit on the circle-drive X–Y data, reaching 90.5% circularity, then applied it to the full drive.</li>
+              <li><b>Heading estimation:</b> compared low-pass-filtered magnetometer yaw, integrated gyro yaw, and a complementary filter (α = 0.98, 0.1&nbsp;Hz Butterworth split) that combines magnetometer stability with gyro responsiveness. The fused heading tracked the VN-100’s onboard heading estimate.</li>
+              <li><b>Velocity:</b> integrated forward acceleration after bias removal and filtering, and compared it with GPS-derived velocity.</li>
+              <li><b>Dead reckoning:</b> integrated the fused heading and corrected velocity into a 2D trajectory and compared it with the GPS track.</li>
             </ul>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Relevance to Robotics &amp; ROS</h3>
-            <p>
-              The techniques used mirror common robotics localization workflows including IMU
-              preprocessing, calibration pipelines, sensor fusion, heading estimation, and
-              trajectory reconstruction. These methods extend directly to ROS environments using
-              packages such as <code>robot_localization</code>, <code>EKF/UKF</code> filters, and
-              SLAM tools that fuse IMU, wheel odometry, and GPS.
-            </p>
+            <h3>Results</h3>
+            <ul>
+              <li>Dead reckoning traced a 72.69&nbsp;km path for a 5.73&nbsp;km drive (12.7×) and ended 27.4&nbsp;km from the true end point.</li>
+              <li>IMU-only position stayed within 2&nbsp;m of GPS for only 3–5&nbsp;s, then passed 10&nbsp;m by 10&nbsp;s and 50&nbsp;m by 30&nbsp;s.</li>
+              <li>Accelerometer-integrated velocity drifted far above GPS velocity even after bias correction.</li>
+            </ul>
           </article>
 
           <article class="content-card reveal">
-            <h3>Key Takeaways</h3>
+            <h3>Takeaways</h3>
             <ul>
-              <li>Calibration is essential for using low-cost IMUs in mobile robots.</li>
-              <li>Gyroscope drift makes long-term inertial navigation unreliable without fusion.</li>
-              <li>Complementary filtering provides a practical balance between noise rejection and responsiveness.</li>
-              <li>GPS is necessary for long-duration global track estimation.</li>
-              <li>IMU-only dead reckoning diverges rapidly without absolute corrections.</li>
+              <li>Calibration is essential before a low-cost magnetometer is usable for heading.</li>
+              <li>Gyro drift makes long-term inertial heading unreliable without fusion.</li>
+              <li>A complementary filter is a simple, practical balance between noise rejection and responsiveness.</li>
+              <li>Consumer MEMS IMUs cannot navigate GPS-denied for long: dead reckoning diverges within seconds without absolute corrections.</li>
             </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Next Step</h3>
+            <p>
+              Fuse GPS and IMU in an EKF (for example with ROS&nbsp;2’s <code>robot_localization</code>) so
+              absolute GPS fixes bound the inertial drift.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-block-map-localization.html">
+      <a class="pager-link prev" href="project-asl-fingerspelling.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">Block-Map Based Localization</span>
+        <span class="pager-title">Real-Time ASL Fingerspelling</span>
       </a>
-      <a class="pager-link next" href="project-4wheel-slam.html">
+      <a class="pager-link next" href="project-block-map-localization.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">4-Wheel Robot with SLAM &amp; Navigation</span>
+        <span class="pager-title">Block-Map LiDAR Localization</span>
       </a>
     </nav>
   </main>

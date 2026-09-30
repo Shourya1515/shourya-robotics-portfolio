@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Block-Map Based Localization – ROS2 / ICP / BBS | Shourya Vuddemarri</title>
-  <meta name="description" content="Hierarchical robot localization that splits a global point-cloud map into overlapping block maps, with branch-and-bound search (BBS) for coarse pose initialization and ICP for fine alignment." />
+  <title>Block-Map LiDAR Localization – BBS + ICP | Shourya Vuddemarri</title>
+  <meta name="description" content="Python / Open3D reimplementation of an ICRA 2024 block-map localization method: overlapping block maps, branch-and-bound pose initialization and ICP tracking, tested on a ~600 m simulated trajectory." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Block-Map Based Localization" />
-  <meta property="og:description" content="Coarse-to-fine localization over overlapping block maps: branch-and-bound search + ICP refinement." />
+  <meta property="og:title" content="Block-Map LiDAR Localization" />
+  <meta property="og:description" content="Overlapping block maps, branch-and-bound initialization and ICP tracking — a Python / Open3D reimplementation study." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-block-map-localization.html" />
   <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/blockmap/blockmap3.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -50,18 +51,19 @@
           Back to Projects
         </a>
         <p class="eyebrow">Project · Localization &amp; Navigation</p>
-        <h1 class="project-title">Block-Map Based Localization</h1>
+        <h1 class="project-title">Block-Map LiDAR Localization</h1>
         <ul class="meta-chips">
-          <li>ROS2</li>
-          <li>ICP</li>
-          <li>Coarse-to-Fine Pose Estimation</li>
-          <li>Global Map Partitioning</li>
+          <li>Autonomous Robotics · Northeastern</li>
+          <li>Mar – Apr 2025 · solo</li>
+          <li>Python</li>
+          <li>Open3D</li>
+          <li>Branch-and-bound + ICP</li>
         </ul>
         <p class="project-lede">
-          A hierarchical robot localization system that improves scan-to-map matching
-          efficiency by dividing a global map into overlapping block maps. The method
-          combines coarse pose initialization using Branch-and-Bound Search (BBS) and
-          fine alignment with Iterative Closest Point (ICP).
+          A Python / Open3D reimplementation of a block-map localization method from an ICRA 2024
+          paper. Instead of matching every LiDAR scan against one large global map, the map is split
+          into overlapping block maps; the robot is localized coarsely with a branch-and-bound search
+          (BBS), then its pose is refined and tracked with ICP.
         </p>
         <div class="project-actions">
           <a href="https://github.com/Shourya1515/Block-Map-Localization" target="_blank" rel="noopener" class="btn ghost">
@@ -69,6 +71,16 @@
             View code on GitHub
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="container reveal">
+        <ul class="stats compact three" aria-label="Key results">
+          <li class="stat"><div class="stat-value">~0.2 m</div><div class="stat-label">tracking error for most of a ~600 m simulated trajectory</div></li>
+          <li class="stat"><div class="stat-value">5</div><div class="stat-label">block-map switches, each with a pose jump under 0.05 m</div></li>
+          <li class="stat"><div class="stat-value">~0.1 m</div><div class="stat-label">error reported by the original paper, for reference</div></li>
+        </ul>
       </div>
     </section>
 
@@ -103,7 +115,7 @@
               <img src="images/thumbs/blockmap/blockmap3.jpg" alt="Top view of all block maps" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Top view of all generated block maps (BM 0 and BM 1) and how they overlap.</span>
+            <span class="gallery-caption">Top view of all generated block maps (BM 0 and BM 1) and their overlap.</span>
           </button>
 
           <button type="button" class="gallery-item is-figure" data-lightbox-item data-type="image"
@@ -113,7 +125,7 @@
               <img src="images/thumbs/blockmap/blockmap4.jpg" alt="Localization result trajectory over Block Map 0" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Localization result: estimated trajectory from the start to the current pose over Block Map 0.</span>
+            <span class="gallery-caption">Localization result: estimated trajectory over Block Map 0.</span>
           </button>
         </div>
       </div>
@@ -123,76 +135,69 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Project Overview</h3>
+            <h3>Why Block Maps</h3>
             <p>
-              This project implements a <b>Block-Map Localization System</b> to address the high
-              computational cost of performing global scan-to-map matching in large environments.
-              Instead of matching LiDAR scans against the full map, the environment is divided
-              into <b>overlapping block maps</b>. This reduces search space, improves accuracy,
-              and accelerates localization.
-            </p>
-            <p>
-              The method integrates <b>BBS for coarse pose estimation</b> followed by
-              <b>ICP for fine alignment</b>, achieving reliable localization even with partial
-              or noisy scan data.
+              Matching each LiDAR scan against a single global map gets expensive as the environment
+              grows. Splitting the map into smaller, overlapping block maps bounds the search to the
+              region the robot is in, while the overlap keeps enough context for reliable matching
+              when the robot crosses from one block into the next.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Methodology</h3>
-            <ul>
-              <li>Partition the global point-cloud map into overlapping block maps.</li>
-              <li>Perform <b>Branch-and-Bound Search (BBS)</b> for coarse pose initialization within the most likely block map.</li>
-              <li>Extract the relevant local block map around the estimated region.</li>
-              <li>Run <b>ICP alignment</b> between the scan and block map for refined pose.</li>
-              <li>Evaluate results using <b>RMSE</b> of estimated vs ground-truth trajectory.</li>
-            </ul>
+            <h3>Pipeline</h3>
+            <ol class="steps">
+              <li><b>Build block maps:</b> accumulate registered scans into a block until the robot has travelled farther than the block size, then start a new one; index the block centroids in a KD-tree.</li>
+              <li><b>Select the active block</b> from the centroid nearest to the current position.</li>
+              <li><b>Coarse initialization:</b> branch-and-bound search over a multi-resolution map pyramid.</li>
+              <li><b>Tracking:</b> ICP refinement (Open3D) against the active block, with motion prediction and a sliding window of keyframes that is trimmed when switching blocks.</li>
+            </ol>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Algorithm Pipeline</h3>
+            <h3>Results</h3>
             <ul>
-              <li><b>Input:</b> LiDAR scan, global point-cloud map.</li>
-              <li><b>Stage 1 – Block Map Partitioning:</b> Create block maps with overlaps of 20–40%.</li>
-              <li><b>Stage 2 – BBS:</b> Branch-and-bound search over a multi-resolution map pyramid for coarse pose initialization.</li>
-              <li><b>Stage 3 – ICP:</b> Perform fine-grained transformation refinement.</li>
-              <li><b>Stage 4 – Pose Fusion:</b> Output final pose estimate.</li>
+              <li>On a ~600&nbsp;m simulated trajectory, the tracked pose stayed under about 0.2&nbsp;m error for most of the run.</li>
+              <li>The five block-map switches each caused a pose jump under 0.05&nbsp;m.</li>
+              <li>The estimate drifted in Y over time; the original paper reports about 0.1&nbsp;m.</li>
             </ul>
           </article>
 
           <article class="content-card reveal">
-            <h3>Results &amp; Observations</h3>
-            <ul>
-              <li>Localization accuracy improved significantly vs full-map ICP.</li>
-              <li>Block maps reduced search area, lowering computation time by up to 40%.</li>
-              <li>Overlapping blocks ensured robustness in ambiguous environments.</li>
-              <li>BBS provided reliable coarse initialization, reducing ICP failure cases.</li>
+            <h3>Scope</h3>
+            <p>
+              A study reimplementation to understand the method: it runs on LiDAR point clouds with a
+              synthetic trajectory and poses rather than a ground-truth dataset, with no ROS integration
+              or hardware.
+            </p>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>Tech Stack</h3>
+            <ul class="chips">
+              <li>Python</li>
+              <li>Open3D</li>
+              <li>NumPy</li>
+              <li>SciPy</li>
+              <li>Matplotlib</li>
+              <li>ICP</li>
+              <li>Branch-and-bound search</li>
             </ul>
           </article>
         </div>
-
-        <article class="content-card full reveal">
-          <h3>Conclusion</h3>
-          <p>
-            The block-map approach demonstrates strong potential for <b>scalable localization</b>
-            in large indoor environments. By combining spatial partitioning with hierarchical
-            scan matching, the system balances efficiency and accuracy—making it suitable for
-            SLAM backends, autonomous mobile robots, and real-time navigation frameworks.
-          </p>
-        </article>
       </div>
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-pesticide.html">
+      <a class="pager-link prev" href="project-nu-nance.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">Pesticide Spraying Robot</span>
+        <span class="pager-title">NUance IMU + GPS Navigation Study</span>
       </a>
-      <a class="pager-link next" href="project-nu-nance.html">
+      <a class="pager-link next" href="project-pesticide.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">NU Nance Report – Sensor Fusion &amp; Localization</span>
+        <span class="pager-title">Pesticide Spraying Robot</span>
       </a>
     </nav>
   </main>

@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Real-Time ASL Fingerspelling Recognition | Shourya Vuddemarri</title>
-  <meta name="description" content="Real-time recognition of 24 ASL letters from webcam input at 27–30 FPS using MediaPipe hand detection and CNN classifiers (custom CNN, ResNet18, MobileNetV2), plus an analysis of the benchmark-to-webcam domain gap." />
+  <meta name="description" content="A live 27–30 FPS ASL fingerspelling app for 24 static letters (MediaPipe + CNN) and a benchmark of three architectures that exposed a 67-point accuracy drop from benchmark data to real-world photos. CS 5330, Northeastern." />
   <meta name="theme-color" content="#06080d" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Real-Time ASL Fingerspelling Recognition" />
-  <meta property="og:description" content="24 ASL letters at 27–30 FPS with MediaPipe + CNN classifiers, and what the benchmark-to-webcam domain gap taught me." />
+  <meta property="og:description" content="24 static letters at 27–30 FPS — and what a 67-point domain gap taught us about deploying perception models." />
   <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/project-asl-fingerspelling.html" />
   <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/thumbs/asl/w.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,6 +35,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html#hero">Home</a>
         <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
         <a href="index.html#projects" class="is-active">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -52,17 +53,17 @@
         <p class="eyebrow">Project · Computer Vision</p>
         <h1 class="project-title">Real-Time ASL Fingerspelling Recognition</h1>
         <ul class="meta-chips">
-          <li>Python</li>
+          <li>CS 5330 Pattern Recognition &amp; Computer Vision</li>
+          <li>Northeastern · Spring 2026</li>
+          <li>Team of 3</li>
           <li>PyTorch</li>
-          <li>OpenCV</li>
           <li>MediaPipe</li>
-          <li>ResNet18</li>
-          <li>MobileNetV2</li>
+          <li>OpenCV</li>
         </ul>
         <p class="project-lede">
-          Built a real-time computer vision system that recognizes 24 American Sign Language letters
-          from webcam input at 27–30 FPS using MediaPipe hand detection and CNN-based classification.
-          The project also investigated the domain gap between benchmark datasets and real-world webcam input.
+          A live webcam app that recognizes 24 static American Sign Language letters, and the benchmark
+          study behind it: three CNN architectures trained on the Kaggle ASL Alphabet dataset, then
+          tested on photos our team took ourselves — which exposed a large domain gap.
         </p>
       </div>
     </section>
@@ -70,10 +71,10 @@
     <section class="project-section">
       <div class="container reveal">
         <ul class="stats compact" aria-label="Key numbers">
-          <li class="stat"><div class="stat-value">24</div><div class="stat-label">ASL letters recognized from live webcam input</div></li>
-          <li class="stat"><div class="stat-value">27–30 FPS</div><div class="stat-label">real-time processing of webcam frames</div></li>
-          <li class="stat"><div class="stat-value">100%</div><div class="stat-label">benchmark accuracy with ResNet18 transfer learning</div></li>
-          <li class="stat"><div class="stat-value">67%</div><div class="stat-label">accuracy drop from benchmark to real-world webcam input</div></li>
+          <li class="stat"><div class="stat-value">24</div><div class="stat-label">static letters, from 72,000 benchmark images</div></li>
+          <li class="stat"><div class="stat-value">27–30 FPS</div><div class="stat-label">end-to-end live app on a laptop GPU (target: 15 FPS)</div></li>
+          <li class="stat"><div class="stat-value">100%</div><div class="stat-label">ResNet18 accuracy on the in-distribution test split</div></li>
+          <li class="stat"><div class="stat-value">−67 pts</div><div class="stat-label">ResNet18 accuracy on 240 team-collected photos</div></li>
         </ul>
       </div>
     </section>
@@ -84,22 +85,22 @@
         <div class="gallery-grid wide">
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/asl/Q.png"
-                  data-caption="Real-time ASL fingerspelling recognition example for the letter Q.">
+                  data-caption="The live app recognizing the letter Q (96% confidence, 27 FPS, ResNet18), with MediaPipe hand landmarks.">
             <span class="gallery-media">
-              <img src="images/thumbs/asl/q.jpg" alt="ASL recognition output for letter Q" loading="lazy" />
+              <img src="images/thumbs/asl/q.jpg" alt="Live ASL recognition of the letter Q" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Real-time ASL fingerspelling recognition example for the letter Q.</span>
+            <span class="gallery-caption">Live recognition of the letter Q — 96% confidence at 27 FPS.</span>
           </button>
 
           <button type="button" class="gallery-item" data-lightbox-item data-type="image"
                   data-src="images/asl/W.png"
-                  data-caption="Real-time ASL fingerspelling recognition example for the letter W.">
+                  data-caption="The live app recognizing the letter W (100% confidence, 30 FPS, ResNet18), with MediaPipe hand landmarks.">
             <span class="gallery-media">
-              <img src="images/thumbs/asl/w.jpg" alt="ASL recognition output for letter W" loading="lazy" />
+              <img src="images/thumbs/asl/w.jpg" alt="Live ASL recognition of the letter W" loading="lazy" />
               <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             </span>
-            <span class="gallery-caption">Real-time ASL fingerspelling recognition example for the letter W.</span>
+            <span class="gallery-caption">Live recognition of the letter W — 100% confidence at 30 FPS.</span>
           </button>
         </div>
       </div>
@@ -109,65 +110,73 @@
       <div class="container content-grid">
         <div class="content-col">
           <article class="content-card reveal">
-            <h3>Overview</h3>
+            <h3>Data</h3>
             <p>
-              This project focuses on real-time sign-language perception using webcam input. The system
-              detects a hand region using MediaPipe, preprocesses the cropped hand image, and classifies
-              ASL fingerspelling letters using trained deep learning models.
+              The Kaggle ASL Alphabet dataset (87,000 images, 29 classes), filtered to the 24 static
+              letters — J and Z need motion — for 72,000 images split 80/10/10. To test real-world
+              performance, the team also photographed 240 images of our own hands (10 per letter) with
+              smartphone cameras, auto-cropped with MediaPipe.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Approach</h3>
+            <h3>Models</h3>
             <ul>
-              <li>Built an end-to-end webcam pipeline using OpenCV and MediaPipe hand detection.</li>
-              <li>Classified 24 ASL letters using CNN-based image classification.</li>
-              <li>Compared three architectures: custom CNN, ResNet18, and MobileNetV2.</li>
-              <li>Trained and evaluated models using 72,000+ benchmark training images.</li>
+              <li><b>Custom CNN:</b> a 5-block network trained from scratch (7.5M parameters).</li>
+              <li><b>ResNet18:</b> transfer learning with the last residual block and the head fine-tuned.</li>
+              <li><b>MobileNetV2:</b> frozen backbone with a small trainable head (334K parameters).</li>
             </ul>
           </article>
 
           <article class="content-card reveal">
-            <h3>Real-Time System</h3>
-            <ul>
-              <li>Processed live webcam frames at 27–30 FPS.</li>
-              <li>Used MediaPipe to localize hand landmarks and isolate the hand region.</li>
-              <li>Applied preprocessing to support stable classification under live camera conditions.</li>
-            </ul>
+            <h3>Live App</h3>
+            <p>
+              OpenCV captures the webcam at 1280×720, MediaPipe Hands finds the hand, and a square crop
+              resized to 224×224 goes to the classifier. A 7-frame smoothing window steadies the
+              prediction, and a spelling mode builds words letter by letter. It runs at 27–30 FPS
+              end-to-end on an RTX 5070 Ti laptop GPU.
+            </p>
           </article>
         </div>
 
         <div class="content-col">
           <article class="content-card reveal">
             <h3>Results</h3>
-            <ul>
-              <li>Achieved 100% benchmark accuracy using ResNet18 transfer learning.</li>
-              <li>Compared real-time behavior across custom CNN, ResNet18, and MobileNetV2.</li>
-              <li>Identified a major domain shift between benchmark images and real-world webcam captures.</li>
-              <li>Observed a 67% accuracy drop when moving from benchmark data to real-world webcam input.</li>
-            </ul>
+            <div class="table-scroll">
+              <table class="result-table">
+                <thead>
+                  <tr><th>Model</th><th>Kaggle test</th><th>Team photos</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>ResNet18</td><td class="num">100.00%</td><td class="num">32.92%</td></tr>
+                  <tr><td>Custom CNN</td><td class="num">99.99%</td><td class="num">34.17%</td></tr>
+                  <tr><td>MobileNetV2</td><td class="num">94.88%</td><td class="num">24.17%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="fine">Chance level for 24 classes is 4.17%.</p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Key Learning</h3>
+            <h3>Key Finding</h3>
             <p>
-              The most important insight from this project was that high benchmark accuracy does not
-              automatically translate to robust real-world deployment. Lighting, camera quality, hand pose,
-              background clutter, and user variation created a significant domain gap, reinforcing the
-              importance of real deployment testing for perception systems.
+              Near-perfect benchmark accuracy did not transfer: every model lost 66–71 percentage points
+              on real photos, where lighting, backgrounds, hand shapes and cameras differ from the
+              dataset. Retraining ResNet18 on Kaggle plus team data kept 99.90% on the Kaggle test set,
+              and that model powers the live app. The lesson: validate perception models on
+              deployment-like data early.
             </p>
           </article>
 
           <article class="content-card reveal">
-            <h3>Tech Stack</h3>
+            <h3>Team &amp; Stack</h3>
+            <p class="fine">Amzaar Faisal, Meet Brahmbhatt and Shourya Vuddemarri.</p>
             <ul class="chips">
               <li>Python</li>
               <li>PyTorch</li>
+              <li>torchvision</li>
               <li>OpenCV</li>
               <li>MediaPipe</li>
-              <li>ResNet18</li>
-              <li>MobileNetV2</li>
-              <li>Custom CNN</li>
             </ul>
           </article>
         </div>
@@ -175,13 +184,13 @@
     </section>
 
     <nav class="container project-pager" aria-label="More projects">
-      <a class="pager-link prev" href="project-multi-object-tracking.html">
+      <a class="pager-link prev" href="project-combat.html">
         <span class="pager-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Previous</span>
-        <span class="pager-title">Multi-Object Tracking with Re-ID</span>
+        <span class="pager-title">Combat Robotics Series</span>
       </a>
-      <a class="pager-link next" href="project-omni.html">
+      <a class="pager-link next" href="project-nu-nance.html">
         <span class="pager-label">Next<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <span class="pager-title">Omni-Directional Robot</span>
+        <span class="pager-title">NUance IMU + GPS Navigation Study</span>
       </a>
     </nav>
   </main>
