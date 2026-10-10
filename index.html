@@ -1,542 +1,1402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shourya Vuddemarri – Robotics Portfolio</title>
-  <meta name="description" content="Shourya Vuddemarri — robotics engineer (M.S. Robotics, Northeastern University) working on SLAM and state estimation, perception, sensor fusion and autonomous navigation, in simulation and on real robots." />
-  <meta name="theme-color" content="#06080d" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Shourya Vuddemarri – Robotics Portfolio" />
-  <meta property="og:description" content="Robotics engineer · SLAM · perception · autonomous navigation. Projects, results and write-ups — open to full-time roles." />
-  <meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/" />
-  <meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css" />
-  <script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shourya Vuddemarri – Robotics Engineer</title>
+<meta name="description" content="Shourya Vuddemarri — robotics engineer (M.S. Robotics, Northeastern University) working on SLAM and state estimation, perception, sensor fusion and autonomous navigation, in simulation and on real robots." />
+<meta name="theme-color" content="#070708" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Shourya Vuddemarri – Robotics Engineer" />
+<meta property="og:description" content="Robotics engineer · SLAM · perception · autonomous navigation. Projects, results and write-ups — open to full-time roles." />
+<meta property="og:url" content="https://shourya1515.github.io/shourya-robotics-portfolio/" />
+<meta property="og:image" content="https://shourya1515.github.io/shourya-robotics-portfolio/images/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<script>
+  document.documentElement.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<style>
+:root{
+  --bg:#070708; --bg2:#0d0d0f; --ink:#f3f0ec; --ink2:#c9c6c2; --muted:#8f8e93;
+  --red:#e4162c; --red2:#ff3347; --plate:#c4112a; --plate-ink:#0a0303;
+  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
+  --f-disp:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --gut:clamp(16px,4vw,56px); --maxw:1360px; --hdr:72px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+html:not(.rm){scroll-behavior:smooth}
+body{margin:0;background:transparent;color:var(--ink);font:400 16px/1.6 var(--f-body);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--red2);outline-offset:3px}
+.plate :focus-visible,.on-red :focus-visible,.contact :focus-visible,.foot :focus-visible{outline-color:#fff}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:#fff;color:#000;padding:10px 14px;border-radius:8px;font:600 14px var(--f-body);text-decoration:none;transition:top .2s}
+.skip:focus{top:12px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.mono{font-family:var(--f-mono)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red2)}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.h2{font:700 clamp(30px,4.4vw,64px)/1.02 var(--f-disp);letter-spacing:-.02em;margin-top:18px}
+.h2 em{font-style:normal;color:var(--red2)}
+.lede{color:var(--ink2);font-size:clamp(15px,1.25vw,18px);max-width:58ch}
+
+/* ---------- stage layers ---------- */
+#backdrop{position:fixed;inset:0;z-index:-1;background:var(--bg);pointer-events:none}
+#backdrop::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 115%,rgba(228,22,44,.16),transparent 60%);opacity:var(--glow,1);transition:opacity .4s}
+#stage{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;display:block}
+.fallback{display:none}
+.layer{position:relative;z-index:2}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--hdr)}
+.hdr::before{content:"";position:absolute;inset:0;background:rgba(7,7,8,.62);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line);opacity:0;transition:opacity .35s,background .35s}
+.hdr.scrolled::before{opacity:1}
+.hdr.on-red::before{background:rgba(170,12,28,.72);border-bottom-color:rgba(0,0,0,.2)}
+.menu-open .hdr::before{opacity:0}
+.hdr-in{position:relative;z-index:1}
+.hdr-in{height:100%;display:flex;align-items:center;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.logo-mark{position:relative;width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:var(--red);color:#fff;font:800 14px/1 var(--f-disp);letter-spacing:-.02em;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 6px 24px -8px rgba(228,22,44,.8)}
+.logo-mark::before,.logo-mark::after{content:"";position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.75);top:5px;left:5px;box-shadow:27px 0 0 rgba(255,255,255,.75),0 27px 0 rgba(255,255,255,.75),27px 27px 0 rgba(255,255,255,.75)}
+.logo-mark::after{display:none}
+.on-red .logo-mark{background:#0a0a0b;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.logo-txt{display:flex;flex-direction:column;line-height:1.1}
+.logo-txt b{font:600 14px var(--f-disp);letter-spacing:-.01em}
+.logo-txt span{font:500 10.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.on-red .logo-txt span{color:rgba(255,255,255,.78)}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{position:relative;text-decoration:none;font:500 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding:10px 12px;border-radius:8px;transition:color .2s}
+.nav a .n{color:var(--red2);margin-right:6px}
+.on-red .nav a .n{color:#fff;opacity:.6}
+.nav a:hover,.nav a[aria-current="true"]{color:#fff}
+.nav a[aria-current="true"]::after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:1px;background:var(--red2)}
+.on-red .nav a{color:rgba(255,255,255,.85)}
+.on-red .nav a[aria-current="true"]::after{background:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;font:600 14px/1 var(--f-body);text-decoration:none;letter-spacing:.01em;border:1px solid transparent;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;white-space:nowrap;cursor:pointer}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px -12px rgba(228,22,44,.9)}
+.btn-red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line2);color:var(--ink);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);transform:translateY(-2px)}
+.btn-black{background:#0a0a0b;color:#fff}
+.btn-black:hover{background:#000;transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(0,0,0,.8)}
+.btn-line{border-color:rgba(255,255,255,.62);color:#fff}
+.btn-line:hover{border-color:#fff;background:rgba(0,0,0,.12);transform:translateY(-2px)}
+.hdr .btn{height:40px;padding:0 18px;font-size:13px}
+.on-red .btn-red{background:#0a0a0b;box-shadow:none}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line2);background:rgba(0,0,0,.25);place-items:center;cursor:pointer}
+.menu-btn i{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:transform .3s,background .3s}
+.menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .3s}
+.menu-btn i::before{top:-6px}.menu-btn i::after{top:6px}
+.menu-open .menu-btn i{background:transparent}
+.menu-open .menu-btn i::before{transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn i::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;min-height:680px;overflow:clip;touch-action:pan-y}
+.rm .hint{display:none}
+.hero-name{position:absolute;z-index:0;left:0;right:0;max-width:var(--maxw);margin:0 auto;top:calc(var(--hdr) + 7vh);padding:0 var(--gut);font:800 clamp(44px,min(9.6vw,15.5vh),172px)/.86 var(--f-disp);letter-spacing:-.035em;text-transform:uppercase;user-select:none;pointer-events:none}
+.hero-name span{display:block}
+.hero-name .l1{color:var(--ink)}
+.hero-name .l2{color:var(--red);margin-left:-.04em}
+.hero-name .hi{display:block;font:500 clamp(12px,1vw,14px)/1 var(--f-mono);letter-spacing:.18em;color:var(--muted);margin:0 0 18px 4px;text-transform:uppercase}
+.hero-ui{position:relative;z-index:2;height:100%;max-width:var(--maxw);margin:0 auto;padding:calc(var(--hdr) + 12px) var(--gut) 34px;display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none}
+.hero-ui a,.hero-ui button{pointer-events:auto}
+.hero-top{position:absolute;z-index:2;top:calc(var(--hdr) + 7vh - 10px);left:0;right:0;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);display:flex;justify-content:flex-end;gap:16px;align-items:center;pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:10px;height:34px;padding:0 14px 0 12px;border-radius:999px;border:1px solid rgba(228,22,44,.45);background:rgba(228,22,44,.08);font:500 12.5px/1 var(--f-mono);letter-spacing:.04em;color:#ffd9dd;white-space:nowrap}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 0 rgba(255,51,71,.6);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,51,71,.55)}70%{box-shadow:0 0 0 10px rgba(255,51,71,0)}100%{box-shadow:0 0 0 0 rgba(255,51,71,0)}}
+.hero-bottom{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.hero-intro{max-width:430px}
+.role{font:600 clamp(14px,1.15vw,16px)/1.45 var(--f-disp);letter-spacing:-.005em;color:#fff}
+.role span{color:var(--red2)}
+.hero-text{margin-top:14px;color:var(--ink2);font-size:14.5px;line-height:1.65}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.socials{display:flex;gap:8px;margin-top:20px}
+.icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;border:1px solid var(--line2);color:var(--ink2);transition:color .2s,border-color .2s,background .2s}
+.icon-btn:hover{color:#fff;border-color:var(--red2);background:rgba(228,22,44,.12)}
+.icon-btn svg{width:17px;height:17px}
+.stats{justify-self:end;display:grid;grid-template-columns:repeat(2,minmax(0,186px));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.stat{background:rgba(9,9,11,.78);padding:16px 18px 18px}
+.stat b{display:block;font:700 19px/1.1 var(--f-disp);letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.stat b em{font-style:normal;color:var(--red2)}
+.stat span{display:block;margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.hint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;font:500 11px/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.hint svg{width:16px;height:16px;color:var(--red2)}
+/* ---------- systems (exploded view) ---------- */
+.systems{position:relative;height:380vh}
+.sys-pin{position:sticky;top:0;height:100vh;z-index:2;overflow:hidden}
+.sys-head{position:absolute;top:calc(var(--hdr) + 26px);left:0;right:0;pointer-events:none}
+.sys-head .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.sys-head .h2{font-size:clamp(24px,2.7vw,40px);margin-top:14px;max-width:16ch}
+.sys-note{font:500 11.5px/1.7 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:right;margin-top:4px}
+.sys-note b{color:var(--ink);font-weight:500}
+.sys-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.sys-lines path{fill:none;stroke:rgba(255,255,255,.32);stroke-width:1;transition:stroke .3s}
+.sys-lines path.on{stroke:var(--red2);stroke-width:1.5}
+.sys-lines circle{fill:var(--bg);stroke:rgba(255,255,255,.6);stroke-width:1}
+.sys-lines circle.on{fill:var(--red2);stroke:#fff}
+.mk{position:absolute;left:0;top:0;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;display:grid;place-items:center;font:600 10px/1 var(--f-mono);color:#fff;background:rgba(7,7,8,.82);border:1px solid rgba(255,255,255,.55);opacity:0;will-change:transform,opacity;transition:background .3s,border-color .3s}
+.mk.on{background:var(--red);border-color:#fff;box-shadow:0 0 0 6px rgba(228,22,44,.22)}
+.callout{position:absolute;left:0;top:0;width:clamp(230px,20vw,292px);padding:14px 16px 15px;border-radius:14px;background:rgba(11,11,13,.9);border:1px solid var(--line);opacity:0;will-change:transform,opacity;transition:border-color .35s,background .35s,box-shadow .35s}
+.callout.on{border-color:rgba(255,51,71,.7);background:rgba(24,7,10,.86);box-shadow:0 18px 50px -20px rgba(228,22,44,.55)}
+.co-top{display:flex;justify-content:space-between;gap:12px;font:500 10.5px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.co-top b{color:var(--red2);font-weight:600}
+.callout h3{font:600 15.5px/1.25 var(--f-disp);letter-spacing:-.01em;margin-top:9px;color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chips li{font:500 10.5px/1 var(--f-mono);padding:6px 7px;border-radius:6px;background:rgba(255,255,255,.07);color:var(--ink2);white-space:nowrap}
+.callout.on .chips li{background:rgba(228,22,44,.18);color:#ffe7ea}
+.co-proof{font-size:12.5px;line-height:1.5;color:var(--ink2);margin-top:11px;padding-top:10px;border-top:1px solid var(--line);display:none}
+.co-proof b{color:#fff;font-weight:600}
+.callout.on .co-proof{display:block}
+.sys-foot{position:absolute;left:0;right:0;bottom:26px;display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:none}
+.steps{display:flex;gap:6px}
+.steps li{width:42px;height:3px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
+.steps li i{display:block;height:100%;background:var(--red2);transform-origin:left;transform:scaleX(0)}
+.sys-status{font:500 11px/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.sys-status b{color:var(--red2);font-weight:600}
+.online{position:absolute;left:0;right:0;bottom:11vh;text-align:center;opacity:0;pointer-events:none}
+.online p{font:800 clamp(30px,5.4vw,84px)/1 var(--f-disp);letter-spacing:-.03em;text-transform:uppercase}
+.online p span{color:var(--red2)}
+.online small{display:block;margin-top:14px;font:500 12px/1 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- about ---------- */
+.about{padding:150px 0 130px}
+.about-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px}
+.who{display:flex;align-items:center;gap:14px;margin-top:34px}
+.who img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 72%;border:2px solid var(--red);background:#222}
+.who b{display:block;font:600 14px var(--f-disp)}
+.who span{display:block;font:500 11.5px var(--f-mono);letter-spacing:.06em;color:var(--muted);margin-top:3px}
+.about-copy>p:not(.eyebrow){color:var(--ink2);font-size:16.5px;line-height:1.75;max-width:62ch;margin-top:22px}
+.about-copy>p.big{font:500 clamp(18px,1.6vw,22px)/1.55 var(--f-body);color:var(--ink);margin-top:28px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.tags li{font:500 12px/1 var(--f-mono);padding:9px 12px;border:1px solid var(--line2);border-radius:999px;color:var(--ink2);background:rgba(7,7,8,.6)}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:70px}
+.card{position:relative;padding:26px 26px 28px;border-radius:20px;background:rgba(14,14,16,.82);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(228,22,44,.12);color:var(--red2);border:1px solid rgba(228,22,44,.3)}
+.card .ic svg{width:22px;height:22px}
+.card h3{font:600 16.5px/1.25 var(--f-disp);margin:18px 0 10px}
+.card p{color:var(--ink2);font-size:14.5px;line-height:1.65}
+.card .k{position:absolute;top:22px;right:24px;font:500 11px var(--f-mono);color:var(--muted)}
+
+/* ---------- experience (red plate) ---------- */
+.plate{position:relative;z-index:2;background:var(--plate);color:#fff;padding:140px 0 130px;overflow:hidden}
+.plate::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 1px,transparent 1px 96px);pointer-events:none}
+.plate .wrap{position:relative}
+.plate .eyebrow{color:#fff}
+.plate .h2{color:#000}
+.plate-sub{margin-top:18px;color:#fff;max-width:56ch;font-size:16px}
+.xp{margin-top:56px;border-top:3px solid #000}
+.xp-row{display:grid;grid-template-columns:190px minmax(0,1fr) minmax(0,1.3fr);gap:36px;padding:32px 0;border-bottom:1px solid rgba(0,0,0,.32)}
+.xp-date{font:600 12.5px/1.5 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.xp-date .now{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:5px 9px;border-radius:999px;background:#000;color:#fff;font-size:10.5px}
+.xp-date .now i{width:6px;height:6px;border-radius:50%;background:var(--red2)}
+.xp-kind{font:600 11.5px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.xp-role{font:700 clamp(22px,2.2vw,30px)/1.1 var(--f-disp);letter-spacing:-.02em;color:#000;margin-top:10px}
+.xp-meta{color:#fff;font-size:14px;margin-top:10px}
+.xp-sum{color:#fff;font-size:14.5px;line-height:1.55;margin-top:14px;max-width:36ch;padding-left:12px;border-left:2px solid #000}
+.xp-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;list-style:none;padding:0}
+.xp-stack li{font:600 10.5px/1 var(--f-mono);letter-spacing:.03em;padding:7px 9px;border-radius:999px;background:rgba(0,0,0,.24);color:#fff}
+.xp-list li{position:relative;padding-left:20px;color:#fff;font-size:15px;line-height:1.62}
+.xp-list li+li{margin-top:9px}
+.xp-list li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:2px;background:#000}
+.edu-rec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:64px}
+.blk{background:#0a0a0b;color:#fff;border-radius:24px;padding:32px 32px 30px}
+.blk h3{display:flex;align-items:center;gap:12px;font:600 13px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red2)}
+.blk h3 svg{width:18px;height:18px}
+.edu{padding:20px 0;border-bottom:1px solid var(--line)}
+.edu:last-child{border-bottom:0;padding-bottom:0}
+.edu-school{font:600 18px/1.25 var(--f-disp)}
+.edu-deg{color:var(--ink);margin-top:6px;font-size:15px}
+.edu-date{font:500 12px var(--f-mono);color:var(--muted);margin-top:6px;letter-spacing:.04em}
+.edu-note{font-size:13px;color:var(--ink2);margin-top:12px;line-height:1.6}
+.award{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.award:last-child{border-bottom:0;padding-bottom:0}
+.award .medal{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font:800 15px/1 var(--f-disp);background:var(--plate);color:#000}
+.award .medal.alt{background:#1b1b1e;color:#fff;border:1px solid var(--line2)}
+.award-title{font:600 15.5px/1.35 var(--f-disp)}
+.award-sub{font-size:13.5px;color:var(--ink2);margin-top:6px;line-height:1.55}
+
+/* ---------- projects (assembly line) ---------- */
+.projects{position:relative;z-index:2;background:var(--bg)}
+.pj-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;padding:calc(var(--hdr) + 26px) 0 22px}
+.pj-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px}
+.pj-head .h2{font-size:clamp(28px,3.4vw,52px)}
+.pj-head .lede{margin-top:12px;font-size:15px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;max-width:520px}
+.fbtn{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:transparent;font:500 11.5px/1 var(--f-mono);letter-spacing:.04em;color:var(--ink2);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.fbtn:hover{border-color:rgba(255,255,255,.45);color:#fff}
+.fbtn[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
+.fbtn sup{font-size:9.5px;margin-left:4px;opacity:.6}
+.line{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;margin-top:22px}
+.viewport{position:relative;min-height:0;flex:none}
+.track{display:flex;align-items:stretch;gap:26px;padding:0 var(--gut);will-change:transform}
+.pcard{position:relative;flex:none;width:clamp(290px,25vw,360px);display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#111113;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .35s var(--ease),border-color .3s,opacity .35s,filter .35s}
+.pcard:hover{transform:translateY(-8px);border-color:rgba(255,51,71,.65)}
+.pcard.dim{opacity:.22;filter:grayscale(1)}
+.pmedia{position:relative;flex:none;height:clamp(140px,25vh,236px);background:#1a1a1d;overflow:hidden}
+.pmedia img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pmedia.fig{background:#f4f4f2}
+.pmedia.fig img{object-fit:contain;padding:8px}
+.pcard:hover .pmedia img{transform:scale(1.05)}
+.pnum{position:absolute;left:12px;top:12px;font:600 10.5px/1 var(--f-mono);letter-spacing:.12em;padding:6px 8px;border-radius:6px;background:rgba(7,7,8,.82);color:#fff}
+.pnum b{color:var(--red2)}
+.pbadge{position:absolute;right:12px;top:12px;font:500 10.5px/1 var(--f-mono);padding:6px 8px;border-radius:6px;background:var(--red);color:#fff}
+.pbody{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.ptags{display:flex;flex-wrap:wrap;gap:5px}
+.ptags li{font:500 10.5px/1 var(--f-mono);padding:5px 7px;border-radius:5px;background:rgba(255,255,255,.06);color:var(--ink2)}
+.pcard h3{font:600 16px/1.28 var(--f-disp);letter-spacing:-.01em;margin-top:12px}
+.pcard p{font-size:13.5px;line-height:1.55;color:var(--ink2);margin-top:8px}
+.pgo{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:14px;font:600 12.5px/1 var(--f-body);color:var(--red2)}
+.pgo svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.pcard:hover .pgo svg{transform:translateX(4px)}
+.pend{flex:none;width:clamp(240px,20vw,300px);align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:28px;border:1px dashed var(--line2);border-radius:18px}
+.pend p{font:600 18px/1.3 var(--f-disp)}
+.conveyor{position:relative;height:58px;margin-top:0}
+.belt{position:absolute;left:0;right:0;top:0;height:12px;background:#1c1c20;border-top:1px solid rgba(255,255,255,.18);overflow:hidden}
+.belt::before{content:"";position:absolute;top:0;bottom:0;left:-80px;right:-80px;background:repeating-linear-gradient(90deg,transparent 0 30px,rgba(0,0,0,.55) 30px 32px,transparent 32px 40px);transform:translateX(var(--belt,0px))}
+.rollers{position:absolute;left:0;right:0;top:12px;height:34px;display:flex;justify-content:space-between;padding:0 6px}
+.roller{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#2a2a2f 0 30%,#141417 31% 100%);border:1px solid rgba(255,255,255,.12);transform:rotate(var(--rot,0deg))}
+.roller::before,.roller::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:2px;margin:-1px 0 0 -11px;background:rgba(255,255,255,.18);border-radius:2px}
+.roller::after{transform:rotate(90deg)}
+.roller{position:relative}
+.roller:nth-child(4n+1)::before{background:var(--red2)}
+.rail{position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(-45deg,#0e0e10 0 10px,#1a1a1d 10px 20px);border-top:1px solid #000}
+.pj-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:14px;font:500 11px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pj-bar{flex:1;max-width:420px;height:2px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pj-bar i{display:block;height:100%;background:var(--red2);transform-origin:left;transform:scaleX(0)}
+.pj-count b{color:#fff;font-weight:600}
+
+/* ---------- contact (red stage) ---------- */
+.contact{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;background:var(--plate);color:#000}
+.live .contact{background:transparent}
+.contact-in{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:calc(var(--hdr) + 40px);padding-bottom:40px}
+.contact .eyebrow{color:#fff}
+.contact-title{font:800 clamp(52px,10.5vw,184px)/.86 var(--f-disp);letter-spacing:-.045em;text-transform:uppercase;margin-top:22px;color:#000}
+.contact-title span{display:block}
+.contact-text{color:#fff;font-size:clamp(16px,1.3vw,19px);line-height:1.6;max-width:44ch;margin-top:30px}
+.contact-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.mail-big{display:inline-block;margin-top:34px;font:600 clamp(17px,2.2vw,30px)/1.2 var(--f-disp);letter-spacing:-.02em;color:#fff;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:9px;word-break:break-word}
+.mail-big:hover{color:#000}
+.foot{position:relative;z-index:2;background:var(--plate);border-top:1px solid rgba(0,0,0,.28)}
+.live .foot{background:transparent}
+.foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:24px;font:500 12px/1.4 var(--f-mono);letter-spacing:.04em;color:#fff}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+
+/* ---------- fallbacks: reduced motion / no WebGL ---------- */
+.rm .systems,.nogl .systems{height:auto}
+.rm .sys-pin,.nogl .sys-pin{position:relative;height:auto;overflow:visible;padding:calc(var(--hdr) + 40px) 0 100px}
+.rm .sys-head,.nogl .sys-head{position:relative;top:0}
+.rm .sys-lines,.nogl .sys-lines,.rm .mk,.nogl .mk,.rm .sys-foot,.nogl .sys-foot,.rm .online,.nogl .online{display:none}
+.rm .callouts,.nogl .callouts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:var(--maxw);margin:40px auto 0;padding:0 var(--gut)}
+.rm .callout,.nogl .callout{position:relative;width:auto;opacity:1;transform:none}
+.rm .co-proof,.nogl .co-proof{display:block}
+.nogl #stage{display:none}
+.nogl .fallback{display:block;position:absolute;z-index:1;left:50%;bottom:118px;width:min(26vw,380px);aspect-ratio:4/3;transform:translateX(-50%);border-radius:24px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 120px -40px rgba(228,22,44,.65)}
+.nogl .fallback img{width:100%;height:100%;object-fit:cover}
+.nogl .fallback span{position:absolute;left:14px;bottom:14px;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;background:rgba(7,7,8,.8);padding:7px 10px;border-radius:6px}
+.nogl .hint{display:none}
+.rm .sys-note,.nogl .sys-note{display:none}
+.rm .sys-head .h2,.nogl .sys-head .h2{max-width:none}
+/* projects: default = native swipe row; JS adds .pj-pinned on wide screens for the pinned conveyor */
+html:not(.pj-pinned) .pj-pin{position:relative;height:auto;padding:130px 0 90px}
+html:not(.pj-pinned) .line{flex:none;margin-top:34px}
+html:not(.pj-pinned) .viewport{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:12px 0 2px}
+html:not(.pj-pinned) .viewport::-webkit-scrollbar{display:none}
+html:not(.pj-pinned) .track{width:max-content;transform:none!important}
+html:not(.pj-pinned) .pcard{scroll-snap-align:start;scroll-margin-left:var(--gut)}
+html:not(.pj-pinned) .pend{scroll-snap-align:end}
+
+@media (max-width:1180px){
+  .xp-row{grid-template-columns:160px minmax(0,1fr);row-gap:18px}
+  .xp-row .xp-list{grid-column:2}
+  .nav a{padding:10px 8px}
+  .nav a .n{display:none}
+}
+@media (max-width:900px){
+  :root{--hdr:64px}
+  .hdr-in{gap:12px}
+  .menu-btn{display:grid}
+  .hdr .btn{display:none}
+  .nav{position:fixed;inset:0;z-index:-1;flex-direction:column;align-items:stretch;justify-content:center;gap:0;padding:96px var(--gut) 48px;background:#070708;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  .on-red .nav{background:#a50e22}
+  .menu-open .nav{opacity:1;visibility:visible}
+  .nav a{font:600 26px/1.2 var(--f-disp);letter-spacing:-.01em;text-transform:none;color:#fff;padding:16px 0;border-bottom:1px solid var(--line);border-radius:0}
+  .nav a .n{display:inline;font:500 12px var(--f-mono);vertical-align:middle;margin-right:14px}
+  .nav a[aria-current="true"]::after{display:none}
+  .nav .nav-contact{display:block}
+  .hero{height:auto;min-height:100svh;overflow:visible;padding-bottom:28px}
+  .hero-top{position:relative;top:auto;padding-top:calc(var(--hdr) + 22px);justify-content:flex-start}
+  .hero-name{position:relative;top:auto;padding-top:26px;font-size:clamp(34px,10.3vw,92px)}
+  .hero-ui{height:auto;padding-top:min(41vh,350px);padding-bottom:0}
+  .hero-bottom{grid-template-columns:1fr;gap:28px}
+  .hero-intro{max-width:none}
+  .stats{justify-self:stretch;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hint{display:none}
+  .systems{height:420vh}
+  .sys-head .h2{font-size:clamp(22px,6vw,30px)}
+  .sys-note{display:none}
+  .callout{left:var(--gut);right:var(--gut);top:auto;bottom:86px;width:auto;transform:none!important;pointer-events:none;transition:opacity .4s,border-color .35s,background .35s}
+  .callout .co-proof{display:block}
+  .sys-foot{bottom:30px}
+  .online{bottom:auto;top:58%}
+  .about{padding:110px 0 90px}
+  .about-grid{grid-template-columns:1fr}
+  .cards3{grid-template-columns:1fr;margin-top:44px}
+  .plate{padding:100px 0 90px}
+  .xp-row{grid-template-columns:1fr;gap:12px;padding:26px 0}
+  .xp-row .xp-list{grid-column:auto}
+  .edu-rec{grid-template-columns:1fr;margin-top:44px}
+  .blk{padding:26px 22px}
+  .pj-head{flex-direction:column;align-items:flex-start;gap:18px}
+  .live .contact-in{justify-content:flex-start;padding-top:calc(var(--hdr) + 26vh)}
+  .filters{justify-content:flex-start}
+  .pcard{width:min(82vw,340px)}
+  .pmedia{height:190px}
+  .pend{width:min(70vw,280px)}
+  .rm .callouts,.nogl .callouts{grid-template-columns:1fr}
+  .nogl .fallback{position:relative;left:auto;bottom:auto;transform:none;width:auto;margin:28px var(--gut) 0}
+  .nogl .hero-ui{padding-top:28px}
+}
+@media (min-width:901px){.nav .nav-contact{display:none}}
+@media (min-width:901px) and (max-width:1180px){
+  .hero-bottom{grid-template-columns:1fr;gap:24px}
+  .hero-intro{max-width:440px}
+  .stats{justify-self:stretch;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .stat{padding:14px 16px 15px}
+  .stat span{font-size:12px}
+  .hint{display:none}
+  .socials{display:none}
+  .hero-name{font-size:clamp(44px,min(8.8vw,14vh),172px)}
+}
+@media (max-height:860px),(max-width:1180px){.callout:not(.on) .chips{display:none}}
+@media (min-width:901px) and (max-height:820px){
+  .pj-head .lede{display:none}
+  .pmedia{height:clamp(110px,21vh,200px)}
+  .pcard p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+}
+@media (max-width:420px){
+  .btn{height:46px;padding:0 18px}
+  .hero-cta .btn{flex:1}
+  .stat{padding:14px 14px 16px}
+  .stat b{font-size:17px}
+  .logo-txt span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
+<div id="backdrop" aria-hidden="true"></div>
+<canvas id="stage" aria-hidden="true"></canvas>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#hero" aria-label="Shourya Vuddemarri – home">
-        <span class="logo-mark" aria-hidden="true">SV</span>
-        <span class="logo-text">Shourya<span>Robotics</span></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
-        <span></span><span></span>
-      </button>
-      <nav id="site-nav" class="site-nav" aria-label="Main">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="nav-cta">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#hero" aria-label="Shourya Vuddemarri – back to top">
+      <span class="logo-mark" aria-hidden="true">SV</span>
+      <span class="logo-txt"><b>Shourya Vuddemarri</b><span>Robotics Engineer</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#skills"><span class="n">01</span>Skills</a>
+      <a href="#about"><span class="n">02</span>About</a>
+      <a href="#experience"><span class="n">03</span>Experience</a>
+      <a href="#projects"><span class="n">04</span>Projects</a>
+      <a href="#contact" class="nav-contact"><span class="n">05</span>Contact</a>
+    </nav>
+    <a class="btn btn-red" href="#contact">Contact</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><i></i></button>
+  </div>
+</header>
 
-  <main id="main">
+<main id="main">
 
-    <!-- ================= HERO ================= -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content reveal">
-            <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Open to full-time roles</p>
-
-            <h1 class="hero-title">
-              <span class="hero-hi">Hi, I’m</span>
-              <span class="grad">Shourya Vuddemarri</span>
-            </h1>
-
-            <p class="hero-subtitle"><strong>Robotics Engineer</strong> · SLAM · Perception · Autonomous Navigation</p>
-
-            <p class="hero-text">
-              I integrate, tune and benchmark the systems that let robots see and move — SLAM and
-              state estimation, sensor fusion, perception and ROS&nbsp;2 navigation — in simulation and on
-              real robots, and I design and build the hardware too. I’m pursuing an M.S. in Robotics at
-              Northeastern University (May 2027).
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn primary">
-                View Projects
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-              <a href="#contact" class="btn ghost">Contact Me</a>
-            </div>
-
-            <div class="hero-social">
-              <a class="icon-link" href="https://github.com/Shourya1515" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              </a>
-              <a class="icon-link" href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-              </a>
-              <a class="icon-link" href="mailto:vuddemarri.s@northeastern.edu" aria-label="Email">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-visual reveal">
-            <div class="photo-frame">
-              <img src="images/profile.jpg" alt="Shourya Vuddemarri portrait" width="1200" height="1600" fetchpriority="high" />
-            </div>
-            <div class="bbox" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="bbox-label">ID 1</span></div>
-          </div>
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero" aria-labelledby="hero-title">
+  <div class="hero-top"><p class="pill"><i aria-hidden="true"></i>Open to full-time roles</p></div>
+  <h1 id="hero-title" class="hero-name"><span class="hi">Hi, I’m</span><span class="l1">Shourya</span><span class="l2">Vuddemarri</span></h1>
+  <div class="fallback" aria-hidden="true"><img src="images/thumbs/pesticide/agri1.jpg" alt="" /><span>Pesticide spraying robot</span></div>
+  <div class="hero-ui">
+    <div class="hero-bottom">
+      <div class="hero-intro">
+        <p class="role">Robotics Engineer <span>·</span> SLAM <span>·</span> Perception <span>·</span> Autonomous Navigation</p>
+        <p class="hero-text">I integrate, tune and benchmark the systems that let robots see and move — SLAM and state estimation, sensor fusion, perception and ROS&nbsp;2 navigation — in simulation and on real robots, and I design and build the hardware too. M.S. Robotics at Northeastern University (May&nbsp;2027).</p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="#projects">View projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
         </div>
+        <div class="socials">
+          <a class="icon-btn" href="https://github.com/Shourya1515" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a class="icon-btn" href="mailto:vuddemarri.s@northeastern.edu" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <ul class="stats" aria-label="Highlights">
+        <li class="stat"><b>ICRA <em>2024</em></b><span>Late-Breaking Results poster co-author (Yokohama)</span></li>
+        <li class="stat"><b><em>3×</em> podiums</b><span>National RoboWars — one 1st, two 2nds</span></li>
+        <li class="stat"><b><em>95%</em> Nav2</b><span>Goal success over 40 simulated trials, up from 85%</span></li>
+        <li class="stat"><b><em>0.71</em> IDF1</b><span>Multi-object tracking on MOT17-09 (MOTA 0.50)</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14.9-4M20 12a8 8 0 0 1-14.9 4"/><path d="M19 3v5h-5M5 21v-5h5"/></svg>Drag to rotate · scroll to disassemble</p>
+</section>
 
-        <ul class="stats reveal" aria-label="Highlights">
-          <li class="stat">
-            <div class="stat-value">ICRA 2024</div>
-            <div class="stat-label">Late-Breaking Results poster co-author (Yokohama)</div>
-          </li>
-          <li class="stat">
-            <div class="stat-value">3×</div>
-            <div class="stat-label">national RoboWars podiums — one 1st, two 2nds</div>
-          </li>
-          <li class="stat">
-            <div class="stat-value">95%</div>
-            <div class="stat-label">Nav2 goal success over 40 simulated trials, up from 85%</div>
-          </li>
-          <li class="stat">
-            <div class="stat-value">0.71 IDF1</div>
-            <div class="stat-label">multi-object tracking on MOT17-09 (MOTA 0.50)</div>
-          </li>
+<!-- ============ SKILLS: EXPLODED VIEW ============ -->
+<section id="skills" class="systems" aria-labelledby="sys-title">
+  <div class="sys-pin">
+    <div class="sys-head"><div class="wrap">
+      <div><p class="eyebrow">01 · Skills</p><h2 id="sys-title" class="h2">One robot. <em>Six</em> skill stacks.</h2></div>
+      <p class="sys-note">Exploded view · <b>scroll</b><br />Each subsystem maps to the<br />tools behind my projects</p>
+    </div></div>
+    <svg class="sys-lines" id="sysLines" aria-hidden="true"></svg>
+    <div class="markers" aria-hidden="true"><span class="mk">01</span><span class="mk">02</span><span class="mk">03</span><span class="mk">04</span><span class="mk">05</span><span class="mk">06</span></div>
+    <div class="callouts">
+      <article class="callout" data-part="lidar">
+        <div class="co-top"><b>01</b><span>LiDAR puck</span></div>
+        <h3>Mapping &amp; SLAM</h3>
+        <ul class="chips"><li>ORB-SLAM3</li><li>SLAM Toolbox</li><li>RTAB-Map</li><li>LIO-SAM</li><li>Open3D</li><li>3D Gaussian Splatting</li></ul>
+        <p class="co-proof">Benchmarked <b>RTAB-Map against LIO-SAM</b> on a Unitree Go2 quadruped carrying a Hesai XT-16 LiDAR.</p>
+      </article>
+      <article class="callout" data-part="camera">
+        <div class="co-top"><b>02</b><span>Stereo camera</span></div>
+        <h3>Perception &amp; computer vision</h3>
+        <ul class="chips"><li>OpenCV</li><li>PyTorch</li><li>YOLOv8</li><li>ResNet / MobileNet</li><li>MediaPipe</li></ul>
+        <p class="co-proof">YOLOv8 + Kalman + Hungarian tracking with ResNet18 Re-ID: <b>IDF1 0.71</b> on MOT17-09.</p>
+      </article>
+      <article class="callout" data-part="imu">
+        <div class="co-top"><b>03</b><span>IMU + GPS</span></div>
+        <h3>State estimation &amp; sensor fusion</h3>
+        <ul class="chips"><li>Sensor fusion</li><li>IMU / GPS</li><li>Visual-inertial SLAM</li><li>Magnetometer calibration</li><li>Complementary filter</li></ul>
+        <p class="co-proof">IMU dead reckoning compared against GPS over a <b>5.7&nbsp;km drive</b> through Boston.</p>
+      </article>
+      <article class="callout" data-part="compute">
+        <div class="co-top"><b>04</b><span>Compute module</span></div>
+        <h3>Software &amp; autonomy</h3>
+        <ul class="chips"><li>ROS 2 Humble / Jazzy</li><li>Nav2</li><li>AMCL</li><li>TF / URDF</li><li>C++</li><li>Python</li><li>MATLAB</li><li>Linux</li><li>Docker</li><li>Git</li><li>Unitree Go2 SDK</li></ul>
+        <p class="co-proof">Nav2 goal success raised <b>from 85% to 95%</b> over 40 simulated trials.</p>
+      </article>
+      <article class="callout" data-part="chassis">
+        <div class="co-top"><b>05</b><span>Chassis + drivetrain</span></div>
+        <h3>Mechanical design &amp; fabrication</h3>
+        <ul class="chips"><li>Fusion 360</li><li>SolidWorks</li><li>Onshape</li><li>Ansys</li><li>ADAMS</li><li>Static FEA</li><li>CNC / VMC machining</li><li>Laser cutting</li></ul>
+        <p class="co-proof">Machined aluminium chassis, heat-treated EN-24 weapons — <b>three national RoboWars podiums</b>.</p>
+      </article>
+      <article class="callout" data-part="twin">
+        <div class="co-top"><b>06</b><span>Digital twin</span></div>
+        <h3>Simulation</h3>
+        <ul class="chips"><li>Gazebo</li><li>Isaac Sim</li><li>CoppeliaSim</li><li>RViz</li></ul>
+        <p class="co-proof">CAD to autonomy: <b>Fusion 360 → URDF → Gazebo / RViz</b> → ROS&nbsp;2 bring-up.</p>
+      </article>
+    </div>
+    <div class="online" aria-hidden="true"><p>Systems <span>online</span></p><small>Six subsystems · one robot</small></div>
+    <div class="sys-foot" aria-hidden="true">
+      <ol class="steps"><li><i></i></li><li><i></i></li><li><i></i></li><li><i></i></li><li><i></i></li><li><i></i></li></ol>
+      <p class="sys-status" id="sysStatus">Scroll to <b>disassemble</b></p>
+    </div>
+  </div>
+</section>
+<!-- ============ ABOUT ============ -->
+<section id="about" class="about layer" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">02 · About</p>
+        <h2 id="about-title" class="h2">From CAD to a robot <em>that works.</em></h2>
+        <div class="who">
+          <img src="images/profile.jpg" alt="Shourya Vuddemarri" width="58" height="58" loading="lazy" />
+          <div><b>Shourya Vuddemarri</b><span>M.S. Robotics · Northeastern University · Boston, MA</span></div>
+        </div>
+        <p class="big">I’m a robotics engineer pursuing an M.S. in Robotics (Electrical &amp; Computer Engineering) at Northeastern University, after a B.Tech in Mechanical Engineering from Amrita Vishwa Vidyapeetham. I like owning the whole path: mechanical design and fabrication, ROS&nbsp;2 bring-up, SLAM and state estimation, perception and navigation.</p>
+        <p>Recent work includes visual-inertial SLAM with ORB-SLAM3, LiDAR SLAM benchmarking on a Unitree Go2 quadruped, SLAM and Nav2 autonomy for a delivery robot, and cross-camera multi-object tracking. I’m currently working on a project that applies 3D Gaussian Splatting to SLAM for a robot that transitions between ground and aerial locomotion. Before grad school I co-authored an ICRA 2024 late-breaking poster and built combat robots that took three national podiums.</p>
+        <ul class="tags" aria-label="Focus areas"><li>ROS 2</li><li>SLAM &amp; State Estimation</li><li>Sensor Fusion</li><li>Computer Vision</li><li>Autonomous Navigation</li><li>Mechanical Design</li></ul>
+      </div>
+    </div>
+    <div class="cards3">
+      <div class="card">
+        <span class="k">A</span>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4M9 3h6"/><circle cx="9.5" cy="12.5" r="1.2"/><circle cx="14.5" cy="12.5" r="1.2"/><path d="M2 11v4M22 11v4"/></svg></div>
+        <h3>What I do</h3>
+        <p>Take robots from CAD to autonomy: Fusion 360 → URDF → Gazebo / RViz → ROS&nbsp;2 bring-up → SLAM, localization, perception and Nav2 navigation.</p>
+      </div>
+      <div class="card">
+        <span class="k">B</span>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg></div>
+        <h3>How I work</h3>
+        <p>Measure, then tune. I integrate proven stacks (Nav2, SLAM Toolbox, ORB-SLAM3, RTAB-Map), benchmark them against baselines, and document what actually improved — and what didn’t.</p>
+      </div>
+      <div class="card">
+        <span class="k">C</span>
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+        <h3>What I’m looking for</h3>
+        <p>Full-time roles in robot perception, SLAM and state estimation, autonomous navigation, or robotics systems integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE (red plate) ============ -->
+<section id="experience" class="plate" aria-labelledby="xp-title">
+  <div class="wrap">
+    <p class="eyebrow">03 · Experience</p>
+    <h2 id="xp-title" class="h2">Experience &amp; Education</h2>
+    <ol class="xp">
+      <li class="xp-row">
+        <div class="xp-date">Sep 2026 – Present<br /><span class="now"><i aria-hidden="true"></i>Current</span></div>
+        <div>
+          <p class="xp-kind">Robotics Research Intern</p>
+          <h3 class="xp-role">Blue Fusion</h3>
+          <p class="xp-meta">Framingham, MA</p>
+          <p class="xp-sum">Real-to-digital-to-synthetic validation pipeline for autonomous driving, built from a low-cost fleet camera rig.</p>
+          <ul class="xp-stack" aria-label="Tools">
+            <li>COLMAP</li><li>3D Gaussian Splatting · 3DGUT</li><li>OpenUSD</li><li>NVIDIA Isaac Sim</li><li>PhysX</li><li>Mask R-CNN</li><li>IMM Kalman tracking</li><li>DGX Spark</li>
+          </ul>
+        </div>
+        <ul class="xp-list">
+          <li>Built, solo, an end-to-end real-to-sim pipeline that turns drives from a production fleet’s multi-camera rig into a georeferenced, simulation-ready digital twin of a suburban route — COLMAP SfM, 3D Gaussian splatting (3DGUT), OpenUSD and NVIDIA Isaac Sim on an ARM64 DGX Spark cluster.</li>
+          <li>Found and fixed sensor-timing faults in the field data — camera clocks out of sync with GNSS time, and receiver leap-second jumps that displaced frames — which substantially cut georeferencing error; added monocular visual odometry with wheel-speed scale.</li>
+          <li>Developed a closed-loop AV test stack inside the twin — PhysX vehicle model, pure-pursuit path tracking, IDM car-following and rule-aware planning — scored on a traffic-rule scorecard across rain, snow, day and night and compared against the recorded human drive.</li>
+          <li>Created reproducible safety-critical edge-case scenarios and a parameter-sweep framework, plus physically based rain, snow, fog and night relighting checked against real adverse-weather footage.</li>
+          <li>Put perception in the loop: the AV drives from its rendered camera using Mask R-CNN detection, monocular ground-plane ranging and IMM Kalman multi-object tracking, and I measured the sim-to-real detection gap against the same drive’s real cameras.</li>
+        </ul>
+      </li>
+      <li class="xp-row">
+        <div class="xp-date">May 2026 – Present<br /><span class="now"><i aria-hidden="true"></i>Ongoing</span></div>
+        <div>
+          <p class="xp-kind">Ongoing Project</p>
+          <h3 class="xp-role">Morpho-GS-SLAM</h3>
+          <p class="xp-meta">Northeastern University · Boston, MA</p>
+        </div>
+        <ul class="xp-list">
+          <li>Building a 3D Gaussian Splatting SLAM system for the Caltech M4 morphobot, a robot that transitions between ground and aerial locomotion.</li>
+          <li>Trained 3DGS reconstructions with gsplat and nerfstudio (PyTorch, CUDA) to about 30&nbsp;dB PSNR, and measured a ~21&nbsp;dB PSNR drop when rendering from camera views outside each model’s training set.</li>
+          <li>Next: visual-inertial fusion and pose-graph optimization across locomotion-mode transitions.</li>
+        </ul>
+      </li>
+      <li class="xp-row">
+        <div class="xp-date">Sep – Nov 2024</div>
+        <div>
+          <p class="xp-kind">Robotics Intern</p>
+          <h3 class="xp-role">9th Pixel</h3>
+          <p class="xp-meta">Hyderabad, India</p>
+        </div>
+        <ul class="xp-list">
+          <li>Integrated a Hesai XT-16 LiDAR and camera on a Unitree Go2 EDU quadruped, bridging the Go2 SDK into ROS&nbsp;2 Humble.</li>
+          <li>Ran visual and LiDAR SLAM pipelines and benchmarked RTAB-Map against LIO-SAM with live runs and offline bag replay.</li>
+          <li>Diagnosed Nav2 runs that failed over Wi-Fi — late and dropped point-cloud and odometry messages were starving the costmap — and documented wired vs. wireless configurations.</li>
+        </ul>
+      </li>
+      <li class="xp-row">
+        <div class="xp-date">Jun – Aug 2024</div>
+        <div>
+          <p class="xp-kind">Robotics Intern</p>
+          <h3 class="xp-role">Kitolit</h3>
+          <p class="xp-meta">Tokyo, Japan</p>
+        </div>
+        <ul class="xp-list">
+          <li>Built and tested three sensing and perception prototypes in ten weeks through rapid iteration; two advanced to customer pilot testing.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="edu-rec">
+      <div class="blk">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Education</h3>
+        <div class="edu">
+          <p class="edu-school">Northeastern University</p>
+          <p class="edu-deg">M.S. Robotics (Electrical &amp; Computer Engineering)</p>
+          <p class="edu-date">Jan 2025 – May 2027 · Boston, MA</p>
+          <p class="edu-note">Robot Sensing &amp; Navigation · Mobile Robotics · Computer Vision · Pattern Recognition &amp; Computer Vision · Robot Mechanics &amp; Control · Control Systems Engineering</p>
+        </div>
+        <div class="edu">
+          <p class="edu-school">Amrita Vishwa Vidyapeetham</p>
+          <p class="edu-deg">B.Tech Mechanical Engineering</p>
+          <p class="edu-date">Sep 2020 – May 2024 · Coimbatore, India</p>
+        </div>
+      </div>
+      <div class="blk">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7"/></svg>Recognition</h3>
+        <ul>
+          <li class="award"><span class="medal alt" aria-hidden="true">IEEE</span><div><p class="award-title">IEEE ICRA 2024 · Late-Breaking Results poster</p><p class="award-sub">“Design Considerations for Bioinspired Multi-morphing Omnidirectional Robot” — Yokohama, Japan (co-author)</p></div></li>
+          <li class="award"><span class="medal" aria-hidden="true">1st</span><div><p class="award-title">1st place · RoboWars 15&nbsp;kg</p><p class="award-sub">Anna University, 2024</p></div></li>
+          <li class="award"><span class="medal" aria-hidden="true">2nd</span><div><p class="award-title">2nd place · RoboWars 25&nbsp;kg &amp; 8&nbsp;kg</p><p class="award-sub">NIT Trichy and Amrita Bangalore, 2023</p></div></li>
         </ul>
       </div>
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="section about">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">01 · About</p>
-          <h2 class="section-title">About Me</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-copy reveal">
-            <p>
-              I’m a robotics engineer pursuing an M.S. in Robotics (Electrical &amp; Computer Engineering)
-              at Northeastern University, after a B.Tech in Mechanical Engineering from Amrita Vishwa
-              Vidyapeetham. I like owning the whole path from CAD to a robot that works: mechanical
-              design and fabrication, ROS&nbsp;2 bring-up, SLAM and state estimation, perception and
-              navigation.
-            </p>
-            <p>
-              Recent work includes visual-inertial SLAM with ORB-SLAM3, LiDAR SLAM benchmarking on a
-              Unitree Go2 quadruped, SLAM and Nav2 autonomy for a delivery robot, and cross-camera
-              multi-object tracking. I’m currently working on a project that applies 3D Gaussian
-              Splatting to SLAM for a robot that transitions between ground and aerial locomotion. Before grad school I
-              co-authored an ICRA 2024 late-breaking poster and built combat robots that took three
-              national podiums.
-            </p>
-            <ul class="tag-list" aria-label="Focus areas">
-              <li class="tag">ROS 2</li>
-              <li class="tag">SLAM &amp; State Estimation</li>
-              <li class="tag">Sensor Fusion</li>
-              <li class="tag">Computer Vision</li>
-              <li class="tag">Autonomous Navigation</li>
-              <li class="tag">Mechanical Design</li>
-            </ul>
-          </div>
-
-          <div class="about-cards" data-stagger>
-            <div class="info-card reveal">
-              <div class="info-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4M9 3h6"/><circle cx="9.5" cy="12.5" r="1.2"/><circle cx="14.5" cy="12.5" r="1.2"/><path d="M2 11v4M22 11v4"/></svg>
-              </div>
-              <div>
-                <h3>What I Do</h3>
-                <p>
-                  Take robots from CAD to autonomy: Fusion 360 → URDF → Gazebo / RViz → ROS&nbsp;2
-                  bring-up → SLAM, localization, perception and Nav2 navigation.
-                </p>
-              </div>
-            </div>
-
-            <div class="info-card reveal">
-              <div class="info-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></svg>
-              </div>
-              <div>
-                <h3>How I Work</h3>
-                <p>
-                  Measure, then tune. I integrate proven stacks (Nav2, SLAM Toolbox, ORB-SLAM3,
-                  RTAB-Map), benchmark them against baselines, and document what actually improved —
-                  and what didn’t.
-                </p>
-              </div>
-            </div>
-
-            <div class="info-card reveal">
-              <div class="info-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
-              </div>
-              <div>
-                <h3>What I’m Looking For</h3>
-                <p>
-                  Full-time roles in robot perception, SLAM and state estimation, autonomous
-                  navigation, or robotics systems integration.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= EXPERIENCE ================= -->
-    <section id="experience" class="section experience">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">02 · Experience</p>
-          <h2 class="section-title">Experience &amp; Education</h2>
-        </div>
-
-        <div class="xp-grid">
-          <ol class="timeline" data-stagger>
-            <li class="timeline-item reveal">
-              <div class="xp-head">
-                <h3 class="xp-role">Ongoing Project · <span>Morpho-GS-SLAM</span></h3>
-                <span class="xp-date">May 2026 – Present</span>
-              </div>
-              <p class="xp-meta">Northeastern University · Boston, MA</p>
-              <ul class="xp-list">
-                <li>Building a 3D Gaussian Splatting SLAM system for the Caltech M4 morphobot, a robot that transitions between ground and aerial locomotion.</li>
-                <li>Trained 3DGS reconstructions with gsplat and nerfstudio (PyTorch, CUDA) to about 30 dB PSNR, and measured a ~21 dB PSNR drop when rendering from camera views outside each model’s training set.</li>
-                <li>Next: visual-inertial fusion and pose-graph optimization across locomotion-mode transitions.</li>
-              </ul>
-            </li>
-
-            <li class="timeline-item reveal">
-              <div class="xp-head">
-                <h3 class="xp-role">Robotics Intern · <span>9th Pixel</span></h3>
-                <span class="xp-date">Sep – Nov 2024</span>
-              </div>
-              <p class="xp-meta">Hyderabad, India</p>
-              <ul class="xp-list">
-                <li>Integrated a Hesai XT-16 LiDAR and camera on a Unitree Go2 EDU quadruped, bridging the Go2 SDK into ROS&nbsp;2 Humble.</li>
-                <li>Ran visual and LiDAR SLAM pipelines and benchmarked RTAB-Map against LIO-SAM with live runs and offline bag replay.</li>
-                <li>Diagnosed Nav2 runs that failed over Wi-Fi — late and dropped point-cloud and odometry messages were starving the costmap — and documented wired vs. wireless configurations.</li>
-              </ul>
-            </li>
-
-            <li class="timeline-item reveal">
-              <div class="xp-head">
-                <h3 class="xp-role">Robotics Intern · <span>Kitolit</span></h3>
-                <span class="xp-date">Jun – Aug 2024</span>
-              </div>
-              <p class="xp-meta">Tokyo, Japan</p>
-              <ul class="xp-list">
-                <li>Built and tested three sensing and perception prototypes in ten weeks through rapid iteration; two advanced to customer pilot testing.</li>
-              </ul>
-            </li>
-          </ol>
-
-          <div class="side-stack">
-            <div class="side-card reveal">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
-                Education
-              </h3>
-              <div class="edu-item">
-                <p class="edu-school">Northeastern University</p>
-                <p class="edu-degree">M.S. Robotics (Electrical &amp; Computer Engineering)</p>
-                <p class="edu-date">Jan 2025 – May 2027 · Boston, MA</p>
-                <p class="edu-note">Robot Sensing &amp; Navigation · Mobile Robotics · Computer Vision · Pattern Recognition &amp; Computer Vision · Robot Mechanics &amp; Control · Control Systems Engineering</p>
-              </div>
-              <div class="edu-item">
-                <p class="edu-school">Amrita Vishwa Vidyapeetham</p>
-                <p class="edu-degree">B.Tech Mechanical Engineering</p>
-                <p class="edu-date">Sep 2020 – May 2024 · Coimbatore, India</p>
-              </div>
-            </div>
-
-            <div class="side-card reveal">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7"/></svg>
-                Recognition
-              </h3>
-              <ul class="award-list">
-                <li>
-                  <span class="award-icon paper" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
-                  <div>
-                    <p class="award-title">IEEE ICRA 2024 · Late-Breaking Results poster</p>
-                    <p class="award-sub">“Design Considerations for Bioinspired Multi-morphing Omnidirectional Robot” — Yokohama, Japan (co-author)</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="award-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
-                  <div>
-                    <p class="award-title">1st place · RoboWars 15 kg</p>
-                    <p class="award-sub">Anna University, 2024</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="award-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
-                  <div>
-                    <p class="award-title">2nd place · RoboWars 25 kg &amp; 8 kg</p>
-                    <p class="award-sub">NIT Trichy and Amrita Bangalore, 2023</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <div class="projects-head">
-          <div class="section-head reveal">
-            <p class="eyebrow">03 · Projects</p>
-            <h2 class="section-title">Projects</h2>
-            <p class="section-sub">Selected work across localization, perception and robot hardware — each with its own write-up, results and media.</p>
-          </div>
-          <div class="filters reveal" role="group" aria-label="Filter projects">
-            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All <span class="filter-count"></span></button>
-            <button type="button" class="filter-btn" data-filter="nav" aria-pressed="false">Localization &amp; Navigation <span class="filter-count"></span></button>
-            <button type="button" class="filter-btn" data-filter="cv" aria-pressed="false">Computer Vision <span class="filter-count"></span></button>
-            <button type="button" class="filter-btn" data-filter="hw" aria-pressed="false">Robot Design &amp; Hardware <span class="filter-count"></span></button>
-          </div>
-        </div>
-
-        <div class="project-grid" data-stagger>
-
-          <a href="project-orb-slam3.html" class="project-card reveal" data-category="nav">
-            <div class="project-media is-figure">
-              <img src="images/thumbs/orbslam3/eval_v1_01_realtime.jpg" alt="EuRoC V1_01 trajectory evaluation: VIO estimate vs. ground truth" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">SLAM</li><li class="tag">VIO</li><li class="tag">ROS 2</li></ul>
-              <h3>Visual-Inertial SLAM with ORB-SLAM3</h3>
-              <p>ROS&nbsp;2 C++ integration of ORB-SLAM3 monocular-inertial SLAM, a fix for cold-start initialization, and an evaluation pipeline — 0.13&nbsp;m ATE on EuRoC V1_01 at 30&nbsp;Hz.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-4wheel-slam.html" class="project-card reveal" data-category="nav">
-            <div class="project-media">
-              <img src="images/thumbs/4wheel/nav2.jpg" alt="RViz view of the SLAM map with a Nav2 planned path" loading="lazy" />
-              <span class="media-badge">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
-                2 demo videos
-              </span>
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">ROS 2</li><li class="tag">SLAM Toolbox</li><li class="tag">Nav2</li></ul>
-              <h3>C.A.N.D.I. Delivery Robot — SLAM &amp; Nav2</h3>
-              <p>Led SLAM and navigation for a four-person simulated delivery robot: 95% goal success over 40 trials and 40% faster goals after tuning.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-multi-object-tracking.html" class="project-card reveal" data-category="cv">
-            <div class="project-media">
-              <img src="images/thumbs/mot/ss1.jpg" alt="Tracking output with two pedestrians labelled ID 1 and ID 2" loading="lazy" style="object-position: 50% 66%" />
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Computer Vision</li><li class="tag">Tracking</li><li class="tag">Re-ID</li></ul>
-              <h3>Multi-Object Tracking with Cross-Camera Re-ID</h3>
-              <p>YOLOv8 + Kalman + Hungarian tracker with ResNet18 appearance Re-ID: MOTA 0.50 / IDF1 0.71 on MOT17-09, and 3/3 identities matched across two cameras.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-omni.html" class="project-card reveal" data-category="hw">
-            <div class="project-media">
-              <img src="images/thumbs/omni/omni1.jpg" alt="Bio-inspired omnidirectional robot with wheeled legs" loading="lazy" />
-              <span class="media-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
-                ICRA 2024 poster
-              </span>
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Kinematics</li><li class="tag">Robot Design</li></ul>
-              <h3>Bio-Inspired Omnidirectional Robot</h3>
-              <p>ICRA 2024 late-breaking poster (Amrita × Sony): leg kinematics and Jacobian-conditioning analysis for a multi-morphing wheeled quadruped.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-combat.html" class="project-card reveal" data-category="hw">
-            <div class="project-media">
-              <img src="images/thumbs/combat/combat1.jpg" alt="Combat robot in the arena with sparks on impact" loading="lazy" />
-              <span class="media-badge gold">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
-                3 national podiums
-              </span>
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Mechanical</li><li class="tag">Competition</li></ul>
-              <h3>Combat Robotics Series</h3>
-              <p>A belt-driven drum-spinner platform built in three weight classes (25&nbsp;/&nbsp;15&nbsp;/&nbsp;8&nbsp;kg): machined aluminium chassis, heat-treated EN-24 weapons, three national podiums.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-asl-fingerspelling.html" class="project-card reveal" data-category="cv">
-            <div class="project-media">
-              <img src="images/thumbs/asl/w.jpg" alt="Live ASL recognition of the letter W with hand landmarks" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Computer Vision</li><li class="tag">Deep Learning</li></ul>
-              <h3>Real-Time ASL Fingerspelling</h3>
-              <p>Benchmarked three CNNs on 24 static ASL letters, built a 27–30&nbsp;FPS live app, and measured a 67-point accuracy drop on real-world photos.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-nu-nance.html" class="project-card reveal" data-category="nav">
-            <div class="project-media is-figure">
-              <img src="images/thumbs/nuance/circle_mag_calibration1.jpg" alt="Magnetometer calibration before and after correction" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Sensor Fusion</li><li class="tag">IMU / GPS</li></ul>
-              <h3>NUance IMU + GPS Navigation Study</h3>
-              <p>Magnetometer calibration, complementary-filter heading, and IMU dead reckoning compared against GPS over a 5.7&nbsp;km drive through Boston.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-block-map-localization.html" class="project-card reveal" data-category="nav">
-            <div class="project-media is-figure">
-              <img src="images/thumbs/blockmap/blockmap3.jpg" alt="Top view of the generated block maps" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Localization</li><li class="tag">Point Clouds</li></ul>
-              <h3>Block-Map LiDAR Localization</h3>
-              <p>Python / Open3D reimplementation of an ICRA 2024 method: branch-and-bound initialization and ICP tracking across overlapping block maps.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-          <a href="project-pesticide.html" class="project-card reveal" data-category="hw">
-            <div class="project-media">
-              <img src="images/thumbs/pesticide/agri1.jpg" alt="Pesticide spraying robot with four-wheel chassis and spray boom" loading="lazy" style="object-position: 50% 42%" />
-            </div>
-            <div class="card-body">
-              <ul class="tag-list"><li class="tag">Agri-Robotics</li><li class="tag">Hardware</li></ul>
-              <h3>Pesticide Spraying Robot</h3>
-              <p>Teleoperated four-wheel sprayer with an onboard tank, pump and dual-axis spray boom, built to reduce farmers’ direct exposure to chemicals.</p>
-              <span class="card-cta">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SKILLS ================= -->
-    <section id="skills" class="section skills">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">04 · Skills</p>
-          <h2 class="section-title">Skills</h2>
-          <p class="section-sub">The frameworks, languages and tools behind these projects.</p>
-        </div>
-
-        <div class="skills-grid" data-stagger>
-          <div class="skill-group reveal">
-            <h3>Robotics &amp; Autonomy</h3>
-            <ul class="skill-list">
-              <li class="skill"><span class="skill-logo"><img src="images/skills/ros-logo.jpg" alt="" loading="lazy" /></span><span>ROS / ROS 2</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/ros2_jazzy.png" alt="" loading="lazy" /></span><span>ROS 2 Jazzy</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/ros2_humble.jpeg" alt="" loading="lazy" /></span><span>ROS 2 Humble</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/SLAM.jpeg" alt="" loading="lazy" /></span><span>SLAM</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/autonomous_navigation.jpeg" alt="" loading="lazy" /></span><span>Navigation</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/sensor_fusion.png" alt="" loading="lazy" /></span><span>Sensor Fusion</span></li>
-            </ul>
-            <ul class="chip-cloud" aria-label="Robotics tools">
-              <li>Nav2</li><li>SLAM Toolbox</li><li>ORB-SLAM3</li><li>RTAB-Map</li><li>LIO-SAM</li><li>AMCL</li><li>TF / URDF</li><li>Unitree Go2 SDK</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>Perception &amp; Software</h3>
-            <ul class="skill-list">
-              <li class="skill"><span class="skill-logo"><img src="images/skills/python.jpeg" alt="" loading="lazy" /></span><span>Python</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/c++.png" alt="" loading="lazy" /></span><span>C++</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/open_cv.png" alt="" loading="lazy" /></span><span>OpenCV</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/matlab.jpeg" alt="" loading="lazy" /></span><span>MATLAB</span></li>
-            </ul>
-            <ul class="chip-cloud" aria-label="Perception and software tools">
-              <li>PyTorch</li><li>YOLOv8</li><li>ResNet / MobileNet</li><li>MediaPipe</li><li>3D Gaussian Splatting</li><li>Open3D</li><li>Linux</li><li>Git</li><li>Docker</li>
-            </ul>
-          </div>
-
-          <div class="skill-group reveal">
-            <h3>Simulation &amp; Mechanical</h3>
-            <ul class="skill-list">
-              <li class="skill"><span class="skill-logo"><img src="images/skills/gazebo.png" alt="" loading="lazy" /></span><span>Gazebo</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/coppeliasim.png" alt="" loading="lazy" /></span><span>CoppeliaSim</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/isaac.png" alt="" loading="lazy" /></span><span>Isaac Sim</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/fusion360.png" alt="" loading="lazy" /></span><span>Fusion 360</span></li>
-              <li class="skill"><span class="skill-logo"><img src="images/skills/ansys.jpeg" alt="" loading="lazy" /></span><span>Ansys</span></li>
-            </ul>
-            <ul class="chip-cloud" aria-label="Simulation and mechanical tools">
-              <li>SolidWorks</li><li>Onshape</li><li>ADAMS</li><li>Static FEA</li><li>CNC / VMC machining</li><li>Laser cutting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <div class="contact-card reveal">
-          <p class="eyebrow">05 · Contact</p>
-          <h2 class="section-title">Let’s connect</h2>
-          <p class="contact-text">
-            I’m open to full-time roles in robot perception, SLAM, autonomy and robotics systems.
-            Email is the fastest way to reach me — I’m based in Boston, MA.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:vuddemarri.s@northeastern.edu" class="btn primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              Email Me
-            </a>
-            <a href="https://github.com/Shourya1515" target="_blank" rel="noopener" class="btn ghost">
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener" class="btn ghost">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-          <a class="contact-email" href="mailto:vuddemarri.s@northeastern.edu">vuddemarri.s@northeastern.edu</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#hero">Back to top ↑</a>
-      </nav>
     </div>
-  </footer>
+  </div>
+</section>
+<!-- ============ PROJECTS: ASSEMBLY LINE ============ -->
+<section id="projects" class="projects" aria-labelledby="pj-title">
+  <div class="pj-pin">
+    <div class="wrap pj-head">
+      <div>
+        <p class="eyebrow">04 · Projects</p>
+        <h2 id="pj-title" class="h2">Off the <em>assembly line.</em></h2>
+        <p class="lede">Selected work across localization, perception and robot hardware — each with its own write-up, results and media.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Highlight projects by area">
+        <button type="button" class="fbtn" data-filter="all" aria-pressed="true">All<sup>9</sup></button>
+        <button type="button" class="fbtn" data-filter="nav" aria-pressed="false">Localization &amp; Navigation<sup>4</sup></button>
+        <button type="button" class="fbtn" data-filter="cv" aria-pressed="false">Computer Vision<sup>2</sup></button>
+        <button type="button" class="fbtn" data-filter="hw" aria-pressed="false">Robot Design &amp; Hardware<sup>3</sup></button>
+      </div>
+    </div>
+    <div class="line">
+      <div class="viewport" id="pjViewport">
+        <div class="track" id="pjTrack">
+          <a class="pcard" href="project-orb-slam3.html" data-cat="nav">
+            <div class="pmedia fig"><img src="images/thumbs/orbslam3/eval_v1_01_realtime.jpg" alt="EuRoC V1_01 trajectory evaluation: VIO estimate vs. ground truth" loading="lazy" /><span class="pnum"><b>01</b> / 09</span></div>
+            <div class="pbody"><ul class="ptags"><li>SLAM</li><li>VIO</li><li>ROS 2</li></ul><h3>Visual-Inertial SLAM with ORB-SLAM3</h3><p>ROS&nbsp;2 C++ integration of ORB-SLAM3 monocular-inertial SLAM, a fix for cold-start initialization, and an evaluation pipeline — 0.13&nbsp;m ATE on EuRoC V1_01 at 30&nbsp;Hz.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-4wheel-slam.html" data-cat="nav">
+            <div class="pmedia"><img src="images/thumbs/4wheel/nav2.jpg" alt="RViz view of the SLAM map with a Nav2 planned path" loading="lazy" /><span class="pnum"><b>02</b> / 09</span><span class="pbadge">2 demo videos</span></div>
+            <div class="pbody"><ul class="ptags"><li>ROS 2</li><li>SLAM Toolbox</li><li>Nav2</li></ul><h3>C.A.N.D.I. Delivery Robot — SLAM &amp; Nav2</h3><p>Led SLAM and navigation for a four-person simulated delivery robot: 95% goal success over 40 trials and 40% faster goals after tuning.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-multi-object-tracking.html" data-cat="cv">
+            <div class="pmedia"><img src="images/thumbs/mot/ss1.jpg" alt="Tracking output with two pedestrians labelled ID 1 and ID 2" loading="lazy" style="object-position:50% 66%" /><span class="pnum"><b>03</b> / 09</span></div>
+            <div class="pbody"><ul class="ptags"><li>Computer Vision</li><li>Tracking</li><li>Re-ID</li></ul><h3>Multi-Object Tracking with Cross-Camera Re-ID</h3><p>YOLOv8 + Kalman + Hungarian tracker with ResNet18 appearance Re-ID: MOTA 0.50 / IDF1 0.71 on MOT17-09, and 3/3 identities matched across two cameras.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-omni.html" data-cat="hw">
+            <div class="pmedia"><img src="images/thumbs/omni/omni1.jpg" alt="Bio-inspired omnidirectional robot with wheeled legs" loading="lazy" /><span class="pnum"><b>04</b> / 09</span><span class="pbadge">ICRA 2024 poster</span></div>
+            <div class="pbody"><ul class="ptags"><li>Kinematics</li><li>Robot Design</li></ul><h3>Bio-Inspired Omnidirectional Robot</h3><p>ICRA 2024 late-breaking poster (Amrita × Sony): leg kinematics and Jacobian-conditioning analysis for a multi-morphing wheeled quadruped.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-combat.html" data-cat="hw">
+            <div class="pmedia"><img src="images/thumbs/combat/combat1.jpg" alt="Combat robot in the arena with sparks on impact" loading="lazy" /><span class="pnum"><b>05</b> / 09</span><span class="pbadge">3 national podiums</span></div>
+            <div class="pbody"><ul class="ptags"><li>Mechanical</li><li>Competition</li></ul><h3>Combat Robotics Series</h3><p>A belt-driven drum-spinner platform built in three weight classes (25&nbsp;/&nbsp;15&nbsp;/&nbsp;8&nbsp;kg): machined aluminium chassis, heat-treated EN-24 weapons, three national podiums.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-asl-fingerspelling.html" data-cat="cv">
+            <div class="pmedia"><img src="images/thumbs/asl/w.jpg" alt="Live ASL recognition of the letter W with hand landmarks" loading="lazy" /><span class="pnum"><b>06</b> / 09</span></div>
+            <div class="pbody"><ul class="ptags"><li>Computer Vision</li><li>Deep Learning</li></ul><h3>Real-Time ASL Fingerspelling</h3><p>Benchmarked three CNNs on 24 static ASL letters, built a 27–30&nbsp;FPS live app, and measured a 67-point accuracy drop on real-world photos.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-nu-nance.html" data-cat="nav">
+            <div class="pmedia fig"><img src="images/thumbs/nuance/circle_mag_calibration1.jpg" alt="Magnetometer calibration before and after correction" loading="lazy" /><span class="pnum"><b>07</b> / 09</span></div>
+            <div class="pbody"><ul class="ptags"><li>Sensor Fusion</li><li>IMU / GPS</li></ul><h3>NUance IMU + GPS Navigation Study</h3><p>Magnetometer calibration, complementary-filter heading, and IMU dead reckoning compared against GPS over a 5.7&nbsp;km drive through Boston.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-block-map-localization.html" data-cat="nav">
+            <div class="pmedia fig"><img src="images/thumbs/blockmap/blockmap3.jpg" alt="Top view of the generated block maps" loading="lazy" /><span class="pnum"><b>08</b> / 09</span></div>
+            <div class="pbody"><ul class="ptags"><li>Localization</li><li>Point Clouds</li></ul><h3>Block-Map LiDAR Localization</h3><p>Python / Open3D reimplementation of an ICRA 2024 method: branch-and-bound initialization and ICP tracking across overlapping block maps.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="pcard" href="project-pesticide.html" data-cat="hw">
+            <div class="pmedia"><img src="images/thumbs/pesticide/agri1.jpg" alt="Pesticide spraying robot with four-wheel chassis and spray boom" loading="lazy" style="object-position:50% 42%" /><span class="pnum"><b>09</b> / 09</span></div>
+            <div class="pbody"><ul class="ptags"><li>Agri-Robotics</li><li>Hardware</li></ul><h3>Pesticide Spraying Robot</h3><p>Teleoperated four-wheel sprayer with an onboard tank, pump and dual-axis spray boom, built to reduce farmers’ direct exposure to chemicals.</p><span class="pgo">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </a>
+          <div class="pend">
+            <p class="eyebrow">End of line</p>
+            <p>More code, notes and experiments on GitHub.</p>
+            <a class="btn btn-ghost" href="https://github.com/Shourya1515" target="_blank" rel="noopener">github.com/Shourya1515</a>
+          </div>
+        </div>
+      </div>
+      <div class="wrap"><div class="conveyor" aria-hidden="true"><div class="belt" id="belt"></div><div class="rollers" id="rollers"></div><div class="rail"></div></div></div>
+    </div>
+    <div class="wrap pj-foot" aria-hidden="true"><span class="pj-count" id="pjCount">Station <b>01</b> / 09</span><span class="pj-bar"><i id="pjBar"></i></span><span id="pjHint">Scroll to run the line →</span></div>
+  </div>
+</section>
 
-  <script src="main.js"></script>
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-in">
+    <p class="eyebrow">05 · Contact</p>
+    <h2 id="contact-title" class="contact-title"><span>Let’s</span><span>connect.</span></h2>
+    <p class="contact-text">I’m open to full-time roles in robot perception, SLAM, autonomy and robotics systems. Email is the fastest way to reach me — I’m based in Boston, MA.</p>
+    <div class="contact-cta">
+      <a class="btn btn-black" href="mailto:vuddemarri.s@northeastern.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+      <a class="btn btn-line" href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-line" href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <a class="mail-big" href="mailto:vuddemarri.s@northeastern.edu">vuddemarri.s@northeastern.edu</a>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Shourya Vuddemarri · Robotics Portfolio</span>
+    <nav aria-label="Footer"><a href="https://github.com/Shourya1515" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/shourya-vuddemarri-0710b9259/" target="_blank" rel="noopener">LinkedIn</a><a href="#hero">Back to top ↑</a></nav>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement, RM = root.classList.contains('rm');
+  const $ = id => document.getElementById(id);
+  const hdr = $('hdr'), menuBtn = $('menuBtn'), nav = $('nav'), navLinks = [...nav.querySelectorAll('a')];
+  const secs = ['skills', 'about', 'experience', 'projects', 'contact'].map($);
+  const redSecs = [$('experience'), $('contact'), document.querySelector('.foot')];
+  const proj = $('projects'), pin = proj.querySelector('.pj-pin'), track = $('pjTrack'), vp = $('pjViewport');
+  const belt = $('belt'), rollersEl = $('rollers'), bar = $('pjBar'), count = $('pjCount'), hint = $('pjHint');
+  const cards = [...track.querySelectorAll('.pcard')];
+  let pinned = false, runLen = 0, projTop = 0, nRollers = 0, lastIdx = -1, raf = 0;
+
+  setTimeout(() => { if (!window.__glok) { root.classList.add('nogl'); schedule(); } }, 4000);
+
+  function buildRollers() {
+    const n = Math.max(6, Math.floor(rollersEl.clientWidth / 62));
+    if (n === nRollers) return;
+    nRollers = n; rollersEl.textContent = '';
+    for (let i = 0; i < n; i++) { const r = document.createElement('i'); r.className = 'roller'; rollersEl.appendChild(r); }
+  }
+  function setBelt(dist, t) {
+    belt.style.setProperty('--belt', (-(dist % 40)).toFixed(1) + 'px');
+    rollersEl.style.setProperty('--rot', (-dist / 17 * 57.2958).toFixed(1) + 'deg');
+    bar.style.transform = 'scaleX(' + t.toFixed(4) + ')';
+    const idx = Math.min(9, Math.max(1, Math.round(t * 8) + 1));
+    if (idx !== lastIdx) { lastIdx = idx; count.innerHTML = 'Station <b>' + String(idx).padStart(2, '0') + '</b> / 09'; }
+  }
+  function layout() {
+    pinned = innerWidth >= 900 && !RM;
+    root.classList.toggle('pj-pinned', pinned);
+    if (pinned) { runLen = Math.max(0, track.scrollWidth - innerWidth); proj.style.height = (innerHeight + runLen) + 'px'; }
+    else { proj.style.height = ''; track.style.transform = ''; }
+    hint.textContent = pinned ? 'Scroll to run the line →' : 'Swipe the line →';
+    projTop = proj.getBoundingClientRect().top + scrollY;
+    buildRollers(); onScroll();
+    window.dispatchEvent(new Event('layoutchange'));
+  }
+  function schedule() { cancelAnimationFrame(raf); raf = requestAnimationFrame(layout); }
+  function onScroll() {
+    const y = scrollY, vh = innerHeight;
+    hdr.classList.toggle('scrolled', y > 8);
+    let red = false;
+    for (const s of redSecs) { const r = s.getBoundingClientRect(); if (r.top <= 36 && r.bottom > 36) red = true; }
+    hdr.classList.toggle('on-red', red);
+    let cur = -1;
+    secs.forEach((s, i) => { if (s.getBoundingClientRect().top <= vh * 0.45) cur = i; });
+    navLinks.forEach((a, i) => { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    if (pinned) {
+      const t = Math.min(1, Math.max(0, (y - projTop) / Math.max(1, runLen)));
+      track.style.transform = 'translate3d(' + (-t * runLen).toFixed(1) + 'px,0,0)';
+      setBelt(t * runLen, t);
+    }
+  }
+  vp.addEventListener('scroll', () => { if (!pinned) { const m = vp.scrollWidth - vp.clientWidth; setBelt(vp.scrollLeft, m > 0 ? vp.scrollLeft / m : 0); } }, { passive: true });
+  track.addEventListener('focusin', e => {
+    if (!pinned) return;
+    const el = e.target.closest('.pcard') || e.target.closest('.pend');
+    if (!el) return;
+    pin.scrollLeft = 0; vp.scrollLeft = 0;
+    const off = Math.min(runLen, Math.max(0, el.offsetLeft - innerWidth * 0.32));
+    window.scrollTo({ top: projTop + off, behavior: 'instant' });
+  });
+  const fbtns = [...document.querySelectorAll('.fbtn')];
+  fbtns.forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.filter;
+    fbtns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    cards.forEach(c => c.classList.toggle('dim', f !== 'all' && c.dataset.cat !== f));
+  }));
+  const setMenu = open => {
+    root.classList.toggle('menu-open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  menuBtn.addEventListener('click', () => setMenu(!root.classList.contains('menu-open')));
+  navLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && root.classList.contains('menu-open')) { setMenu(false); menuBtn.focus(); } });
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', () => { if (innerWidth >= 900) setMenu(false); schedule(); });
+  if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(document.body);
+  addEventListener('load', schedule);
+  layout();
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+window.__glok = true;
+const root = document.documentElement;
+const RM = root.classList.contains('rm');
+const canvas = document.getElementById('stage');
+let renderer = null;
+try {
+  if (!/[?&]nogl\b/.test(location.search) && !root.classList.contains('nogl')) renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+} catch (e) { renderer = null; }
+if (!renderer) { root.classList.add('nogl'); window.dispatchEvent(new Event('layoutchange')); }
+else {
+root.classList.add('live');
+renderer.setClearColor(0x000000, 0);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+const camera = new THREE.PerspectiveCamera(30, innerWidth / innerHeight, 0.05, 60);
+
+/* ---------------- materials ---------------- */
+const ENV = 0.55;
+const M = {
+  body:   new THREE.MeshPhysicalMaterial({ color: 0x17181c, metalness: 0.62, roughness: 0.34, clearcoat: 0.6, clearcoatRoughness: 0.28, envMapIntensity: ENV }),
+  shell:  new THREE.MeshPhysicalMaterial({ color: 0x0f1013, metalness: 0.5, roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.4, envMapIntensity: ENV }),
+  deck:   new THREE.MeshStandardMaterial({ color: 0x2a2c32, metalness: 0.85, roughness: 0.38, envMapIntensity: ENV }),
+  alu:    new THREE.MeshStandardMaterial({ color: 0x55585f, metalness: 0.95, roughness: 0.3, envMapIntensity: ENV }),
+  steel:  new THREE.MeshStandardMaterial({ color: 0x9ea2aa, metalness: 1.0, roughness: 0.22, envMapIntensity: ENV }),
+  dark:   new THREE.MeshStandardMaterial({ color: 0x0b0b0d, metalness: 0.4, roughness: 0.55, envMapIntensity: ENV }),
+  red:    new THREE.MeshPhysicalMaterial({ color: 0xc8102a, metalness: 0.55, roughness: 0.28, clearcoat: 0.9, clearcoatRoughness: 0.18, envMapIntensity: ENV }),
+  rubber: new THREE.MeshStandardMaterial({ color: 0x111113, metalness: 0.0, roughness: 0.86, envMapIntensity: 0.35 }),
+  glass:  new THREE.MeshPhysicalMaterial({ color: 0x030304, metalness: 0.1, roughness: 0.04, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 0.9 }),
+  led:    new THREE.MeshBasicMaterial({ color: 0xff2a3c }),
+  ledW:   new THREE.MeshBasicMaterial({ color: 0xffe9ea }),
+  hole:   new THREE.MeshBasicMaterial({ color: 0x050506 }),
+};
+const LED_BASE = new THREE.Color(0xff2a3c);
+
+/* ---------------- robot scaffold ---------------- */
+const rig = new THREE.Group();       // world placement
+const robot = new THREE.Group();     // yaw (turntable)
+rig.add(robot); scene.add(rig);
+const parts = [];
+const SUBS = ['lidar', 'camera', 'imu', 'compute', 'chassis', 'twin'];
+const anchors = SUBS.map(() => new THREE.Object3D());
+function part(sub, dir, s0 = 0, s1 = 1) {
+  const g = new THREE.Group();
+  g.userData = { sub, dir: new THREE.Vector3(dir[0], dir[1], dir[2]), s0, s1 };
+  robot.add(g); parts.push(g); return g;
+}
+function mesh(geo, mat, parent, pos, rot, shadow = true) {
+  const m = new THREE.Mesh(geo, mat);
+  if (pos) m.position.set(pos[0], pos[1], pos[2]);
+  if (rot) m.rotation.set(rot[0], rot[1], rot[2]);
+  m.castShadow = shadow; m.receiveShadow = true;
+  parent.add(m); return m;
+}
+const RB = (w, h, d, s = 3, r = 0.01) => { const g = new RoundedBoxGeometry(w, h, d, s, r); g.userData.box = [w, h, d]; return g; };
+const place = (geo, x, y, z, rx = 0, ry = 0, rz = 0, sx = 1, sy = 1, sz = 1) => {
+  const o = new THREE.Object3D(); o.position.set(x, y, z); o.rotation.set(rx, ry, rz); o.scale.set(sx, sy, sz); o.updateMatrix();
+  return geo.clone().applyMatrix4(o.matrix);
+};
+const mergeAll = (list) => mergeGeometries(list.map(g => g.index ? g.toNonIndexed() : g), false);
+
+/* ---------- wheel (axle along X, outer face +X) ---------- */
+function makeTyreGeo() {
+  const rO = 0.15, rI = 0.097, w = 0.118, c = 0.034, pts = [];
+  pts.push(new THREE.Vector2(rI, -w / 2));
+  for (let i = 0; i <= 7; i++) { const a = -Math.PI / 2 + (i / 7) * (Math.PI / 2); pts.push(new THREE.Vector2(rO - c + Math.cos(a) * c, -w / 2 + c + Math.sin(a) * c)); }
+  for (let i = 0; i <= 7; i++) { const a = (i / 7) * (Math.PI / 2); pts.push(new THREE.Vector2(rO - c + Math.cos(a) * c, w / 2 - c + Math.sin(a) * c)); }
+  pts.push(new THREE.Vector2(rI, w / 2));
+  const list = [new THREE.LatheGeometry(pts, 64)];
+  const lug = RB(0.026, 0.05, 0.018, 1, 0.005);
+  const N = 26;
+  for (let row = 0; row < 2; row++) {
+    for (let i = 0; i < N; i++) {
+      const th = (i + row * 0.5) / N * Math.PI * 2, r = rO - 0.002, y = row ? 0.027 : -0.027;
+      list.push(place(lug, Math.sin(th) * r, y, Math.cos(th) * r, 0, th, row ? 0.42 : -0.42));
+    }
+  }
+  const g = mergeAll(list);
+  g.rotateZ(Math.PI / 2);
+  return g;
+}
+function makeRimFaceGeo() {           // built with axle along Z, rotated to X
+  const list = [new THREE.TorusGeometry(0.091, 0.007, 10, 56)];
+  const spoke = RB(0.019, 0.066, 0.016, 2, 0.006);
+  for (let k = 0; k < 6; k++) { const a = k / 6 * Math.PI * 2; list.push(place(spoke, Math.sin(a) * 0.058, Math.cos(a) * 0.058, 0, 0, 0, -a)); }
+  list.push(place(new THREE.CylinderGeometry(0.036, 0.04, 0.03, 32), 0, 0, -0.004, Math.PI / 2));
+  const g = mergeAll(list); g.rotateY(Math.PI / 2); return g;
+}
+function makeBoltRingGeo(n, r, size, x) {
+  const list = []; const b = new THREE.CylinderGeometry(size, size, size * 1.1, 6);
+  for (let k = 0; k < n; k++) { const a = k / n * Math.PI * 2; list.push(place(b, x, Math.cos(a) * r, Math.sin(a) * r, 0, 0, Math.PI / 2)); }
+  return mergeAll(list);
+}
+const G = {
+  tyre: makeTyreGeo(),
+  rimFace: makeRimFaceGeo(),
+  barrel: new THREE.CylinderGeometry(0.099, 0.099, 0.104, 48, 1, false).rotateZ(Math.PI / 2),
+  cap: new THREE.CylinderGeometry(0.021, 0.021, 0.012, 28).rotateZ(Math.PI / 2),
+  capBolts: makeBoltRingGeo(5, 0.028, 0.0055, 0.056),
+  motor: new THREE.CylinderGeometry(0.058, 0.058, 0.044, 36).rotateZ(Math.PI / 2),
+  motorRing: new THREE.TorusGeometry(0.058, 0.0045, 8, 40).rotateY(Math.PI / 2),
+};
+function wheel(sx, sz) {
+  const g = part('chassis', [sx * 0.36, 0, 0], 0.32, 0.86);
+  g.position.set(sx * 0.385, 0.15, sz * 0.32);
+  if (sx < 0) g.scale.x = -1;
+  mesh(G.tyre, M.rubber, g);
+  mesh(G.barrel, M.dark, g);
+  mesh(G.rimFace, M.alu, g, [0.046, 0, 0]);
+  mesh(G.cap, M.red, g, [0.064, 0, 0]);
+  mesh(G.capBolts, M.steel, g, [0.004, 0, 0], null, false);
+  const m = part('chassis', [sx * 0.19, 0, 0], 0.3, 0.8);
+  m.position.set(sx * 0.316, 0.15, sz * 0.32);
+  mesh(G.motor, M.shell, m);
+  mesh(G.motorRing, M.steel, m, [sx * 0.012, 0, 0], null, false);
+  mesh(G.motorRing, M.red, m, [-sx * 0.014, 0, 0], null, false);
+  return g;
+}
+const cylZ = (r, h, s = 32) => new THREE.CylinderGeometry(r, r, h, s).rotateX(Math.PI / 2);
+const cylY = (r, h, s = 32) => new THREE.CylinderGeometry(r, r, h, s);
+const leds = [];
+
+/* ---------- chassis body ---------- */
+const chassis = part('chassis', [0, 0, 0]);
+mesh(RB(0.54, 0.2, 0.84, 4, 0.06), M.body, chassis, [0, 0.24, 0]);
+mesh(RB(0.55, 0.012, 0.852, 2, 0.006), M.red, chassis, [0, 0.302, 0], null, false);
+mesh(RB(0.48, 0.026, 0.76, 2, 0.011), M.shell, chassis, [0, 0.135, 0]);
+mesh(RB(0.43, 0.086, 0.022, 2, 0.009), M.glass, chassis, [0, 0.232, 0.418]);
+mesh(RB(0.43, 0.07, 0.022, 2, 0.009), M.glass, chassis, [0, 0.232, -0.418]);
+for (const lx of [-0.125, 0.125]) leds.push(mesh(RB(0.13, 0.013, 0.008, 1, 0.003), M.led, chassis, [lx, 0.248, 0.43], null, false));
+leds.push(mesh(RB(0.32, 0.01, 0.008, 1, 0.003), M.led, chassis, [0, 0.232, -0.43], null, false));
+{ // side vents + panel seams (merged)
+  const v = [], slot = RB(0.006, 0.009, 0.1, 1, 0.003);
+  for (const sx of [-1, 1]) for (let i = 0; i < 4; i++) v.push(place(slot, sx * 0.27, 0.205 + i * 0.019, -0.24));
+  for (const sx of [-1, 1]) v.push(place(RB(0.004, 0.11, 0.004, 1, 0.0015), sx * 0.2705, 0.235, 0.13));
+  mesh(mergeAll(v), M.hole, chassis, null, null, false);
+}
+/* decal */
+function decalTex() {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 128;
+  const x = c.getContext('2d');
+  x.fillStyle = '#e4162c'; x.fillRect(0, 34, 10, 60);
+  x.fillStyle = '#f3f0ec'; x.font = '600 52px "JetBrains Mono", Consolas, monospace'; x.textBaseline = 'middle';
+  x.fillText('SV—01', 30, 66);
+  x.fillStyle = 'rgba(243,240,236,.5)'; x.font = '500 22px "JetBrains Mono", Consolas, monospace'; x.fillText('FIELD UNIT', 240, 70);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
+}
+const decalMat = new THREE.MeshBasicMaterial({ map: decalTex(), transparent: true, depthWrite: false, toneMapped: false, opacity: 0.9 });
+document.fonts && document.fonts.ready.then(() => { decalMat.map.dispose(); decalMat.map = decalTex(); decalMat.needsUpdate = true; });
+for (const sx of [-1, 1]) { const d = mesh(new THREE.PlaneGeometry(0.16, 0.04), decalMat, chassis, [sx * 0.2712, 0.273, 0], [0, sx * Math.PI / 2, 0], false); d.receiveShadow = false; }
+chassis.add(anchors[4]); anchors[4].position.set(0.27, 0.215, 0.12);
+
+/* ---------- bumpers ---------- */
+for (const sz of [-1, 1]) {
+  const b = part('chassis', [0, 0, sz * 0.24], 0.22, 0.72);
+  mesh(RB(0.5, 0.062, 0.062, 3, 0.026), M.red, b, [0, 0.152, sz * 0.458]);
+  for (const bx of [-0.17, 0.17]) mesh(RB(0.044, 0.03, 0.05, 2, 0.008), M.alu, b, [bx, 0.152, sz * 0.425]);
+}
+/* ---------- suspension rockers ---------- */
+for (const sx of [-1, 1]) {
+  const r = part('chassis', [sx * 0.085, 0, 0], 0.26, 0.8);
+  r.position.set(sx * 0.293, 0, 0);
+  const L = Math.hypot(0.32, 0.075), a = Math.atan2(0.075, 0.32);
+  mesh(RB(0.026, 0.05, L + 0.05, 2, 0.012), M.shell, r, [0, 0.1875, 0.16], [a, 0, 0]);
+  mesh(RB(0.026, 0.05, L + 0.05, 2, 0.012), M.shell, r, [0, 0.1875, -0.16], [-a, 0, 0]);
+  mesh(new THREE.CylinderGeometry(0.031, 0.031, 0.034, 32).rotateZ(Math.PI / 2), M.red, r, [sx * 0.004, 0.225, 0]);
+  mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.04, 6).rotateZ(Math.PI / 2), M.steel, r, [sx * 0.008, 0.225, 0], null, false);
+}
+for (const sx of [-1, 1]) for (const sz of [-1, 1]) wheel(sx, sz);
+
+/* ---------- deck plate ---------- */
+const deck = part('chassis', [0, 0.2, 0], 0.12, 0.62);
+mesh(RB(0.5, 0.016, 0.76, 2, 0.007), M.deck, deck, [0, 0.348, 0]);
+{
+  const holes = new THREE.InstancedMesh(cylY(0.0055, 0.002, 12), M.hole, 77), o = new THREE.Object3D(); let i = 0;
+  for (let cx = 0; cx < 7; cx++) for (let cz = 0; cz < 11; cz++) { o.position.set(-0.21 + cx * 0.07, 0.3566, -0.35 + cz * 0.07); o.updateMatrix(); holes.setMatrixAt(i++, o.matrix); }
+  deck.add(holes);
+  const pts = []; for (const z of [-0.355, -0.18, 0, 0.18, 0.355]) for (const x of [-0.228, 0.228]) pts.push([x, z]);
+  for (const z of [-0.355, 0.355]) for (const x of [-0.08, 0.08]) pts.push([x, z]);
+  const bolts = new THREE.InstancedMesh(cylY(0.0095, 0.006, 6), M.steel, pts.length);
+  pts.forEach((p, k) => { o.position.set(p[0], 0.359, p[1]); o.updateMatrix(); bolts.setMatrixAt(k, o.matrix); });
+  bolts.castShadow = true; deck.add(bolts);
+}
+
+/* ---------- LiDAR mast + puck ---------- */
+const mast = part('lidar', [0, 0.3, 0], 0.0, 0.55);
+mesh(new THREE.CylinderGeometry(0.042, 0.048, 0.016, 36), M.red, mast, [0, 0.364, -0.2]);
+mesh(RB(0.032, 0.29, 0.032, 2, 0.006), M.alu, mast, [0, 0.51, -0.2]);
+mesh(RB(0.074, 0.012, 0.074, 2, 0.004), M.shell, mast, [0, 0.659, -0.2]);
+const lidar = part('lidar', [0, 0.6, 0], 0.0, 0.62);
+lidar.position.set(0, 0, -0.2);
+mesh(new THREE.CylinderGeometry(0.07, 0.075, 0.022, 56), M.shell, lidar, [0, 0.676, 0]);
+mesh(new THREE.CylinderGeometry(0.064, 0.066, 0.046, 56), M.glass, lidar, [0, 0.71, 0]);
+mesh(new THREE.CylinderGeometry(0.069, 0.065, 0.02, 56), M.shell, lidar, [0, 0.743, 0]);
+mesh(new THREE.TorusGeometry(0.052, 0.003, 8, 56).rotateX(Math.PI / 2), M.red, lidar, [0, 0.7535, 0], null, false);
+const spinner = new THREE.Group(); spinner.position.set(0, 0.71, 0); lidar.add(spinner);
+leds.push(mesh(RB(0.018, 0.032, 0.004, 1, 0.0015), M.led, spinner, [0, 0, 0.0655], null, false));
+lidar.add(anchors[0]); anchors[0].position.set(0, 0.756, 0);
+
+/* ---------- stereo camera ---------- */
+const cam = part('camera', [0, 0.1, 0.4], 0.04, 0.58);
+mesh(RB(0.05, 0.03, 0.05, 2, 0.006), M.alu, cam, [0, 0.371, 0.318]);
+mesh(RB(0.27, 0.052, 0.054, 3, 0.015), M.shell, cam, [0, 0.41, 0.33]);
+for (const lx of [-0.088, 0.088]) {
+  mesh(cylZ(0.019, 0.012), M.alu, cam, [lx, 0.41, 0.358]);
+  mesh(cylZ(0.0138, 0.006), M.glass, cam, [lx, 0.41, 0.3635]);
+  mesh(new THREE.TorusGeometry(0.0168, 0.0018, 6, 32), M.red, cam, [lx, 0.41, 0.3645], null, false);
+}
+mesh(cylZ(0.008, 0.006), M.glass, cam, [0, 0.41, 0.358]);
+leds.push(mesh(RB(0.014, 0.006, 0.004, 1, 0.002), M.led, cam, [0.116, 0.428, 0.3575], null, false));
+cam.add(anchors[1]); anchors[1].position.set(-0.088, 0.41, 0.366);
+
+/* ---------- compute module + heatsink ---------- */
+const comp = part('compute', [0, 0.34, -0.02], 0.08, 0.6);
+mesh(RB(0.23, 0.06, 0.25, 3, 0.012), M.shell, comp, [0, 0.388, 0.03]);
+mesh(RB(0.17, 0.012, 0.004, 1, 0.002), M.red, comp, [-0.02, 0.392, 0.1565], null, false);
+leds.push(mesh(RB(0.012, 0.008, 0.004, 1, 0.002), M.led, comp, [0.092, 0.392, 0.1565], null, false));
+const sink = part('compute', [0, 0.52, -0.02], 0.12, 0.68);
+mesh(RB(0.21, 0.008, 0.23, 1, 0.003), M.alu, sink, [0, 0.422, 0.03]);
+{ const f = [], fin = RB(0.005, 0.034, 0.22, 1, 0.002); for (let k = 0; k < 12; k++) f.push(place(fin, -0.0935 + k * 0.017, 0.443, 0.03)); mesh(mergeAll(f), M.alu, sink); }
+sink.add(anchors[3]); anchors[3].position.set(0.1, 0.45, 0.03);
+
+/* ---------- battery (hidden inside chassis until exploded) ---------- */
+const bat = part('chassis', [0, -0.02, -0.8], 0.38, 0.96);
+mesh(RB(0.36, 0.1, 0.44, 3, 0.014), M.shell, bat, [0, 0.235, -0.06]);
+mesh(RB(0.364, 0.104, 0.03, 2, 0.01), M.red, bat, [0, 0.235, -0.27]);
+mesh(RB(0.09, 0.022, 0.014, 2, 0.006), M.alu, bat, [0, 0.235, -0.29]);
+mesh(RB(0.2, 0.003, 0.14, 1, 0.0015), M.alu, bat, [0, 0.2865, -0.04], null, false);
+
+/* ---------- IMU + GPS + antennas ---------- */
+const imu = part('imu', [-0.12, 0.42, 0.06], 0.1, 0.62);
+mesh(RB(0.07, 0.026, 0.07, 2, 0.008), M.red, imu, [-0.17, 0.369, 0.205]);
+mesh(RB(0.04, 0.003, 0.04, 1, 0.0015), M.dark, imu, [-0.17, 0.3835, 0.205], null, false);
+imu.add(anchors[2]); anchors[2].position.set(-0.17, 0.383, 0.205);
+const gps = part('imu', [0.12, 0.6, -0.06], 0.14, 0.7);
+mesh(cylY(0.012, 0.06, 16), M.alu, gps, [0.12, 0.386, -0.27]);
+mesh(new THREE.CylinderGeometry(0.05, 0.057, 0.024, 44), M.shell, gps, [0.12, 0.428, -0.27]);
+mesh(new THREE.TorusGeometry(0.038, 0.0025, 6, 40).rotateX(Math.PI / 2), M.red, gps, [0.12, 0.4405, -0.27], null, false);
+for (const sx of [-1, 1]) {
+  const an = part('imu', [sx * 0.14, 0.38, -0.08], 0.16, 0.72);
+  mesh(cylY(0.013, 0.02, 16), M.alu, an, [sx * 0.225, 0.366, -0.355]);
+  mesh(new THREE.CylinderGeometry(0.0042, 0.0062, 0.22, 10), M.rubber, an, [sx * 0.225, 0.486, -0.355]);
+  mesh(new THREE.SphereGeometry(0.008, 12, 10), M.red, an, [sx * 0.225, 0.598, -0.355], null, false);
+}
+/* ---------- finalize: rest positions, technical edge overlay, digital-twin wireframe ---------- */
+for (const g of parts) g.userData.base = g.position.clone();
+robot.updateMatrixWorld(true);
+const edgeMats = SUBS.map(() => new THREE.LineBasicMaterial({ color: 0xff3347, transparent: true, opacity: 0, depthWrite: false }));
+const edgeCache = new Map(), twinGeos = [], boxEdge = new Map();
+for (const g of parts) {
+  const si = SUBS.indexOf(g.userData.sub);
+  g.traverse(o => {
+    if (!o.isMesh || o.isInstancedMesh || o.material === M.led || o.material === decalMat || o.material === M.hole) return;
+    if (!o.geometry.boundingSphere) o.geometry.computeBoundingSphere();
+    if (o.geometry.boundingSphere.radius < 0.02) return;
+    let eg = edgeCache.get(o.geometry);
+    if (!eg) { eg = new THREE.EdgesGeometry(o.geometry === G.tyre ? new THREE.CylinderGeometry(0.15, 0.15, 0.118, 56, 1, true).rotateZ(Math.PI / 2) : o.geometry, 33); edgeCache.set(o.geometry, eg); }
+    const ls = new THREE.LineSegments(eg, edgeMats[si]); ls.renderOrder = 2; o.add(ls);
+    if (o.geometry.boundingSphere.radius < 0.03) return;
+    const bx = o.geometry.userData.box;
+    let tg = eg;
+    if (bx) { const key = bx.join(); tg = boxEdge.get(key); if (!tg) { tg = new THREE.EdgesGeometry(new THREE.BoxGeometry(bx[0], bx[1], bx[2])); boxEdge.set(key, tg); } }
+    twinGeos.push(tg.clone().applyMatrix4(o.matrixWorld));
+  });
+}
+const twin = new THREE.Group();
+const twinMat = new THREE.LineBasicMaterial({ color: 0xff3347, transparent: true, opacity: 0, depthWrite: false });
+twin.add(new THREE.LineSegments(mergeGeometries(twinGeos, false), twinMat));
+{ // corner brackets of a sim "pad"
+  const v = [], W = 0.72, D = 0.8, c = 0.2;
+  for (const [sx, sz] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) v.push(sx * W, 0.004, sz * D, sx * (W - c), 0.004, sz * D, sx * W, 0.004, sz * D, sx * W, 0.004, sz * (D - c));
+  const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.Float32BufferAttribute(v, 3));
+  twin.add(new THREE.LineSegments(pg, twinMat));
+}
+twin.position.set(-2.85, 0, -0.5); twin.scale.setScalar(0.8); twin.visible = false;
+rig.add(twin); twin.add(anchors[5]); anchors[5].position.set(0, 0.82, 0);
+
+/* ---------- floor: shadow catcher, contact AO, fading grid with scan ring ---------- */
+function radialTex(stops, size = 128) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const x = c.getContext('2d'), g = x.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+  for (const [o, col] of stops) g.addColorStop(o, col);
+  x.fillStyle = g; x.fillRect(0, 0, size, size);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const shadowPlane = new THREE.Mesh(new THREE.PlaneGeometry(9, 9), new THREE.ShadowMaterial({ opacity: 0.6, depthWrite: false }));
+shadowPlane.rotation.x = -Math.PI / 2; shadowPlane.receiveShadow = true; shadowPlane.renderOrder = -1; scene.add(shadowPlane);
+const aoMat = new THREE.MeshBasicMaterial({ map: radialTex([[0, 'rgba(0,0,0,.9)'], [0.45, 'rgba(0,0,0,.55)'], [1, 'rgba(0,0,0,0)']]), transparent: true, depthWrite: false, toneMapped: false });
+const ao = new THREE.Mesh(new THREE.PlaneGeometry(1.25, 1.45), aoMat);
+ao.rotation.x = -Math.PI / 2; ao.position.y = 0.003; ao.renderOrder = -1; robot.add(ao);
+const gridMat = new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, extensions: { derivatives: true },
+  uniforms: { uColor: { value: new THREE.Color(0xff2a3c) }, uOpacity: { value: 0.5 }, uRing: { value: 0 }, uRingA: { value: 0 }, uFade: { value: 0.2 } },
+  vertexShader: 'varying vec2 vP; void main(){ vec4 w = modelMatrix * vec4(position, 1.0); vP = w.xz; gl_Position = projectionMatrix * viewMatrix * w; }',
+  fragmentShader: `uniform vec3 uColor; uniform float uOpacity, uRing, uRingA, uFade; varying vec2 vP;
+    float grid(vec2 p, float s, float w){ vec2 q = p / s; vec2 g = abs(fract(q - 0.5) - 0.5) / fwidth(q); return 1.0 - min(min(g.x, g.y) / w, 1.0); }
+    void main(){
+      float r = length(vP);
+      float fade = exp(-r * r * uFade);
+      float minor = grid(vP, 0.25, 1.0) * 0.2;
+      float major = grid(vP, 1.0, 1.2) * 0.6;
+      float ring = smoothstep(0.045, 0.0, abs(r - uRing)) * uRingA * exp(-r * 0.35);
+      float a = max(minor, major) * fade * uOpacity + ring;
+      gl_FragColor = vec4(uColor, clamp(a, 0.0, 1.0));
+      #include <colorspace_fragment>
+    }`
+});
+const grid = new THREE.Mesh(new THREE.PlaneGeometry(18, 18), gridMat);
+grid.rotation.x = -Math.PI / 2; grid.position.y = 0.001; grid.renderOrder = -2; scene.add(grid);
+
+/* ---------- glow sprites (cheap bloom) ---------- */
+const glowTex = radialTex([[0, 'rgba(255,255,255,1)'], [0.16, 'rgba(255,255,255,.6)'], [0.42, 'rgba(255,255,255,.14)'], [1, 'rgba(255,255,255,0)']]);
+const glows = [];
+function glow(parent, pos, size, k = 1, eye = false) {
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: 0xff2238, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: 0 }));
+  s.position.set(pos[0], pos[1], pos[2]); s.scale.set(size, size, 1); s.userData = { k, eye }; s.renderOrder = 3; parent.add(s); glows.push(s); return s;
+}
+glow(chassis, [-0.125, 0.248, 0.446], 0.17); glow(chassis, [0.125, 0.248, 0.446], 0.17);
+glow(chassis, [0, 0.232, -0.446], 0.22, 0.7);
+glow(spinner, [0, 0, 0.074], 0.12, 1.1);
+glow(cam, [0.116, 0.428, 0.362], 0.05, 0.7); glow(comp, [0.092, 0.392, 0.162], 0.05, 0.7);
+glow(cam, [-0.088, 0.41, 0.372], 0.075, 1, true); glow(cam, [0.088, 0.41, 0.372], 0.075, 1, true);
+
+/* ---------- lights (rig follows the camera azimuth) ---------- */
+const lightRig = new THREE.Group(); scene.add(lightRig);
+lightRig.add(new THREE.HemisphereLight(0xffffff, 0x1a0306, 0.42));
+const key = new THREE.DirectionalLight(0xffffff, 2.5);
+key.position.set(1.7, 4.2, 3.1); key.target.position.set(0, 0.3, 0);
+key.castShadow = true; key.shadow.mapSize.set(1024, 1024);
+Object.assign(key.shadow.camera, { left: -1.7, right: 1.7, top: 1.7, bottom: -1.7, near: 1, far: 10 });
+key.shadow.bias = -0.0005; key.shadow.normalBias = 0.02;
+lightRig.add(key, key.target);
+const rimA = new THREE.DirectionalLight(0xff1f35, 6.5); rimA.position.set(-3.2, 2.1, -2.8); lightRig.add(rimA);
+const rimB = new THREE.DirectionalLight(0xff2a40, 3.4); rimB.position.set(3.4, 1.3, -2.4); lightRig.add(rimB);
+const fill = new THREE.DirectionalLight(0xe6ebff, 0.5); fill.position.set(-3, 1.1, 2.6); lightRig.add(fill);
+/* ================= choreography: every target derives from scrollY ================= */
+const KEYS = ['az', 'el', 'fitW', 'fitH', 'ty', 'sx', 'sy', 'explode', 'lock', 'spin', 'opacity', 'edges', 'online', 'leds', 'eyes', 'twin', 'grid', 'gridDark', 'fov'];
+const BASE = { az: 0.55, el: 0.16, fitW: 3.0, fitH: 1.9, ty: 0.34, sx: 0, sy: 0.12, explode: 0, lock: 0, spin: 1, opacity: 1, edges: 0.05, online: 0.2, leds: 0.45, eyes: 0, twin: 0, grid: 0.45, gridDark: 0, fov: 30 };
+const pose = o => Object.assign({}, BASE, o);
+const SYS = { lock: 1, spin: 0, online: 0, leds: 0.3, grid: 0.55 };
+const PD = {
+  hero:    pose({ fitW: 4.3, fitH: 2.5, sx: 0.02, sy: 0.1 }),
+  sys0:    pose({ ...SYS, az: 0.8, el: 0.34, fitW: 3.4, fitH: 2.2, ty: 0.42, sy: 0.06, edges: 0.3 }),
+  sysA:    pose({ ...SYS, az: 0.82, el: 0.4, fitW: 4.0, fitH: 2.7, ty: 0.5, sy: 0.07, explode: 1, edges: 0.34, twin: 1 }),
+  sysB:    pose({ ...SYS, az: 1.04, el: 0.44, fitW: 4.0, fitH: 2.7, ty: 0.5, sy: 0.07, explode: 1, edges: 0.34, twin: 1 }),
+  sysOn:   pose({ az: -0.42, el: 0.2, fitW: 3.4, fitH: 2.1, ty: 0.36, sy: -0.04, lock: 1, spin: 0, edges: 0.1, online: 1, leds: 1, grid: 0.6 }),
+  about:   pose({ az: -0.62, el: 0.12, fitW: 3.6, fitH: 2.2, sx: 0.27, sy: 0.14, spin: 0.55, opacity: 0.6, edges: 0.04, online: 0.6, leds: 0.6, grid: 0.4 }),
+  contact: pose({ az: 0.0, el: 0.06, fitW: 3.4, fitH: 2.1, ty: 0.36, sx: 0.27, sy: 0.13, lock: 1, spin: 0, edges: 0, online: 1, leds: 1, eyes: 1, grid: 0.5, gridDark: 1 }),
+};
+const PM = {
+  hero:    pose({ fitW: 1.42, fitH: 1.25, sy: 0.02, fov: 36 }),
+  sys0:    pose({ ...SYS, az: 0.8, el: 0.36, fitW: 1.9, fitH: 2.0, ty: 0.42, sy: -0.1, edges: 0.3, fov: 38 }),
+  sysA:    pose({ ...SYS, az: 0.82, el: 0.42, fitW: 2.5, fitH: 2.6, ty: 0.5, sy: -0.13, explode: 1, edges: 0.34, twin: 1, fov: 38 }),
+  sysB:    pose({ ...SYS, az: 1.14, el: 0.46, fitW: 2.5, fitH: 2.6, ty: 0.5, sy: -0.13, explode: 1, edges: 0.34, twin: 1, fov: 38 }),
+  sysOn:   pose({ az: -0.42, el: 0.2, fitW: 1.7, fitH: 1.6, ty: 0.36, sy: -0.06, lock: 1, spin: 0, edges: 0.1, online: 1, leds: 1, grid: 0.85, fov: 38 }),
+  about:   pose({ az: -0.62, el: 0.14, fitW: 1.7, fitH: 1.5, sy: -0.16, spin: 0.55, opacity: 0.2, edges: 0.04, online: 0.6, leds: 0.6, grid: 0.3, fov: 38 }),
+  contact: pose({ az: 0.0, el: 0.1, fitW: 1.9, fitH: 1.0, ty: 0.36, sy: -0.3, lock: 1, spin: 0, edges: 0, online: 1, leds: 1, eyes: 1, grid: 0.5, gridDark: 1, fov: 36 }),
+};
+const SYSFIT = { sys0: [3.4, 2.2], sysA: [4.0, 2.7], sysB: [4.0, 2.7] };
+function tunePoses() {
+  const tab = innerWidth > 900 && innerWidth <= 1180;
+  Object.assign(PD.hero, tab ? { fitW: 3.7, fitH: 2.35, sx: 0.22, sy: 0.06 } : { fitW: 4.3, fitH: 2.5, sx: 0.02, sy: 0.1 });
+  const k = Math.min(1.25, Math.max(1, 1440 / innerWidth));
+  for (const n in SYSFIT) { PD[n].fitW = SYSFIT[n][0] * k; PD[n].fitH = SYSFIT[n][1] * k; }
+}
+const tgt = pose({}), cur = pose({});
+if (!RM) cur.explode = 1;                     // page load: parts fly in and assemble
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const ease = t => t * t * (3 - 2 * t);
+const sstep = (a, b, v) => ease(clamp((v - a) / (b - a), 0, 1));
+const mixInto = (o, a, b, t) => { for (const k of KEYS) o[k] = a[k] + (b[k] - a[k]) * t; return o; };
+const wrapPi = a => Math.atan2(Math.sin(a), Math.cos(a));
+
+let mobile = innerWidth < 900;
+const L = { sys: 1, sysH: 1, xp: 0, proj: 0, projEnd: 0 };
+const elSys = document.getElementById('skills'), elXp = document.getElementById('experience'), elProj = document.getElementById('projects');
+function measure() {
+  const y0 = scrollY, top = el => el.getBoundingClientRect().top + y0;
+  L.sys = Math.max(1, top(elSys)); L.sysH = elSys.offsetHeight; L.xp = top(elXp); L.proj = top(elProj); L.projEnd = L.proj + elProj.offsetHeight;
+  coH = callouts.map(c => c.offsetHeight); coW = callouts[0].offsetWidth;
+  const head = document.querySelector('.sys-head');
+  gut = parseFloat(getComputedStyle(head.querySelector('.wrap')).paddingLeft) || 24;
+  colTopL = head.offsetTop + head.querySelector('.h2').getBoundingClientRect().bottom - head.getBoundingClientRect().top + 22;
+  colTopR = head.offsetTop + head.querySelector('.sys-note').getBoundingClientRect().bottom - head.getBoundingClientRect().top + 26;
+  tunePoses();
+}
+let sysP = 0, activeIdx = -1;
+function computeTarget(y) {
+  const P = mobile ? PM : PD, vh = innerHeight, R = Math.max(1, L.sysH - vh);
+  sysP = clamp((y - L.sys) / R, 0, 1);
+  if (y <= L.sys) mixInto(tgt, P.hero, P.sys0, ease(clamp(y / L.sys, 0, 1)));
+  else if (y <= L.sys + R) {
+    const p = sysP;
+    if (p < 0.2) mixInto(tgt, P.sys0, P.sysA, ease(p / 0.2));
+    else if (p < 0.8) mixInto(tgt, P.sysA, P.sysB, (p - 0.2) / 0.6);
+    else if (p < 0.9) mixInto(tgt, P.sysB, P.sysOn, ease((p - 0.8) / 0.1));
+    else mixInto(tgt, P.sysOn, P.sysOn, 0);
+  } else if (y < L.proj) mixInto(tgt, P.sysOn, P.about, ease(clamp((y - L.sys - R) / (vh * 0.9), 0, 1)));
+  else mixInto(tgt, P.contact, P.contact, 0);
+  if (mobile && y > 40 && y < L.sys) tgt.opacity = 1 - 0.65 * sstep(0.15, 0.55, y / L.sys);   // let hero copy read over the robot
+  activeIdx = (y < L.sys || y > L.sys + R) ? -1 : (sysP < 0.2 ? 0 : sysP > 0.8 ? 5 : Math.min(5, Math.floor((sysP - 0.2) / 0.6 * 6)));
+  if (RM) { tgt.explode = 0; tgt.spin = 0; tgt.twin = 0; }
+}
+
+/* ---------------- callouts (HTML labels pinned to 3D anchors) ---------------- */
+const callouts = [...document.querySelectorAll('.callout')];
+const markers = [...document.querySelectorAll('.mk')];
+const svg = document.getElementById('sysLines'), NS = 'http://www.w3.org/2000/svg';
+const paths = SUBS.map(() => { const p = document.createElementNS(NS, 'path'); svg.appendChild(p); return p; });
+const stepFills = [...document.querySelectorAll('.steps i')];
+const statusEl = document.getElementById('sysStatus'), onlineEl = document.querySelector('.online');
+const NAMES = ['LiDAR puck', 'Stereo camera', 'IMU + GPS', 'Compute module', 'Chassis + drivetrain', 'Digital twin'];
+const SIDE = [1, -1, -1, 1, 1, -1];
+let coH = callouts.map(c => c.offsetHeight), coW = 280, gut = 48, colTopL = 240, colTopR = 200, lastActive = -2, calloutsShown = true, lastStatus = '', lastP = -1;
+const v3 = new THREE.Vector3(), scr = SUBS.map(() => ({ x: 0, y: 0, ly: 0 }));
+const sideIdx = { '-1': [2, 1, 5], '1': [0, 3, 4] };
+function updateSystemsUI(vis) {
+  const w = innerWidth, h = innerHeight;
+  if (activeIdx !== lastActive) {
+    callouts.forEach((c, i) => c.classList.toggle('on', i === activeIdx));
+    markers.forEach((m, i) => m.classList.toggle('on', i === activeIdx));
+    paths.forEach((p, i) => p.classList.toggle('on', i === activeIdx));
+    lastActive = activeIdx; coH = callouts.map(c => c.offsetHeight);
+  }
+  if (Math.abs(sysP - lastP) > 0.0004) {
+    lastP = sysP;
+    const pf = (sysP - 0.2) / 0.6 * 6;
+    for (let i = 0; i < 6; i++) stepFills[i].style.transform = `scaleX(${clamp(pf - i, 0, 1).toFixed(3)})`;
+    const st = sysP >= 0.86 ? 'All systems <b>online</b>' : (sysP < 0.1 || activeIdx < 0) ? 'Scroll to <b>disassemble</b>' : `Subsystem <b>0${activeIdx + 1}</b> / 06 · ${NAMES[activeIdx]}`;
+    if (st !== lastStatus) { statusEl.innerHTML = st; lastStatus = st; }
+    onlineEl.style.opacity = sstep(0.84, 0.92, sysP).toFixed(3);
+  }
+  if (vis < 0.01) {
+    if (calloutsShown) { callouts.forEach(c => c.style.opacity = 0); markers.forEach(m => m.style.opacity = 0); paths.forEach(p => p.setAttribute('d', '')); calloutsShown = false; }
+    return;
+  }
+  calloutsShown = true;
+  for (let i = 0; i < 6; i++) { anchors[i].getWorldPosition(v3).project(camera); scr[i].x = (v3.x * 0.5 + 0.5) * w; scr[i].y = (-v3.y * 0.5 + 0.5) * h; }
+  for (let i = 0; i < 6; i++) { const m = markers[i]; m.style.transform = `translate3d(${scr[i].x.toFixed(1)}px,${scr[i].y.toFixed(1)}px,0)`; m.style.opacity = clamp(vis * 1.6 - i * 0.1, 0, 1).toFixed(3); }
+  if (!mobile) {
+    const bottom = h - 92, gap = 12;
+    for (const side of [-1, 1]) {
+      const top = side < 0 ? colTopL : colTopR;
+      const ids = sideIdx[side].slice().sort((a, b) => scr[a].y - scr[b].y);
+      let prev = top - gap;
+      for (const i of ids) { scr[i].ly = Math.max(scr[i].y - 30, prev + gap); prev = scr[i].ly + coH[i]; }
+      let next = bottom + gap;
+      for (let j = ids.length - 1; j >= 0; j--) { const i = ids[j]; scr[i].ly = Math.min(scr[i].ly, next - gap - coH[i]); next = scr[i].ly; }
+      prev = top - gap;
+      for (const i of ids) { scr[i].ly = Math.max(scr[i].ly, prev + gap); prev = scr[i].ly + coH[i]; }
+      for (const i of ids) {
+        const x = side < 0 ? gut : w - gut - coW, y = scr[i].ly, o = clamp(vis * 1.5 - i * 0.08, 0, 1);
+        callouts[i].style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;
+        callouts[i].style.opacity = o.toFixed(3);
+        const lx = side < 0 ? x + coW : x, ly = y + 26, ex = lx + (side < 0 ? 34 : -34);
+        paths[i].setAttribute('d', o > 0.01 ? `M${scr[i].x.toFixed(1)} ${scr[i].y.toFixed(1)}L${ex.toFixed(1)} ${ly.toFixed(1)}L${lx.toFixed(1)} ${ly.toFixed(1)}` : '');
+        paths[i].style.opacity = o.toFixed(3);
+      }
+    }
+  } else {
+    const a = Math.max(0, activeIdx);
+    for (let i = 0; i < 6; i++) { callouts[i].style.opacity = i === a ? vis.toFixed(3) : '0'; if (i !== a) paths[i].setAttribute('d', ''); }
+    const cardTop = h - 86 - coH[a];
+    paths[a].setAttribute('d', `M${scr[a].x.toFixed(1)} ${scr[a].y.toFixed(1)}L${scr[a].x.toFixed(1)} ${(cardTop - 18).toFixed(1)}L${(w / 2).toFixed(1)} ${cardTop.toFixed(1)}`);
+    paths[a].style.opacity = vis.toFixed(3);
+  }
+}
+/* ================= frame ================= */
+const clock = new THREE.Clock();
+let time = 0, ttYaw = 0, snap = true, wasCovered = false, lastOpacity = -1, redOn = false;
+let mx = 0, my = 0, dragging = false, lastX = 0, W = innerWidth, H = innerHeight;
+const par = { az: 0, el: 0 }, edgeCur = [0, 0, 0, 0, 0, 0]; let twinFade = 0, ghostTwin = false;
+const finePointer = matchMedia('(pointer: fine)').matches;
+const heroEl = document.getElementById('hero'), backdrop = document.getElementById('backdrop');
+const gridRed = new THREE.Color(0xff2a3c), gridBlack = new THREE.Color(0x000000);
+
+function updateBackdrop(y) {
+  const r = y > L.proj + 2;
+  if (r !== redOn) { redOn = r; backdrop.style.background = r ? 'var(--plate)' : ''; backdrop.style.setProperty('--glow', r ? '0' : '1'); }
+}
+function applyScene(dt, k) {
+  const e = cur.explode;
+  for (const g of parts) { const u = g.userData; g.position.copy(u.base).addScaledVector(u.dir, ease(clamp((e - u.s0) / (u.s1 - u.s0), 0, 1))); }
+  aoMat.opacity = 1 - 0.6 * e;
+  if (!dragging) ttYaw += dt * 0.22 * cur.spin;
+  robot.rotation.y = ttYaw + wrapPi(-ttYaw) * cur.lock;
+  spinner.rotation.y += dt * (1.4 + 13 * cur.online);
+  M.led.color.copy(LED_BASE).multiplyScalar(0.25 + 1.05 * cur.leds);
+  for (const s of glows) s.material.opacity = s.userData.eye ? cur.eyes * 0.85 : clamp(cur.leds * s.userData.k, 0, 1) * 0.9;
+  for (let i = 0; i < 6; i++) { const on = i === activeIdx && e > 0.5; edgeCur[i] += ((on ? 0.95 : cur.edges) - edgeCur[i]) * k; edgeMats[i].opacity = edgeCur[i]; edgeMats[i].visible = edgeCur[i] > 0.004; }
+  twinFade += ((ghostTwin ? (activeIdx === 5 ? 1 : 0) : 1) - twinFade) * k;
+  twinMat.opacity = cur.twin * twinFade * (activeIdx === 5 ? 0.9 : 0.5); twin.visible = twinMat.opacity > 0.01;
+  const gu = gridMat.uniforms;
+  gu.uOpacity.value = cur.grid; gu.uColor.value.copy(gridRed).lerp(gridBlack, cur.gridDark);
+  if (cur.online > 0.02 && !RM) { const rt = (time * 0.42) % 1; gu.uRing.value = 0.35 + rt * 3.4; gu.uRingA.value = cur.online * (1 - rt) * 0.85; } else gu.uRingA.value = 0;
+}
+function applyCamera() {
+  camera.fov = cur.fov;
+  const t = Math.tan(cur.fov * Math.PI / 360);
+  const dist = Math.max(cur.fitH / 2 / t, cur.fitW / 2 / (t * camera.aspect));
+  const az = cur.az + par.az, el = cur.el + par.el;
+  camera.position.set(dist * Math.sin(az) * Math.cos(el), cur.ty + dist * Math.sin(el), dist * Math.cos(az) * Math.cos(el));
+  camera.lookAt(0, cur.ty, 0);
+  camera.setViewOffset(W, H, -cur.sx * W, -cur.sy * H, W, H);
+  lightRig.rotation.y = az;
+}
+function frame() {
+  const dt = Math.min(clock.getDelta(), 0.5); time += dt;
+  const y = scrollY;
+  computeTarget(y); updateBackdrop(y);
+  if (y >= L.xp - 1 && y + H <= L.projEnd + 1) {           // opaque sections cover the stage: skip rendering
+    if (!wasCovered) { canvas.style.visibility = 'hidden'; wasCovered = true; }
+    snap = true; return;
+  }
+  if (wasCovered) { canvas.style.visibility = ''; wasCovered = false; }
+  const k = snap ? 1 : 1 - Math.exp(-dt * 3.6); snap = false;
+  for (const key of KEYS) cur[key] += (tgt[key] - cur[key]) * k;
+  const kp = 1 - Math.exp(-dt * 3);
+  par.az += ((finePointer ? mx * 0.16 * (1 - 0.7 * cur.lock) : 0) - par.az) * kp;
+  par.el += ((finePointer ? my * 0.05 : 0) - par.el) * kp;
+  applyScene(dt, 1 - Math.exp(-dt * 6)); applyCamera();
+  if (Math.abs(cur.opacity - lastOpacity) > 0.004) { canvas.style.opacity = cur.opacity.toFixed(3); lastOpacity = cur.opacity; }
+  renderer.render(scene, camera);
+  updateSystemsUI(activeIdx >= 0 ? sstep(0.6, 0.95, cur.explode) : 0);
+}
+/* reduced motion: discrete, static poses, rendered only when the section changes */
+let rmKey = '';
+function renderStatic(force) {
+  const y = scrollY, P = mobile ? PM : PD;
+  const name = y < L.sys * 0.6 ? 'hero' : y < L.proj ? 'about' : 'contact';
+  updateBackdrop(y);
+  if (!force && name === rmKey) return;
+  rmKey = name; Object.assign(cur, P[name], { explode: 0, spin: 0, twin: 0 }); activeIdx = -1;
+  applyScene(0, 1); applyCamera();
+  canvas.style.opacity = cur.opacity.toFixed(3);
+  renderer.render(scene, camera);
+}
+function resize() {
+  W = innerWidth; H = innerHeight; mobile = W < 900;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 2));
+  renderer.setSize(W, H, false);
+  camera.aspect = W / H;
+  ghostTwin = W <= 1180;
+  if (ghostTwin) { twin.position.set(0, 0, 0); twin.scale.setScalar(1); } else { twin.position.set(-2.55, 0, -0.95); twin.scale.setScalar(0.8); }
+  measure();
+}
+addEventListener('resize', () => { resize(); if (RM) renderStatic(true); });
+addEventListener('layoutchange', () => { measure(); if (RM) renderStatic(true); });
+addEventListener('load', () => { measure(); if (RM) renderStatic(true); });
+if (document.fonts) document.fonts.ready.then(() => { measure(); if (RM) renderStatic(true); });
+addEventListener('pointermove', e => {
+  mx = e.clientX / W * 2 - 1; my = e.clientY / H * 2 - 1;
+  if (dragging) { ttYaw += (e.clientX - lastX) * 0.009; lastX = e.clientX; }
+}, { passive: true });
+heroEl.addEventListener('pointerdown', e => { if (RM || e.target.closest('a,button')) return; dragging = true; lastX = e.clientX; });
+addEventListener('pointerup', () => { dragging = false; });
+addEventListener('pointercancel', () => { dragging = false; });
+canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); renderer.setAnimationLoop(null); root.classList.add('nogl'); root.classList.remove('live'); window.dispatchEvent(new Event('layoutchange')); });
+resize();
+if (RM) { renderStatic(true); addEventListener('scroll', () => renderStatic(false), { passive: true }); }
+else {
+  renderer.setAnimationLoop(frame);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) renderer.setAnimationLoop(null);
+    else { clock.getDelta(); renderer.setAnimationLoop(frame); }
+  });
+}
+}
+</script>
 </body>
 </html>

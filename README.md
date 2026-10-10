@@ -21,10 +21,13 @@ perception, sensor fusion and autonomous navigation — in simulation and on rea
 
 ## Structure
 
-- `index.html` — home page: about, experience, projects, skills, contact
+- `index.html` — home page: skills, about, experience, projects, contact. Self-contained: its styles and
+  scripts are inline, and the 3D robot is drawn with three.js (loaded from jsDelivr). Without WebGL, or
+  with reduced motion turned on, it falls back to a static layout.
 - `project-*.html` — one page per project
-- `style.css`, `main.js` — shared styles and scripts (plain HTML/CSS/JS, no build step)
+- `style.css`, `main.js` — styles and scripts shared by the project pages (plain HTML/CSS/JS, no build step)
 - `images/<project>/` — original photos, figures and videos
 - `images/thumbs/` — resized copies used on cards and galleries; the lightbox opens the originals
 
-Served by GitHub Pages from the `main` branch.
+Served by GitHub Pages from the `main` branch. The previous design is kept on the `old-portfolio-2026-10`
+branch (tag `v1-before-redesign`).
